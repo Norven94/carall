@@ -17,11 +17,16 @@ const CarContextProvider =(props)=>{
       isDiscount:car.price < 200000 ? "true" : "false",
       image:`/assets/car-pictures/${car.make}-${car.model}-${car.year}.jpg`,
     }
-  }))  )
+  })))
+
+  const findProduct = (productId) => {
+    return cars.find((p) => p.id === productId);
+  }
 
   const values =
   {
-    cars
+    cars,
+    findProduct
   }
 
   return(
