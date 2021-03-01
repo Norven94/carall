@@ -1,10 +1,10 @@
-import { useContext } from React
+import { useContext } from "react"
 import CarContext from '../contexts/CarContext'
 
 import Car from '../components/Car'
 
 const DiscountCarList = () => {
-  const { isDiscount } = useContext(CarContext);
+  const {isDiscount} = useContext(CarContext)
 
   return (
     <div>
