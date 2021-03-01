@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-=======
-
-
-
->>>>>>> redirectToCart
 const CartPage = () => {
   return ( 
     <div></div>
