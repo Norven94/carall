@@ -4,8 +4,7 @@ function Home() {
    return (
      <div>
        <CarList />     
-     </div>
-      
+     </div>      
    )
  }
  
