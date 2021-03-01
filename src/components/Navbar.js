@@ -11,7 +11,7 @@ function Navbar () {
 <div>
    
 <ReactBootstrap.Navbar collapseOnSelect expand="sm" bg="info" variant="dark">
-<ReactBootstrap.Navbar.Brand href="/">Carall</ReactBootstrap.Navbar.Brand>
+<ReactBootstrap.Navbar.Brand href="/"><img src="/assets/logo.png" alt="Logo"/></ReactBootstrap.Navbar.Brand>
     <ReactBootstrap.Navbar.Toggle aria-controls="responsive-navbar-nav" />
     <ReactBootstrap.Navbar.Collapse id="responsive-navbar-nav">
         <ReactBootstrap.Nav className="ml-auto">
