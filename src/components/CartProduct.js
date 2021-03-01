@@ -2,9 +2,6 @@ import {useContext} from "react"
 import { Col, Container, Row } from "react-bootstrap";
 import {CarContext }from "../contexts/CarContext"
 
-export default function CartProduct(props) {
-    /*
-    Add when cart array is availible in CarContext.js
 
 export default function CartProduct(props) {
 
