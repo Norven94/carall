@@ -8,34 +8,21 @@ export default function Car (props) {
     history.push("/product/" + props.car.vin)
   }
 
-  const value = useContext(CarContext);
-  const [products] = value.products;
-  //console.log(value)
-
-  const [index, setIndex] = useState(0);
-
-  const cars = products.filter((product, index) => {
-    return props.product.vin;
-  });
 
   return (
-    <div>
+    <div className="car">
       <img onClick={goToProduct} src={props.car.image} alt={"Image of " + props.car.make + " " + props.car.model + " " + props.car.year} />
-      {cars.map((product) => (
-        <div className="car" key={props.product.vin}>
-          <div
-            className="img-container"
-            style={{ backgroundImage: `url(${props.product.images[index]})` }}
-          />
+      
           <div className="box-details">
-            <h2 title={props.produc.title}>{props.product.title}</h2>
-            <h3>{props.product.price} kr</h3>
-            <p>{props.product.descShort}</p>
-            <p>{props.product.descLong}</p>
+            
+            <h2>{props.car.make + " " + props.car.model}</h2>
+            <h3>{props.car.price} kr</h3>
+            <p>{props.car.descShort}</p>
+            <p>{props.car.descLong}</p>
             <button>Add to Cart</button>
           </div>
         </div>
-      ))}
-    </div>
+      
+    
   );
 }
