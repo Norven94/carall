@@ -23,10 +23,13 @@ const CarContextProvider =(props)=>{
     return cars.find((p) => p.vin === productId);
   }
 
+  const [isDiscount, setIsDicount] = useState(() => cars.filter((car) => car.isDiscount === true))
+
   const values =
   {
     cars,
-    findProduct
+    findProduct,
+    isDiscount
   }
 
   return(
