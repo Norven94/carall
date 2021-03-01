@@ -1,11 +1,9 @@
+import CarList from "../components/CarList"
 
-function Home() {
-
-   
+function Home() {  
    return (
      <div>
-       
-      
+       <CarList />     
      </div>
       
    )
