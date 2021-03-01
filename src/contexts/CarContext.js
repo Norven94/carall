@@ -20,7 +20,7 @@ const CarContextProvider =(props)=>{
   }))
   
   const findProduct = (productId) => {
-    return cars.find((p) => p.id === productId);
+    return cars.find((p) => p.vin === productId);
   }
 
   const values =
