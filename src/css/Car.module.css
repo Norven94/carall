@@ -1,12 +1,5 @@
-.product{
-  box-sizing: border-box;
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  margin: 15px 0;
-}
-.product .car {
+
+ .car {
   max-width: 227px;
   width: 100%;
   height: 340px;
@@ -47,7 +40,7 @@
   height: 50px;
 }
 .boxDetails h3{
-  text-transform: uppercase;
+  
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;

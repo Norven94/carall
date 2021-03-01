@@ -17,7 +17,7 @@ export default function Car (props) {
         
         <div className={boxDetails}>             
           <h2>{props.car.make + " " + props.car.model}</h2>
-          <h3>{props.car.year} {props.car.city}</h3>
+          <h3>{props.car.year} / {props.car.miles}km {props.car.city}</h3>
           <h4>{props.car.price} kr</h4>
           <button>Add to Cart</button>
         </div>
