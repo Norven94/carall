@@ -1,5 +1,6 @@
 //Form for Address, shipping alternatives, payment details
 
+import { useHistory } from "react-router-dom";
 import Form from 'react-bootstrap/Form'
 
 export default function Form (props) {
@@ -31,18 +32,17 @@ export default function Form (props) {
       <Form.Group controlId="formBasicAddress">
         <Form.Control type="address" placeholder="Address" />
       </Form.Group>
-      {['checkbox', 'radio'].map((type) => (
+      {['radio'].map((type) => (
       <div key={`inline-${type}`} className="mb-3">
-        <Form.Check inline label="1" type={type} id={`inline-${type}-1`} />
-        <Form.Check inline label="2" type={type} id={`inline-${type}-2`} />
-        <Form.Check
-        inline
-        disabled
-        label="3 (disabled)"
-        type={type}
-        id={`inline-${type}-3`}
-        />
-    </div>
+        <Form.Check inline type={type} id={`inline-${type}-1`} />
+        <img className={visa} src="/assets/images/visa.png" alt="visa"/>
+        <Form.Check inline type={type} id={`inline-${type}-2`} />
+        <img className={visa} src="/assets/images/mc.png" alt="mcard"/>
+        <Form.Check inline type={type} id={`inline-${type}-3`} />
+        <img className={visa} src="/assets/images/applepay.png" alt="applepay"/>
+        <Form.Check inline type={type} id={`inline-${type}-4`} />
+        <img className={visa} src="/assets/images/swish.png" alt="swish"/>
+      </div>
     ))}
 
 
