@@ -3,7 +3,7 @@
 // import Home from './Pages/Home';
 //import About from './Pages/About';
 import * as ReactBootstrap from 'react-bootstrap'
-import { cart } from "./css/cart.module.css";
+import { cart } from "../css/cart.module.css";
 
 function Navbar () {
   return (
