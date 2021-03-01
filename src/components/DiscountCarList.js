@@ -4,11 +4,11 @@ import CarContext from '../contexts/CarContext'
 import Car from '../components/Car'
 
 const DiscountCarList = () => {
-  const {isDiscount} = useContext(CarContext)
+  const {carDiscount} = useContext(CarContext)
 
   return (
     <div>
-      {isDiscount.map((car) =>(
+      {carDiscount.map((car) =>(
         <Car key={car.vin} car={car} />
       ))}
     </div>
