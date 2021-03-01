@@ -20,7 +20,7 @@ export default function Car (props) {
 
   return (
     <div>
-      <img onClick={goToProduct} img={props.post.image} alt={"Image of " + props.car.make + " " + props.car.model + " " + props.car.year} />
+      <img onClick={goToProduct} src={props.car.image} alt={"Image of " + props.car.make + " " + props.car.model + " " + props.car.year} />
       {cars.map((product) => (
         <div className="car" key={props.product.vin}>
           <div
