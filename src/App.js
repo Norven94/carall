@@ -1,4 +1,6 @@
 import { BrowserRouter, Route } from "react-router-dom";
+import CarContextProvider from "./contexts/CarContext";
+import ProductPage from "./components/ProductPage";
 
 import ContextProvider from './contexts/CarContext'
 import Navbar from './components/Navbar'
@@ -12,14 +14,20 @@ function App() {
       <BrowserRouter>
         <Navbar />
         {/* ContextProvider must enclose all components that will have access to its data */}
-        <ContextProvider>
+        <CarContextProvider>
           <Route exact path="/">
             <Home />
           </Route>
           <Route exact path="/cart">
             <CartPage />
           </Route>
-        </ContextProvider>
+        <Route
+          path="/products/:productId"
+          render={(props) => {
+          return <ProductPage productId={props.match.params.productId} />;
+          }}
+        />
+        </CarContextProvider>
         <Route exact path="/About" component={About} />
       </BrowserRouter>
     </div>
