@@ -4,9 +4,8 @@ import { CarContext } from "../contexts/CarContext";
 
 export default function Car (props) {
   const history = useHistory();
-
   const goToProduct = () => {
-    history.push("/product/" + props.post.vin)
+    history.push("/product/" + props.car.vin)
   }
 
   const value = useContext(CarContext);
