@@ -12,7 +12,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Navbar />
-        {/* ContextProvider must enclose all components that will have access to its data */}
+        {/* CarContextProvider must enclose all components that will have access to its data */}
         <CarContextProvider>
           <Route exact path="/">
             <Home />
@@ -22,12 +22,12 @@ function App() {
             <CartPage />
           </Route>
           */}
-        <Route
-          path="/product/:productId"
-          render={(props) => {
-          return <ProductPage productId={props.match.params.productId} />;
-          }}
-        />
+          <Route
+            path="/product/:productId"
+            render={(props) => {
+            return <ProductPage productId={props.match.params.productId} />;
+            }}
+          />
         </CarContextProvider>
         {/*
         <Route exact path="/About" component={About} />

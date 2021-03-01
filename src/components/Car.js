@@ -1,5 +1,8 @@
 import { useHistory } from "react-router-dom";
+<<<<<<< HEAD
 import { car, boxDetails } from '../css/Car.module.css'
+=======
+>>>>>>> dev
 
 export default function Car (props) {
   const history = useHistory();
@@ -9,6 +12,7 @@ export default function Car (props) {
 
 
   return (
+<<<<<<< HEAD
     <div className={car}>
       <img onClick={goToProduct} src={props.car.image} alt={"Image of " + props.car.make + " " + props.car.model + " " + props.car.year} />
       
@@ -22,5 +26,17 @@ export default function Car (props) {
         </div>
       
     
+=======
+    <div className="car">
+      <img onClick={goToProduct} src={props.car.image} alt={"Image of " + props.car.make + " " + props.car.model + " " + props.car.year} />      
+      <div className="box-details">        
+        <h2>{props.car.make + " " + props.car.model}</h2>
+        <h3>{props.car.price} kr</h3>
+        <p>{props.car.descShort}</p>
+        <p>{props.car.descLong}</p>
+        <button>Add to Cart</button>
+      </div>
+    </div>
+>>>>>>> dev
   );
 }

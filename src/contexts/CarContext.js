@@ -14,7 +14,7 @@ const CarContextProvider =(props)=>{
       descLong:car.descLong,
       price:car.price,
       miles:car.miles,
-      isDiscount:car.price < 200000 ? "true" : "false",
+      isDiscount:car.price < 200000 ? true : false,
       image:`/assets/car-pictures/${car.make}-${car.model}-${car.year}.jpg`,
     }
   }))
