@@ -2,7 +2,9 @@ import { BrowserRouter, Route } from "react-router-dom";
 
 import ContextProvider from './contexts/CarContext'
 import Navbar from './components/Navbar'
-import Home from './'
+import Home from './pages/Home'
+import About from '.pages/About'
+import CartPage from './pages/CartPage'
 
 function App() {
   return (
@@ -14,8 +16,11 @@ function App() {
           <Route exact path="/">
             <Home />
           </Route>
+          <Route exact path="/cart">
+            <CartPage />
+          </Route>
         </ContextProvider>
-
+        <Route exact path="/About" component={About} />
       </BrowserRouter>
     </div>
   )
