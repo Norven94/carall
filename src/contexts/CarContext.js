@@ -23,10 +23,23 @@ const CarContextProvider =(props)=>{
     return cars.find((p) => p.vin === productId);
   }
 
+  /*
+  Add when cart array is added to this file
+
+  const removeProduct = (product) => {
+    setCart(cart.filter((p) => p !== product));
+  }
+
+  Also add removeProduct to values
+  */
+
+  const [carDiscount, setCarDicount] = useState(() => cars.filter((car) => car.isDiscount === true))
+
   const values =
   {
     cars,
-    findProduct
+    findProduct,
+    carDiscount
   }
 
   return(

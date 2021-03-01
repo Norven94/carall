@@ -1,16 +1,16 @@
-import { useContext } from React
+import { useContext } from "react"
 import CarContext from '../contexts/CarContext'
 
 import Car from '../components/Car'
 
 const DiscountCarList = () => {
-  const { cars } = useContext(CarContext);
-  // const [isDiscount, setIsDicount] = useState(() => cars.filter((car) => car.isDiscount === true))
-  {cars.filter((car) => car.isDiscount === true)}
+  const {carDiscount} = useContext(CarContext)
 
   return (
     <div>
-      
+      {carDiscount.map((car) =>(
+        <Car key={car.vin} car={car} />
+      ))}
     </div>
   );
 }
