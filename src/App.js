@@ -23,7 +23,7 @@ function App() {
           </Route>
           */}
         <Route
-          path="/products/:productId"
+          path="/product/:productId"
           render={(props) => {
           return <ProductPage productId={props.match.params.productId} />;
           }}
