@@ -1,5 +1,5 @@
 import { CarContext } from "../contexts/CarContext";
-import { useState } from "react";
+import { useState, useContext } from "react";
 
 export default function ProductPage (props) {
     const { findProduct } = useContext(CarContext);
