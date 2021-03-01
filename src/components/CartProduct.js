@@ -1,9 +1,7 @@
-const CartProduct = () => {
+
+
+function CartProduct() {
   
-  
-  return ( 
-    <h1></h1>
-   );
 }
- 
+
 export default CartProduct;
