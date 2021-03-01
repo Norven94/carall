@@ -2,7 +2,6 @@ import { BrowserRouter, Route } from "react-router-dom";
 import CarContextProvider from "./contexts/CarContext";
 import ProductPage from "./components/ProductPage";
 
-import ContextProvider from './contexts/CarContext'
 import Navbar from './components/Navbar'
 import Home from './pages/Home'
 import About from '.pages/About'
