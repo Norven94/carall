@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import CarContext from '../contexts/CarContext'
+import { CarContext } from '../contexts/CarContext'
 import Car from './Car'
 
 const DiscountCarList = () => {
