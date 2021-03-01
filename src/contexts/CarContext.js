@@ -3,7 +3,7 @@ import data from "../assets/json/cars.json"
 export const CarContext = createContext();
 
 const CarContextProvider =(props)=>{
-  const [cars] = useState(()=>data.map((car=>{      
+  const [cars] = useState(()=>data.map((car) => {          
     return{
       make:car.make,
       model:car.model,
@@ -14,23 +14,26 @@ const CarContextProvider =(props)=>{
       descLong:car.descLong,
       price:car.price,
       miles:car.miles,
-      isDiscount:car.price < 200000 ? "true" : "false",
+      isDiscount:car.price < 200000 ? true : false,
       image:`/assets/car-pictures/${car.make}-${car.model}-${car.year}.jpg`,
     }
-  })))
-
+  }))
+  
   const findProduct = (productId) => {
-    return cars.find((p) => p.id === productId);
+    return cars.find((p) => p.vin === productId);
   }
+
+  const [isDiscount, setIsDicount] = useState(() => cars.filter((car) => car.isDiscount === true))
 
   const values =
   {
     cars,
-    findProduct
+    findProduct,
+    isDiscount
   }
 
   return(
-    <CarContext.Provider value={{values}}>
+    <CarContext.Provider value={values}>
       {props.children}
     </CarContext.Provider>
   )
