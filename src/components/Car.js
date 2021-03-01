@@ -1,7 +1,14 @@
+import { useHistory } from "react-router-dom";
 import React, { useContext, useState } from "react";
 import { CarContext } from "../contexts/CarContext";
 
-export default function Car(props) {
+export default function Car (props) {
+  const history = useHistory();
+
+  const goToProduct = () => {
+    history.push("/product/" + props.post.vin)
+  }
+
   const value = useContext(CarContext);
   const [products] = value.products;
   //console.log(value)
@@ -14,6 +21,7 @@ export default function Car(props) {
 
   return (
     <div>
+      <img onClick={goToProduct} img={props.post.image} alt={"Image of " + props.car.make + " " + props.car.model + " " + props.car.year} />
       {cars.map((product) => (
         <div className="car" key={props.product.vin}>
           <div
