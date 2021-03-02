@@ -6,7 +6,7 @@ const DiscountCarList = () => {
   const {carDiscount} = useContext(CarContext)
 
   return (
-    <div classname="cardiscount-container">
+    <div className="cardiscount-container">
       {carDiscount.map((car) =>(
         <Car key={car.vin} car={car} />
       ))}
