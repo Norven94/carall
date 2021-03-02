@@ -1,6 +1,7 @@
 import { useHistory } from "react-router-dom";
 import { car, boxDetails } from '../css/Car.module.css'
-
+import { useContext } from "react"
+import { CarContext }from "../contexts/CarContext"
 export default function Car (props) {
   const { addToCart } = useContext(CarContext)
   const history = useHistory();
