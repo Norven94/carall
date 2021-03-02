@@ -1,4 +1,4 @@
-import {createContext, useState, useEffect} from "react"
+import {createContext, useState} from "react"
 import data from "../assets/json/cars.json"
 export const CarContext = createContext();
 
@@ -42,7 +42,7 @@ const [cart, setCart] = useState([
 
 const addToCart = (product) => {
   setCart([...cart, product])
-  console.log(cart)
+ 
 }
 
 
