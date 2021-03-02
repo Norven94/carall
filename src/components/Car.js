@@ -2,6 +2,7 @@ import { useHistory } from "react-router-dom";
 import { car, boxDetails } from '../css/Car.module.css'
 
 export default function Car (props) {
+  const { addToCart } = useContext(CarContext)
   const history = useHistory();
   const goToProduct = () => {
     history.push("/product/" + props.car.vin)
@@ -14,9 +15,9 @@ export default function Car (props) {
        
         <div className={boxDetails}>             
           <h2>{props.car.make + " " + props.car.model}</h2>
-          <h3>{props.car.year} {props.car.city}</h3>
+          <h3>{props.car.year} / {props.car.miles}km {props.car.city}</h3>
           <h4>{props.car.price} kr</h4>
-          <button>Add to Cart</button>
+          <button onClick={() => addToCart(props.car)}>Add to Cart</button>
         </div>
       </div>
    
