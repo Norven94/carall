@@ -1,8 +1,10 @@
-import {createContext, useState} from "react"
+import {createContext, useState, useEffect} from "react"
 import data from "../assets/json/cars.json"
 export const CarContext = createContext();
 
 const CarContextProvider =(props)=>{
+
+ 
   const [cars] = useState(()=>data.map((car) => {          
     return{
       make:car.make,
@@ -38,6 +40,11 @@ const [cart, setCart] = useState([
   }
 ])
 
+const addToCart = (product) => {
+  setCart([...cart, product])
+  console.log(cart)
+}
+
 
   /*
   Add when cart array is added to this file
@@ -56,7 +63,8 @@ const [cart, setCart] = useState([
     cars,
     findProduct,
     carDiscount, 
-    cart
+    cart,
+    addToCart,
   }
 
   return(
