@@ -12,7 +12,7 @@ export default function Car (props) {
     history.push("/product/" + props.car.vin)
   }
 
-<<<<<<< HEAD
+
   function Map(props) {
     return (
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="12" viewBox="0 2 12 24">
@@ -21,8 +21,7 @@ export default function Car (props) {
   }
 
 
-=======
->>>>>>> dev
+
   return (
     <Col lg={3} md={4} sm={12} >
       <div className={car}>
