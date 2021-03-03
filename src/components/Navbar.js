@@ -4,13 +4,18 @@ import { useState, useContext, useEffect } from "react";
 
 function Navbar () {
   const { cart } = useContext(CarContext)
+  const { totalVal } = useContext(CarContext)
   const [totalProducts, setTotalProducts] = useState(0)
+  const [totalOrder, setTotalOrder] = useState(0)
+
   useEffect(
       () =>{  
           setTotalProducts(cart.length)
-          console.log(totalProducts);
+          setTotalOrder(totalVal)
       }, [cart]   
   )
+
+
   return (
   <ReactBootstrap.Navbar collapseOnSelect expand="sm" bg="info" variant="dark">
     <ReactBootstrap.Navbar.Brand href="/"><img src="/assets/images/logo.png" alt="Logo"/></ReactBootstrap.Navbar.Brand>
@@ -29,7 +34,7 @@ function Navbar () {
               <ReactBootstrap.Dropdown.Menu>
                 <ReactBootstrap.NavDropdown.Item href="#a">Mazda 23421</ReactBootstrap.NavDropdown.Item>
                 <ReactBootstrap.NavDropdown.Divider />
-                <ReactBootstrap.NavDropdown.Item href="#">TOTAL:</ReactBootstrap.NavDropdown.Item>
+                <ReactBootstrap.NavDropdown.Item href="#">TOTAL: {totalOrder}</ReactBootstrap.NavDropdown.Item>
                 <ReactBootstrap.NavDropdown.Item href="#" 
                 onClick={() => history.push("/cartpage")}
                 >Checkout</ReactBootstrap.NavDropdown.Item>
