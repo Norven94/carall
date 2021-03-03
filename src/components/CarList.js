@@ -13,7 +13,7 @@ function CarList() {
           ))}      
         </Row>
       </Container>   
-      </div>
+    </div>
   )
 }
 
