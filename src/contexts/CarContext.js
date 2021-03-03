@@ -44,16 +44,10 @@ const addToCart = (product) => {
   setCart([...cart, product])
 }
 
-
-  /*
-  Add when cart array is added to this file
-
   const removeProduct = (product) => {
     setCart(cart.filter((p) => p !== product));
   }
 
-  Also add removeProduct to values
-  */
 
   const [carDiscount, setCarDicount] = useState(() => cars.filter((car) => car.isDiscount === true))
 
@@ -64,6 +58,7 @@ const addToCart = (product) => {
     carDiscount, 
     cart,
     addToCart,
+    removeProduct,
   }
 
   return(
