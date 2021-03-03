@@ -21,8 +21,7 @@ export default function ProductPage (props) {
                     <span className={styles['product-city']}>{product.city}</span>
                     <p>{product.descLong}</p>
                     <span className={styles['product-price']}>{product.price}Kr</span>
-                    <button onClick={() => addToCart(product)}>Add to cart</button>
-                 
+                    <button onClick={() => addToCart(product)}>Add to cart</button>                 
                 </Col>   
             </Row>         
         </Container>
