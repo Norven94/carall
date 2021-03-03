@@ -4,8 +4,12 @@
 //import About from './Pages/About';
 import * as ReactBootstrap from 'react-bootstrap'
 import { cart } from "./css/cart.module.css";
+import { CartPage } from "../pages/CartPage.js";
+import { useHistory } from "react-router-dom" 
 
 function Navbar () {
+  const history = useHistory();
+  
   return (
     
 <div>
