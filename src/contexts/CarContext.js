@@ -26,9 +26,7 @@ const CarContextProvider =(props)=>{
   }
 
 /* Did a fake cart so i had something to loop out in CartProduct */
-const [cart, setCart] = useState([
-  
-])
+const [cart, setCart] = useState([])
 
 const addToCart = (product) => {
   setCart([...cart, product])

@@ -21,7 +21,7 @@
 }
 
 .delete-button {
-  background-color: #555555; 
+  background-color: #555555c9; 
   border: none;
   color: white;
   padding: 10px 20px;
@@ -33,15 +33,23 @@
 }
 
 .product-make {
-  font-size: 2.5rem;
-  margin-top: 50px;
+  font-size: 3rem;
+  color: #707070;
 }
 
 .product-info {
-  font-size: 1.5rem;
+  font-size: 2rem;
+  color: #707070;
 }
 
 .product-city {
-  font: 1rem;
+  font-size: 1.5rem;
+  color: #707070;
+}
+
+.product-desc {
+  font-size: 1rem;
+  color: #707070;
+  max-width: 400px;
 }
 
