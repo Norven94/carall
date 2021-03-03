@@ -27,7 +27,9 @@ function Navbar () {
             <ReactBootstrap.NavDropdown.Item href="#a">Mazda 23421</ReactBootstrap.NavDropdown.Item>
                 <ReactBootstrap.NavDropdown.Divider />
                 <ReactBootstrap.NavDropdown.Item href="#">TOTAL:</ReactBootstrap.NavDropdown.Item>
-                <ReactBootstrap.NavDropdown.Item href="#">Checkout</ReactBootstrap.NavDropdown.Item>
+                <ReactBootstrap.NavDropdown.Item href="#" 
+                onClick={() => history.push("/cartpage")}
+                >Checkout</ReactBootstrap.NavDropdown.Item>
             </ReactBootstrap.Dropdown.Menu>
             </ReactBootstrap.Dropdown>
 
