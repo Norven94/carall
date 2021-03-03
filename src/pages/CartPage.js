@@ -4,7 +4,6 @@ import BillingFields from "../components/BillingFields";
 import { CarContext } from "../contexts/CarContext";
 import ShippingFields from "../components/ShippingFields";
 
-
 const CartPage = () => {
 const carContext = useContext(CarContext);
   return ( 
