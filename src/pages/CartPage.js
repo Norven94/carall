@@ -13,12 +13,15 @@ const carContext = useContext(CarContext);
       <span className={styles["cart-rubrik"]}>SHOPPING CART</span>
       <Container>
         <Row>
-        <Col>
+        <Col xs={12} md={8}>
       {carContext.cart.map(product =><CartProduct key={product.vin} product={product}/>)}
       </Col>
-      <Col>
+      <Col xs={6} md={4}>
       <BillingFields />
+      <div className="sticky-top">
       <ShippingFields />
+      </div>
+      
       </Col>
       </Row>
       </Container>

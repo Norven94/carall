@@ -5,5 +5,9 @@
 
 .cart-rubrik {
   margin: 10px auto 10px auto;
-  font-size: 3rem;
+  font-size: 2rem;
+}
+
+.shipping-field {
+  position: fixed;
 }
