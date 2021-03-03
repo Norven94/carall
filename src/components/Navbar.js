@@ -1,26 +1,13 @@
 import * as ReactBootstrap from 'react-bootstrap'
 import { CarContext } from "../contexts/CarContext";
-import { useState, useContext, useEffect } from "react";
+import { useContext } from "react";
 import { useHistory } from "react-router-dom"
 import { NavLink } from "react-router-dom";
 
 function Navbar () {
-  
+  const { totalProducts,totalOrder } = useContext(CarContext);
   const history = useHistory()
   
-  const { cart } = useContext(CarContext)
-  const { totalVal } = useContext(CarContext)
-  const [totalProducts, setTotalProducts] = useState(0)
-  const [totalOrder, setTotalOrder] = useState(0)
-
-  useEffect(
-      () =>{  
-          setTotalProducts(cart.length)
-          setTotalOrder(totalVal)
-      }, [cart]   
-  )
-
-
   return (
   <ReactBootstrap.Navbar collapseOnSelect expand="sm" bg="info" variant="dark">
     <ReactBootstrap.Navbar.Brand>
@@ -51,7 +38,7 @@ function Navbar () {
           <ReactBootstrap.Dropdown.Menu>
             <ReactBootstrap.NavDropdown.Item href="#a">Mazda 23421</ReactBootstrap.NavDropdown.Item>
             <ReactBootstrap.NavDropdown.Divider />
-            <ReactBootstrap.NavDropdown.Item href="#">TOTAL:</ReactBootstrap.NavDropdown.Item>
+            <ReactBootstrap.NavDropdown.Item href="#">TOTAL: {totalOrder} Kr </ReactBootstrap.NavDropdown.Item>
             <ReactBootstrap.NavDropdown.Item href="#" 
             onClick={() => history.push("/cartpage")}
             >Checkout</ReactBootstrap.NavDropdown.Item>
