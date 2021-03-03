@@ -44,6 +44,18 @@ const addToCart = (product) => {
   setCart([...cart, product])
 }
 
+const total = () =>{
+  let totalVal = 0;
+  for(let i = 0; i < cart.length; i++ ){
+      totalVal += cart[i].price
+  }
+  setTotalOrder(totalVal)
+}
+
+
+  /*
+  Add when cart array is added to this file
+
   const removeProduct = (product) => {
     setCart(cart.filter((p) => p !== product));
   }
