@@ -3,6 +3,14 @@ import { CarContext } from '../contexts/CarContext'
 import Car from './Car'
 import Carousel from 'react-elastic-carousel'
 
+// function DiscountCarList() {
+  
+// return(
+//   <div>
+//     <h1>Discount Page</h1>
+//   </div>
+// )
+
 const DiscountCarList = () => {
   const {carDiscount} = useContext(CarContext)
   const breakPoints = [
