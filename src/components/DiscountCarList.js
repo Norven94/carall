@@ -29,6 +29,7 @@ const DiscountCarList = () => {
       </Carousel>
     </div>
   );
+  
 }
 
 export default DiscountCarList;

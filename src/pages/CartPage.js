@@ -8,7 +8,8 @@ import ShippingFields from "../components/ShippingFields";
 const CartPage = () => {
 const carContext = useContext(CarContext);
   return ( 
-    <div>
+      <div className="cartPage-style">
+      <span className="cart-rubrik">SHOPPING CART</span>
       {carContext.cart.map(product =><CartProduct key={product.vin} product={product}/>)}
     <BillingFields />
     <ShippingFields />

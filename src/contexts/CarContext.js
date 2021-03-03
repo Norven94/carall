@@ -42,7 +42,6 @@ const [cart, setCart] = useState([
 
 const addToCart = (product) => {
   setCart([...cart, product])
- 
 }
 
 
