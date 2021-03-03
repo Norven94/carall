@@ -42,7 +42,6 @@ const [cart, setCart] = useState([
 
 const addToCart = (product) => {
   setCart([...cart, product])
- 
 }
 
 const total = () =>{
@@ -61,8 +60,6 @@ const total = () =>{
     setCart(cart.filter((p) => p !== product));
   }
 
-  Also add removeProduct to values
-  */
 
   const [carDiscount, setCarDicount] = useState(() => cars.filter((car) => car.isDiscount === true))
 
@@ -73,6 +70,7 @@ const total = () =>{
     carDiscount, 
     cart,
     addToCart,
+    removeProduct,
   }
 
   return(
