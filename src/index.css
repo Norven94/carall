@@ -13,3 +13,16 @@ code {
 }
 
 
+.shipping-header {
+  font-size: 1.5rem;
+  margin-left: 15px;
+}
+
+.billing-header {
+  font-size: 1.5rem;
+  margin-left: 15px;
+}
+
+.cart-price {
+  margin-left: 15px;
+}
