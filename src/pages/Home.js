@@ -1,15 +1,15 @@
 import CarList from "../components/CarList"
-import Form from "../components/FormFields"
+import DiscountCarList from "../components/DiscountCarList"
 
 function Home() {  
-   return (
-     <div>
-       <CarList />     
-       <Form />
-     </div>      
-   )
- }
- 
- export default Home
- 
+  return (
+    <div>
+      <DiscountCarList />
+      <CarList />     
+    </div>      
+  )
+}
+
+export default Home
+
 

@@ -1,11 +1,16 @@
-
-// import { Route, Switch, BrowserRouter } from 'react-router-dom';
-// import Home from './Pages/Home';
-//import About from './Pages/About';
 import * as ReactBootstrap from 'react-bootstrap'
-import { cart } from "../css/cart.module.css";
+import { CarContext } from "../contexts/CarContext";
+import { useState, useContext, useEffect } from "react";
 
 function Navbar () {
+  const { cart } = useContext(CarContext)
+  const [totalProducts, setTotalProducts] = useState(0)
+  useEffect(
+      () =>{  
+          setTotalProducts(cart.length)
+          console.log(totalProducts);
+      }, [cart]   
+  )
   return (
   <ReactBootstrap.Navbar collapseOnSelect expand="sm" bg="info" variant="dark">
     <ReactBootstrap.Navbar.Brand href="/"><img src="/assets/images/logo.png" alt="Logo"/></ReactBootstrap.Navbar.Brand>
@@ -16,15 +21,19 @@ function Navbar () {
           <ReactBootstrap.Nav.Link eventKey={2} href="/About">About</ReactBootstrap.Nav.Link>
             <ReactBootstrap.Dropdown>
               <ReactBootstrap.Dropdown.Toggle variant="info" id="dropdown-basic" >
-              <img className={cart} src="/assets/icons/cartw.svg" alt="Cart"/>
+              <div className="cartBox"> <p>{totalProducts}</p>
+              <img src="/assets/icons/cartw.svg" alt="Cart"/>
+               </div>
               </ReactBootstrap.Dropdown.Toggle>
 
               <ReactBootstrap.Dropdown.Menu>
                 <ReactBootstrap.NavDropdown.Item href="#a">Mazda 23421</ReactBootstrap.NavDropdown.Item>
                 <ReactBootstrap.NavDropdown.Divider />
                 <ReactBootstrap.NavDropdown.Item href="#">TOTAL:</ReactBootstrap.NavDropdown.Item>
-                <ReactBootstrap.NavDropdown.Item href="#">Checkout</ReactBootstrap.NavDropdown.Item>
-              </ReactBootstrap.Dropdown.Menu>
+                <ReactBootstrap.NavDropdown.Item href="#" 
+                onClick={() => history.push("/cartpage")}
+                >Checkout</ReactBootstrap.NavDropdown.Item>
+            </ReactBootstrap.Dropdown.Menu>
             </ReactBootstrap.Dropdown>
         </ReactBootstrap.Nav>
       </ReactBootstrap.Navbar.Collapse>
