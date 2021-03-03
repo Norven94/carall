@@ -11,10 +11,11 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Navbar />
+      
         {/* CarContextProvider must enclose all components that will have access to its data */}
         <CarContextProvider>
           <Route exact path="/">
+          <Navbar />
             <Home />
           </Route>
           {/*
