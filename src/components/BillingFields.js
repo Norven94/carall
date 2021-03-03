@@ -49,7 +49,7 @@ function BillingFields() {
   return (
     <div>
       {/* Billing Infos fiels here */}
-      <h1>Billing Info</h1>
+      <h1 className="billing-header">Billing Info</h1>
       <Form>
         <Form.Group as={Col} controlId="formBasicName">
           <Form.Control onChange={handleNameChangeBilling} type="full name" placeholder="Full Name" />

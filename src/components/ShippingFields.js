@@ -43,7 +43,7 @@ function ShippingFields() {
   return (
     <div>
       {/* Shipping Details Fields here */}
-      <h1>Shipping Details</h1>
+      <h1 className="shipping-header">Shipping Details</h1>
       <Form>
         <Form.Group as={Col} controlId="formBasicName">
           <Form.Control onChange={handleNameChangeShipping} type="full name" placeholder="Full Name" />
@@ -69,9 +69,9 @@ function ShippingFields() {
             <option value="25000">Normal (5-7 days) 25000kr</option>
           </Form.Control>
         </Form.Group>
-        <p><b>Car price: </b>{ totalCarPrice }Kr</p>
-        <p><b>Shipping price: </b>{ shipping }Kr</p>
-        <p><b>Total: </b> { totalCarPrice+ + shipping } Kr</p>
+        <p className="cart-price"><b>Car price: </b>{ totalCarPrice }Kr</p>
+        <p className="cart-price"><b>Shipping price: </b>{ shipping }Kr</p>
+        <p className="cart-price"><b>Total: </b> { totalCarPrice+ + shipping } Kr</p>
       </Form>
     </div>
 
