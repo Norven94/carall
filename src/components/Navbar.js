@@ -9,13 +9,18 @@ function Navbar () {
   const history = useHistory()
   
   const { cart } = useContext(CarContext)
+  const { totalVal } = useContext(CarContext)
   const [totalProducts, setTotalProducts] = useState(0)
+  const [totalOrder, setTotalOrder] = useState(0)
+
   useEffect(
       () =>{  
           setTotalProducts(cart.length)
-          console.log(totalProducts);
+          setTotalOrder(totalVal)
       }, [cart]   
   )
+
+
   return (
   <ReactBootstrap.Navbar collapseOnSelect expand="sm" bg="info" variant="dark">
     <ReactBootstrap.Navbar.Brand>
