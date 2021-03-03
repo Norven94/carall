@@ -41,7 +41,6 @@ const CarContextProvider =(props)=>{
     () =>{  
         setTotalProducts(cart.length)
         setTotalOrder(cart.reduce((acc,num) => {
-          console.log(acc)
           return acc+num.price          
         },0 ))
     }, [cart]   
