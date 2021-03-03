@@ -5,7 +5,7 @@ import ProductPage from "./components/ProductPage";
 import Navbar from './components/Navbar'
 import Home from './pages/Home'
 //import About from './pages/About'
-//import CartPage from './pages/CartPage'
+import CartPage from './pages/CartPage'
 
 function App() {
   return (
@@ -18,11 +18,11 @@ function App() {
           <Navbar />
             <Home />
           </Route>
-          {/*
+          
           <Route exact path="/cart">
             <CartPage />
           </Route>
-          */}
+          
           <Route
             path="/product/:productId"
             render={(props) => {
