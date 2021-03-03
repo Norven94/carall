@@ -4,13 +4,8 @@ import { CarContext }from "../contexts/CarContext"
 
 
 export default function CartProduct(props) {
+    const { removeProduct } = useContext(CarContext)
 
-    
-    //Add when cart array is availible in CarContext.js
-
-   // const {removeProduct} = useContext(CarContext)
-    console.log("HEREEE");
-    console.log(props);
     return (
         <div className="cart-container">
             <Container>
@@ -19,7 +14,7 @@ export default function CartProduct(props) {
                     <div className="bild-price">
                     <div className="bild"></div>
                     <p className="cart-price">{props.product.price} Kr</p>
-                    <button className="delete-button">Delete</button>
+                    <button onClick={() => removeProduct(props.product)} className="delete-button">Delete</button>
                     </div>
                     </Col>
                     <Col>
@@ -34,10 +29,6 @@ export default function CartProduct(props) {
                 </Row>
             </Container>
             <hr size="8" width="90%"></hr>
-            
-            
-            
-           {/* <button onClick={() => removeProduct(props)}>Remove</button> */}
         </div>
     )
     
