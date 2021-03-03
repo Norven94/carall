@@ -21,7 +21,7 @@ function Navbar () {
           <ReactBootstrap.Nav.Link eventKey={2} href="/About">About</ReactBootstrap.Nav.Link>
             <ReactBootstrap.Dropdown>
               <ReactBootstrap.Dropdown.Toggle variant="info" id="dropdown-basic" >
-              <div> <h1>{totalProducts}</h1>
+              <div className="cartBox"> <p>{totalProducts}</p>
               <img src="/assets/icons/cartw.svg" alt="Cart"/>
                </div>
               </ReactBootstrap.Dropdown.Toggle>
