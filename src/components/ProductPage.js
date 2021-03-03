@@ -7,9 +7,8 @@ import styles from '../css/productpage.module.css';
 
 
 export default function ProductPage (props) {
-    const { findProduct } = useContext(CarContext);
+    const { findProduct,addToCart } = useContext(CarContext);
     const [product] = useState(findProduct(props.productId))
-    
     return (
         <Container className={styles['product-page']}>
             <Row>
@@ -21,8 +20,8 @@ export default function ProductPage (props) {
                     <h3 className={styles['product-info']}>{product.model + "/" + product.year + "/" + product.miles + " miles"}</h3>
                     <span className={styles['product-city']}>{product.city}</span>
                     <p>{product.descLong}</p>
-                    <span className={styles.['product-price']}>{product.price}Kr</span>
-                    <button>Add to cart</button>
+                    <span className={styles['product-price']}>{product.price}Kr</span>
+                    <button onClick={() => addToCart(product)}>Add to cart</button>                 
                 </Col>   
             </Row>         
         </Container>
