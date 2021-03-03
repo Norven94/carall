@@ -36,7 +36,7 @@ function Navbar () {
             </div>
           </ReactBootstrap.Dropdown.Toggle>
           <ReactBootstrap.Dropdown.Menu>
-            <ReactBootstrap.NavDropdown.Item href="#">TOTAL:</ReactBootstrap.NavDropdown.Item>
+            <ReactBootstrap.NavDropdown.Item href="#">TOTAL:{totalOrder} Kr</ReactBootstrap.NavDropdown.Item>
             <ReactBootstrap.NavDropdown.Divider />
             <ReactBootstrap.NavDropdown.Item href="#" 
             onClick={() => history.push("/cartpage")}
