@@ -14,8 +14,8 @@ function App() {
       
         {/* CarContextProvider must enclose all components that will have access to its data */}
         <CarContextProvider>
-          <Route exact path="/">
           <Navbar />
+          <Route exact path="/">          
             <Home />
           </Route>
           
