@@ -33,6 +33,7 @@ export default function CartProduct(props) {
                     
                 </Row>
             </Container>
+            <hr size="8" width="90%"></hr>
             
             
             
