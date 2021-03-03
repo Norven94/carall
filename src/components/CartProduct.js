@@ -13,10 +13,9 @@ export default function CartProduct(props) {
     console.log(props);
     return (
         <div className="cart-container">
-            <span className="cart-rubrik">SHOPPING CART</span>
             <Container>
                 <Row>
-                <Col>
+                    <Col>
                     <div className="bild-price">
                     <div className="bild"></div>
                     <p className="cart-price">{props.product.price} Kr</p>
