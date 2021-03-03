@@ -18,7 +18,10 @@ const carContext = useContext(CarContext);
       </Col>
       <Col xs={6} md={4}>
       <BillingFields />
+      <div className="sticky-top">
       <ShippingFields />
+      </div>
+      
       </Col>
       </Row>
       </Container>
