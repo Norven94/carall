@@ -5,7 +5,9 @@ import { useHistory } from "react-router-dom"
 import { NavLink } from "react-router-dom";
 
 function Navbar () {
+  
   const history = useHistory()
+  
   const { cart } = useContext(CarContext)
   const [totalProducts, setTotalProducts] = useState(0)
   useEffect(

@@ -19,7 +19,7 @@ function App() {
             <Home />
           </Route>
           
-          <Route exact path="/cart">
+          <Route exact path="/cartpage">
             <CartPage />
           </Route>
           
