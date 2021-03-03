@@ -13,14 +13,3 @@ code {
 }
 
 
-/* CartPage CSS */
-
-.cartPage-style {
-  display: grid;
-}
-
-.cart-rubrik {
-  margin: 10px auto 10px auto;
-  font-size: 3rem;
-}
-
