@@ -1,20 +1,18 @@
-import { useContext, useState } from "react"
-import {CarContext }from "../contexts/CarContext"
-function SearchFields() {
-  const cars = useContext(CarContext)
+import { useContext } from "react"
+import { FilterContext } from "../contexts/FilterContext" 
 
-//   const searchList =(e)=>{    
-//     setNewCars(cars.filter((car)=>{
-//      return car.make.toLowerCase().search(e.target.value.toLowerCase()) !==-1 ;
-//     }) 
-//     )                    
-// }
+function SearchFields() {
+  const { search } = useContext(FilterContext);
+  const handleSearch = (e) => {
+    console.log(e.target.value)
+    search(e.target.value)
+  }
+
   return (
-    <div className="search-container">
+  <div className="search-container">
     <div>
-      <input  type="text" placeholder="search" name="search" />
+      <input onChange={handleSearch} type="text" placeholder="search" name="search" />
     </div>
-   
   </div>
   )
 }
