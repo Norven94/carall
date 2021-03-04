@@ -43,3 +43,27 @@ margin-bottom:-10px;
 .nav-link a:hover {
     text-decoration: none;
 }
+.totalPrice {
+    margin-left: 1.5rem;
+}
+
+
+@media only screen and (min-width: 576px) 
+{
+   .dropdown  {
+        order:1;
+        }
+}
+
+.nav-link p {
+    margin: auto;
+}
+
+.About  {
+    color:#000;
+    background-color: #fff;
+    
+}
+.About h1{
+    font-weight: 600;
+    }

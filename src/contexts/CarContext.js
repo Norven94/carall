@@ -19,6 +19,7 @@ const CarContextProvider =(props)=>{
       image:`/assets/car-pictures/${car.make}-${car.model}-${car.year}.jpg`,
     }
   }))
+  const [tempCars] = useState(cars)
   const [carDiscount, setCarDicount] = useState(() => cars.filter((car) => car.isDiscount === true))
   
   const findProduct = (productId) => {
@@ -28,6 +29,7 @@ const CarContextProvider =(props)=>{
   const values =
   {
     cars,
+    tempCars,
     setCars,
     findProduct,
     carDiscount, 
