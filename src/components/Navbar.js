@@ -35,12 +35,12 @@ function Navbar() {
         <ReactBootstrap.Nav className="ml-auto">
           <ReactBootstrap.Nav.Link>
             <NavLink to="/">
-            <p class="text-center">Home</p>
+            <p className="text-center">Home</p>
           </NavLink>
           </ReactBootstrap.Nav.Link>
           <ReactBootstrap.Nav.Link eventKey={2} href="/About">
             <NavLink to="/about">
-            <p class="text-center">About</p>
+            <p className="text-center">About</p>
           </NavLink>
           </ReactBootstrap.Nav.Link>
       
