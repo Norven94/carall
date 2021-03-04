@@ -1,10 +1,10 @@
 import { useHistory } from "react-router-dom";
 import { car, boxDetails } from '../css/Car.module.css'
 import { useContext } from "react"
-import { CarContext }from "../contexts/CarContext"
+import { CartContext }from "../contexts/CartContext"
 
 export default function Car (props) {
-  const { addToCart } = useContext(CarContext)
+  const { addToCart } = useContext(CartContext)
   const history = useHistory();
   const goToProduct = () => {
     history.push("/product/" + props.car.vin)
