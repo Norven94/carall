@@ -1,0 +1,45 @@
+$theme-colors: (
+    "info":  #ff7f50,
+    "danger":  #B34C26,
+    "success":#14B394,
+    "warning":#50FFDD,
+    "primary":#FF7F50,
+    "secondary":#FF9269,
+);
+
+@import "~bootstrap/scss/bootstrap";
+
+.cartBox{
+    color:#fff;
+    font-size:0.8rem;
+    padding:0;
+    margin:0;
+}
+  .cartBox img {
+    width:20px;
+    height:20px;   
+    padding:0;
+    margin:0;
+}
+
+.cartBox p {
+margin-bottom:-10px;
+}
+
+.dropdown-menu  {
+    right: 0;
+    left: auto;
+    padding-left: 1px;
+    padding-right: 1px;
+}
+
+.dropdown-toggle::after {
+    display: none;
+
+}
+.nav-link a {
+    color:#fff;
+}
+.nav-link a:hover {
+    text-decoration: none;
+}
