@@ -11,7 +11,7 @@ const cartContext = useContext(CartContext);
   return ( 
     <div className={styles["cartPage-style"]}>
       <span className={styles["cart-rubrik"]}>SHOPPING CART</span>
-      <Container>
+      <Container fluid>
         <Row>
         <Col xs={12} md={8}>
       {cartContext.cart.map(product =><CartProduct key={product.vin} product={product}/>)}
