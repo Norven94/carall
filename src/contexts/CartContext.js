@@ -8,18 +8,17 @@ const CartContextProvider = (props) => {
     const [totalOrder, setTotalOrder] = useState(0)
     const [alert, setAlert] = useState("");
 
-    // const addToCart = (product) => {
-    //   setCart([...cart, product])
-    // }
     const addToCart = (product) => {
       let addProduct = true;
       for(let i = 0; i < cart.length; i++){
-        if (cart[i].id === product.id) addProduct = false;
+        if (cart[i].vin === product.vin) addProduct = false;
       }
       if (addProduct){
         setCart([...cart, product])
         setAlert("");
-      } else setAlert(`${product.name} is already in your cart`)
+      } else {
+        setAlert(`${product.make}  ${product.model} is already in your cart`)
+      }
    
     }
     const removeProduct = (product) => {
@@ -45,6 +44,7 @@ const CartContextProvider = (props) => {
         removeProduct,
         totalProducts,
         totalOrder,
+        alert,
     }
 
     return(
