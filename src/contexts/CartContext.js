@@ -6,11 +6,22 @@ const CartContextProvider = (props) => {
     const [cart, setCart] = useState([])
     const [totalProducts, setTotalProducts] = useState(0)
     const [totalOrder, setTotalOrder] = useState(0)
+    const [alert, setAlert] = useState("");
 
+    // const addToCart = (product) => {
+    //   setCart([...cart, product])
+    // }
     const addToCart = (product) => {
-      setCart([...cart, product])
+      let addProduct = true;
+      for(let i = 0; i < cart.length; i++){
+        if (cart[i].id === product.id) addProduct = false;
+      }
+      if (addProduct){
+        setCart([...cart, product])
+        setAlert("");
+      } else setAlert(`${product.name} is already in your cart`)
+   
     }
-    
     const removeProduct = (product) => {
       setCart(cart.filter((p) => p !== product));
     }
