@@ -4,7 +4,7 @@ export const CarContext = createContext();
 
 const CarContextProvider =(props)=>{  
  
-  const [cars] = useState(()=>data.map((car) => {          
+  const [cars, setCars] = useState(()=>data.map((car) => {          
     return{
       make:car.make,
       model:car.model,
@@ -28,6 +28,7 @@ const CarContextProvider =(props)=>{
   const values =
   {
     cars,
+    setCars,
     findProduct,
     carDiscount, 
   }
