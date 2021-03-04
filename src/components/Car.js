@@ -1,10 +1,10 @@
 import { useHistory } from "react-router-dom";
 import { car, boxDetails } from '../css/Car.module.css'
 import { useContext } from "react"
-import { CarContext }from "../contexts/CarContext"
+import { CartContext }from "../contexts/CartContext"
 
 export default function Car (props) {
-  const { addToCart } = useContext(CarContext)
+  const { addToCart } = useContext(CartContext)
   const history = useHistory();
   const goToProduct = () => {
     history.push("/product/" + props.car.vin)
@@ -18,6 +18,7 @@ export default function Car (props) {
   }
 
   return (
+    <div>
     <div className={car}>
       <img onClick={goToProduct} src={props.car.image} alt={"Image of " + props.car.make + " " + props.car.model + " " + props.car.year} />
       <div className={boxDetails}>             
@@ -26,6 +27,7 @@ export default function Car (props) {
         <h4>{props.car.price} kr</h4>
         <button onClick={() => addToCart(props.car)}>Add to Cart</button>
       </div>
+    </div>
     </div>
   );
 }
