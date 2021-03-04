@@ -33,7 +33,7 @@ function Sort() {
           <option value="price">Price ↑</option>
           <option value="price">Price ↓</option>
           <option value="year">Year ↑</option>
-          <option value="make">Make Z-A</option>
+          <option value="year">Year ↓</option>
         </select>
       
       <Container fluid>
