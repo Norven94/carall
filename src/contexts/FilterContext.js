@@ -9,8 +9,8 @@ const FilterContextProvider = (props) => {
         setCars(tempCars.filter((car) => {
             console.log(searchString)              
             return car.make.toLowerCase().search(searchString.toLowerCase()) !==-1 
-            // ||  car.model.toLowerCase().search(searchString.toLowerCase()) !==-1
-            // ||  car.year.toString().toLowerCase().search(searchString.toLowerCase()) !==-1;
+            ||  car.model.toLowerCase().search(searchString.toLowerCase()) !==-1
+            ||  car.year.toString().toLowerCase().search(searchString.toLowerCase()) !==-1;
         }))              
     }
     const values =
