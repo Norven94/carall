@@ -55,7 +55,7 @@ function ShippingFields() {
           <Form.Group as={Col} controlId="formGridCity">
             <Form.Control onChange={handleCityChangeShipping} type="city" placeholder="City" />
           </Form.Group>
-          <Form.Group controlId="formGridZip">
+          <Form.Group as={Col} controlId="formGridZip">
             <Form.Control onChange={handleZipChangeShipping} type="zip code" placeholder="Zip Code" />
           </Form.Group>
         </Form.Row>
