@@ -13,14 +13,17 @@ code {
 }
 
 
-/* CartPage CSS */
-
-.cartPage-style {
-  display: grid;
+.shipping-header {
+  font-size: 1.5rem;
+  margin-left: 15px;
 }
 
-.cart-rubrik {
-  margin: 10px auto 10px auto;
-  font-size: 3rem;
+.billing-header {
+  font-size: 1.5rem;
+  margin-left: 15px;
+}
+
+.cart-price {
+  margin-left: 15px;
 }
 

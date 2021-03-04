@@ -1,10 +1,10 @@
 import { useContext } from "react"
 import { Col, Container, Row } from "react-bootstrap";
-import { CarContext } from "../contexts/CarContext"
+import { CartContext } from "../contexts/CartContext"
 import styles from '../css/CartProduct.module.css';
 
 export default function CartProduct(props) {
-    const { removeProduct } = useContext(CarContext)
+    const { removeProduct } = useContext(CartContext)
 
     return (
         <div className="cart-container">
@@ -25,7 +25,7 @@ export default function CartProduct(props) {
                         <span className={styles["product-info"]}>{props.product.model} / {props.product.year} / {props.product.miles}</span>
                         <br />
                         <span className={styles["product-city"]}>{props.product.city}</span>
-                        <p className={styles["product-desc"]}>{props.product.descLong}</p>
+                        <p className={styles["product-desc"]}>{props.product.descShort}</p>
                     </Col>
                 </Row>
             </Container>

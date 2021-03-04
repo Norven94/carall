@@ -1,4 +1,5 @@
 import { CarContext } from "../contexts/CarContext";
+import { CartContext } from "../contexts/CartContext";
 import { useState, useContext } from "react";
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
@@ -7,7 +8,8 @@ import styles from '../css/productpage.module.css';
 
 
 export default function ProductPage (props) {
-    const { findProduct,addToCart } = useContext(CarContext);
+    const { findProduct } = useContext(CarContext);
+    const { addToCart } = useContext(CartContext);
     const [product] = useState(findProduct(props.productId))
     return (
         <Container className={styles['product-page']}>
