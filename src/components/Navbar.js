@@ -1,11 +1,11 @@
 import * as ReactBootstrap from 'react-bootstrap'
-import { CartContext } from "../contexts/CartContext";
+import { CarContext } from "../contexts/CarContext";
 import { useContext } from "react";
 import { useHistory } from "react-router-dom"
 import { NavLink } from "react-router-dom";
 
 function Navbar () {
-  const { totalProducts,totalOrder } = useContext(CartContext);
+  const { totalProducts,totalOrder } = useContext(CarContext);
   const history = useHistory()
   
   return (
