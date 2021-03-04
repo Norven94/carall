@@ -1,10 +1,10 @@
 import { useContext } from "react"
 import { Col, Container, Row } from "react-bootstrap";
-import { CarContext } from "../contexts/CarContext"
+import { CartContext } from "../contexts/CartContext"
 import styles from '../css/CartProduct.module.css';
 
 export default function CartProduct(props) {
-    const { removeProduct } = useContext(CarContext)
+    const { removeProduct } = useContext(CartContext)
 
     return (
         <div className="cart-container">
