@@ -1,20 +1,23 @@
-import { Form } from 'react-bootstrap'
+import { useState } from 'react'
+import styles from '../css/filter.module.css'
 
-const filter = () => {
+const Filter = () => {
+  const [value, setValue] = useState([10,50])
+
   return (
-    <div className="filter">
-      <Form>
-        <Form.Group controlId="formBasicRange">
-          <Form.Label>Price</Form.Label>
-          <Form.Control type="range" />
-        </Form.Group>
-        <Form.Group controlId="formBasicRange">
-          <Form.Label>Miles</Form.Label>
-          <Form.Control type="range" />
-        </Form.Group>
-      </Form>
-    </div>
+      <div className={styles.dropdown}>
+        <button className={styles.dropbtn}>Filter</button>
+        <div className={styles.dropdownContent}>
+          <form action="">
+            <label for="miles">Miles</label>
+            <input type="range" name="miles" id="miles" min="0" max="100" />
+            <label for="price">Price</label>
+            <input type="range" name="price" min="0" max="100"/>
+            
+          </form>
+        </div>
+      </div>
   );
 }
 
-export default filter;
+export default Filter;
