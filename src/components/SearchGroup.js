@@ -1,8 +1,9 @@
-function SearchGroup() {
- 
+import SearchFields from "./SearchFields";
+
+function SearchGroup() { 
   return (         
     <div className="search-group-container">
-     <p>This is a SearchGroup component</p>
+     <SearchFields />
     </div>
   )
 }
