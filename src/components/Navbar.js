@@ -9,7 +9,7 @@ function Navbar () {
   const history = useHistory()
   
   return (
-  <ReactBootstrap.Navbar collapseOnSelect expand="sm" bg="info" variant="dark">
+  <ReactBootstrap.Navbar collapseOnSelect expand="sm" bg="info" variant="info">
     <ReactBootstrap.Navbar.Brand>
       <NavLink to="/">
         <img src="/assets/images/logo.png" alt="Logo"/>
