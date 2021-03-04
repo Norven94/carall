@@ -61,7 +61,7 @@ function BillingFields() {
           <Form.Group as={Col} controlId="formGridCityZip">
             <Form.Control onChange={handleCityChangeBilling} type="city" placeholder="City" />
           </Form.Group>
-          <Form.Group controlId="formGridCityZip">
+          <Form.Group as={Col}  controlId="formGridCityZip">
             <Form.Control onChange={handleZipChangeBilling} type="zip code" placeholder="Zip Code" />
           </Form.Group>
         </Form.Row>
