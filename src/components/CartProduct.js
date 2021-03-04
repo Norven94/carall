@@ -25,7 +25,7 @@ export default function CartProduct(props) {
                         <span className={styles["product-info"]}>{props.product.model} / {props.product.year} / {props.product.miles}</span>
                         <br />
                         <span className={styles["product-city"]}>{props.product.city}</span>
-                        <p className={styles["product-desc"]}>{props.product.descShort}</p>
+                        <p className={styles["product-desc"]}>{props.product.descLong}</p>
                     </Col>
                 </Row>
             </Container>
