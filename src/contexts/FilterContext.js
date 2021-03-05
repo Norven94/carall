@@ -10,8 +10,7 @@ const FilterContextProvider = (props) => {
     const [milesEnd, setMilesEnd] = useState(0)
 
     const search = (searchString) => {      
-        setCars(tempCars.filter((car) => {
-            console.log(searchString)              
+        setCars(tempCars.filter((car) => {              
             return car.make.toLowerCase().search(searchString.toLowerCase()) !==-1 
             ||  car.model.toLowerCase().search(searchString.toLowerCase()) !==-1
             ||  car.year.toString().toLowerCase().search(searchString.toLowerCase()) !==-1;

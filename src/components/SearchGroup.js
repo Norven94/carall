@@ -5,7 +5,7 @@ function SearchGroup() {
   return (         
     <div className="search-group-container">
       <Filter />
-     <SearchFields />
+      <SearchFields />
     </div>
   )
 }
