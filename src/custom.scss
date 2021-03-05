@@ -6,6 +6,7 @@ $theme-colors: (
     "primary":#FF7F50,
     "secondary":#FF9269,
 );
+$first:#ffc8b4;
 
 @import "~bootstrap/scss/bootstrap";
 @use "sass:color";
@@ -28,8 +29,7 @@ margin-bottom:-10px;
 .dropdown-menu  {
     right: 0;
     left: auto;
-    padding-left: 1px;
-    padding-right: 1px;
+    text-align: center;
 }
 .dropdown-toggle::after {
     display: none;
@@ -40,9 +40,7 @@ margin-bottom:-10px;
 .nav-link a:hover {
     text-decoration: none;
 }
-.totalPrice {
-    margin-left: 1.5rem;
-}
+
 @media only screen and (min-width: 576px) 
 {
    .dropdown  {
@@ -52,13 +50,6 @@ margin-bottom:-10px;
 .nav-link p {
     margin: auto;
 }
-.About  {
-    color:#000;
-    background-color: #fff;
-}
-.About h1{
-    font-weight: 600;
-    }
 
 .fadeout {
     text-align:center;
@@ -84,3 +75,20 @@ margin-bottom:-10px;
         opacity: 0; 
       }
   }
+  .jumbotron {
+    background-color:$first; 
+
+}
+.About{
+    text-align: center;
+    h1{
+        font-weight: 600;
+        }
+        h2{
+            font-size:1.5rem;
+            font-weight: 600;
+            }
+        img{
+            padding:2rem;
+        }    
+}
