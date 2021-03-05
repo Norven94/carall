@@ -31,9 +31,7 @@ function Sort() {
         <select onChange={handleChange}>
           <option value="">unsorted</option>
           <option value="price">Price ↑</option>
-          <option value="price">Price ↓</option>
           <option value="year">Year ↑</option>
-          <option value="year">Year ↓</option>
         </select>
       
       <Container fluid>
