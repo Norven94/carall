@@ -40,6 +40,12 @@ const FilterContextProvider = (props) => {
         }))
     }, [priceStart, priceEnd])
 
+
+    useEffect(() => {
+        setCars(tempCars.filter((car) => {
+            return car.miles < milesEnd && car.miles > milesStart
+        }))
+    }, [milesStart, milesEnd])
     const values =
     {
         search, 
