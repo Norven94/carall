@@ -1,5 +1,5 @@
 import { useHistory } from "react-router-dom";
-import { car, boxDetails } from '../css/Car.module.css'
+import { car, boxDetails, isdiscount, undiscount} from '../css/Car.module.css'
 import { useContext } from "react"
 import { CartContext }from "../contexts/CartContext"
 
@@ -24,7 +24,7 @@ export default function Car (props) {
       <div className={boxDetails}>             
         <h2>{props.car.make + " " + props.car.model}</h2>
         <h3>{props.car.year} / {props.car.miles}km <Map />{props.car.city}</h3>
-        <h4>{props.car.price} kr</h4>
+        <h4 className={props.car.isDiscount ? isdiscount :undiscount}>{props.car.price} kr</h4>
         <button onClick={() => addToCart(props.car)}>Add to Cart</button>
       </div>
     </div>
