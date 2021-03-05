@@ -3,7 +3,7 @@ import { CartContext } from "../contexts/CartContext";
 import { useContext } from "react";
 import { useHistory } from "react-router-dom"
 import { NavLink } from "react-router-dom";
-
+import styles from '../css/Navbar.module.css';
 function Navbar() {
   const { totalProducts, totalOrder } = useContext(CartContext);
   const { alert } = useContext(CartContext);
@@ -35,16 +35,12 @@ function Navbar() {
           </ReactBootstrap.Dropdown>
       <ReactBootstrap.Navbar.Collapse id="responsive-navbar-nav">
         <ReactBootstrap.Nav className="ml-auto">
-          <ReactBootstrap.Nav.Link>
-            <NavLink to="/">
+            <NavLink className={styles.span}  to="/">
             <p className="text-center">Home</p>
           </NavLink>
-          </ReactBootstrap.Nav.Link>
-          <ReactBootstrap.Nav.Link>
-            <NavLink to="/about">
+            <NavLink className={styles.span} to="/about">
             <p className="text-center">About</p>
           </NavLink>
-          </ReactBootstrap.Nav.Link>
         </ReactBootstrap.Nav>
       </ReactBootstrap.Navbar.Collapse>
     </ReactBootstrap.Navbar>
