@@ -5,9 +5,9 @@ export const FilterContext = createContext();
 const FilterContextProvider = (props) => {
     const { cars, setCars, tempCars } = useContext(CarContext);
     const [priceStart, setPriceStart] = useState(0)
-    const [priceEnd, setPriceEnd] = useState(0)
+    const [priceEnd, setPriceEnd] = useState(800000)
     const [milesStart, setMilesStart] = useState(0)
-    const [milesEnd, setMilesEnd] = useState(0)
+    const [milesEnd, setMilesEnd] = useState(70000)
 
     const search = (searchString) => {      
         setCars(tempCars.filter((car) => {              
