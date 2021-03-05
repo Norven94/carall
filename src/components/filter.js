@@ -13,24 +13,20 @@ const Filter = () => {
   const [ milesValue2, setMilesValue2 ] = useState(25);
 
   const handlePriceValue1 = (e) => {
-    // console.log(priceValue1);
     setPriceValue1(e.target.value);
     filterPriceStart(e.target.value)
   }
 
   const handlePriceValue2 = (e) => {
-    // console.log(priceValue2);
     setPriceValue2(e.target.value);
     filterPriceEnd(e.target.value)
   }
 
   const handleMilesValue1 = (e) => {
-    // console.log(milesValue1);
     setMilesValue1(e.target.value)
   }
 
   const handleMilesValue2 = (e) => {
-    // console.log(milesValue2);
     setMilesValue2(e.target.value)
   }
 
