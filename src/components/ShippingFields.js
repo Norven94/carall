@@ -2,7 +2,7 @@
 import Form from 'react-bootstrap/Form'
 import { Col } from 'react-bootstrap'
 import { useState, useContext } from 'react'
-import { CarContext } from "../contexts/CarContext";
+import { CartContext } from "../contexts/CartContext";
 
 function ShippingFields() {
   const [name, setName] = useState("");
@@ -12,7 +12,7 @@ function ShippingFields() {
   const [country, setCountry] = useState("");
   const [shipping, setShipping] = useState("");
 
-  const carContext = useContext(CarContext);
+  const cartContext = useContext(CartContext);
 
   const handleNameChangeShipping = (e) => {
     setName(e.target.value);
@@ -38,7 +38,7 @@ function ShippingFields() {
     setShipping(e.target.value);
   };
 
-  let totalCarPrice = carContext.cart.reduce((sum, car) => (sum + car.price), 0 )
+  let totalCarPrice = cartContext.cart.reduce((sum, car) => (sum + car.price), 0 )
 
   return (
     <div>
@@ -55,7 +55,7 @@ function ShippingFields() {
           <Form.Group as={Col} controlId="formGridCity">
             <Form.Control onChange={handleCityChangeShipping} type="city" placeholder="City" />
           </Form.Group>
-          <Form.Group controlId="formGridZip">
+          <Form.Group as={Col} controlId="formGridZip">
             <Form.Control onChange={handleZipChangeShipping} type="zip code" placeholder="Zip Code" />
           </Form.Group>
         </Form.Row>

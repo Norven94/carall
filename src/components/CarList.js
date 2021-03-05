@@ -3,11 +3,16 @@ import {CarContext }from "../contexts/CarContext"
 import Car from "./Car"
 import {Container, Row } from 'react-bootstrap'
 import SearchGroup from "./SearchGroup"
+
+import Sort from "./Sort"
+ 
+
 function CarList() {
   const {cars} =useContext(CarContext)
   return (   
     <div className="carlist-container">
       <SearchGroup />         
+      <Sort />
       <Container fluid>
         <Row className="d-flex justify-content-center align-content-center flex-wrap">
         {cars.map((car)=>(        

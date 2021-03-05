@@ -6,8 +6,10 @@ $theme-colors: (
     "primary":#FF7F50,
     "secondary":#FF9269,
 );
+$first:#ffc8b4;
 
 @import "~bootstrap/scss/bootstrap";
+@use "sass:color";
 
 .cartBox{
     color:#fff;
@@ -21,25 +23,72 @@ $theme-colors: (
     padding:0;
     margin:0;
 }
-
 .cartBox p {
 margin-bottom:-10px;
 }
-
 .dropdown-menu  {
     right: 0;
     left: auto;
-    padding-left: 1px;
-    padding-right: 1px;
+    text-align: center;
 }
-
 .dropdown-toggle::after {
     display: none;
-
 }
 .nav-link a {
     color:#fff;
 }
 .nav-link a:hover {
     text-decoration: none;
+}
+
+@media only screen and (min-width: 576px) 
+{
+   .dropdown  {
+        order:1;
+        }
+}
+.nav-link p {
+    margin: auto;
+}
+
+.fadeout {
+    text-align:center;
+    color: #000;
+    text-align: center;
+    opacity: 0;
+      -webkit-animation: fadeout 4s; /* Safari, Chrome and Opera > 12.1 */
+         -moz-animation: fadeout 4s; /* Firefox < 16 */
+          -ms-animation: fadeout 4s; /* Internet Explorer */
+           -o-animation: fadeout 4s; /* Opera < 12.1 */
+              animation: fadeout 4s;
+  }
+  
+  @keyframes fadeout {
+ 
+      0% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.5; 
+      }
+      100% {
+        opacity: 0; 
+      }
+  }
+  .jumbotron {
+    background-color:$first; 
+
+}
+.About{
+    text-align: center;
+    h1{
+        font-weight: 600;
+        }
+        h2{
+            font-size:1.5rem;
+            font-weight: 600;
+            }
+        img{
+            padding:2rem;
+        }    
 }
