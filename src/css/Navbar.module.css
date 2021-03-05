@@ -1,0 +1,9 @@
+.span{
+  text-decoration:none;
+  color:white;
+  margin-right:1rem;
+  margin-top:0.5rem
+}
+.span a:hover{
+  text-decoration: none;
+}
