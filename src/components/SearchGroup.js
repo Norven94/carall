@@ -1,5 +1,5 @@
 import SearchFields from "./SearchFields";
-import Filter from './Filter'
+import Filter from './filter'
 
 function SearchGroup() { 
   return (         
