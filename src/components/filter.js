@@ -6,11 +6,11 @@ import { Col, Row, Form } from 'react-bootstrap'
 import RangeSlider from 'react-bootstrap-range-slider'
 
 const Filter = () => {
-  const { filterPriceStart, filterPriceEnd } = useContext(FilterContext);
-  const [ priceValue1, setPriceValue1 ] = useState(0);
-  const [ priceValue2, setPriceValue2 ] = useState(25);
-  const [ milesValue1, setMilesValue1 ] = useState(0);
-  const [ milesValue2, setMilesValue2 ] = useState(25);
+  const { filterPriceStart, filterPriceEnd, filterMilesStart, filterMilesEnd } = useContext(FilterContext);
+  const [ priceValue1, setPriceValue1 ] = useState(1000);
+  const [ priceValue2, setPriceValue2 ] = useState(400000);
+  const [ milesValue1, setMilesValue1 ] = useState(1000);
+  const [ milesValue2, setMilesValue2 ] = useState(35000);
 
   const handlePriceValue1 = (e) => {
     setPriceValue1(e.target.value);
@@ -23,11 +23,13 @@ const Filter = () => {
   }
 
   const handleMilesValue1 = (e) => {
-    setMilesValue1(e.target.value)
+    setMilesValue1(e.target.value);
+    filterMilesStart(e.target.value)
   }
 
   const handleMilesValue2 = (e) => {
-    setMilesValue2(e.target.value)
+    setMilesValue2(e.target.value);
+    filterMilesEnd(e.target.value)
   }
 
 
