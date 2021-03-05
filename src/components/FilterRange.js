@@ -9,8 +9,8 @@ const FilterRange = () => {
   const { filterPriceStart, filterPriceEnd, filterMilesStart, filterMilesEnd } = useContext(FilterContext);
   const [ priceValue1, setPriceValue1 ] = useState(0);
   const [ priceValue2, setPriceValue2 ] = useState(800000);
-  const [ milesValue1, setMilesValue1 ] = useState(1000);
-  const [ milesValue2, setMilesValue2 ] = useState(35000);
+  const [ milesValue1, setMilesValue1 ] = useState(0);
+  const [ milesValue2, setMilesValue2 ] = useState(70000);
 
   const handlePriceValue1 = (e) => {
     console.log(e.target.value)
