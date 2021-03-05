@@ -7,17 +7,19 @@ import RangeSlider from 'react-bootstrap-range-slider'
 
 const Filter = () => {
   const { filterPriceStart, filterPriceEnd, filterMilesStart, filterMilesEnd } = useContext(FilterContext);
-  const [ priceValue1, setPriceValue1 ] = useState(1000);
-  const [ priceValue2, setPriceValue2 ] = useState(400000);
+  const [ priceValue1, setPriceValue1 ] = useState(0);
+  const [ priceValue2, setPriceValue2 ] = useState(800000);
   const [ milesValue1, setMilesValue1 ] = useState(1000);
   const [ milesValue2, setMilesValue2 ] = useState(35000);
 
   const handlePriceValue1 = (e) => {
+    console.log(e.target.value)
     setPriceValue1(e.target.value);
     filterPriceStart(e.target.value)
   }
 
   const handlePriceValue2 = (e) => {
+    console.log(e.target.value)
     setPriceValue2(e.target.value);
     filterPriceEnd(e.target.value)
   }
