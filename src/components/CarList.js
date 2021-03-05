@@ -12,7 +12,6 @@ function CarList() {
   return (   
     <div className="carlist-container">
       <SearchGroup />         
-      <Sort />
       <Container fluid>
         <Row className="d-flex justify-content-center align-content-center flex-wrap">
         {cars.map((car)=>(        
