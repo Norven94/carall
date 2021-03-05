@@ -35,16 +35,12 @@ function Navbar() {
           </ReactBootstrap.Dropdown>
       <ReactBootstrap.Navbar.Collapse id="responsive-navbar-nav">
         <ReactBootstrap.Nav className="ml-auto">
-          {/* <ReactBootstrap.Nav.Link > */}
             <NavLink className={styles.span}  to="/">
             <p className="text-center">Home</p>
           </NavLink>
-          {/* </ReactBootstrap.Nav.Link> */}
-          {/* <ReactBootstrap.Nav.Link > */}
-            <NavLink style={{ textDecoration: 'none', color:'white', marginRight:'1rem', marginTop:'0.5rem'}} to="/about">
+            <NavLink className={styles.span} to="/about">
             <p className="text-center">About</p>
           </NavLink>
-          {/* </ReactBootstrap.Nav.Link> */}
         </ReactBootstrap.Nav>
       </ReactBootstrap.Navbar.Collapse>
     </ReactBootstrap.Navbar>
