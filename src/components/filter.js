@@ -42,13 +42,13 @@ const Filter = () => {
               <Row>
                 <p>min</p>
                 <Col xs="9">
-                  <RangeSlider value={priceValue1} onChange={handlePriceValue1} min="0" max="800000" step="10000"/>
+                  <RangeSlider value={priceValue1} onChange={handlePriceValue1} min={0} max={800000} step={10000}/>
                 </Col>
               </Row>
               <Row>
                 <p>max</p>
                 <Col xs="9">
-                  <RangeSlider value={priceValue2} onChange={handlePriceValue2} min="0" max="800000" step="10000"/>
+                  <RangeSlider value={priceValue2} onChange={handlePriceValue2} min={0} max={800000} step={10000}/>
                 </Col>
               </Row>
             </Form.Group>
@@ -58,13 +58,13 @@ const Filter = () => {
               <Row>
                 <p>min</p>
                 <Col xs="9">
-                  <RangeSlider value={milesValue1} onChange={handleMilesValue1} min="0" max="70000" step="1000"/>
+                  <RangeSlider value={milesValue1} onChange={handleMilesValue1} min={0} max={70000} step={1000}/>
                 </Col>
               </Row>
               <Row>
                 <p>max</p>
                 <Col xs="9">
-                  <RangeSlider value={milesValue2} onChange={handleMilesValue2} min="0" max="70000" step="1000"/>
+                  <RangeSlider value={milesValue2} onChange={handleMilesValue2} min={0} max={70000} step={1000}/>
                 </Col>
               </Row>
             </Form.Group>
