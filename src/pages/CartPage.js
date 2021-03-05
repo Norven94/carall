@@ -7,7 +7,7 @@ import styles from '../css/CartPage.module.css';
 import { Col, Container, Row } from "react-bootstrap";
 
 const CartPage = () => {
-const cartContext = useContext(CartContext);
+  const cartContext = useContext(CartContext);
   return ( 
     <div className={styles["cartPage-style"]}>
       <span className={styles["cart-rubrik"]}>SHOPPING CART</span>

@@ -3,8 +3,8 @@ import { FilterContext } from "../contexts/FilterContext"
 
 function SearchFields() {
   const { search } = useContext(FilterContext);
+  
   const handleSearch = (e) => {
-    console.log(e.target.value)
     search(e.target.value)
   }
 
