@@ -30,10 +30,9 @@ function Sort() {
         <span>Sort By:</span>
         <select onChange={handleChange}>
           <option value="">unsorted</option>
-          <option value="price">Price ↑</option>
-          <option value="price">Price ↓</option>
+          <option value="make">Mark a-z</option>
+          <option value="model">Model a-z</option>
           <option value="year">Year ↑</option>
-          <option value="year">Year ↓</option>
         </select>
       
       <Container fluid>
