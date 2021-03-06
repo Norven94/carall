@@ -57,16 +57,16 @@ const FilterContextProvider = (props) => {
         let sorted;
 
         if (sortChoice === "make") {
-            sorted = [...cars].sort((a,b) => (a.make > b.make ? 1 : -1))
+            sorted = [...tempCars].sort((a,b) => (a.make > b.make ? 1 : -1))
         } else if (sortChoice === "model") {
-            sorted = [...cars].sort((a,b) => (a.model > b.model ? 1 : -1))
+            sorted = [...tempCars].sort((a,b) => (a.model > b.model ? 1 : -1))
         } else if (sortChoice === "year up") {
-            sorted = [...cars].sort((a,b) => (a.year > b.year ? 1 : -1))
+            sorted = [...tempCars].sort((a,b) => (a.year > b.year ? 1 : -1))
         } else {
-            sorted = [...cars].sort((a,b) => (a.year < b.year ? 1 : -1))
+            sorted = [...tempCars].sort((a,b) => (a.year < b.year ? 1 : -1))
         }
 
-        setCars(sorted)
+        setTempCars(sorted)
      
     }
 
