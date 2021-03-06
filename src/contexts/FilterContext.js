@@ -3,7 +3,7 @@ import { CarContext } from "../contexts/CarContext"
 export const FilterContext = createContext();
 
 const FilterContextProvider = (props) => {
-    const { cars, setCars, tempCars } = useContext(CarContext);
+    const { cars, setCars, tempCars, setTempCars } = useContext(CarContext);
     const [priceStart, setPriceStart] = useState(0)
     const [priceEnd, setPriceEnd] = useState(800000)
     const [milesStart, setMilesStart] = useState(0)
@@ -12,7 +12,7 @@ const FilterContextProvider = (props) => {
     //Search function
 
     const search = (searchString) => {      
-        setCars(tempCars.filter((car) => {              
+        setTempCars(cars.filter((car) => {              
             return car.make.toLowerCase().search(searchString.toLowerCase()) !==-1 
             ||  car.model.toLowerCase().search(searchString.toLowerCase()) !==-1
             ||  car.year.toString().toLowerCase().search(searchString.toLowerCase()) !==-1;
@@ -38,14 +38,14 @@ const FilterContextProvider = (props) => {
     }
 
     useEffect(() => {
-        setCars(tempCars.filter((car) => {
+        setTempCars(cars.filter((car) => {
             return car.price < priceEnd && car.price > priceStart
         }))
     }, [priceStart, priceEnd])
 
 
     useEffect(() => {
-        setCars(tempCars.filter((car) => {
+        setTempCars(tempCars.filter((car) => {
             return car.miles < milesEnd && car.miles > milesStart
         }))
     }, [milesStart, milesEnd])
