@@ -50,6 +50,7 @@ const FilterContextProvider = (props) => {
         }))
     }, [milesStart, milesEnd])
 
+    
     //Sort functions
 
     const sort = (sortChoice) => {
@@ -66,15 +67,7 @@ const FilterContextProvider = (props) => {
         }
 
         setCars(sorted)
-
-        
-        
-        
-
-        /*
-        if (sortChoice === "") return cars.sort((a, b) => (a.model > b.model ? 1 : -1));
-        return cars.sort((a, b) => (a[sortChoice] > b[sortChoice] ? 1 : -1));
-        */
+     
     }
 
     const values =
