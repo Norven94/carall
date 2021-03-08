@@ -4,11 +4,5 @@ h2 {
 }
 
 .rec.rec-dot {
-  background: #ff4343;
-  border: 2px #333 solid;
-  border-radius: 0;
-}
-
-.rec-pagination {
-  background-color: red;
+  visibility: hidden;
 }

@@ -10,6 +10,7 @@
   margin: 60px;
   cursor: pointer;
   background: white;
+  position: relative;
 }
 
 .car:hover {
@@ -79,7 +80,6 @@
   }
 
   .car .boxDetails .isdiscount {
-    /* color: crimson; */
     color: #FE7F50;
     font-size: 1rem;
   }
@@ -121,6 +121,28 @@ span.notPurchased {
 
 span.purchased {
   visibility: visible;
+}
+
+span.discountTag {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  height: 50px;
+  width: 50px;
+  background-color: #FE7F50;
+  border-radius: 50%;
+  color: white;
+  text-align: center;
+  padding: 12px 5px;
+  font-weight: 600;
+}
+
+span.isdiscount {
+  visibility: visible;
+}
+
+span.undiscount {
+  visibility: hidden;
 }
 
 @media (max-width: 500px){
