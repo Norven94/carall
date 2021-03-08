@@ -9,7 +9,9 @@ function CarList() {
   return (
     <div className="carlist-container">
       <SearchGroup />
+      
       <Container fluid>
+      <h1>Find Your New Favorite Vehicle</h1>
         <Row className="d-flex justify-content-center align-content-center flex-wrap">
           {tempCars.map((car) => (
             <Car key={car.vin} car={car} />

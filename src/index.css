@@ -28,3 +28,9 @@ code {
   margin-top: -10px;
 }
 
+.carlist-container {
+  display: grid;
+  text-align: center;
+  background: #F5F7F6;
+}
+
