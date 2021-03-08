@@ -37,6 +37,7 @@
   margin: 30px 0 15px 0;
 }
 .boxDetails h2{
+  font-family: 'Lato';
   color: darkblue;
   font-size: 1.05rem;
 }
@@ -49,17 +50,13 @@
   overflow: hidden;
   height: 50px;
 }
-.boxDetails h3{
-  
+.boxDetails h3{ 
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
   font-size: 0.7rem;
   }
-  /* .car .boxDetails h4{
-    color: crimson;
-    font-size: 1rem;
-  } */
+
   .car .boxDetails .isdiscount {
     color: crimson;
     font-size: 1rem;
