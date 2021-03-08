@@ -5,6 +5,10 @@ import {
   isdiscount,
   undiscount,
   cartBox,
+  purchased,
+  notPurchased,
+  purchasedBox,
+  imageBox
 } from "../css/Car.module.css";
 import { useContext } from "react";
 import { CartContext } from "../contexts/CartContext";
@@ -26,35 +30,29 @@ export default function Car(props) {
     );
   } */
 
-  const Button1 = () => {
-    return (
-      <button className={cartBox} onClick={() => addToCart(props.car)}>
-      <img
-        src="/assets/icons/cartw.svg"
-        alt="Cart"
-        className={cartBox}
-        onClick={() => addToCart(props.car)}
-      />
-    </button>
-    )
+  const errorMessage = () => {
+    //alert("noooo");
   }
 
   return (
     <div>
-      <div className={car} >
-        <img
-          onClick={goToProduct}
-          src={props.car.image}
-          alt={
-            "Image of " +
-            props.car.make +
-            " " +
-            props.car.model +
-            " " +
-            props.car.year
-          }
-        />
-        <div className={boxDetails}>
+      <div className={car}>
+        <div className={imageBox}>
+          <span className={`${purchasedBox} ${props.car.purchased ? purchased : notPurchased}`}>In your cart</span>
+          <img
+            onClick={goToProduct}
+            src={props.car.image}
+            alt={
+              "Image of " +
+              props.car.make +
+              " " +
+              props.car.model +
+              " " +
+              props.car.year
+            }
+          />
+        </div>
+        <div className={boxDetails}>          
           <h2>{props.car.make + " " + props.car.model}</h2>
           <h3>
             {props.car.year} / {props.car.miles}km {/* <Map /> */}
