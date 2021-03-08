@@ -1,44 +1,37 @@
 //Form for Address, shipping alternatives, payment details
 import Form from 'react-bootstrap/Form'
 import { Col } from 'react-bootstrap'
-import { useState, useContext } from 'react'
+import { useContext } from 'react'
 import { CartContext } from "../contexts/CartContext";
 
 function ShippingFields() {
-  const [name, setName] = useState("");
-  const [address, setAddress] = useState("");
-  const [city, setCity] = useState("");
-  const [zip, setZip] = useState("");
-  const [country, setCountry] = useState("");
-  const [shipping, setShipping] = useState("");
-
-  const cartContext = useContext(CartContext);
+  const { cart, orderDetails, setOrderDetails} = useContext(CartContext);
 
   const handleNameChangeShipping = (e) => {
-    setName(e.target.value);
+    setOrderDetails({...orderDetails, ShippingName: e.target.value});
   };
 
   const handleAddressChangeShipping = (e) => {
-    setAddress(e.target.value);
+    setOrderDetails({...orderDetails, ShippingAddress: e.target.value});
   };
 
   const handleCityChangeShipping = (e) => {
-    setCity(e.target.value);
+    setOrderDetails({...orderDetails, ShippingCity: e.target.value});
   };
 
   const handleZipChangeShipping = (e) => {
-    setZip(e.target.value);
+    setOrderDetails({...orderDetails, ShippingZip: e.target.value});
   };
 
   const handleCountryChangeShipping = (e) => {
-    setCountry(e.target.value);
+    setOrderDetails({...orderDetails, ShippingCountry: e.target.value});
   };
 
   const handleAlternativeChangeShipping = (e) => {
-    setShipping(e.target.value);
+    setOrderDetails({...orderDetails, ShippingAlternative: e.target.value});
   };
 
-  let totalCarPrice = cartContext.cart.reduce((sum, car) => (sum + car.price), 0 )
+  let totalCarPrice = cart.reduce((sum, car) => (sum + car.price), 0 )
 
   return (
     <div>
@@ -46,21 +39,21 @@ function ShippingFields() {
       <h1 className="shipping-header">Shipping Details</h1>
       <Form>
         <Form.Group as={Col} controlId="formBasicName">
-          <Form.Control size="sm" onChange={handleNameChangeShipping} type="full name" placeholder="Full Name" />
+          <Form.Control size="sm" onChange={handleNameChangeShipping} type="full name" placeholder="Full Name" value={orderDetails.shippingName}/>
         </Form.Group>
         <Form.Group as={Col} controlId="formBasicAddress">
-          <Form.Control size="sm" onChange={handleAddressChangeShipping} type="address" placeholder="Address" />
+          <Form.Control size="sm" onChange={handleAddressChangeShipping} type="address" placeholder="Address" value={orderDetails.shippingAddress}/>
         </Form.Group>
         <Form.Row as={Col}>
           <Form.Group as={Col} controlId="formGridCity">
-            <Form.Control size="sm" onChange={handleCityChangeShipping} type="city" placeholder="City" />
+            <Form.Control size="sm" onChange={handleCityChangeShipping} type="city" placeholder="City" value={orderDetails.shippingCity}/>
           </Form.Group>
           <Form.Group as={Col} controlId="formGridZip">
-            <Form.Control size="sm" onChange={handleZipChangeShipping} type="zip code" placeholder="Zip Code" />
+            <Form.Control size="sm" onChange={handleZipChangeShipping} type="zip code" placeholder="Zip Code" value={orderDetails.shippingZip}/>
           </Form.Group>
         </Form.Row>
         <Form.Group as={Col} controlId="formBasicCountry">
-          <Form.Control size="sm" onChange={handleCountryChangeShipping} type="country" placeholder="Country" />
+          <Form.Control size="sm" onChange={handleCountryChangeShipping} type="country" placeholder="Country" value={orderDetails.shippingCountry}/>
         </Form.Group>
         <Form.Group as={Col} controlId="formGridShipping">
           <Form.Control size="sm" onChange={handleAlternativeChangeShipping} as="select" defaultValue="Shipping">
@@ -70,8 +63,8 @@ function ShippingFields() {
           </Form.Control>
         </Form.Group>
         <p className="cart-price"><b>Car price: </b>{ totalCarPrice }Kr</p>
-        <p className="cart-price"><b>Shipping price: </b>{ shipping }Kr</p>
-        <p className="cart-price"><b>Total: </b> { totalCarPrice+ + shipping } Kr</p>
+        <p className="cart-price"><b>Shipping price: </b>{ orderDetails.ShippingAlternative }Kr</p>
+        <p className="cart-price"><b>Total: </b> { totalCarPrice+ + orderDetails.ShippingAlternative } Kr</p>
       </Form>
     </div>
 
