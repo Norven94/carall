@@ -8,6 +8,7 @@
   padding: 15px;
   margin: 15px;
   cursor: pointer;
+  background: white;
 }
 
 .car:hover {
@@ -16,7 +17,7 @@
 
 .car img{
   width: 100%;
-  max-height: 162px;
+  max-height: 132px;
   display: block;
   object-fit: cover;
 }
@@ -55,8 +56,16 @@
   text-overflow: ellipsis;
   font-size: 0.7rem;
   }
-  .car .boxDetails h4{
+  /* .car .boxDetails h4{
     color: crimson;
+    font-size: 1rem;
+  } */
+  .car .boxDetails .isdiscount {
+    color: crimson;
+    font-size: 1rem;
+  }
+  .car .boxDetails .undiscount{
+    color:black;
     font-size: 1rem;
   }
 

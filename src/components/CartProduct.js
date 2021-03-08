@@ -1,11 +1,11 @@
 import { useContext } from "react"
 import { Col, Container, Row } from "react-bootstrap";
-import { CarContext } from "../contexts/CarContext"
+import { CartContext } from "../contexts/CartContext"
 import styles from '../css/CartProduct.module.css';
 
 export default function CartProduct(props) {
-    const { removeProduct } = useContext(CarContext)
-
+    const { removeProduct } = useContext(CartContext)
+    const priceWithSpace=props.product.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")
     return (
         <div className="cart-container">
             <Container>
@@ -15,7 +15,7 @@ export default function CartProduct(props) {
                             <div className={styles["product-image"]}>
                                 <img src={props.product.image} alt={"Image of " + props.product.make + " " + props.product.model + " " + props.product.year} />
                             </div>
-                            <p className={styles["cart-price"]}>{props.product.price} Kr</p>
+                            <p className={styles["cart-price"]}>{priceWithSpace} Kr</p>
                             <button onClick={() => removeProduct(props.product)} className={styles["delete-button"]}>Delete</button>
                         </div>
                     </Col>
