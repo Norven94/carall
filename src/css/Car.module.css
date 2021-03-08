@@ -1,12 +1,13 @@
 
  .car {
-  max-width: 227px;
+  display: flex;
+  flex-direction: column;
+  max-width: 431px;
   width: 100%;
-  height: 340px;
+  height: 550px;
   overflow: hidden;
   box-shadow: 0 0 5px #ccc;
-  padding: 15px;
-  margin: 15px;
+  margin: 60px;
   cursor: pointer;
   background: white;
 }
@@ -17,29 +18,38 @@
 
 .car img{
   width: 100%;
-  max-height: 132px;
+  height: 100%;
+  max-height: 300px;
   display: block;
   object-fit: cover;
 }
 
-.car img:hover{
+.cartBox img {
+  width:20px;
+  height:20px;   
+  padding:0;
+  margin:0;
+  fill: black;
+}
+/* .car img:hover{
   width: 100%;
   height: 100%;
   max-height: 162px;
   display: block;
   object-fit: cover;
-}
+} */
 
 .car .boxDetails{
   max-width: 500px;
   width: 100%;
   margin: 20px;
+  padding: 20px;
   margin: 30px 0 15px 0;
 }
 .boxDetails h2{
   font-family: 'Lato';
-  color: darkblue;
-  font-size: 1.05rem;
+  color:#030303;
+  font-size: 19px;
 }
 
 .boxDetails p{
@@ -50,11 +60,23 @@
   overflow: hidden;
   height: 50px;
 }
-.boxDetails h3{ 
+.boxDetails h3{
+  color:#030303;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
   font-size: 0.7rem;
+  }
+  /* .car .boxDetails h4{
+    color: crimson;
+    font-size: 1rem;
+  } */
+
+  .car .boxDetails h4{
+    display: flex;
+    justify-content: space-between;
+    color:#030303;
+    font-size: 1rem;
   }
 
   .car .boxDetails .isdiscount {
@@ -67,17 +89,8 @@
   }
 
 .car .boxDetails button{
-  width: 100%;
-  border: none;
-  outline: none;
-  background: #333;
-  color: white;
-  text-align: center;
-  padding: 10px 0;
-  margin: 10px 0;
   cursor: pointer;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+  padding-right: 50px;
 }
 
 .car .boxDetails button:hover{
