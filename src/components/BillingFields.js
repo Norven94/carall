@@ -49,7 +49,7 @@ function BillingFields() {
   return (
     <div>
       {/* Billing Infos fiels here */}
-      <h1>Billing Info</h1>
+      <h1 className="billing-header">Billing Info</h1>
       <Form>
         <Form.Group as={Col} controlId="formBasicName">
           <Form.Control onChange={handleNameChangeBilling} type="full name" placeholder="Full Name" />
@@ -61,7 +61,7 @@ function BillingFields() {
           <Form.Group as={Col} controlId="formGridCityZip">
             <Form.Control onChange={handleCityChangeBilling} type="city" placeholder="City" />
           </Form.Group>
-          <Form.Group controlId="formGridCityZip">
+          <Form.Group as={Col}  controlId="formGridCityZip">
             <Form.Control onChange={handleZipChangeBilling} type="zip code" placeholder="Zip Code" />
           </Form.Group>
         </Form.Row>
