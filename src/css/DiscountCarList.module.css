@@ -1,0 +1,14 @@
+h2 {
+  text-align: center;
+  padding-top: 30px;
+}
+
+.rec.rec-dot {
+  background: #ff4343;
+  border: 2px #333 solid;
+  border-radius: 0;
+}
+
+.rec-pagination {
+  background-color: red;
+}

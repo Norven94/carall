@@ -79,7 +79,8 @@
   }
 
   .car .boxDetails .isdiscount {
-    color: crimson;
+    /* color: crimson; */
+    color: #FE7F50;
     font-size: 1rem;
   }
   .car .boxDetails .undiscount{
