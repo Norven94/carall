@@ -69,8 +69,8 @@ function ShippingFields() {
             <option value="25000">Normal (5-7 days) 25000kr</option>
           </Form.Control>
         </Form.Group>
-        <p className="cart-price"><b>Car price: </b>{ totalCarPrice }Kr</p>
-        <p className="cart-price"><b>Shipping price: </b>{ shipping }Kr</p>
+        <p className="cart-price"><b>Car price: </b>{ totalCarPrice } Kr</p>
+        <p className="cart-price"><b>Shipping price: </b>{ shipping } Kr</p>
         <p className="cart-price"><b>Total: </b> { totalCarPrice+ + shipping } Kr</p>
       </Form>
     </div>
