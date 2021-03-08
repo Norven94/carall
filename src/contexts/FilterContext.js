@@ -39,16 +39,16 @@ const FilterContextProvider = (props) => {
 
     useEffect(() => {
         setTempCars(cars.filter((car) => {
-            return car.price < priceEnd && car.price > priceStart
+            return car.price < priceEnd && car.price > priceStart && car.miles < milesEnd && car.miles > milesStart
         }))
-    }, [priceStart, priceEnd])
+    }, [priceStart, priceEnd,milesStart, milesEnd])
 
 
-    useEffect(() => {
-        setTempCars(tempCars.filter((car) => {
-            return car.miles < milesEnd && car.miles > milesStart
-        }))
-    }, [milesStart, milesEnd])
+    // useEffect(() => {
+    //     setTempCars(tempCars.filter((car) => {
+    //         return car.miles < milesEnd && car.miles > milesStart
+    //     }))
+    // }, [])
 
     
     //Sort functions
