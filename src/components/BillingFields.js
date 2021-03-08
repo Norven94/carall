@@ -52,31 +52,31 @@ function BillingFields() {
       <h1 className="billing-header">Billing Info</h1>
       <Form>
         <Form.Group as={Col} controlId="formBasicName">
-          <Form.Control onChange={handleNameChangeBilling} type="full name" placeholder="Full Name" />
+          <Form.Control size="sm" onChange={handleNameChangeBilling} type="full name" placeholder="Full Name" />
         </Form.Group>
         <Form.Group as={Col} controlId="formBasicAddress">
-          <Form.Control onChange={handleAddressChangeBilling} type="address" placeholder="Address" />
+          <Form.Control size="sm" onChange={handleAddressChangeBilling} type="address" placeholder="Address" />
         </Form.Group>
         <Form.Row as={Col}>
           <Form.Group as={Col} controlId="formGridCityZip">
-            <Form.Control onChange={handleCityChangeBilling} type="city" placeholder="City" />
+            <Form.Control size="sm" onChange={handleCityChangeBilling} type="city" placeholder="City" />
           </Form.Group>
           <Form.Group as={Col}  controlId="formGridCityZip">
-            <Form.Control onChange={handleZipChangeBilling} type="zip code" placeholder="Zip Code" />
+            <Form.Control size="sm" onChange={handleZipChangeBilling} type="zip code" placeholder="Zip Code" />
           </Form.Group>
         </Form.Row>
         <Form.Group as={Col} controlId="formBasicCountry">
-          <Form.Control onChange={handleCountryChangeBilling} type="country" placeholder="Country" />
+          <Form.Control size="sm" onChange={handleCountryChangeBilling} type="country" placeholder="Country" />
         </Form.Group >
         <Form.Group as={Col} controlId="formBasicCardNumber">
-          <Form.Control onChange={handleCardNumberChangeBilling} type="cardnumber" placeholder="Card Number" />
+          <Form.Control size="sm" onChange={handleCardNumberChangeBilling} type="cardnumber" placeholder="Card Number" />
         </Form.Group >
         <Form.Row as={Col}>
         <Form.Group as={Col} controlId="formBasicExDate">
-          <Form.Control onChange={handleExDateChangeBilling} type="exdate" placeholder="00/00" />
+          <Form.Control size="sm" onChange={handleExDateChangeBilling} type="exdate" placeholder="00/00" />
         </Form.Group >
         <Form.Group as={Col} controlId="formBasicCvc">
-          <Form.Control onChange={handleCvcChangeBilling} type="cvc" placeholder="CVC" />
+          <Form.Control size="sm" onChange={handleCvcChangeBilling} type="cvc" placeholder="CVC" />
         </Form.Group >
         </Form.Row>
         <Form.Group as={Col}>

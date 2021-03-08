@@ -46,31 +46,31 @@ function ShippingFields() {
       <h1 className="shipping-header">Shipping Details</h1>
       <Form>
         <Form.Group as={Col} controlId="formBasicName">
-          <Form.Control onChange={handleNameChangeShipping} type="full name" placeholder="Full Name" />
+          <Form.Control size="sm" onChange={handleNameChangeShipping} type="full name" placeholder="Full Name" />
         </Form.Group>
         <Form.Group as={Col} controlId="formBasicAddress">
-          <Form.Control onChange={handleAddressChangeShipping} type="address" placeholder="Address" />
+          <Form.Control size="sm" onChange={handleAddressChangeShipping} type="address" placeholder="Address" />
         </Form.Group>
         <Form.Row as={Col}>
           <Form.Group as={Col} controlId="formGridCity">
-            <Form.Control onChange={handleCityChangeShipping} type="city" placeholder="City" />
+            <Form.Control size="sm" onChange={handleCityChangeShipping} type="city" placeholder="City" />
           </Form.Group>
           <Form.Group as={Col} controlId="formGridZip">
-            <Form.Control onChange={handleZipChangeShipping} type="zip code" placeholder="Zip Code" />
+            <Form.Control size="sm" onChange={handleZipChangeShipping} type="zip code" placeholder="Zip Code" />
           </Form.Group>
         </Form.Row>
         <Form.Group as={Col} controlId="formBasicCountry">
-          <Form.Control onChange={handleCountryChangeShipping} type="country" placeholder="Country" />
+          <Form.Control size="sm" onChange={handleCountryChangeShipping} type="country" placeholder="Country" />
         </Form.Group>
         <Form.Group as={Col} controlId="formGridShipping">
-          <Form.Control onChange={handleAlternativeChangeShipping} as="select" defaultValue="Shipping">
+          <Form.Control size="sm" onChange={handleAlternativeChangeShipping} as="select" defaultValue="Shipping">
             <option value="0">Shipping alternatives...</option>
             <option value="100000">Express (1-2 days) 100000kr</option>
             <option value="25000">Normal (5-7 days) 25000kr</option>
           </Form.Control>
         </Form.Group>
-        <p className="cart-price"><b>Car price: </b>{ totalCarPrice }Kr</p>
-        <p className="cart-price"><b>Shipping price: </b>{ shipping }Kr</p>
+        <p className="cart-price"><b>Car price: </b>{ totalCarPrice } Kr</p>
+        <p className="cart-price"><b>Shipping price: </b>{ shipping } Kr</p>
         <p className="cart-price"><b>Total: </b> { totalCarPrice+ + shipping } Kr</p>
       </Form>
     </div>
