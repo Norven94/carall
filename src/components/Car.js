@@ -8,7 +8,8 @@ import {
   purchased,
   notPurchased,
   purchasedBox,
-  imageBox
+  imageBox,
+  discountTag
 } from "../css/Car.module.css";
 import { useContext } from "react";
 import { CartContext } from "../contexts/CartContext";
@@ -38,6 +39,7 @@ export default function Car(props) {
     <div>
       <div className={car}>
         <div className={imageBox}>
+          <span className={`${discountTag} ${props.car.isDiscount ? isdiscount : undiscount}`}>Sale</span>    
           <span className={`${purchasedBox} ${props.car.purchased ? purchased : notPurchased}`}>In your cart</span>
           <img
             onClick={goToProduct}
@@ -52,7 +54,7 @@ export default function Car(props) {
             }
           />
         </div>
-        <div className={boxDetails}>          
+        <div className={boxDetails}>
           <h2>{props.car.make + " " + props.car.model}</h2>
           <h3>
             {props.car.year} / {props.car.miles}km {/* <Map /> */}
