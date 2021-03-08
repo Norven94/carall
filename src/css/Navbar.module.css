@@ -1,10 +1,10 @@
 .span{
   text-decoration:none;
-  color:white;
+  color:#000;
   margin-right:1rem;
   margin-top:0.5rem
 }
 .span:hover{
-  color:orangered;
+  color:#FE7F50;
   text-decoration: none;
 }
