@@ -1,19 +1,21 @@
 $theme-colors: (
-    "info":  #ff7f50,
+    "info":  #fff,
     "danger":  #B34C26,
     "success":#14B394,
     "warning":#50FFDD,
     "primary":#FF7F50,
-    "secondary":#FF9269,
 );
-$first:#ffc8b4;
+$first:#FE7F50;
+$second:#344648;
+$third:#F5F7F6;
 
 @import "~bootstrap/scss/bootstrap";
 @use "sass:color";
 
 .cartBox{
-    color:#fff;
+    color:$first;
     font-size:0.8rem;
+    font-weight: 600;
     padding:0;
     margin:0;
 }
@@ -34,6 +36,12 @@ margin-bottom:-10px;
 .dropdown-toggle::after {
     display: none;
 }
+
+.navbar {
+    border-radius: 2px;
+    box-shadow: 0px 1px 10px #999;
+  }
+  
 .nav-link a {
     color:#fff;
 }
@@ -50,7 +58,9 @@ margin-bottom:-10px;
 .nav-link p {
     margin: auto;
 }
-
+.dropdown-item.active, .dropdown-item:active{
+    background-color:$first;
+}
 .fadeout {
     text-align:center;
     color: #000;

@@ -7,6 +7,7 @@ const CartContextProvider = (props) => {
     const [totalProducts, setTotalProducts] = useState(0)
     const [totalOrder, setTotalOrder] = useState(0)
     const [alert, setAlert] = useState("");
+    const [orderDetails, setOrderDetails] = useState({})
 
     const addToCart = (product) => {
       let addProduct = true;
@@ -25,12 +26,16 @@ const CartContextProvider = (props) => {
       setCart(cart.filter((p) => p !== product));
     }
     
+    //Things that need to dynamicaly change when cart changes
     useEffect(
       () =>{  
           setTotalProducts(cart.length)
           setTotalOrder(cart.reduce((acc,num) => {
             return acc+num.price          
           },0 ))
+
+          setOrderDetails({...orderDetails, cart});
+
       }, [cart]   
     )
     // acc = totala värdet i cart (börjar alltid på 0)
@@ -45,6 +50,8 @@ const CartContextProvider = (props) => {
         totalProducts,
         totalOrder,
         alert,
+        orderDetails,
+        setOrderDetails
     }
 
     return(
