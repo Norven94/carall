@@ -8,10 +8,9 @@ function CarList() {
   const { tempCars} = useContext(CarContext);
   return (
     <div className="carlist-container">
-      <SearchGroup />
-      
-      <Container fluid>
       <h1>Find Your New Favorite Vehicle</h1>
+      <SearchGroup />
+      <Container fluid>
         <Row className="d-flex justify-content-center align-content-center flex-wrap">
           {tempCars.map((car) => (
             <Car key={car.vin} car={car} />
