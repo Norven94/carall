@@ -10,8 +10,8 @@ import { alignPropType } from "react-bootstrap/esm/DropdownMenu"
 const breakPoints = [
   { width: 1, itemsToShow: 1 },
   { width: 550, itemsToShow: 1 },
-  { width: 768, itemsToShow: 2 },
-  { width: 1200, itemsToShow: 3 }
+  { width: 700, itemsToShow: 2 },
+  { width: 1150, itemsToShow: 3 }
 ]
 
 const DiscountCarList = () => {
