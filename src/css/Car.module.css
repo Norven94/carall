@@ -43,9 +43,11 @@
   width: 100%;
   margin: 20px;
   padding: 20px;
-  margin: 30px 0 15px 0;
+  margin: 15px 0 15px 0;
 }
 .boxDetails h2{
+  display: flex;
+  justify-content: flex-start;
   font-weight:bold;
   font-family: 'Lato';
   color:#030303;
@@ -61,11 +63,13 @@
   height: 50px;
 }
 .boxDetails h3{
+  display: flex;
+  justify-content: flex-start;
   color:#030303;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  font-size: 0.7rem;
+  font-size: 12px;
   }
   /* .car .boxDetails h4{
     color: crimson;
@@ -78,6 +82,11 @@
     justify-content: space-between;
     color:#030303;
     font-size: 1rem;
+  }
+
+  .location {
+    display: flex;
+    justify-content: flex-start;
   }
 
   .car .boxDetails .isdiscount {

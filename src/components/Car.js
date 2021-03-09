@@ -5,6 +5,7 @@ import {
   isdiscount,
   undiscount,
   cartBox,
+  location,
   purchased,
   notPurchased,
   purchasedBox,
@@ -57,7 +58,7 @@ export default function Car(props) {
         <div className={boxDetails}>
           <h2>{props.car.make + " " + props.car.model}</h2>
           <h3>
-            {props.car.year} / {props.car.miles}km {/* <Map /> */}
+            {props.car.year} / {props.car.miles}{" "}km {/* <Map /> */}
           </h3>
           <h4 style={{paddingTop: "30px"}} className={props.car.isDiscount ? isdiscount : undiscount}>
             {priceWithSpace} kr{" "}
@@ -69,7 +70,7 @@ export default function Car(props) {
           
           <hr />
           {/*  <button onClick={() => addToCart(props.car)}>Add to Cart</button> */}
-          <div style={{ paddingLeft: "0px" }}>{props.car.city}</div>
+          <div className={location} style={{ paddingLeft: "0px" }}>{props.car.city}</div>
         </div>
       </div>
     </div>
