@@ -8,13 +8,12 @@ import Navbar from './components/Navbar'
 import Home from './pages/Home'
 import About from './pages/About'
 import CartPage from './pages/CartPage'
+// import Confirmation from './pages/Confirmation'
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
-      
-        {/* CarContextProvider must enclose all components that will have access to its data */}
         <CarContextProvider>
           <FilterContextProvider>
             <CartContextProvider>
@@ -26,6 +25,10 @@ function App() {
               <Route exact path="/cartpage">
                 <CartPage />
               </Route>
+
+              {/* <Route exact path="/confirmation">
+                <Confirmation />
+              </Route> */}
               
               <Route
                 path="/product/:productId"
