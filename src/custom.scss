@@ -56,7 +56,9 @@ $fourth:#ffc8b4;
         order:1;
         }
 }
-
+.dropdown-item.active, .dropdown-item:active{
+    background-color:$first;
+}
 .fadeout {
     text-align:center;
     color: #000;
