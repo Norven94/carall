@@ -35,3 +35,20 @@ code {
   background: #F5F7F6;
 }
 
+/* Carousel Buttons Starts */
+.rec.rec-pagination {
+  visibility: hidden;
+}
+
+.rec.rec-arrow {
+  background-color: white;
+  box-shadow: none;
+  color: black;
+}
+
+.rec.rec-arrow:hover:enabled, .rec.rec-arrow:focus:enabled {
+  background-color: white;
+  box-shadow: none;
+  color: black;
+}
+/* Carousel Buttons Ends */
