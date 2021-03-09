@@ -1,14 +1,16 @@
 
  .car {
-  max-width: 227px;
+  display: flex;
+  flex-direction: column;
+  max-width: 431px;
   width: 100%;
-  height: 340px;
+  height: 550px;
   overflow: hidden;
   box-shadow: 0 0 5px #ccc;
-  padding: 15px;
-  margin: 15px;
+  margin: 60px;
   cursor: pointer;
   background: white;
+  position: relative;
 }
 
 .car:hover {
@@ -17,28 +19,37 @@
 
 .car img{
   width: 100%;
-  max-height: 162px;
+  max-height: 300px;
   display: block;
   object-fit: cover;
 }
 
-.car img:hover{
+.cartBox img {
+  width:20px;
+  height:20px;   
+  padding:0;
+  margin:0;
+  fill: black;
+}
+/* .car img:hover{
   width: 100%;
   height: 100%;
   max-height: 162px;
   display: block;
   object-fit: cover;
-}
+} */
 
 .car .boxDetails{
   max-width: 500px;
   width: 100%;
   margin: 20px;
+  padding: 20px;
   margin: 30px 0 15px 0;
 }
 .boxDetails h2{
-  color: darkblue;
-  font-size: 1.05rem;
+  font-family: 'Lato';
+  color:#030303;
+  font-size: 19px;
 }
 
 .boxDetails p{
@@ -50,34 +61,88 @@
   height: 50px;
 }
 .boxDetails h3{
-  
+  color:#030303;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
   font-size: 0.7rem;
   }
-  .car .boxDetails h4{
+  /* .car .boxDetails h4{
     color: crimson;
+    font-size: 1rem;
+  } */
+
+  .car .boxDetails h4{
+    display: flex;
+    justify-content: space-between;
+    color:#030303;
+    font-size: 1rem;
+  }
+
+  .car .boxDetails .isdiscount {
+    color: #FE7F50;
+    font-size: 1rem;
+  }
+  .car .boxDetails .undiscount{
+    color:black;
     font-size: 1rem;
   }
 
 .car .boxDetails button{
-  width: 100%;
-  border: none;
-  outline: none;
-  background: #333;
-  color: white;
-  text-align: center;
-  padding: 10px 0;
-  margin: 10px 0;
   cursor: pointer;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+  padding-right: 50px;
 }
 
 .car .boxDetails button:hover{
   background: #afafaf;
   color: #333;
+}
+
+.imageBox {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+span.purchasedBox {
+  background-color: #FE7F50;
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  padding: 20px 40px;
+  position: absolute;
+  transform:translate(-25%);
+}
+
+span.notPurchased {
+  visibility: hidden;
+}
+
+span.purchased {
+  visibility: visible;
+}
+
+span.discountTag {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  height: 50px;
+  width: 50px;
+  background-color: #FE7F50;
+  border-radius: 50%;
+  color: white;
+  text-align: center;
+  padding: 12px 5px;
+  font-weight: 600;
+}
+
+span.isdiscount {
+  visibility: visible;
+}
+
+span.undiscount {
+  visibility: hidden;
 }
 
 @media (max-width: 500px){

@@ -3,7 +3,7 @@ import { CartContext } from "../contexts/CartContext";
 import { useContext } from "react";
 import { useHistory } from "react-router-dom"
 import { NavLink } from "react-router-dom";
-
+import styles from '../css/Navbar.module.css';
 function Navbar() {
   const { totalProducts, totalOrder } = useContext(CartContext);
   const { alert } = useContext(CartContext);
@@ -11,7 +11,7 @@ function Navbar() {
 
   return (
     <>
-    <ReactBootstrap.Navbar collapseOnSelect expand="sm" bg="info" variant="dark">
+    <ReactBootstrap.Navbar sticky="top" collapseOnSelect expand="sm" bg="info" variant="light">
       <ReactBootstrap.Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <ReactBootstrap.Navbar.Brand>
         <NavLink to="/">
@@ -22,7 +22,7 @@ function Navbar() {
             <ReactBootstrap.Dropdown.Toggle variant="info" id="dropdown-basic" >
               <div className="cartBox">
                 <p>{totalProducts}</p>
-                <img src="/assets/icons/cartw.svg" alt="Cart" />
+                <img src="/assets/icons/cart.svg" alt="Cart" />
               </div>
             </ReactBootstrap.Dropdown.Toggle>
             <ReactBootstrap.Dropdown.Menu>
@@ -35,16 +35,12 @@ function Navbar() {
           </ReactBootstrap.Dropdown>
       <ReactBootstrap.Navbar.Collapse id="responsive-navbar-nav">
         <ReactBootstrap.Nav className="ml-auto">
-          <ReactBootstrap.Nav.Link>
-            <NavLink to="/">
+            <NavLink className={styles.span}  to="/">
             <p className="text-center">Home</p>
           </NavLink>
-          </ReactBootstrap.Nav.Link>
-          <ReactBootstrap.Nav.Link>
-            <NavLink to="/about">
+            <NavLink className={styles.span} to="/about">
             <p className="text-center">About</p>
           </NavLink>
-          </ReactBootstrap.Nav.Link>
         </ReactBootstrap.Nav>
       </ReactBootstrap.Navbar.Collapse>
     </ReactBootstrap.Navbar>
