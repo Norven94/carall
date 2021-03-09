@@ -1,4 +1,8 @@
 
+.stickyTop {
+  position: relative;
+}
+
 .cartPage-style {
   display: grid;
 }
@@ -11,4 +15,14 @@
 
 .shipping-field {
   position: fixed;
+}
+
+.buyButton {
+  background-color: #FE7F50 ;
+  position: absolute;
+  bottom: 5px;
+  right: 15px;
+  width: 100px;
+  padding: 5px;
+  border: none;
 }
