@@ -62,7 +62,7 @@ export default function Car(props) {
           <h4 style={{paddingTop: "30px"}} className={props.car.isDiscount ? isdiscount : undiscount}>
             {priceWithSpace} kr{" "}
             <button className={cartBox} onClick={() => addToCart(props.car)}>
-              <img src="/assets/icons/cartw.svg" alt="Cart" className={cartBox} onClick={() => addToCart(props.car)}/>
+            <img src="/assets/icons/cart.svg" alt="Cart"  className={cartBox} onClick={() => addToCart(props.car)}/>
             </button>
             
           </h4>
