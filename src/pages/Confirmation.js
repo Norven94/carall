@@ -17,7 +17,10 @@ const Confirmation = () => {
       <p>Delivery Address: {`${orderDetails.ShippingAddress}, ${orderDetails.ShippingCity}, ${orderDetails.ShippingCountry}`}</p>
       <h3>Car details:</h3>
       {cart.map((c) => (
-           <p>Make: {c.make}</p>
+        <div key={c.vin}>
+          <p>Make: {c.make}</p>
+          <p>Model: {c.model}</p>
+        </div>
           ))}
       
     
