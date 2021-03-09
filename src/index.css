@@ -27,3 +27,7 @@ code {
   margin-left: 15px;
 }
 
+input[type="range"].range-slider::-moz-range-thumb {
+  background: #FE7F50;
+}
+

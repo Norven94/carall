@@ -6,10 +6,13 @@ $theme-colors: (
     "primary":#FF7F50,
     "secondary":#FF9269,
 );
+@import "react-bootstrap-range-slider/dist/react-bootstrap-range-slider.scss";  
+
 $first:#ffc8b4;
 
 @import "~bootstrap/scss/bootstrap";
 @use "sass:color";
+
 
 .cartBox{
     color:#fff;
@@ -90,5 +93,10 @@ margin-bottom:-10px;
             }
         img{
             padding:2rem;
-        }    
+        }  
+}
+
+.rangeSlider::-webkit-slider-thumb {
+    color: #ff7f50;
+    background: #ff7f50;
 }
