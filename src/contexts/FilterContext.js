@@ -9,11 +9,8 @@ const FilterContextProvider = (props) => {
     const [milesStart, setMilesStart] = useState(0)
     const [milesEnd, setMilesEnd] = useState(70000)
     const [searchString, setSearchString] = useState("")
-    //Search function
-
-    
-    //Filter range functions
-    
+   
+    //Filter range functions    
     const filterPriceStart = (price) => {
         setPriceStart(price)
     }
@@ -36,13 +33,13 @@ const FilterContextProvider = (props) => {
     
     useEffect(() => {
         setTempCars(cars.filter((car) => {
-            return car.price < priceEnd && car.price > priceStart && car.miles < milesEnd && car.miles > milesStart
+            return car.price < priceEnd && car.price > priceStart 
+            && car.miles < milesEnd && car.miles > milesStart
             && (car.make.toLowerCase().includes(searchString.toLowerCase())
-            ||  car.model.toLowerCase().includes(searchString.toLowerCase())
-            ||  car.year.toString().toLowerCase().includes(searchString.toLowerCase()) )
-
+                ||  car.model.toLowerCase().includes(searchString.toLowerCase())
+                ||  car.year.toString().toLowerCase().includes(searchString.toLowerCase()))
         }))
-    }, [priceStart, priceEnd,milesStart, milesEnd, searchString])
+    }, [priceStart, priceEnd, milesStart, milesEnd, searchString])
    
     //Sort functions
 
