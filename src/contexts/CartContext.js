@@ -4,7 +4,7 @@ import { CarContext } from "./CarContext"
 export const CartContext = createContext();
 
 const CartContextProvider = (props) => {
-    const { tempCars, setTempCars, cars } = useContext(CarContext);
+    const { tempCars, setTempCars, cars, setCars} = useContext(CarContext);
     const [cart, setCart] = useState([])
     const [totalProducts, setTotalProducts] = useState(0)
     const [totalOrder, setTotalOrder] = useState(0)
@@ -14,7 +14,7 @@ const CartContextProvider = (props) => {
       if (!product.purchased) {        
         setCart([...cart, product])
 
-        setTempCars(tempCars.map((car) => {
+        setCars(cars.map((car) => {
           if (car.vin === product.vin) {
             car.purchased = true;          
           }
@@ -25,8 +25,7 @@ const CartContextProvider = (props) => {
 
     const removeProduct = (product) => {
       setCart(cart.filter((p) => p !== product));
-
-      setTempCars(tempCars.map((car) => {
+      setCars(cars.map((car) => {
         if (car.vin === product.vin) {
           car.purchased = false;         
         }
