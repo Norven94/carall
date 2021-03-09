@@ -6,10 +6,7 @@ import SearchGroup from "./SearchGroup";
 
 function CarList() {
   const { tempCars} = useContext(CarContext);
-  useEffect(() => {
-    console.log(tempCars)
-   
-  }, [tempCars])
+
   return (
     <div className="carlist-container">
       <h1>Find Your New Favorite Vehicle</h1>
