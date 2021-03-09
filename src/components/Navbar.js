@@ -44,7 +44,7 @@ function Navbar() {
         </ReactBootstrap.Nav>
       </ReactBootstrap.Navbar.Collapse>
     </ReactBootstrap.Navbar>
-    <div className="fadeout"> {alert} </div>
+ 
     </>
   )
 }
