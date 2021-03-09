@@ -11,7 +11,7 @@ function Navbar() {
 
   return (
     <>
-    <ReactBootstrap.Navbar sticky="top" collapseOnSelect expand="sm" bg="info" variant="dark">
+    <ReactBootstrap.Navbar sticky="top" collapseOnSelect expand="sm" bg="info" variant="light">
       <ReactBootstrap.Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <ReactBootstrap.Navbar.Brand>
         <NavLink to="/">
