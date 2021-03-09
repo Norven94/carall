@@ -26,7 +26,7 @@ const CartPage = () => {
       </Row>
       </Container>
     </div>
-   );
+  );
 }
- 
+
 export default CartPage;
