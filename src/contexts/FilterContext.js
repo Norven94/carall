@@ -41,6 +41,10 @@ const FilterContextProvider = (props) => {
     useEffect(() => {
         setTempCars(cars.filter((car) => {
             return car.price < priceEnd && car.price > priceStart && car.miles < milesEnd && car.miles > milesStart
+            // && cars.filter(car=>{
+            //     return Object.keys(car).some(key=>car[key].toLowerCase().includes(searchString.toLowerCase()))
+            
+            // })
             && car.make.toLowerCase().includes(searchString.toLowerCase())
             // ||  car.model.toLowerCase().includes(searchString.toLowerCase())
             // ||  car.year.toString().toLowerCase().includes(searchString.toLowerCase()) 
