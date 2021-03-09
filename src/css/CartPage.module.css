@@ -1,6 +1,7 @@
 
 .stickyTop {
-  position: relative;
+  position: sticky;
+  top: 0;
 }
 
 .cartPage-style {
