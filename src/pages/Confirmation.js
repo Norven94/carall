@@ -5,18 +5,6 @@ import styles from '../css/Confirmation.module.css'
 
 const Confirmation = () => {
   const { orderDetails, cart } = useContext(CartContext)
-  const [confirm, setConfirm] = useState([])
-  // console.log(cart);
-  // console.log(orderDetails.cart);
-  // console.log(orderDetails)
-
-  useEffect(
-    () => {
-      setConfirm(cart.map((c) => {
-        <p>{c.make}</p>
-      }))
-    },[cart]
-  )
 
   return (
     <div className={styles.confirmation}>
@@ -25,9 +13,13 @@ const Confirmation = () => {
       <p>Full Name: {orderDetails.ShippingName}</p>
       <p>Delivery Address: {`${orderDetails.ShippingAddress}, ${orderDetails.ShippingCity}, ${orderDetails.ShippingCountry}`}</p>
       <h3>Car details:</h3>
-      <p>Make: {confirm}</p>
-      
-      
+      {cart.map((c) => (
+        <div key={c.vin}>
+          <p>Article Number: {c.vin}</p>
+          <p>Make: {c.make}</p>
+          <p>Model: {c.model}</p>
+        </div>
+          ))}     
       <button>Print order confirmation</button>
     </div>
   );

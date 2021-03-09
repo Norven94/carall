@@ -23,7 +23,7 @@ const CartPage = () => {
           <Col xs={12} md={8}>
             {cartContext.cart.map(product => <CartProduct key={product.vin} product={product} />)}
           </Col>
-          <Col fluid xs={6} md={4}>
+          <Col /*fluid*/ xs={6} md={4}>
             <div className={styles.stickyTop}>
               <BillingFields />
               <ShippingFields />
