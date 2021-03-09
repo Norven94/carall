@@ -8,7 +8,7 @@ $theme-colors: (
 $first:#FE7F50;
 $second:#344648;
 $third:#F5F7F6;
-
+$fourth:#ffc8b4;
 @import "~bootstrap/scss/bootstrap";
 @use "sass:color";
 
@@ -56,7 +56,9 @@ $third:#F5F7F6;
         order:1;
         }
 }
-
+.dropdown-item.active, .dropdown-item:active{
+    background-color:$first;
+}
 .fadeout {
     text-align:center;
     color: #000;
@@ -82,7 +84,7 @@ $third:#F5F7F6;
       }
   }
   .jumbotron {
-    background-color:$first; 
+    background-color:$fourth; 
 
 }
 .About{
