@@ -1,10 +1,7 @@
 
-.stickyTop {
-  position: sticky;
-  top: 0;
-}
 
 .cartPage-style {
+  background: #F5F7F6;
   display: grid;
 }
 
@@ -14,16 +11,31 @@
   font-family:Verdana, Geneva, Tahoma, sans-serif ;
 }
 
+.product-container {
+  margin:5px; 
+  padding:5px; 
+  width: auto; 
+  height: 36vw; 
+  overflow: scroll; 
+  text-align:justify; 
+}
+
+.forms {
+  margin-top: 25px;
+  padding: 10px;
+  background-color: white;
+}
+
 .shipping-field {
   position: fixed;
 }
 
 .buyButton {
+  display: grid;
   background-color: #FE7F50 ;
-  position: absolute;
-  bottom: 5px;
-  right: 15px;
-  width: 100px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
   padding: 5px;
   border: none;
 }
@@ -36,3 +48,4 @@
     margin-bottom: 50px;
   }
 }
+
