@@ -1,3 +1,4 @@
+import { useHistory } from "react-router-dom";
 import { useContext } from "react"
 import { Col, Container, Row } from "react-bootstrap";
 import { CartContext } from "../contexts/CartContext"
@@ -6,6 +7,11 @@ import styles from '../css/CartProduct.module.css';
 export default function CartProduct(props) {
     const { removeProduct } = useContext(CartContext)
     const priceWithSpace=props.product.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")
+    const history = useHistory();
+    const goToProduct = () => {
+        history.push("/product/" + props.product.vin);
+      };
+
     return (
         <div className="cart-container">
             <Container>
@@ -13,7 +19,7 @@ export default function CartProduct(props) {
                     <Col>
                         <div className={styles["bild-price"]}>
                             <div className={styles["product-image"]}>
-                                <img src={props.product.image} alt={"Image of " + props.product.make + " " + props.product.model + " " + props.product.year} />
+                                <img  onClick={goToProduct} src={props.product.image} alt={"Image of " + props.product.make + " " + props.product.model + " " + props.product.year} />
                             </div>
                             <p className={styles["cart-price"]}>{priceWithSpace} Kr</p>
                             <button onClick={() => removeProduct(props.product)} className={styles["delete-button"]}>Delete</button>
