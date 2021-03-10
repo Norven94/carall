@@ -24,7 +24,9 @@ const CartPage = () => {
       <Container>
         <Row>
           <Col xs={12} md={8}>
+            <div className={styles["product-container"]}>
             {cart.map(product => <CartProduct key={product.vin} product={product} />)}
+          </div>
           </Col>
           <Col /*fluid*/ xs={6} md={4}>
             <div className={styles["forms"]}>
