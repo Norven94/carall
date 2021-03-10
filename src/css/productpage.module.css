@@ -6,6 +6,31 @@
     width: 100%;    
 }
 
+.image-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+span.purchasedBox {
+background-color: #FE7F50;
+color: white;
+font-weight: 600;
+text-align: center;
+padding: 20px 40px;
+position: absolute;
+transform:translate(-25%);
+}
+
+span.notPurchased {
+visibility: hidden;
+}
+
+span.purchased {
+visibility: visible;
+}
+
 .product-details .product-heading {
     font-size: 44px;
     color: #707070;

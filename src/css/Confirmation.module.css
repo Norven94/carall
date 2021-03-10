@@ -1,4 +1,12 @@
+
 .confirmation {
+  font-family: 'Roboto';
   text-align: center;
   margin-top: 30px;
+}
+
+.thanks {
+  font-weight: 700;
+  font-family: 'Lato';
+  font-size: 1.6rem;
 }
