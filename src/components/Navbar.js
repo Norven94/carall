@@ -11,11 +11,11 @@ function Navbar() {
 
   return (
     <>
-    <ReactBootstrap.Navbar sticky="top" collapseOnSelect expand="sm" bg="info" variant="dark">
+    <ReactBootstrap.Navbar sticky="top" collapseOnSelect expand="sm" bg="info" variant="light">
       <ReactBootstrap.Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <ReactBootstrap.Navbar.Brand>
         <NavLink to="/">
-          <img src="/assets/images/logo.png" alt="Logo" />
+          <img src="/assets/images/logo.svg" alt="Logo" />
         </NavLink>
       </ReactBootstrap.Navbar.Brand>
       <ReactBootstrap.Dropdown>
@@ -44,7 +44,7 @@ function Navbar() {
         </ReactBootstrap.Nav>
       </ReactBootstrap.Navbar.Collapse>
     </ReactBootstrap.Navbar>
-    <div className="fadeout"> {alert} </div>
+ 
     </>
   )
 }

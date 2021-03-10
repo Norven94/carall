@@ -31,8 +31,11 @@ code {
 
 .carlist-container {
   display: grid;
-  text-align: center;
+  text-align: center; 
   background: #F5F7F6;
+}
+input[type="range"].range-slider::-moz-range-thumb {
+  background: #FE7F50;
 }
 
 /* Carousel Buttons Starts */

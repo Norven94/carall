@@ -1,6 +1,6 @@
 $theme-colors: (
     "info":  #fff,
-    "danger":  #B34C26,
+    "danger":  #FE7F50,
     "success":#14B394,
     "warning":#50FFDD,
     "primary":#FF7F50,
@@ -8,13 +8,15 @@ $theme-colors: (
 $first:#FE7F50;
 $second:#344648;
 $third:#F5F7F6;
-
+$fourth:#ffc8b4;
+@import "react-bootstrap-range-slider/dist/react-bootstrap-range-slider.scss";  
 @import "~bootstrap/scss/bootstrap";
 @use "sass:color";
 
+
 .cartBox{
     color:$first;
-    font-size:0.8rem;
+    font-size:1rem;
     font-weight: 600;
     padding:0;
     margin:0;
@@ -26,7 +28,8 @@ $third:#F5F7F6;
     margin:0;
 }
 .cartBox p {
-margin-bottom:-10px;
+    margin-bottom: -1.7rem;
+    margin-left: 2.5rem;
 }
 .dropdown-menu  {
     right: 0;
@@ -54,9 +57,6 @@ margin-bottom:-10px;
    .dropdown  {
         order:1;
         }
-}
-.nav-link p {
-    margin: auto;
 }
 .dropdown-item.active, .dropdown-item:active{
     background-color:$first;
@@ -86,7 +86,7 @@ margin-bottom:-10px;
       }
   }
   .jumbotron {
-    background-color:$first; 
+    background-color:$fourth; 
 
 }
 .About{
@@ -100,5 +100,15 @@ margin-bottom:-10px;
             }
         img{
             padding:2rem;
-        }    
+        }  
+}
+
+.rangeSlider::-webkit-slider-thumb {
+    color: #ff7f50;
+    background: #ff7f50;
+}
+
+.carlist-container h1{
+    padding-top: 3rem;
+    padding-bottom: 2rem;
 }

@@ -9,9 +9,11 @@ import { alignPropType } from "react-bootstrap/esm/DropdownMenu"
 
 const breakPoints = [
   { width: 1, itemsToShow: 1 },
-  { width: 550, itemsToShow: 1 },
-  { width: 768, itemsToShow: 2 },
-  { width: 1200, itemsToShow: 3 }
+  { width: 450, itemsToShow: 1 },
+  { width: 630, itemsToShow: 2 },
+  { width: 1100, itemsToShow: 3 },
+  { width: 1350, itemsToShow: 4 },
+  { width: 1700, itemsToShow: 5 }
 ]
 
 const DiscountCarList = () => {
@@ -20,7 +22,7 @@ const DiscountCarList = () => {
   return (
     <div className="discount">
       <h2>Discount Cars</h2>
-      <Carousel breakPoints={breakPoints}>
+      <Carousel itemPadding={[0, 0]} breakPoints={breakPoints}>
         {carDiscount.map((car) =>(
             <Car key={car.vin} car={car} />
         ))}
