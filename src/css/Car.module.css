@@ -20,8 +20,8 @@
 }
 
 .car img{
-  width: 100%;
-  max-height: 300px;
+  width: 431px;
+  height: 298px;
   display: block;
   object-fit: cover;
 }
