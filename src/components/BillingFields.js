@@ -2,48 +2,42 @@
 import Form from 'react-bootstrap/Form'
 import { visa } from "../css/visa.module.css"
 import { Col } from 'react-bootstrap'
-import { useState } from 'react'
+import { useContext } from 'react'
+import { CartContext } from "../contexts/CartContext";
 
 function BillingFields() {
-  const [name, setName] = useState("");
-  const [address, setAddress] = useState("");
-  const [city, setCity] = useState("");
-  const [zip, setZip] = useState("");
-  const [country, setCountry] = useState("");
-  const [cardnumber, setCardNumber] = useState("");
-  const [exdate, setExDate] = useState("");
-  const [cvc, setCvc] = useState("");
+  const { orderDetails, setOrderDetails } = useContext(CartContext);
 
   const handleNameChangeBilling = (e) => {
-    setName(e.target.value);
+    setOrderDetails({...orderDetails, billingName: e.target.value});
   };
 
   const handleAddressChangeBilling = (e) => {
-    setAddress(e.target.value);
+    setOrderDetails({...orderDetails, billingAddress: e.target.value});
   };
 
   const handleCityChangeBilling = (e) => {
-    setCity(e.target.value);
+    setOrderDetails({...orderDetails, billingCity: e.target.value});
   };
 
   const handleZipChangeBilling = (e) => {
-    setZip(e.target.value);
+    setOrderDetails({...orderDetails, billingZip: e.target.value});
   };
 
   const handleCountryChangeBilling = (e) => {
-    setCountry(e.target.value);
+    setOrderDetails({...orderDetails, billingCountry: e.target.value});
   };
 
   const handleCardNumberChangeBilling = (e) => {
-    setCardNumber(e.target.value);
+    setOrderDetails({...orderDetails, billingCardnumber: e.target.value});
   }
 
   const handleExDateChangeBilling = (e) => {
-    setExDate(e.target.value);
+    setOrderDetails({...orderDetails, billingExdate: e.target.value});
   }
 
   const handleCvcChangeBilling = (e) => {
-    setCvc(e.target.value);
+    setOrderDetails({...orderDetails, billingCvc: e.target.value});
   }
 
   return (
@@ -52,31 +46,31 @@ function BillingFields() {
       <h1 className="billing-header">Billing Info</h1>
       <Form>
         <Form.Group as={Col} controlId="formBasicName">
-          <Form.Control onChange={handleNameChangeBilling} type="full name" placeholder="Full Name" />
+          <Form.Control size="sm" onChange={handleNameChangeBilling} type="full name" placeholder="Full Name" value={orderDetails.billingName} />
         </Form.Group>
         <Form.Group as={Col} controlId="formBasicAddress">
-          <Form.Control onChange={handleAddressChangeBilling} type="address" placeholder="Address" />
+          <Form.Control size="sm" onChange={handleAddressChangeBilling} type="address" placeholder="Address" value={orderDetails.billingAddress} />
         </Form.Group>
         <Form.Row as={Col}>
           <Form.Group as={Col} controlId="formGridCityZip">
-            <Form.Control onChange={handleCityChangeBilling} type="city" placeholder="City" />
+            <Form.Control size="sm" onChange={handleCityChangeBilling} type="city" placeholder="City" value={orderDetails.billingCity} />
           </Form.Group>
           <Form.Group as={Col}  controlId="formGridCityZip">
-            <Form.Control onChange={handleZipChangeBilling} type="zip code" placeholder="Zip Code" />
+            <Form.Control size="sm" onChange={handleZipChangeBilling} type="zip code" placeholder="Zip Code" value={orderDetails.billingZip} />
           </Form.Group>
         </Form.Row>
         <Form.Group as={Col} controlId="formBasicCountry">
-          <Form.Control onChange={handleCountryChangeBilling} type="country" placeholder="Country" />
+          <Form.Control size="sm" onChange={handleCountryChangeBilling} type="country" placeholder="Country" value={orderDetails.billingCountry} />
         </Form.Group >
         <Form.Group as={Col} controlId="formBasicCardNumber">
-          <Form.Control onChange={handleCardNumberChangeBilling} type="cardnumber" placeholder="Card Number" />
+          <Form.Control size="sm" onChange={handleCardNumberChangeBilling} type="cardnumber" placeholder="Card Number" value={orderDetails.billingCardnumber}/>
         </Form.Group >
         <Form.Row as={Col}>
         <Form.Group as={Col} controlId="formBasicExDate">
-          <Form.Control onChange={handleExDateChangeBilling} type="exdate" placeholder="00/00" />
+          <Form.Control size="sm" onChange={handleExDateChangeBilling} type="exdate" placeholder="00/00" value={orderDetails.billingExdate}/>
         </Form.Group >
         <Form.Group as={Col} controlId="formBasicCvc">
-          <Form.Control onChange={handleCvcChangeBilling} type="cvc" placeholder="CVC" />
+          <Form.Control size="sm" onChange={handleCvcChangeBilling} type="cvc" placeholder="CVC" value={orderDetails.billingCvc}/>
         </Form.Group >
         </Form.Row>
         <Form.Group as={Col}>

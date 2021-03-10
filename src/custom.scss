@@ -1,19 +1,23 @@
 $theme-colors: (
-    "info":  #ff7f50,
-    "danger":  #B34C26,
+    "info":  #fff,
+    "danger":  #FE7F50,
     "success":#14B394,
     "warning":#50FFDD,
     "primary":#FF7F50,
-    "secondary":#FF9269,
 );
-$first:#ffc8b4;
-
+$first:#FE7F50;
+$second:#344648;
+$third:#F5F7F6;
+$fourth:#ffc8b4;
+@import "react-bootstrap-range-slider/dist/react-bootstrap-range-slider.scss";  
 @import "~bootstrap/scss/bootstrap";
 @use "sass:color";
 
+
 .cartBox{
-    color:#fff;
-    font-size:0.8rem;
+    color:$first;
+    font-size:1rem;
+    font-weight: 600;
     padding:0;
     margin:0;
 }
@@ -24,7 +28,8 @@ $first:#ffc8b4;
     margin:0;
 }
 .cartBox p {
-margin-bottom:-10px;
+    margin-bottom: -1.7rem;
+    margin-left: 2.5rem;
 }
 .dropdown-menu  {
     right: 0;
@@ -34,6 +39,12 @@ margin-bottom:-10px;
 .dropdown-toggle::after {
     display: none;
 }
+
+.navbar {
+    border-radius: 2px;
+    box-shadow: 0px 1px 10px #999;
+  }
+  
 .nav-link a {
     color:#fff;
 }
@@ -47,10 +58,9 @@ margin-bottom:-10px;
         order:1;
         }
 }
-.nav-link p {
-    margin: auto;
+.dropdown-item.active, .dropdown-item:active{
+    background-color:$first;
 }
-
 .fadeout {
     text-align:center;
     color: #000;
@@ -76,7 +86,7 @@ margin-bottom:-10px;
       }
   }
   .jumbotron {
-    background-color:$first; 
+    background-color:$fourth; 
 
 }
 .About{
@@ -90,5 +100,15 @@ margin-bottom:-10px;
             }
         img{
             padding:2rem;
-        }    
+        }  
+}
+
+.rangeSlider::-webkit-slider-thumb {
+    color: #ff7f50;
+    background: #ff7f50;
+}
+
+.carlist-container h1{
+    padding-top: 3rem;
+    padding-bottom: 2rem;
 }

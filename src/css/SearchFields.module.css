@@ -1,0 +1,12 @@
+/* .search{
+  padding-right: 4rem;
+  padding-bottom: 10px;
+} */
+
+input[type="text"] {
+  padding-right: 4rem;
+  padding-bottom: 7px;
+  padding-top: 9px;
+  padding-left: 6px;
+
+}
