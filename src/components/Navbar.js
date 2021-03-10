@@ -11,7 +11,7 @@ function Navbar() {
 
   return (
     <>
-    <ReactBootstrap.Navbar collapseOnSelect expand="sm" bg="info" variant="dark">
+    <ReactBootstrap.Navbar sticky="top" collapseOnSelect expand="sm" bg="info" variant="light">
       <ReactBootstrap.Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <ReactBootstrap.Navbar.Brand>
         <NavLink to="/">
@@ -22,7 +22,7 @@ function Navbar() {
             <ReactBootstrap.Dropdown.Toggle variant="info" id="dropdown-basic" >
               <div className="cartBox">
                 <p>{totalProducts}</p>
-                <img src="/assets/icons/cartw.svg" alt="Cart" />
+                <img src="/assets/icons/cart.svg" alt="Cart" />
               </div>
             </ReactBootstrap.Dropdown.Toggle>
             <ReactBootstrap.Dropdown.Menu>
@@ -44,7 +44,7 @@ function Navbar() {
         </ReactBootstrap.Nav>
       </ReactBootstrap.Navbar.Collapse>
     </ReactBootstrap.Navbar>
-    <div className="fadeout"> {alert} </div>
+ 
     </>
   )
 }

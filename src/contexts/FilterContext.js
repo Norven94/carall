@@ -3,20 +3,14 @@ import { CarContext } from "../contexts/CarContext"
 export const FilterContext = createContext();
 
 const FilterContextProvider = (props) => {
-    const { cars, setCars, tempCars } = useContext(CarContext);
+    const { cars, setCars, tempCars, setTempCars } = useContext(CarContext);
     const [priceStart, setPriceStart] = useState(0)
     const [priceEnd, setPriceEnd] = useState(800000)
     const [milesStart, setMilesStart] = useState(0)
     const [milesEnd, setMilesEnd] = useState(70000)
-
-    const search = (searchString) => {      
-        setCars(tempCars.filter((car) => {              
-            return car.make.toLowerCase().search(searchString.toLowerCase()) !==-1 
-            ||  car.model.toLowerCase().search(searchString.toLowerCase()) !==-1
-            ||  car.year.toString().toLowerCase().search(searchString.toLowerCase()) !==-1;
-        }))              
-    }
-
+    const [searchString, setSearchString] = useState("")
+   
+    //Filter range functions    
     const filterPriceStart = (price) => {
         setPriceStart(price)
     }
@@ -33,25 +27,47 @@ const FilterContextProvider = (props) => {
         setMilesEnd(miles)
     }
 
+    const search = (searchString) => {  
+        setSearchString(searchString)    
+    }
+    
     useEffect(() => {
-        setCars(tempCars.filter((car) => {
-            return car.price < priceEnd && car.price > priceStart
+        setTempCars(cars.filter((car) => {
+            return car.price < priceEnd && car.price > priceStart 
+            && car.miles < milesEnd && car.miles > milesStart
+            && (car.make.toLowerCase().includes(searchString.toLowerCase())
+                ||  car.model.toLowerCase().includes(searchString.toLowerCase())
+                ||  car.year.toString().toLowerCase().includes(searchString.toLowerCase()))
         }))
-    }, [priceStart, priceEnd])
+    }, [priceStart, priceEnd, milesStart, milesEnd, searchString])
+   
+    //Sort functions
 
+    const sort = (sortChoice) => {
+        let sorted;
+        
+        if (sortChoice === "make") {
+            sorted = [...tempCars].sort((a,b) => (a.make > b.make ? 1 : -1))
+        } else if (sortChoice === "model") {
+            sorted = [...tempCars].sort((a,b) => (a.model > b.model ? 1 : -1))
+        } else if (sortChoice === "year up") {
+            sorted = [...tempCars].sort((a,b) => (a.year > b.year ? 1 : -1))
+        } else {
+            sorted = [...tempCars].sort((a,b) => (a.year < b.year ? 1 : -1))
+        }
 
-    useEffect(() => {
-        setCars(tempCars.filter((car) => {
-            return car.miles < milesEnd && car.miles > milesStart
-        }))
-    }, [milesStart, milesEnd])
+        setTempCars(sorted)
+     
+    }
+
     const values =
     {
         search, 
         filterPriceEnd,
         filterPriceStart,
         filterMilesEnd,
-        filterMilesStart
+        filterMilesStart,
+        sort
     }
     
     return(

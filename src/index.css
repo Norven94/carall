@@ -1,10 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Lato','Roboto', sans-serif;
+}
+h1, h2, h3, h4, h5, h6, p{
+  font-family:'Roboto'
 }
 
 code {
@@ -14,16 +15,40 @@ code {
 
 
 .shipping-header {
-  font-size: 1.5rem;
+  font-size: 1rem;
   margin-left: 15px;
 }
 
 .billing-header {
-  font-size: 1.5rem;
+  font-size: 1rem;
   margin-left: 15px;
 }
 
 .cart-price {
   margin-left: 15px;
+  margin-top: -10px;
 }
 
+.carlist-container {
+  display: grid;
+  text-align: center; 
+  background: #F5F7F6;
+}
+
+/* Carousel Buttons Starts */
+.rec.rec-pagination {
+  visibility: hidden;
+}
+
+.rec.rec-arrow {
+  background-color: white;
+  box-shadow: none;
+  color: black;
+}
+
+.rec.rec-arrow:hover:enabled, .rec.rec-arrow:focus:enabled {
+  background-color: white;
+  box-shadow: none;
+  color: black;
+}
+/* Carousel Buttons Ends */

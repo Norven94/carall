@@ -1,9 +1,13 @@
 .dropbtn {
   background-color: white;
-  color: black;
-  padding: 16px;
+  color:black;
   font-size: 16px;
-  border: black 1px solid;
+  border: gray 0.5px solid;
+  padding-top:1px;
+  padding-bottom: 1px;
+  padding-left: 3px;
+  padding-right: 5rem;
+ 
 }
 
 .dropdown {
