@@ -20,7 +20,7 @@ const Confirmation = () => {
           <p>Model: {c.model}</p>
         </div>
           ))}     
-      <button>Print order confirmation</button>
+      <button onClick={() => window.print()}>Print order confirmation</button>
     </div>
   );
 }

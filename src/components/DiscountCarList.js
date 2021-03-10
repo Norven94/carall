@@ -11,7 +11,9 @@ const breakPoints = [
   { width: 1, itemsToShow: 1 },
   { width: 450, itemsToShow: 1 },
   { width: 630, itemsToShow: 2 },
-  { width: 1100, itemsToShow: 3 }
+  { width: 1100, itemsToShow: 3 },
+  { width: 1300, itemsToShow: 4 },
+  { width: 1700, itemsToShow: 5 }
 ]
 
 const DiscountCarList = () => {
