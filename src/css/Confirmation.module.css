@@ -23,7 +23,7 @@
   font-weight: 300;
   font-family: 'Roboto Condensed';
   text-align: center;
-  margin-top: 40px;
+  margin-top: 30px;
 }
 
 .details > h4 {
@@ -45,6 +45,10 @@
 
 .detailsRight {
   text-align: right;
+}
+
+.carDetails {
+  padding-bottom: .9rem;
 }
 
 .print {

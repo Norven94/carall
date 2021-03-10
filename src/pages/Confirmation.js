@@ -9,46 +9,46 @@ const Confirmation = () => {
 
   return (
     <div className={styles.confirmation}>
-      <img className={confirm} src="/assets/icons/confirm.svg" alt="confirm icon"/>
+      <img className={confirm} src="/assets/icons/confirm.svg" alt="confirm icon" />
       <div className={styles.thanks}>
         <h1>Thank you for choosing us!</h1>
         <p>Below you will find information about your purchase</p>
       </div>
 
       <div className={styles.details}>
-      <h4>Order details:</h4>
-      <div className={styles.orderDetails}>
-        <div className={styles.detailsLeft}>
-          <p>Order Number:</p>
-          <p>Order Date:</p>
-          <p>Full Name:</p>
-          <p>Delivery Address:</p>
-        </div>
-        <div className={styles.detailsRight}>
-          <p> {orderDetails.orderNumber}</p>
-          <p> {orderDetails.orderDate}</p>
-          <p> {orderDetails.ShippingName}</p>
-          <p> {orderDetails.ShippingAddress}</p>
-          <p> {`${orderDetails.ShippingCity}, ${orderDetails.ShippingCountry}`}</p>
-        </div>
+        <h4>Order details:</h4>
+        <div className={styles.orderDetails}>
+          <div className={styles.detailsLeft}>
+            <p>Order Number:</p>
+            <p>Order Date:</p>
+            <p>Full Name:</p>
+            <p>Delivery Address:</p>
+          </div>
+          <div className={styles.detailsRight}>
+            <p> {orderDetails.orderNumber}</p>
+            <p> {orderDetails.orderDate}</p>
+            <p> {orderDetails.ShippingName}</p>
+            <p> {orderDetails.ShippingAddress}</p>
+            <p> {`${orderDetails.ShippingCity}, ${orderDetails.ShippingCountry}`}</p>
+          </div>
         </div>
 
         <h4>Car details:</h4>
-        <div className={styles.carDetails}>
-          <div className={styles.detailsLeft}>
-            <p className={styles.left}>Article Number</p>
-            <p className={styles.left}>Make, Model:</p>
-            <p className={styles.left}>Price:</p>
-            <p > {orderDetails.vin}</p>
-          </div>
-          {orderDetails.cart.map((c) => (
+        {orderDetails.cart.map((c) => (
+          <div className={styles.carDetails}>
+            <div className={styles.detailsLeft}>
+              <p className={styles.left}>Article Number</p>
+              <p className={styles.left}>Make, Model:</p>
+              <p className={styles.left}>Price:</p>
+            </div>
             <div className={styles.detailsRight} key={c.vin}>
               <p className={styles.right}>{c.vin}</p>
               <p className={styles.right}>{`${c.make} ${c.model}`}</p>
               <p className={styles.right}>{c.price} Kr</p>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
+
       </div>
       <button className={styles.print} onClick={() => window.print()}>Print </button>
     </div>
