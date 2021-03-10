@@ -1,12 +1,13 @@
 .dropbtn {
   background-color: white;
-  color:black;
+  color:#707070;
   font-size: 16px;
   border: gray 0.5px solid;
-  padding-top:1px;
-  padding-bottom: 1px;
-  padding-left: 3px;
-  padding-right: 5rem;
+  padding-top:10px;
+  padding-bottom: 10px;
+  padding-left: 6px;
+  padding-right: 4rem;
+  /* margin-right: 20px; */
  
 }
 
@@ -18,7 +19,7 @@
 .dropdownContent {
   display: none;
   position: absolute;
-  margin-left: -120px;
+  /* margin-left: -100px; */
   background-color: white;
   width: 350px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -26,14 +27,9 @@
 }
 
 .priceFilter  {
-  /* padding-left: 60px; */
-  /* padding-left: auto;
-  padding-right: auto; */
 
   padding-top: 20px;
-  /* padding-right: 0; */
-  /* margin-left: auto;
-  margin-right: auto; */
+
 }
 
 .minmax {
@@ -41,16 +37,16 @@
 }
 
 .p {
-  padding-left: 30px;
+  padding-right: 270px;
 }
 
 /* .slider::-webkit-slider-thumb {
   padding-left: 30px;
 } */
 
-.range-slider {
+/* .range-slider {
   margin-right: 10px;  
-}
+} */
 
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {background-color: #ddd;}

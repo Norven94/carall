@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { FilterContext } from "../contexts/FilterContext";
 import Dropdown from 'react-bootstrap/Dropdown'
+import styles from '../css/Sort.module.css'
 
 function Sort() {
   const { sort } = useContext(FilterContext);
@@ -10,8 +11,8 @@ function Sort() {
   };
 
   return (
-    <div className="sort-container col-md-2">
-      <span>Sort By :</span>
+    <div className="sort-container">
+      {/* <span>Sort By :</span> */}
       {/* <Dropdown>
         <Dropdown.Toggle id="dropdown-basic">
           Sort by:
@@ -24,12 +25,12 @@ function Sort() {
           <Dropdown.Item value="year down">Year ↓</Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown> */}
-      <select onChange={handleChange}>
-      <option selected>Unsorted</option>
-        <option value="make">Mark a-z</option>
-        <option value="model">Model a-z</option>
-        <option value="year up">Year ↑</option>
-        <option value="year down">Year ↓</option>
+      <select className={styles.select} onChange={handleChange}>
+      <option className={styles.sortSelect} selected>Sort</option>
+        <option className={styles.sortSelect} value="make">Mark a-z</option>
+        <option className={styles.sortSelect} value="model">Model a-z</option>
+        <option className={styles.sortSelect} value="year up">Year ↑</option>
+        <option className={styles.sortSelect} value="year down">Year ↓</option>
       </select>
     </div>
   );
