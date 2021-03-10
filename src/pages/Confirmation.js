@@ -8,11 +8,12 @@ const Confirmation = () => {
 
   return (
     <div className={styles.confirmation}>
-      <h1>Thank you for your purchase!</h1>
-      <h3>Your order details</h3>
+      <h1 className={styles.thanks}>Thank you for choosing us!</h1>
+      <p>Below you will find information about your purchase</p>
+      <h4>Order details:</h4>
       <p>Full Name: {orderDetails.ShippingName}</p>
       <p>Delivery Address: {`${orderDetails.ShippingAddress}, ${orderDetails.ShippingCity}, ${orderDetails.ShippingCountry}`}</p>
-      <h3>Car details:</h3>
+      <h4>Car details:</h4>
       {orderDetails.cart.map((c) => (
         <div key={c.vin}>
           <p>Article Number: {c.vin}</p>
