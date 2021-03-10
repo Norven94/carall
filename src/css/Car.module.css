@@ -1,15 +1,18 @@
-
- .car {
+.car {
   display: flex;
   flex-direction: column;
-  max-width: 431px;
+  /* max-width: 431px; */
+  max-width: 340px;
   width: 100%;
-  height: 550px;
+  /* height: 550px; */
+  height: 500px;
   overflow: hidden;
   box-shadow: 0 0 5px #ccc;
-  margin: 60px;
+  /* margin: 60px; */
+  margin: 40px;
   cursor: pointer;
   background: white;
+  position: relative;
 }
 
 .car:hover {
@@ -18,18 +21,16 @@
 
 .car img{
   width: 100%;
-  height: 100%;
   max-height: 300px;
   display: block;
   object-fit: cover;
 }
 
 .cartBox img {
-  width:20px;
-  height:20px;   
-  padding:0;
-  margin:0;
-  fill: black;
+  width:30px;
+  height:25px;   
+
+  
 }
 /* .car img:hover{
   width: 100%;
@@ -44,9 +45,12 @@
   width: 100%;
   margin: 20px;
   padding: 20px;
-  margin: 30px 0 15px 0;
+  margin: 15px 0 15px 0;
 }
 .boxDetails h2{
+  display: flex;
+  justify-content: flex-start;
+  font-weight:bold;
   font-family: 'Lato';
   color:#030303;
   font-size: 19px;
@@ -61,11 +65,13 @@
   height: 50px;
 }
 .boxDetails h3{
+  display: flex;
+  justify-content: flex-start;
   color:#030303;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  font-size: 0.7rem;
+  font-size: 12px;
   }
   /* .car .boxDetails h4{
     color: crimson;
@@ -73,14 +79,20 @@
   } */
 
   .car .boxDetails h4{
+    font-weight:bold;
     display: flex;
     justify-content: space-between;
     color:#030303;
     font-size: 1rem;
   }
 
+  .location {
+    display: flex;
+    justify-content: flex-start;
+  }
+
   .car .boxDetails .isdiscount {
-    color: crimson;
+    color: #FE7F50;
     font-size: 1rem;
   }
   .car .boxDetails .undiscount{
@@ -89,16 +101,79 @@
   }
 
 .car .boxDetails button{
+  border: none;
+  padding-left: 60px;
   cursor: pointer;
-  padding-right: 50px;
+  background-color: white;
+  
 }
 
-.car .boxDetails button:hover{
+/* .car .boxDetails button:hover{
   background: #afafaf;
   color: #333;
+} */
+
+.imageBox {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+span.purchasedBox {
+  background-color: #FE7F50;
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  padding: 20px 40px;
+  position: absolute;
+  transform:translate(-25%);
+}
+
+span.notPurchased {
+  visibility: hidden;
+}
+
+span.purchased {
+  visibility: visible;
+}
+
+span.discountTag {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  height: 50px;
+  width: 50px;
+  background-color: #FE7F50;
+  border-radius: 50%;
+  color: white;
+  text-align: center;
+  padding: 12px 5px;
+  font-weight: 600;
+}
+
+span.isdiscount {
+  visibility: visible;
+}
+
+span.undiscount {
+  visibility: hidden;
+}
+
+@media (max-width: 768px){
+  .car {
+    max-width: 300px;
+    margin: 15px;
+    height: 460px;
+  }
 }
 
 @media (max-width: 500px){
+  .car {
+    max-width: 290px;
+    margin: 15px 0;
+  }
+
   .boxDetails{
     padding: 0;
   }

@@ -8,19 +8,9 @@ const FilterContextProvider = (props) => {
     const [priceEnd, setPriceEnd] = useState(800000)
     const [milesStart, setMilesStart] = useState(0)
     const [milesEnd, setMilesEnd] = useState(70000)
-
-    //Search function
-
-    const search = (searchString) => {      
-        setTempCars(cars.filter((car) => {              
-            return car.make.toLowerCase().search(searchString.toLowerCase()) !==-1 
-            ||  car.model.toLowerCase().search(searchString.toLowerCase()) !==-1
-            ||  car.year.toString().toLowerCase().search(searchString.toLowerCase()) !==-1;
-        }))              
-    }
-
-    //Filter range functions
-
+    const [searchString, setSearchString] = useState("")
+   
+    //Filter range functions    
     const filterPriceStart = (price) => {
         setPriceStart(price)
     }
@@ -37,25 +27,25 @@ const FilterContextProvider = (props) => {
         setMilesEnd(miles)
     }
 
+    const search = (searchString) => {  
+        setSearchString(searchString)    
+    }
+    
     useEffect(() => {
         setTempCars(cars.filter((car) => {
-            return car.price < priceEnd && car.price > priceStart
+            return car.price < priceEnd && car.price > priceStart 
+            && car.miles < milesEnd && car.miles > milesStart
+            && (car.make.toLowerCase().includes(searchString.toLowerCase())
+                ||  car.model.toLowerCase().includes(searchString.toLowerCase())
+                ||  car.year.toString().toLowerCase().includes(searchString.toLowerCase()))
         }))
-    }, [priceStart, priceEnd])
-
-
-    useEffect(() => {
-        setTempCars(tempCars.filter((car) => {
-            return car.miles < milesEnd && car.miles > milesStart
-        }))
-    }, [milesStart, milesEnd])
-
-    
+    }, [priceStart, priceEnd, milesStart, milesEnd, searchString])
+   
     //Sort functions
 
     const sort = (sortChoice) => {
         let sorted;
-
+        
         if (sortChoice === "make") {
             sorted = [...tempCars].sort((a,b) => (a.make > b.make ? 1 : -1))
         } else if (sortChoice === "model") {
