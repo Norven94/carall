@@ -14,9 +14,8 @@ const CartPage = () => {
   const handleClick = () => {
     history.push("/confirmation")
     let timestamp = new Date().toLocaleDateString();
-    let id = Math.floor(Math.random() * 100);
+    let id = Math.floor(Math.random() * 100000);
     setOrderDetails({...orderDetails, orderDate: timestamp, orderNumber: id});
-    console.log(orderDetails)
   }
 
   return (
