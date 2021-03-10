@@ -16,6 +16,7 @@ export default function ProductPage (props) {
         <Container className={styles['product-page']}>
             <Row>
                 <Col md={4} className={styles['image-container']}>
+                    <span className={`${styles.purchasedBox} ${product.purchased ? styles.purchased : styles.notPurchased}`}>In your cart</span>
                     <img src={product.image} alt={"Image of " + product.make + " " + product.model + " " + product.year}/>
                 </Col>
                 <Col md={8} className={styles['product-details']}>
