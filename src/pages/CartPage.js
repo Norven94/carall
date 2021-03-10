@@ -5,7 +5,7 @@ import BillingFields from "../components/BillingFields";
 import { CartContext } from "../contexts/CartContext";
 import ShippingFields from "../components/ShippingFields";
 import styles from '../css/CartPage.module.css';
-import { Col, Container, Row } from "react-bootstrap";
+import { Col, Container, Row, Form } from "react-bootstrap";
 
 const CartPage = () => {
   const { cart, orderDetails, setOrderDetails } = useContext(CartContext);
@@ -14,9 +14,8 @@ const CartPage = () => {
   const handleClick = () => {
     history.push("/confirmation")
     let timestamp = new Date().toLocaleDateString();
-    let id = Math.floor(Math.random() * 100);
+    let id = Math.floor(Math.random() * 100000);
     setOrderDetails({...orderDetails, orderDate: timestamp, orderNumber: id});
-    console.log(orderDetails)
   }
 
   return (
@@ -24,15 +23,18 @@ const CartPage = () => {
       <Container>
         <Row>
           <Col xs={12} md={8}>
+          <h1 className={styles["cart-rubrik"]}>SHOPPING CART</h1>
             <div className={styles["product-container"]}>
             {cart.map(product => <CartProduct key={product.vin} product={product} />)}
           </div>
           </Col>
-          <Col /*fluid*/ xs={6} md={4}>
+          <Col xs={6} md={4}>
             <div className={styles["forms"]}>
-              <BillingFields />
-              <ShippingFields />
-              <button className={styles.buyButton} onClick={handleClick}>BUY</button>
+              <Form onSubmit={handleClick}>
+                <BillingFields />
+                <ShippingFields />
+              <button type="submit" className={styles.buyButton} >BUY</button>
+              </Form>
             </div>
           </Col>
         </Row>
