@@ -10,7 +10,6 @@ function BillingFields() {
 
   const handleNameChangeBilling = (e) => {
     setOrderDetails({...orderDetails, billingName: e.target.value});
-    console.log(orderDetails);
   };
 
   const handleAddressChangeBilling = (e) => {

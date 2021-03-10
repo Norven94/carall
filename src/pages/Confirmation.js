@@ -1,10 +1,10 @@
-import  { useContext, useState, useEffect } from 'react'
+import { useContext } from 'react'
 import { CartContext } from "../contexts/CartContext"
 
 import styles from '../css/Confirmation.module.css'
 
 const Confirmation = () => {
-  const { orderDetails, cart } = useContext(CartContext)
+  const { orderDetails } = useContext(CartContext)
 
   return (
     <div className={styles.confirmation}>
@@ -19,7 +19,7 @@ const Confirmation = () => {
           <p>Make: {c.make}</p>
           <p>Model: {c.model}</p>
         </div>
-          ))}     
+      ))}
       <button onClick={() => window.print()}>Print order confirmation</button>
     </div>
   );
