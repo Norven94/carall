@@ -8,7 +8,7 @@ import Navbar from './components/Navbar'
 import Home from './pages/Home'
 import About from './pages/About'
 import CartPage from './pages/CartPage'
-// import Confirmation from './pages/Confirmation'
+import Confirmation from './pages/Confirmation'
 
 function App() {
   return (
@@ -26,9 +26,9 @@ function App() {
                 <CartPage />
               </Route>
 
-              {/* <Route exact path="/confirmation">
+              <Route exact path="/confirmation">
                 <Confirmation />
-              </Route> */}
+              </Route>
               
               <Route
                 path="/product/:productId"
