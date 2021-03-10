@@ -8,11 +8,15 @@ import styles from '../css/CartPage.module.css';
 import { Col, Container, Row } from "react-bootstrap";
 
 const CartPage = () => {
-  const cartContext = useContext(CartContext);
+  const { cart, orderDetails, setOrderDetails } = useContext(CartContext);
   const history = useHistory();
 
   const handleClick = () => {
     history.push("/confirmation")
+    let timestamp = new Date().toLocaleDateString();
+    let id = Math.floor(Math.random() * 100);
+    setOrderDetails({...orderDetails, orderDate: timestamp, orderNumber: id});
+    console.log(orderDetails)
   }
 
   return (
@@ -20,10 +24,7 @@ const CartPage = () => {
       <Container>
         <Row>
           <Col xs={12} md={8}>
-          <span className={styles["cart-rubrik"]}>SHOPPING CART</span>
-            <div className={styles["product-container"]}>
-            {cartContext.cart.map(product => <CartProduct key={product.vin} product={product} />)}
-            </div>
+            {cart.map(product => <CartProduct key={product.vin} product={product} />)}
           </Col>
           <Col /*fluid*/ xs={6} md={4}>
             <div className={styles["forms"]}>
