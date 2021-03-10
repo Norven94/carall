@@ -9,6 +9,7 @@ const CartContextProvider = (props) => {
     const [totalProducts, setTotalProducts] = useState(0)
     const [totalOrder, setTotalOrder] = useState(0)
     const [orderDetails, setOrderDetails] = useState({})
+    
 
     const addToCart = (product) => {
       if (!product.purchased) {        
