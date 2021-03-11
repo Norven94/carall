@@ -40,6 +40,8 @@ export default function ProductPage(props) {
   };
 
   return (
+    <>
+    <Back/>
     <Container className={styles["product-page"]}>
       <Row>
         <Col md={4} className={styles["image-container"]}>
@@ -84,8 +86,8 @@ export default function ProductPage(props) {
         </Col>
       </Row>
     </Container>
+      </>
   );
-        </>
-        <>
-        <Back/>
+      
+  
 }
