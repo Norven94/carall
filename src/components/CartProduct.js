@@ -40,7 +40,7 @@ export default function CartProduct(props) {
                        
             </div>
             
-            <div className={styles["remove-product"]} onClick={handleClick}><span>{priceWithSpace} </span><VscTrash className={styles["trashcan"]} size={30} style={{ fill: 'black' }} /></div>  
+            <div className={styles["remove-product"]}><span>{priceWithSpace} </span><VscTrash  onClick={handleClick} className={styles["trashcan"]} size={30} style={{ fill: 'black' }} /></div>  
             
             
         </div>

@@ -31,17 +31,17 @@ const CartPage = () => {
       <Container>
         <Row>
           <Col xs={12} md={8}>
-          <h1 className={styles["cart-rubrik"]}>SHOPPING CART</h1>
+            <h1 className={styles["cart-rubrik"]}>SHOPPING CART</h1>
             <div className={styles["product-container"]}>
-            {cart.map(product => <CartProduct key={product.vin} product={product} />)}
-          </div>
+              {cart.map(product => <CartProduct key={product.vin} product={product} />)}
+            </div>
           </Col>
           <Col xs={6} md={4}>
             <div className={styles["forms"]}>
               <Form onSubmit={handleClick}>
                 <BillingFields />
                 <ShippingFields />
-              <button type="submit" className={styles.buyButton} >BUY</button>
+                <button type="submit" className={styles.buyButton} >BUY</button>
               </Form>
             </div>
           </Col>
