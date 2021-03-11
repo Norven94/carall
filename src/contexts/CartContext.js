@@ -1,4 +1,4 @@
-import {createContext, useContext, useState, useEffect} from "react"
+import {createContext, useContext, useState, useEffect, /* useRef */} from "react"
 import { CarContext } from "./CarContext"
 
 export const CartContext = createContext();
@@ -9,7 +9,7 @@ const CartContextProvider = (props) => {
     const [totalProducts, setTotalProducts] = useState(0)
     const [totalOrder, setTotalOrder] = useState(0)
     const [orderDetails, setOrderDetails] = useState({})
-    
+   /*  const firstRender = useRef(true); */
 
     const addToCart = (product) => {
       if (!product.purchased) {        
@@ -43,12 +43,22 @@ const CartContextProvider = (props) => {
           },0 ))
 
           setOrderDetails({...orderDetails, cart});
-
+          /* if (!firstRender.current) {
+            localStorage.setItem('cart', JSON.stringify(cart));
+         }
+         firstRender.current = false; */
       }, [cart]   
     )
     // acc = totala värdet i cart (börjar alltid på 0)
     // num = objektet (bilen) 
     // returnerar det nya priset
+/* 
+    Local Storage
+    useEffect(() => {
+      if (localStorage.getItem('cart')) {
+       setCart(JSON.parse(localStorage.getItem('cart')));
+      }
+      }, []); */
 
     const values =
     {
