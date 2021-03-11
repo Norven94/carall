@@ -63,7 +63,7 @@ function ShippingFields() {
         </Form.Group>
         <p className="cart-price"><b>Car price: </b>{ totalCarPrice }Kr</p>
         <p className="cart-price"><b>Shipping price: </b>{ orderDetails.ShippingAlternative }Kr</p>
-        <p className="cart-price"><b>Total: </b> { totalCarPrice+ + orderDetails.ShippingAlternative } Kr</p>
+        <p className="cart-price"><b>Total: </b> { totalCarPrice+ + (orderDetails.ShippingAlternative ? orderDetails.ShippingAlternative : 0 )} Kr</p>
      
     </div>
 
