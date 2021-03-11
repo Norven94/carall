@@ -56,8 +56,13 @@ $fourth:#ffc8b4;
 {
    .dropdown  {
         order:1;
+        margin-right: 3rem;
+        }
+        .navbar-brand{
+            margin-left:3rem;
         }
 }
+
 .dropdown-item.active, .dropdown-item:active{
     background-color:$first;
 }
