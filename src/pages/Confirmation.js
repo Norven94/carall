@@ -33,9 +33,9 @@ const Confirmation = () => {
           </div>
         </div>
 
-        <h4>Car details:</h4>
+        <h4 >Car details:</h4>
         {orderDetails.cart.map((c) => (
-          <div className={styles.carDetails}>
+          <div className={`${styles.carDetails} ${styles.carDetailsC}`}>
             <div className={styles.detailsLeft}>
               <p className={styles.left}>Article Number</p>
               <p className={styles.left}>Make, Model:</p>
