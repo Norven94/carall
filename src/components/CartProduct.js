@@ -3,6 +3,7 @@ import { useContext } from "react"
 import { Col, Container, Row } from "react-bootstrap";
 import { CartContext } from "../contexts/CartContext"
 import styles from '../css/CartProduct.module.css';
+import { VscTrash } from 'react-icons/vsc';
 
 export default function CartProduct(props) {
     const { removeProduct } = useContext(CartContext)
@@ -17,29 +18,31 @@ export default function CartProduct(props) {
       }
 
     return (
-        <div onClick={goToProduct} className="cart-container">
-            <Container>
-                <Row>
-                    <Col>
-                        <div className={styles["bild-price"]}>
-                            <div className={styles["product-image"]}>
-                                <img src={props.product.image} alt={"Image of " + props.product.make + " " + props.product.model + " " + props.product.year} />
-                            </div>
-                            <p className={styles["cart-price"]}>{priceWithSpace} Kr</p>
-                            <button onClick={handleClick} className={styles["delete-button"]}>Delete</button>
-                        </div>
-                    </Col>
-                    <Col className={styles["info-col"]}>
-                        <span className={styles["product-make"]}>{props.product.make}</span>
-                        <br />
-                        <span className={styles["product-info"]}>{props.product.model} / {props.product.year} / {props.product.miles}</span>
-                        <br />
-                        <span className={styles["product-city"]}>{props.product.city}</span>
-                        <p className={styles["product-desc"]}>{props.product.descShort}</p>
-                    </Col>
-                </Row>
-            </Container>
-            <hr size="8" width="90%"></hr>
+        <div className={styles["cart-container"]}>
+            <div className={styles["product-image"]}>
+            <img src={props.product.image} alt={"Image of " + props.product.make + " " + props.product.model + " " + props.product.year} />
+            </div> 
+                        
+            <div className={styles["product-info"]}>
+                
+                <div className={styles["make-year"]}>
+                <span className={styles["product-model"]}>{props.product.model}</span>
+                <br />
+                    <p>{props.product.make}</p>
+                    <p>{props.product.year}</p>
+                 </div> 
+                    <div className={styles["miles-city"]}>
+                    <p>{props.product.miles} miles</p>
+                    <p>{props.product.city}</p>
+                    </div>
+                
+                        
+                       
+            </div>
+            
+            <div className={styles["remove-product"]} onClick={() => removeProduct(props.product)}><span>{priceWithSpace} </span><VscTrash className={styles["trashcan"]} size={30} style={{ fill: 'black' }} /></div>  
+            
+            
         </div>
     )
 }

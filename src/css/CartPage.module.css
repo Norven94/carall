@@ -15,7 +15,7 @@
   margin:5px; 
   padding:5px; 
   width: auto; 
-  height: 600px; 
+  height: 37vw; 
   overflow: scroll; 
   text-align:justify; 
 }
@@ -48,3 +48,4 @@
     margin-bottom: 50px;
   }
 }
+
