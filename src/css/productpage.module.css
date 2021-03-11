@@ -8,7 +8,12 @@
     max-height: 400px;    
 }
 
+/* .product-details {
+    margin-top: 100px;
+} */
+
 .product-details .product-info h1{
+    
     font-size: 44px;
 }
 
@@ -87,6 +92,7 @@ span.undiscount{
 
 
 .product-details .product-info {
+    margin-right: 610px;
     font-size: 37px;
     color: #000000;
 }
@@ -112,5 +118,63 @@ span.undiscount{
     margin-top: -30px;
     width:44px;
     height:40px;    
+}
+
+@media (max-width: 500px){
+
+    .product-details {
+        margin-top: 0;
+    }
+    .product-details .product-makemiles {
+        font-size: 25px;
+        margin-right: 0;
+        display: flex;
+        justify-content: space;
+    }  
+    
+    .product-details .product-makemiles h4{
+        font-size: 25px;
+       
+    }  
+    
+    .product-details .product-city-year {
+        margin-right: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }   
+    .product-details .product-city-year h6{
+        font-size: 20px;
+    }   
+    
+}
+
+@media (max-width: 768px){
+
+    .product-details {
+        margin-top: 100px;
+    }
+    .product-details .product-makemiles {
+        font-size: 25px;
+        margin-right: 0;
+        display: flex;
+        justify-content: space;
+    }  
+    
+    .product-details .product-makemiles h4{
+        font-size: 25px;
+       
+    }  
+    
+    .product-details .product-city-year {
+        margin-right: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }   
+    .product-details .product-city-year h6{
+        font-size: 20px;
+    }   
+    
 }
 
