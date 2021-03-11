@@ -7,6 +7,7 @@ import { CarContext } from "../contexts/CarContext";
 import ShippingFields from "../components/ShippingFields";
 import styles from '../css/CartPage.module.css';
 import { Col, Container, Row, Form } from "react-bootstrap";
+import Back from '../components/Back'
 
 const CartPage = () => {
   const { cart, setCart, orderDetails, setOrderDetails} = useContext(CartContext);
@@ -28,6 +29,7 @@ const CartPage = () => {
 
   return (
     <div className={styles["cartPage-style"]}>
+      <Back/>
       <Container>
         <Row>
           <Col xs={12} md={8}>
