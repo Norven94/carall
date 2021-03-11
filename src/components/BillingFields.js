@@ -44,40 +44,38 @@ function BillingFields() {
     <div>
       {/* Billing Infos fiels here */}
       <h1 className="billing-header">Billing Info</h1>
-      <Form>
         <Form.Group as={Col} controlId="formBasicName">
-          <Form.Control size="sm" onChange={handleNameChangeBilling} type="full name" placeholder="Full Name" value={orderDetails.billingName} />
+          <Form.Control size="sm" onChange={handleNameChangeBilling} type="full name" placeholder="Full Name" value={orderDetails.billingName} required />
         </Form.Group>
         <Form.Group as={Col} controlId="formBasicAddress">
-          <Form.Control size="sm" onChange={handleAddressChangeBilling} type="address" placeholder="Address" value={orderDetails.billingAddress} />
+          <Form.Control size="sm" onChange={handleAddressChangeBilling} type="address" placeholder="Address" value={orderDetails.billingAddress} required />
         </Form.Group>
         <Form.Row as={Col}>
           <Form.Group as={Col} controlId="formGridCityZip">
-            <Form.Control size="sm" onChange={handleCityChangeBilling} type="city" placeholder="City" value={orderDetails.billingCity} />
+            <Form.Control size="sm" onChange={handleCityChangeBilling} type="city" placeholder="City" value={orderDetails.billingCity} required />
           </Form.Group>
           <Form.Group as={Col}  controlId="formGridCityZip">
-            <Form.Control size="sm" onChange={handleZipChangeBilling} type="zip code" placeholder="Zip Code" value={orderDetails.billingZip} />
+            <Form.Control size="sm" onChange={handleZipChangeBilling} type="zip code" placeholder="Zip Code" value={orderDetails.billingZip} required/>
           </Form.Group>
         </Form.Row>
         <Form.Group as={Col} controlId="formBasicCountry">
-          <Form.Control size="sm" onChange={handleCountryChangeBilling} type="country" placeholder="Country" value={orderDetails.billingCountry} />
+          <Form.Control size="sm" onChange={handleCountryChangeBilling} type="country" placeholder="Country" value={orderDetails.billingCountry} required/>
         </Form.Group >
         <Form.Group as={Col} controlId="formBasicCardNumber">
-          <Form.Control size="sm" onChange={handleCardNumberChangeBilling} type="cardnumber" placeholder="Card Number" value={orderDetails.billingCardnumber}/>
+          <Form.Control size="sm" onChange={handleCardNumberChangeBilling} type="cardnumber" placeholder="Card Number" value={orderDetails.billingCardnumber} required/>
         </Form.Group >
         <Form.Row as={Col}>
         <Form.Group as={Col} controlId="formBasicExDate">
-          <Form.Control size="sm" onChange={handleExDateChangeBilling} type="exdate" placeholder="00/00" value={orderDetails.billingExdate}/>
+          <Form.Control size="sm" onChange={handleExDateChangeBilling} type="exdate" placeholder="00/00" value={orderDetails.billingExdate} required/>
         </Form.Group >
         <Form.Group as={Col} controlId="formBasicCvc">
-          <Form.Control size="sm" onChange={handleCvcChangeBilling} type="cvc" placeholder="CVC" value={orderDetails.billingCvc}/>
+          <Form.Control size="sm" onChange={handleCvcChangeBilling} type="cvc" placeholder="CVC" value={orderDetails.billingCvc} required/>
         </Form.Group >
         </Form.Row>
         <Form.Group as={Col}>
           <img className={visa} src="/assets/images/visa.png" alt="visa" />
           <img className={visa} src="/assets/images/mc.png" alt="mcard" />
           </Form.Group >
-      </Form>
     </div>
   )
 }

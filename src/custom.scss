@@ -9,8 +9,10 @@ $first:#FE7F50;
 $second:#344648;
 $third:#F5F7F6;
 $fourth:#ffc8b4;
+@import "react-bootstrap-range-slider/dist/react-bootstrap-range-slider.scss";  
 @import "~bootstrap/scss/bootstrap";
 @use "sass:color";
+
 
 .cartBox{
     color:$first;
@@ -54,8 +56,13 @@ $fourth:#ffc8b4;
 {
    .dropdown  {
         order:1;
+        margin-right: 3rem;
+        }
+        .navbar-brand{
+            margin-left:3rem;
         }
 }
+
 .dropdown-item.active, .dropdown-item:active{
     background-color:$first;
 }
@@ -98,5 +105,15 @@ $fourth:#ffc8b4;
             }
         img{
             padding:2rem;
-        }    
+        }  
+}
+
+.rangeSlider::-webkit-slider-thumb {
+    color: #ff7f50;
+    background: #ff7f50;
+}
+
+.carlist-container h1{
+    padding-top: 3rem;
+    padding-bottom: 2rem;
 }
