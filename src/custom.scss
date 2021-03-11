@@ -1,0 +1,125 @@
+$theme-colors: (
+    "info":  #fff,
+    "danger":  #FE7F50,
+    "success":#14B394,
+    "warning":#50FFDD,
+    "primary":#FF7F50,
+);
+$first:#FE7F50;
+$second:#344648;
+$third:#F5F7F6;
+$fourth:#ffc8b4;
+@import "react-bootstrap-range-slider/dist/react-bootstrap-range-slider.scss";  
+@import "~bootstrap/scss/bootstrap";
+@use "sass:color";
+
+
+.cartBox{
+    color:$first;
+    font-size:1rem;
+    font-weight: 600;
+    padding:0;
+    margin:0;
+}
+  .cartBox img {
+    width:20px;
+    height:20px;   
+    padding:0;
+    margin:0;
+}
+.cartBox p {
+    margin-bottom: -1.7rem;
+    margin-left: 2.5rem;
+}
+.dropdown-menu  {
+    right: 0;
+    left: auto;
+    text-align: center;
+}
+.dropdown-toggle::after {
+    display: none;
+}
+
+.navbar {
+    border-radius: 2px;
+    box-shadow: 0px 1px 10px #999;
+  }
+  
+.nav-link a {
+    color:#fff;
+}
+.nav-link a:hover {
+    text-decoration: none;
+}
+
+@media only screen and (min-width: 576px) 
+{
+   .dropdown  {
+        order:1;
+        margin-right: 3rem;
+        }
+        .navbar-brand{
+            margin-left:3rem;
+        }
+}
+
+.dropdown-item.active, .dropdown-item:active{
+    background-color:$first;
+}
+.fadeout {
+    text-align:center;
+    color: #000;
+    text-align: center;
+    opacity: 0;
+      -webkit-animation: fadeout 4s; /* Safari, Chrome and Opera > 12.1 */
+         -moz-animation: fadeout 4s; /* Firefox < 16 */
+          -ms-animation: fadeout 4s; /* Internet Explorer */
+           -o-animation: fadeout 4s; /* Opera < 12.1 */
+              animation: fadeout 4s;
+  }
+  
+  @keyframes fadeout {
+ 
+      0% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.5; 
+      }
+      100% {
+        opacity: 0; 
+      }
+  }
+  .jumbotron {
+    background-color:$fourth; 
+
+}
+.About{
+    text-align: center;
+    h1{
+        font-weight: 600;
+        }
+        h2{
+            font-size:1.5rem;
+            font-weight: 600;
+            }
+        img{
+            padding:2rem;
+        }  
+}
+
+.rangeSlider::-webkit-slider-thumb {
+    color: #ff7f50;
+    background: #ff7f50;
+}
+
+.carlist-container h1{
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+}
+
+.arrow{
+    margin-left: 1rem;
+    margin-top: 2rem;
+    cursor:pointer;
+}

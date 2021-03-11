@@ -1,0 +1,49 @@
+.cartPage-style {
+  background: #F5F7F6;
+  display: grid;
+}
+
+.cart-rubrik {
+  margin: 10px auto 10px auto;
+  font-size: 2rem;
+}
+
+.product-container {
+  margin:5px; 
+  padding:5px; 
+  width: auto; 
+  height: 38vw; 
+  overflow: scroll; 
+  text-align:justify; 
+}
+
+.forms {
+  margin-top: 25px;
+  padding: 10px;
+  background-color: white;
+}
+
+.shipping-field {
+  position: fixed;
+}
+
+.buyButton {
+  display: grid;
+  background-color: #FE7F50 ;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5px;
+  border: none;
+}
+
+
+@media (max-width: 768px){
+  .buyButton {
+    position: relative;
+    top: 15px;
+    left: 15px;
+    margin-bottom: 50px;
+  }
+}
+
