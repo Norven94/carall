@@ -1,4 +1,82 @@
 .confirmation {
+  width: 330px;
+  display: block;
+  margin: 0 auto;
+}
+
+.thanks {
+  margin: 0 auto;
+}
+
+.thanks > h1 {
+  font-family: 'Lato';
+  font-weight: 700;
+  font-size: 1.6rem;
   text-align: center;
   margin-top: 30px;
 }
+
+.thanks > p {
+  text-align: center;
+  font-size: .9rem;
+}
+
+.confirmation h4 {
+  text-align: center;
+}
+
+.details {
+  color: gray;
+  font-weight: 300;
+  font-family: 'Roboto Condensed';
+  text-align: center;
+  margin-top: 30px;
+}
+
+.details > h4 {
+  font-size: 1.2rem;
+}
+
+.orderDetails, .carDetails {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px 0px;
+  font-size: .8rem;
+  line-height: .2rem;
+}
+
+.detailsLeft {
+  text-align: left;
+}
+
+.detailsRight {
+  text-align: right;
+}
+
+.carDetailsC:not(:last-child) {
+  border-bottom: 1px solid  #FE7F50 ;
+  /* border-bottom-width: 50px; */
+}
+
+.carDetails {
+  padding-bottom: .9rem;
+}
+
+.print {
+  border: none;
+  background: #FE7F50;
+  color: white;
+  font-size: .8rem;
+  padding: 10px 35px;
+  display: block;
+  margin: 20px auto;
+}
+
+/* @media (min-width: 768px){
+  .confirmation {
+    width: 330px;
+    display: block;
+    margin: 0 auto;
+  }
+} */
