@@ -1,7 +1,6 @@
 import { useContext } from 'react'
 import { CartContext } from "../contexts/CartContext"
 import { confirm } from '../css/confirm.module.css'
-import { printIcon } from '../css/PrintIcon.module.css'
 
 import styles from '../css/Confirmation.module.css'
 
@@ -53,7 +52,7 @@ const Confirmation = () => {
       </div>
       <div className={styles.printButton}>
         <button className={styles.print} onClick={() => window.print()}>Print</button>
-        <img className={styles.printIcon} src="assets/icons/print.svg" alt=""/>
+        <img className={styles.printIcon} src="assets/icons/print.svg" alt="" />
       </div>
     </div>
   );
