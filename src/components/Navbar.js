@@ -15,7 +15,7 @@ function Navbar() {
       <ReactBootstrap.Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <ReactBootstrap.Navbar.Brand>
         <NavLink to="/">
-          <img src="/assets/images/logo.svg" alt="Logo" />
+          <img src="/assets/images/logo.png" alt="Logo" />
         </NavLink>
       </ReactBootstrap.Navbar.Brand>
       <ReactBootstrap.Dropdown>
