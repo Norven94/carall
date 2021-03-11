@@ -3,20 +3,28 @@ import { useHistory } from 'react-router-dom'
 import CartProduct from "../components/CartProduct";
 import BillingFields from "../components/BillingFields";
 import { CartContext } from "../contexts/CartContext";
+import { CarContext } from "../contexts/CarContext";
 import ShippingFields from "../components/ShippingFields";
 import styles from '../css/CartPage.module.css';
 import { Col, Container, Row, Form } from "react-bootstrap";
 
 const CartPage = () => {
-  const { cart, orderDetails, setOrderDetails } = useContext(CartContext);
+  const { cart, setCart, orderDetails, setOrderDetails} = useContext(CartContext);
+  const { cars, setCars } = useContext(CarContext);
   const history = useHistory();
 
   const handleClick = () => {
     history.push("/confirmation")
     let timestamp = new Date().toLocaleDateString();
     let id = Math.floor(Math.random() * 100000);
-    setOrderDetails({...orderDetails, orderDate: timestamp, orderNumber: id});
-  }
+    setOrderDetails({...orderDetails, orderDate: timestamp, orderNumber: id, cart});    
+    //Reset car list and empty the cart after purchase 
+    setCart([]);
+    setCars(cars.map((car) => {
+      car.purchased = false;
+      return car
+    }));
+  }    
 
   return (
     <div className={styles["cartPage-style"]}>

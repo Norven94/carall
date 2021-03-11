@@ -42,7 +42,6 @@ const CartContextProvider = (props) => {
             return acc+num.price          
           },0 ))
 
-          setOrderDetails({...orderDetails, cart});
           /* if (!firstRender.current) {
             localStorage.setItem('cart', JSON.stringify(cart));
          }
@@ -63,6 +62,7 @@ const CartContextProvider = (props) => {
     const values =
     {
         cart,
+        setCart,
         addToCart,
         removeProduct,
         totalProducts,
