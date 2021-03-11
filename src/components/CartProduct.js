@@ -20,7 +20,8 @@ export default function CartProduct(props) {
     return (
         <div onClick={goToProduct} className={styles["cart-container"]}>
             <div className={styles["product-image"]}>
-            <img src={props.product.image} alt={"Image of " + props.product.make + " " + props.product.model + " " + props.product.year} />
+                <span className={`${styles.discountTag} ${props.product.isDiscount ? styles.isdiscount : styles.undiscount}`}>Sale</span>
+                <img src={props.product.image} alt={"Image of " + props.product.make + " " + props.product.model + " " + props.product.year} />
             </div> 
                         
             <div className={styles["product-info"]}>
