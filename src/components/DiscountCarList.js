@@ -4,7 +4,6 @@ import Car from './Car'
 
 import Carousel from 'react-elastic-carousel'
 import '../css/DiscountCarList.module.css'
-import { alignPropType } from "react-bootstrap/esm/DropdownMenu"
 
 
 const breakPoints = [
