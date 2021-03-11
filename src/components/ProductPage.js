@@ -5,7 +5,7 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col';
 import styles from '../css/productpage.module.css';
-
+import Back from './Back'
 
 export default function ProductPage (props) {
     const { findProduct } = useContext(CarContext);
@@ -13,6 +13,8 @@ export default function ProductPage (props) {
     const [product] = useState(findProduct(props.productId));
     const priceWithSpace=product.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")
     return (
+        <>
+        <Back/>
         <Container className={styles['product-page']}>
             <Row>
                 <Col md={4} className={styles['image-container']}>
@@ -29,5 +31,6 @@ export default function ProductPage (props) {
                 </Col>   
             </Row>         
         </Container>
+        </>
     )
 }
