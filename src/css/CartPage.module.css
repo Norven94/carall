@@ -1,5 +1,3 @@
-
-
 .cartPage-style {
   background: #F5F7F6;
   display: grid;
@@ -8,7 +6,6 @@
 .cart-rubrik {
   margin: 10px auto 10px auto;
   font-size: 2rem;
-  font-family:Verdana, Geneva, Tahoma, sans-serif ;
 }
 
 .product-container {
