@@ -6,6 +6,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import styles from "../css/productpage.module.css";
 import { cartBox1 } from "../css/productpage.module.css";
+import Back from './Back'
 
 export default function ProductPage(props) {
   const { findProduct } = useContext(CarContext);
@@ -84,4 +85,7 @@ export default function ProductPage(props) {
       </Row>
     </Container>
   );
+        </>
+        <>
+        <Back/>
 }
