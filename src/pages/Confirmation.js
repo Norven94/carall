@@ -6,7 +6,7 @@ import styles from '../css/Confirmation.module.css'
 
 const Confirmation = () => {
   const { orderDetails } = useContext(CartContext)
-
+  
   return (
     <div className={styles.confirmation}>
       <img className={confirm} src="/assets/icons/confirm.svg" alt="confirm icon" />

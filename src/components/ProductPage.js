@@ -6,6 +6,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import styles from "../css/productpage.module.css";
 import { cartBox1 } from "../css/productpage.module.css";
+import Back from './Back'
 
 export default function ProductPage(props) {
   const { findProduct } = useContext(CarContext);
@@ -39,9 +40,12 @@ export default function ProductPage(props) {
   };
 
   return (
+    <>
+    <Back/>
     <Container className={styles["product-page"]}>
       <Row>
         <Col md={4} className={styles["image-container"]}>
+          <span className={`${styles.discountTag} ${product.isDiscount ? styles.isdiscount : styles.undiscount}`}>Sale</span>    
           <span className={`${styles.purchasedBox} ${product.purchased ? styles.purchased : styles.notPurchased}`}>In your cart</span>
           <img
             src={product.image}
@@ -82,5 +86,8 @@ export default function ProductPage(props) {
         </Col>
       </Row>
     </Container>
+      </>
   );
+      
+  
 }
