@@ -10,8 +10,6 @@
   margin-top: 10vh;
 }
 
-
-
 .product-image img {
  width: 200px;
  height: 150px;
@@ -81,6 +79,17 @@ display: inline-block;
 }
 .trashcan {
   cursor: pointer;
+}
+
+@media (max-width: 768px){
+  .cart-container:first-child { 
+    margin-top: 1vh;
+  }
+  .product-image img {
+    width: 150px;
+    height: 100px;
+  }
+
 }
 
 
