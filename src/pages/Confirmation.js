@@ -1,7 +1,5 @@
 import { useContext } from 'react'
 import { CartContext } from "../contexts/CartContext"
-import { confirm } from '../css/confirm.module.css'
-
 import styles from '../css/Confirmation.module.css'
 
 const Confirmation = () => {
@@ -9,7 +7,7 @@ const Confirmation = () => {
   
   return (
     <div className={styles.confirmation}>
-      <img className={confirm} src="/assets/icons/confirm.svg" alt="confirm icon" />
+      <img className={styles.confirm} src="/assets/icons/confirm.svg" alt="confirm icon" />
       <div className={styles.thanks}>
         <h1>Thank you for choosing us!</h1>
         <p>Below you will find information about your purchase</p>
