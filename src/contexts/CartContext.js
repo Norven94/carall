@@ -48,9 +48,6 @@ const CartContextProvider = (props) => {
          firstRender.current = false; */
       }, [cart]   
     )
-    // acc = totala värdet i cart (börjar alltid på 0)
-    // num = objektet (bilen) 
-    // returnerar det nya priset
 /* 
     Local Storage
     useEffect(() => {
