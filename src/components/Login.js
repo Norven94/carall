@@ -1,11 +1,14 @@
 import { useState, useContext } from "react"
+import { useHistory } from "react-router-dom"
 import { UserContext } from "../contexts/UserContext"
+import styles from "../css/login.module.css"
 
 export default function Login () {
-    const { loginState } = useContext(UserContext); //users
+    const history = useHistory()
+    const { loginState, setLoginState, currentUser, setCurrentUser } = useContext(UserContext); //users
     const [userName, setUserName] = useState("");
     const [password, setPassword] = useState("");
-    const [users, setUsers] = useState ([
+    const [users] = useState ([
         {
             username: "Oskar",
             email: "oskar@gmail.com",
@@ -33,17 +36,31 @@ export default function Login () {
 
     const login = () => {
         users.map((user) => {
-            if (user.username === userName && user.password === password) {
-                console.log(user);
-
-                //return ""
+            if ((user.username === userName || user.email === userName) && user.password === password) {                
+                setLoginState(true)
+                setCurrentUser({
+                    username: user.username,
+                    email: user.email,
+                    password: user.password
+                });                
+                history.push("/");
             }
         })
-        //alert("You did not choose a valid username or password");
+        if (loginState) {
+            
+        }
+        console.log(loginState);
+    }
+
+    const displayError = (state) => {
+        if (!state) {
+            return (<span >You did not enter the correct credentials</span>)
+        }
     }
 
     return (
         <div>
+            <div>{displayError(loginState)}</div>            
             <input onChange={handleUsernameChange} placeholder="username/email"/>
             <input onChange={handlePasswordChange} placeholder="password" type="password" />
             <button onClick={login} >Sign in</button>
