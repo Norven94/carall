@@ -9,6 +9,7 @@ import Home from './pages/Home'
 import About from './pages/About'
 import CartPage from './pages/CartPage'
 import Confirmation from './pages/Confirmation'
+import LoginPage from "./pages/LoginPage";
 
 function App() {
   return (
@@ -20,6 +21,10 @@ function App() {
               <Navbar />
               <Route exact path="/">          
                 <Home />
+              </Route>
+
+              <Route exact path="/login">
+                <LoginPage />
               </Route>
               
               <Route exact path="/cartpage">
