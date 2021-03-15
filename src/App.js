@@ -2,6 +2,7 @@ import { BrowserRouter, Route } from "react-router-dom";
 import CarContextProvider from "./contexts/CarContext";
 import CartContextProvider from "./contexts/CartContext";
 import FilterContextProvider from "./contexts/FilterContext";
+import UserContextProvider from "./contexts/UserContext";
 import ProductPage from "./components/ProductPage";
 
 import Navbar from './components/Navbar'
@@ -18,29 +19,31 @@ function App() {
         <CarContextProvider>
           <FilterContextProvider>
             <CartContextProvider>
-              <Navbar />
-              <Route exact path="/">          
-                <Home />
-              </Route>
+              <UserContextProvider>
+                <Navbar />
+                <Route exact path="/">          
+                  <Home />
+                </Route>
 
-              <Route exact path="/login">
-                <LoginPage />
-              </Route>
-              
-              <Route exact path="/cartpage">
-                <CartPage />
-              </Route>
+                <Route exact path="/login">
+                  <LoginPage />
+                </Route>
+                
+                <Route exact path="/cartpage">
+                  <CartPage />
+                </Route>
 
-              <Route exact path="/confirmation">
-                <Confirmation />
-              </Route>
-              
-              <Route
-                path="/product/:productId"
-                render={(props) => {
-                return <ProductPage productId={props.match.params.productId} />;
-                }}
-              />
+                <Route exact path="/confirmation">
+                  <Confirmation />
+                </Route>
+                
+                <Route
+                  path="/product/:productId"
+                  render={(props) => {
+                  return <ProductPage productId={props.match.params.productId} />;
+                  }}
+                />
+              </UserContextProvider>
             </CartContextProvider>
           </FilterContextProvider>
         </CarContextProvider>
