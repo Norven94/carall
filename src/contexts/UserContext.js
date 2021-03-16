@@ -23,6 +23,17 @@ const UserContextProvider = (props) => {
     ])
     const [currentUser, setCurrentUser] = useState ({});
 
+    const addToRegistration = (e, userName, password, email) => {
+        e.preventDefault()
+        const member = {
+            userName,
+            password,
+            email
+        }
+
+        setUsers([member, ...users])
+    }
+
     const values =
     {
         loginState,
@@ -31,6 +42,7 @@ const UserContextProvider = (props) => {
         setUsers,
         currentUser,
         setCurrentUser
+        addToRegistration
     }
 
     return(

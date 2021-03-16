@@ -40,6 +40,9 @@ function Navbar() {
             <NavLink className={styles.span} to="/about">
             <p className="text-center">About</p>
           </NavLink>
+          <NavLink className={styles.span} to="/orderhistory">
+            <p className="text-center">Order History</p>
+          </NavLink>
         </ReactBootstrap.Nav>
       </ReactBootstrap.Navbar.Collapse>
     </ReactBootstrap.Navbar>
