@@ -1,10 +1,12 @@
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import { CartContext } from "../contexts/CartContext"
+import { UserContext } from "../contexts/UserContext"
 import styles from '../css/Confirmation.module.css'
 
 const Confirmation = () => {
-  const { orderDetails } = useContext(CartContext)
-  
+  const { orderDetails, previousOrderDetails } = useContext(CartContext)
+  const { users } = useContext(UserContext);
+    
   return (
     <div className={styles.confirmation}>
       <img className={styles.confirm} src="/assets/icons/confirm.svg" alt="confirm icon" />

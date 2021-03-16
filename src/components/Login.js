@@ -5,26 +5,9 @@ import styles from "../css/login.module.css"
 
 export default function Login () {
     const history = useHistory()
-    const { loginState, setLoginState, currentUser, setCurrentUser } = useContext(UserContext); //users
+    const { users, loginState, setLoginState, currentUser, setCurrentUser } = useContext(UserContext); //users
     const [userName, setUserName] = useState("");
-    const [password, setPassword] = useState("");
-    const [users] = useState ([
-        {
-            username: "Oskar",
-            email: "oskar@gmail.com",
-            password: "1234"
-        }, 
-        {
-            username: "Celil",
-            email: "celil@gmail.com",
-            password: "celil123"
-        }, 
-        {
-            username: "Mikaela",
-            email: "mikaela@gmail.com",
-            password: "mikaela123"
-        }, 
-    ])
+    const [password, setPassword] = useState("");    
 
     const handleUsernameChange = (e) => {
         setUserName(e.target.value)
@@ -46,21 +29,12 @@ export default function Login () {
                 history.push("/");
             }
         })
-        if (loginState) {
-            
-        }
-        console.log(loginState);
-    }
-
-    const displayError = (state) => {
-        if (!state) {
-            return (<span >You did not enter the correct credentials</span>)
-        }
+        console.log(currentUser);
     }
 
     return (
         <div>
-            <div>{displayError(loginState)}</div>            
+            <span className={`${styles.errorBox} ${!loginState ? styles.active : styles.inactive}`}>You did not enter the correct credentials</span>
             <input onChange={handleUsernameChange} placeholder="username/email"/>
             <input onChange={handlePasswordChange} placeholder="password" type="password" />
             <button onClick={login} >Sign in</button>
