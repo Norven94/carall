@@ -4,6 +4,7 @@ export const UserContext = createContext();
 
 const UserContextProvider = (props) => {  
     const [loginState, setLoginState] = useState(false);
+    const [isMember, setIsMember] = useState(true);
     const [users, setUsers] = useState([]);
 
     const addToRegistration = (e, email, password) => {
@@ -14,9 +15,11 @@ const UserContextProvider = (props) => {
         }
         setUsers([member, ...users])
         
+        console.log(member.email);
+        console.log(users)
         users.map((user) => {
             if(user.email === member.email) {
-                console.log('this email already exist. try another' );
+                return setIsMember(false)
             }
         })
     }
@@ -25,7 +28,8 @@ const UserContextProvider = (props) => {
     {
         loginState, 
         users,
-        addToRegistration
+        addToRegistration, 
+        isMember
     }
 
     return(

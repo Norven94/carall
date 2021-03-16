@@ -2,7 +2,7 @@ import { useState, useContext } from 'react'
 import { UserContext } from '../contexts/UserContext'
 
 const Register = () => {
-  const { addToRegistration } = useContext(UserContext)
+  const { addToRegistration, isMember } = useContext(UserContext)
   const [password, setPassword] = useState();
   const [email, setEmail] = useState();
 
@@ -12,6 +12,7 @@ const Register = () => {
         {/* <input type="password" onChange={(e) => setPassword(e.target.value)} placeholder="Password" required/> */}
         <input onChange={(e) => setPassword(e.target.value)} placeholder="Password" required/>
         <button type="submit">Register</button>
+        <p >{isMember ? "welcome" : "this email already exist"}</p>
       </form>
   );
 }
