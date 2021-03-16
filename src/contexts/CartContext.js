@@ -42,16 +42,12 @@ const CartContextProvider = (props) => {
             return acc+num.price          
           },0 ))
 
-          setOrderDetails({...orderDetails, cart});
           /* if (!firstRender.current) {
             localStorage.setItem('cart', JSON.stringify(cart));
          }
          firstRender.current = false; */
       }, [cart]   
     )
-    // acc = totala värdet i cart (börjar alltid på 0)
-    // num = objektet (bilen) 
-    // returnerar det nya priset
 /* 
     Local Storage
     useEffect(() => {
@@ -63,6 +59,7 @@ const CartContextProvider = (props) => {
     const values =
     {
         cart,
+        setCart,
         addToCart,
         removeProduct,
         totalProducts,

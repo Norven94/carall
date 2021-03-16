@@ -1,7 +1,6 @@
 //Form for Address, shipping alternatives, payment details
-import Form from 'react-bootstrap/Form'
 import { visa } from "../css/visa.module.css"
-import { Col } from 'react-bootstrap'
+import { Col, Form } from 'react-bootstrap'
 import { useContext } from 'react'
 import { CartContext } from "../contexts/CartContext";
 

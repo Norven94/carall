@@ -1,8 +1,7 @@
 import * as ReactBootstrap from 'react-bootstrap'
 import { CartContext } from "../contexts/CartContext";
 import { useContext } from "react";
-import { useHistory } from "react-router-dom"
-import { NavLink } from "react-router-dom";
+import { useHistory, NavLink } from "react-router-dom"
 import styles from '../css/Navbar.module.css';
 function Navbar() {
   const { totalProducts, totalOrder } = useContext(CartContext);
