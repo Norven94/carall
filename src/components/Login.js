@@ -1,27 +1,13 @@
 import { useState, useContext } from "react"
+import { useHistory } from "react-router-dom"
 import { UserContext } from "../contexts/UserContext"
+import styles from "../css/login.module.css"
 
 export default function Login () {
-    const { loginState } = useContext(UserContext); //users
+    const history = useHistory()
+    const { users, loginState, setLoginState, currentUser, setCurrentUser } = useContext(UserContext); //users
     const [userName, setUserName] = useState("");
-    const [password, setPassword] = useState("");
-    const [users, setUsers] = useState ([
-        {
-            username: "Oskar",
-            email: "oskar@gmail.com",
-            password: "1234"
-        }, 
-        {
-            username: "Celil",
-            email: "celil@gmail.com",
-            password: "celil123"
-        }, 
-        {
-            username: "Mikaela",
-            email: "mikaela@gmail.com",
-            password: "mikaela123"
-        }, 
-    ])
+    const [password, setPassword] = useState("");    
 
     const handleUsernameChange = (e) => {
         setUserName(e.target.value)
@@ -33,17 +19,22 @@ export default function Login () {
 
     const login = () => {
         users.map((user) => {
-            if (user.username === userName && user.password === password) {
-                console.log(user);
-
-                //return ""
+            if ((user.username === userName || user.email === userName) && user.password === password) {                
+                setLoginState(true)
+                setCurrentUser({
+                    username: user.username,
+                    email: user.email,
+                    password: user.password
+                });                
+                history.push("/");
             }
         })
-        //alert("You did not choose a valid username or password");
+        console.log(currentUser);
     }
 
     return (
         <div>
+            <span className={`${styles.errorBox} ${!loginState ? styles.active : styles.inactive}`}>You did not enter the correct credentials</span>
             <input onChange={handleUsernameChange} placeholder="username/email"/>
             <input onChange={handlePasswordChange} placeholder="password" type="password" />
             <button onClick={login} >Sign in</button>
