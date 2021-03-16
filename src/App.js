@@ -8,6 +8,7 @@ import ProductPage from "./components/ProductPage";
 import Navbar from './components/Navbar'
 import Home from './pages/Home'
 import About from './pages/About'
+import OrderHistory from './pages/OrderHistory'
 import CartPage from './pages/CartPage'
 import Confirmation from './pages/Confirmation'
 import LoginPage from "./pages/LoginPage";
@@ -23,6 +24,10 @@ function App() {
                 <Navbar />
                 <Route exact path="/">          
                   <Home />
+                </Route>
+
+                <Route exact path="/orderhistory">          
+                  <OrderHistory />
                 </Route>
 
                 <Route exact path="/login">
