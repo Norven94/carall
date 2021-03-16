@@ -41,7 +41,7 @@ const UserContextProvider = (props) => {
         users,
         setUsers,
         currentUser,
-        setCurrentUser
+        setCurrentUser,
         addToRegistration
     }
 
