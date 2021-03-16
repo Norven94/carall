@@ -25,9 +25,9 @@ const Confirmation = () => {
           <div className={styles.detailsRight}>
             <p> {orderDetails.orderNumber}</p>
             <p> {orderDetails.orderDate}</p>
-            <p> {orderDetails.ShippingName}</p>
-            <p> {orderDetails.ShippingAddress}</p>
-            <p> {`${orderDetails.ShippingCity}, ${orderDetails.ShippingCountry}`}</p>
+            <p> {orderDetails.shippingDetails.ShippingName}</p>
+            <p> {orderDetails.shippingDetails.ShippingAddress}</p>
+            <p> {`${orderDetails.shippingDetails.ShippingCity}, ${orderDetails.shippingDetails.ShippingCountry}`}</p>
           </div>
         </div>
 
