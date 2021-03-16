@@ -6,15 +6,19 @@ const UserContextProvider = (props) => {
     const [loginState, setLoginState] = useState(false);
     const [users, setUsers] = useState([]);
 
-    const addToRegistration = (e, userName, password, email) => {
+    const addToRegistration = (e, email, password) => {
         e.preventDefault()
         const member = {
-            userName,
-            password,
-            email
+            email, 
+            password
         }
-
         setUsers([member, ...users])
+        
+        users.map((user) => {
+            if(user.email === member.email) {
+                console.log('this email already exist. try another' );
+            }
+        })
     }
 
     const values =
