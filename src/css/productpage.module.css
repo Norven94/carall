@@ -1,13 +1,14 @@
 .product-page {
     margin: 50px auto 0 auto;
+    width: 800px;
   }
-  
+
   .image-container img {
     width: 100%;
     max-width: 510px;
     max-height: 400px;
   }
-   
+
   .product-details .product-info h1 {
     display: inline-block;
     font-size: 44px;
@@ -15,9 +16,9 @@
   
   .image-container {
     position: relative;
-    display: flex;
+    /* display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
   }
   
   span.purchasedBox {
@@ -27,6 +28,9 @@
     text-align: center;
     padding: 20px 40px;
     position: absolute;
+    top: 150px;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
   
   span.notPurchased {
@@ -39,8 +43,8 @@
   
   span.discountTag {
     position: absolute;
-    top: 50px;
-    left: 35px;
+    top: 30px;
+    left: 10%;
     height: 50px;
     width: 50px;
     background-color: #fe7f50;
@@ -78,6 +82,11 @@
     flex-direction: column;
     justify-content: space-between;
   }
+
+  .product-details .product-city-year {
+    display: flex;
+    flex-direction: column;
+  }
   
   .product-details .product-makemiles h4 {
     font-size: 29px;
@@ -98,6 +107,7 @@
     font-size: 20px;
     color: #707070;
     max-width: 920px;
+    text-align: left;
   }
   
   .product-details .product-price {
@@ -117,73 +127,53 @@
     width: 44px;
     height: 40px;
   }
-  
-  @media (max-width: 500px) {
 
-   
-    .product-page {
-        margin: 15px auto 0 auto;
-      }
-      
-    .product-details .details1 {
-        display: flex;
-        justify-content: space-between;
-      }
-      .product-details .product-makemiles {
-        font-size: 25px;
-        margin-right: 0;
-        display: flex;
-        justify-content: space;
-      }
-    
-      .product-details .product-makemiles h4 {
-        font-size: 25px;
-      }
-    
-      .product-details .product-city-year {
-        margin-right: 0;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-      }
-    
-      .product-details .product-city-year h6 {
-        font-size: 20px;
-      }
-  }
+@media (max-width: 800px) {
 
-@media (max-width: 768px){
-    .product-page {
-        margin: 15px auto 0 auto;
-      }
-      
-    .image-container img {
-        width: 100%;
-      }
+  .product-page {
+      margin: 15px auto 0 auto;
+    }
+
+    .rowContainer {
+      justify-content: center;
+      align-items: center;
+    }
+
+    .product-details {
+      margin-top: 50px;
+    }
+    
+  .product-details .details1 {
+      display: flex;
+      justify-content: space-between;
+    }
 
     .product-details .product-makemiles {
-    
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-      }
-    
-      .product-details .product-makemiles h4 {
-        font-size: 25px;
-      }
-    
-      .product-details .product-city-year {
-        
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-      }
-    
-      .product-details .product-city-year h6 {
-        font-size: 20px;
-      }
-      
-      
-    
+      font-size: 25px;
+      margin-right: 0;
+      display: flex;
+      justify-content: space;
+    }
+
+    .product-details .product-makemiles h4 {
+      font-size: 25px;
+    }
+  
+    .product-details .product-city-year h6 {
+      font-size: 20px;
+    }
 }
+@media (max-width: 500px){
+  span.purchasedBox {
+    padding: 10px 30px;
+    top: 100px;
+  }
+
+  span.discountTag {
+    top: 20px;
+    color: white;
+    padding: 12px 5px;
+  }
+}
+
 
