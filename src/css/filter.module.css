@@ -4,13 +4,11 @@
   font-size: 16px;
   border: 0px;
   border-right: gray 0.5px solid;
-  /* border: gray 0.5px solid; */
   padding-top:10px;
   padding-bottom: 10px;
   padding-left: 6px;
   padding-right: 4rem;
-  /* margin-right: 20px; */
- 
+
 }
 
 .dropdown {
@@ -21,7 +19,6 @@
 .dropdownContent {
   display: none;
   position: absolute;
-  /* margin-left: -100px; */
   background-color: white;
   width: 350px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -42,14 +39,6 @@
   padding-right: 270px;
 }
 
-/* .slider::-webkit-slider-thumb {
-  padding-left: 30px;
-} */
-
-/* .range-slider {
-  margin-right: 10px;  
-} */
-
 /* Change color of dropdown links on hover */
 .dropdown-content:hover {
   background-color: #ddd;
@@ -63,16 +52,10 @@
   
 }
 
-/* Change the background color of the dropdown button when the dropdown content is shown */
-/* .dropdown:hover .dropbtn {background-color: white;} */
-
-/* .bootstrap-select .bs-ok-default::after {
-  width: 0.3em;
-  height: 0.6em;
-  border-width: 0 0.1em 0.1em 0;
-  transform: rotate(45deg) translateY(0.5rem);
+@media only screen and (max-width: 659px) 
+{
+ .dropbtn{
+  width: 15rem;
+  }
+  
 }
-
-.btn.dropdown-toggle:focus {
-  outline: none !important;
-} */

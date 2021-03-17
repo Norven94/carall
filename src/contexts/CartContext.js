@@ -9,12 +9,15 @@ const CartContextProvider = (props) => {
     const [totalProducts, setTotalProducts] = useState(0)
     const [totalOrder, setTotalOrder] = useState(0)
     const [orderDetails, setOrderDetails] = useState({})
-    const firstRender = useRef(true); 
+    const [billingDetails, setBillingDetails] = useState({})
+    const [shippingDetails, setShippingDetails] = useState({})
+    const [previousOrderDetails, setPreviousOrderDetails] = useState([])
+   /*  const firstRender = useRef(true); */
 
     const addToCart = (product) => {
       if (!product.purchased) {        
         setCart([...cart, product])
-
+        
         setCars(cars.map((car) => {
           if (car.vin === product.vin) {
             car.purchased = true;          
@@ -48,10 +51,8 @@ const CartContextProvider = (props) => {
          firstRender.current = false; 
       }, [cart]   
     )
-    // acc = totala värdet i cart (börjar alltid på 0)
-    // num = objektet (bilen) 
-    // returnerar det nya priset
-
+/* 
+    Local Storage
     useEffect(() => {
       if (localStorage.getItem('cart')) {
        setCart(JSON.parse(localStorage.getItem('cart')));
@@ -68,7 +69,13 @@ const CartContextProvider = (props) => {
         totalOrder,
         alert,
         orderDetails,
-        setOrderDetails
+        setOrderDetails,
+        billingDetails, 
+        setBillingDetails,
+        shippingDetails, 
+        setShippingDetails,
+        previousOrderDetails, 
+        setPreviousOrderDetails
     }
 
     return(

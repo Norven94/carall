@@ -1,8 +1,7 @@
 import * as ReactBootstrap from 'react-bootstrap'
 import { CartContext } from "../contexts/CartContext";
 import { useContext } from "react";
-import { useHistory } from "react-router-dom"
-import { NavLink } from "react-router-dom";
+import { useHistory, NavLink } from "react-router-dom"
 import styles from '../css/Navbar.module.css';
 function Navbar() {
   const { totalProducts, totalOrder } = useContext(CartContext);
@@ -40,6 +39,9 @@ function Navbar() {
           </NavLink>
             <NavLink className={styles.span} to="/about">
             <p className="text-center">About</p>
+          </NavLink>
+          <NavLink className={styles.span} to="/orderhistory">
+            <p className="text-center">Order History</p>
           </NavLink>
         </ReactBootstrap.Nav>
       </ReactBootstrap.Navbar.Collapse>
