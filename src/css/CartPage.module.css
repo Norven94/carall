@@ -13,7 +13,7 @@
 .product-container {
   margin:5px; 
   padding:5px; 
-  width: auto; 
+  width: 50vw; 
   height: 550px; 
   overflow: scroll; 
   text-align:justify; 
@@ -24,6 +24,7 @@
 }
 
 .forms {
+  width: 25%;
   margin-top: 25px;
   padding: 10px;
   background-color: white;
