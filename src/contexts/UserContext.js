@@ -61,7 +61,7 @@ const UserContextProvider = (props) => {
         setUsers,
         currentUser,
         setCurrentUser,
-        addToRegistration
+        addToRegistration,
         isMember
     }
 
