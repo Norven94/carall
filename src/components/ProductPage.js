@@ -42,7 +42,7 @@ export default function ProductPage(props) {
       
         <Container className={styles["product-page"]}>
           <Row className={styles.rowContainer}>
-            <Col xs={10} sm={8} lg={5} className={styles["image-container"]}>
+            <Col xs={11} sm={8} lg={5} className={styles["image-container"]}>
               <span className={`${styles.discountTag} ${product.isDiscount ? styles.isdiscount : styles.undiscount}`}>Sale</span>
               <span className={`${styles.purchasedBox} ${product.purchased ? styles.purchased : styles.notPurchased}`}>In your cart</span>
               <img
@@ -57,7 +57,7 @@ export default function ProductPage(props) {
                 }
               />
             </Col>
-            <Col xs={10} sm={8} lg={6} className={styles["product-details"]}>
+            <Col xs={11} sm={8} lg={6} className={styles["product-details"]}>
               <h1 className={styles["product-info"]}>{product.model}</h1>
               <div className={styles["details1"]}>
                 <div className={styles["product-makemiles"]}>
