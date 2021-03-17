@@ -1,15 +1,15 @@
-// import { useScrollTrigger } from '@material-ui/core'
+import Order from "../components/Order"
 import { useContext } from 'react'
-// import { CartContext } from "../contexts/CartContext"
 import { UserContext } from '../contexts/UserContext'
 import styles from '../css/OrderHistory.module.css'
 import Order from '../components/Order'
+import { UserContext } from "../contexts/UserContext"
 // import '../css/OrderHistory.module.css'
 
 const OrderHistory = () => {
-  // const { orderDetails } = useContext(CartContext)
   const {users} =useContext(UserContext)
   const {currentUser} =useContext(UserContext)
+  const { users, currentUser } = useContext(UserContext)
   
   return (
     <div>
@@ -28,6 +28,34 @@ const OrderHistory = () => {
         })}
         {/* <h4>Purchase date....</h4> */}
       </div>      
+        <h4>Purchase date....</h4>
+      </div>
+
+      {users.map((user, index) => {
+        if (user.email === currentUser.email) {
+          return (
+            user.previousOrders.map((order) => (
+              <Order key={index} order={order}/>
+            ))    
+          )
+        }
+      })}
+      
+
+      <div className={styles.details}>
+            <p>Order Number:</p>
+            <p>Order Date:</p>
+            <p>Delivery Address:</p>
+          </div>
+
+          <div>
+            <p>Car details:</p>
+              <p>Article Number</p>
+              <p>Make, Model:</p>
+              <p>Total Price:</p>
+          </div>
+
+      
     </div>
    ); 
  } 
