@@ -1,10 +1,16 @@
+.confirm {
+  width: 60px;
+  display: block;
+  margin: 50px auto 10px;
+}
+
 .confirmation {
   width: 330px;
   display: block;
   margin: 0 auto;
 }
 
-.thanks {
+.latest {
   margin: 0 auto;
 }
 

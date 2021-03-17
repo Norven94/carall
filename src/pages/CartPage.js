@@ -1,22 +1,48 @@
-import React, { useContext } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import { useHistory } from 'react-router-dom'
 import CartProduct from "../components/CartProduct";
 import BillingFields from "../components/BillingFields";
 import { CartContext } from "../contexts/CartContext";
+import { CarContext } from "../contexts/CarContext";
+import { UserContext } from "../contexts/UserContext";
 import ShippingFields from "../components/ShippingFields";
 import styles from '../css/CartPage.module.css';
+import Back from '../components/Back'
 import { Form } from "react-bootstrap";
 
 const CartPage = () => {
-  const { cart, orderDetails, setOrderDetails } = useContext(CartContext);
+  const { cart, setCart, orderDetails, setOrderDetails, billingDetails, shippingDetails, previousOrderDetails, setPreviousOrderDetails} = useContext(CartContext);
+  const { users, setUsers, currentUser } = useContext(UserContext);
+  const { cars, setCars } = useContext(CarContext);
   const history = useHistory();
 
   const handleClick = () => {
     history.push("/confirmation")
     let timestamp = new Date().toLocaleDateString();
     let id = Math.floor(Math.random() * 100000);
-    setOrderDetails({ ...orderDetails, orderDate: timestamp, orderNumber: id });
-  }
+    setOrderDetails({billingDetails, shippingDetails, orderDate: timestamp, orderNumber: id, cart});    
+    
+    //Reset car list and empty the cart after purchase 
+    setCart([]);
+    setCars(cars.map((car) => {
+      car.purchased = false;
+      return car
+    }));
+  } 
+
+  useEffect(() => {
+      setUsers(users.map((user) => {
+        if (user.email === currentUser.email) {          
+          setPreviousOrderDetails([...previousOrderDetails, orderDetails])
+          return {
+            ...user,
+            previousOrders: previousOrderDetails
+          } 
+        } else {
+          return user
+        }
+      }))
+  },[orderDetails])
 
   return (
     <div className={styles["cartPage-style"]}>
@@ -30,6 +56,7 @@ const CartPage = () => {
           <Form onSubmit={handleClick}>
             <div className={styles["billing"]}>
               <BillingFields />
+      <Back/>
             </div>
             <div className={styles["shipping"]}>
               <ShippingFields />

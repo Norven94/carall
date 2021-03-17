@@ -92,5 +92,8 @@ display: inline-block;
 
 }
 
+span.undiscount{
+  visibility: hidden;
+}
 
 
