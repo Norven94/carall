@@ -5,16 +5,20 @@ import styles from "../css/login.module.css"
 
 export default function Login () {
     const history = useHistory()
-    const { users, loginState, setLoginState, currentUser, setCurrentUser } = useContext(UserContext); //users
+    const { users, setLoginState, setCurrentUser } = useContext(UserContext);
     const [userName, setUserName] = useState("");
     const [password, setPassword] = useState("");    
 
+    const [isError, setIsError] = useState(false)
+
     const handleUsernameChange = (e) => {
         setUserName(e.target.value)
+        setIsError(false);
     }
 
     const handlePasswordChange = (e) => {
         setPassword(e.target.value);
+        setIsError(false);
     }
 
     const login = () => {
@@ -25,19 +29,20 @@ export default function Login () {
                     username: user.username,
                     email: user.email,
                     password: user.password
-                });                
-                history.push("/");
+                });               
+                history.push("/");                
+            } else {
+                setIsError(true);
             }
         })
-        console.log(currentUser);
     }
 
     return (
-        <div>
-            <span className={`${styles.errorBox} ${!loginState ? styles.active : styles.inactive}`}>You did not enter the correct credentials</span>
-            <input onChange={handleUsernameChange} placeholder="username/email"/>
-            <input onChange={handlePasswordChange} placeholder="password" type="password" />
-            <button onClick={login} >Sign in</button>
-        </div>    
+        <form onSubmit={login}>
+            <span className={`${styles.errorBox} ${isError ? styles.active : styles.inactive}`}>You did not enter the correct credentials</span>
+            <input onChange={handleUsernameChange} placeholder="username/email" required/>
+            <input onChange={handlePasswordChange} placeholder="password" type="password" required/>
+            <button>Sign in</button>
+        </form>    
     )
 }
