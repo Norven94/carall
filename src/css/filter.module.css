@@ -8,6 +8,7 @@
   padding-bottom: 10px;
   padding-left: 6px;
   padding-right: 4rem;
+
 }
 
 .dropdown {
@@ -48,5 +49,13 @@
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdownContent {
   display: block;
+  
+}
+
+@media only screen and (max-width: 659px) 
+{
+ .dropbtn{
+  width: 15rem;
+  }
   
 }
