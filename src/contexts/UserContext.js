@@ -9,17 +9,14 @@ const UserContextProvider = (props) => {
     const [isMember, setIsMember] = useState(false);
     const [users, setUsers] = useState ([
         {
-            username: "Oskar",
             email: "oskar@gmail.com",
             password: "1234"
         }, 
         {
-            username: "Celil",
             email: "celil@gmail.com",
             password: "celil123"
         }, 
         {
-            username: "Mikaela",
             email: "mikaela@gmail.com",
             password: "mikaela123"
         }, 
@@ -46,7 +43,7 @@ const UserContextProvider = (props) => {
             setIsMember(true)
         }
     }
-
+      console.log(users)
     useEffect(() => {
         if ( orderDetails ) {            
             setPreviousOrderDetails([...previousOrderDetails, orderDetails])
