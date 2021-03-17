@@ -12,7 +12,7 @@ const Register = () => {
         {/* <input type="password" onChange={(e) => setPassword(e.target.value)} placeholder="Password" required/> */}
         <input onChange={(e) => setPassword(e.target.value)} placeholder="Password" required/>
         <button type="submit">Register</button>
-        <p >{isMember ? "welcome" : "this email already exist"}</p>
+        <p >{isMember ? "" : "this email already exist"}</p>
       </form>
   );
 }

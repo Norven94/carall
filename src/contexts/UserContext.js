@@ -12,17 +12,29 @@ const UserContextProvider = (props) => {
         const member = {
             email, 
             password
-        }
-        setUsers([member, ...users])
-        
-        console.log(member.email);
-        console.log(users)
-        users.map((user) => {
-            if(user.email === member.email) {
-                return setIsMember(false)
-            }
-        })
+        } 
+
+        // setUsers([member, ...users])
+        // users.map((user) => {
+        //     if(user.email === member.email) {
+        //         console.log(users)
+        //         return setIsMember(false)
+        //     }
+        // })
+
+        // setUsers(users.map((user) => {
+            // if(user.email !== member.email) {
+            //     return {...users, member}
+            // }
+            // {
+            //     console.log(users)
+            //     return setIsMember(false)
+            // }
+        // }))
+        setUsers()
     }
+    
+
 
     const values =
     {
