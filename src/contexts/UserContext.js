@@ -6,7 +6,7 @@ export const UserContext = createContext();
 const UserContextProvider = (props) => {  
     const { orderDetails, previousOrderDetails, setPreviousOrderDetails} = useContext(CartContext);
     const [loginState, setLoginState] = useState(false);
-    const [isMember, setIsMember] = useState(true);
+    const [isMember, setIsMember] = useState(false);
     const [users, setUsers] = useState ([
         {
             username: "Oskar",
@@ -35,22 +35,17 @@ const UserContextProvider = (props) => {
         let isAlreadyMember =false   
         for(let i =0; i< users.length; i++){
             if(users[i].email === member.email) {
-                  setIsMember(true);
-                isAlreadyMember=true
-                console.log('already_a_member')               
+                isAlreadyMember=true         
             }
         }   
-   
+  
         if (!isAlreadyMember) {
-            console.log('new member')
             setUsers([member, ...users])
         } 
         else{
             setIsMember(true)
         }
     }
-    
-
 
     useEffect(() => {
         if ( orderDetails ) {            
