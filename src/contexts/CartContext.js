@@ -12,7 +12,7 @@ const CartContextProvider = (props) => {
     const [billingDetails, setBillingDetails] = useState({})
     const [shippingDetails, setShippingDetails] = useState({})
     const [previousOrderDetails, setPreviousOrderDetails] = useState([])
-   /*  const firstRender = useRef(true); */
+    const firstRender = useRef(true); 
 
     const addToCart = (product) => {
       if (!product.purchased) {        
@@ -46,16 +46,27 @@ const CartContextProvider = (props) => {
           },0 ))
 
           if (!firstRender.current) {
+            console.log("Not first render");
             localStorage.setItem('cart', JSON.stringify(cart));
          }
          firstRender.current = false; 
       }, [cart]   
     )
-/* 
-    Local Storage
+
+    // Local Storage
     useEffect(() => {
       if (localStorage.getItem('cart')) {
-       setCart(JSON.parse(localStorage.getItem('cart')));
+        const cart = JSON.parse(localStorage.getItem('cart'));
+        console.log("Cart", cart);
+        cart.forEach(product => {
+          setCars(cars.map((car) => {
+            if (car.vin === product.vin) {
+              car.purchased = true;          
+            }
+            return car
+          }))   
+        });
+        setCart(cart);
       }
       }, []); 
 
