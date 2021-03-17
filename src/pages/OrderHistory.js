@@ -1,12 +1,10 @@
 import Order from "../components/Order"
 import { useContext } from 'react'
-import { CartContext } from "../contexts/CartContext"
 import styles from '../css/OrderHistory.module.css'
 import { UserContext } from "../contexts/UserContext"
 // import '../css/OrderHistory.module.css'
 
 const OrderHistory = () => {
-  const { orderDetails } = useContext(CartContext)
   const { users, currentUser } = useContext(UserContext)
   
   return (

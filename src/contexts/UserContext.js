@@ -1,8 +1,10 @@
-import {createContext, useState } from "react"
+import {createContext, useState, useContext, useEffect } from "react"
+import { CartContext } from "../contexts/CartContext";
 
 export const UserContext = createContext();
 
 const UserContextProvider = (props) => {  
+    const { orderDetails, previousOrderDetails, setPreviousOrderDetails} = useContext(CartContext);
     const [loginState, setLoginState] = useState(false);
     const [users, setUsers] = useState ([
         {
@@ -33,6 +35,27 @@ const UserContextProvider = (props) => {
 
         setUsers([member, ...users])
     }
+
+    useEffect(() => {
+        if ( orderDetails ) {            
+            setPreviousOrderDetails([...previousOrderDetails, orderDetails])
+            console.log(previousOrderDetails)
+        }                    
+    },[orderDetails])
+
+    useEffect(() => {
+        setUsers(users.map((user) => {
+            if (user.email === currentUser.email) {     
+              return {
+                ...user,
+                previousOrders: previousOrderDetails
+              } 
+            } else {
+              return user
+            }
+          }))
+          console.log(previousOrderDetails) 
+    },[previousOrderDetails])
 
     const values =
     {
