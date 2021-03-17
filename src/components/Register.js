@@ -15,7 +15,7 @@ const Register = (props) => {
         <input onChange={(e) => setPassword(e.target.value)} placeholder="Password" required/>
         <p onClick={handleOnclick}>Are you already member?</p>
         <button type="submit">Register</button>
-        <p >{isMember ? "" : "this email already exist"}</p>
+        <p >{isMember ? "this email already exist":"welcome"}</p>
       </form>
   );
 }
