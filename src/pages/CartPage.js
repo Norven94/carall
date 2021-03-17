@@ -21,9 +21,9 @@ const CartPage = () => {
     let timestamp = new Date().toLocaleDateString();
     let id = Math.floor(Math.random() * 100000);
     setOrderDetails({billingDetails, shippingDetails, orderDate: timestamp, orderNumber: id, cart});    
-    
+    console.log(orderDetails);
     //Reset car list and empty the cart after purchase 
-    setCart([]);
+    //setCart([]);
     setCars(cars.map((car) => {
       car.purchased = false;
       return car
@@ -31,6 +31,7 @@ const CartPage = () => {
   } 
 
   useEffect(() => {
+      console.log(orderDetails);
       setUsers(users.map((user) => {
         if (user.email === currentUser.email) {          
           setPreviousOrderDetails([...previousOrderDetails, orderDetails])

@@ -8,7 +8,7 @@ const CartContextProvider = (props) => {
     const [cart, setCart] = useState([])
     const [totalProducts, setTotalProducts] = useState(0)
     const [totalOrder, setTotalOrder] = useState(0)
-    const [orderDetails, setOrderDetails] = useState({})
+    const [orderDetails, setOrderDetails] = useState(null)
     const [billingDetails, setBillingDetails] = useState({})
     const [shippingDetails, setShippingDetails] = useState({})
     const [previousOrderDetails, setPreviousOrderDetails] = useState([])

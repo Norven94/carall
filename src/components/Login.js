@@ -9,12 +9,17 @@ export default function Login () {
     const [userName, setUserName] = useState("");
     const [password, setPassword] = useState("");    
 
+    const [isError, setIsError] = useState(false)
+    //let isError = false 
+
     const handleUsernameChange = (e) => {
         setUserName(e.target.value)
+        setIsError(false);
     }
 
     const handlePasswordChange = (e) => {
         setPassword(e.target.value);
+        setIsError(false);
     }
 
     const login = () => {
@@ -25,8 +30,10 @@ export default function Login () {
                     username: user.username,
                     email: user.email,
                     password: user.password
-                });                
-                history.push("/");
+                });               
+                history.push("/");                
+            } else {
+                setIsError(true);
             }
         })
         console.log(currentUser);
@@ -34,7 +41,7 @@ export default function Login () {
 
     return (
         <div>
-            <span className={`${styles.errorBox} ${!loginState ? styles.active : styles.inactive}`}>You did not enter the correct credentials</span>
+            <span className={`${styles.errorBox} ${isError ? styles.active : styles.inactive}`}>You did not enter the correct credentials</span>
             <input onChange={handleUsernameChange} placeholder="username/email"/>
             <input onChange={handlePasswordChange} placeholder="password" type="password" />
             <button onClick={login} >Sign in</button>
