@@ -1,13 +1,14 @@
 .dropbtn {
   background-color: white;
-  color:black;
+  color:#707070;
   font-size: 16px;
-  border: gray 0.5px solid;
-  padding-top:1px;
-  padding-bottom: 1px;
-  padding-left: 3px;
-  padding-right: 5rem;
- 
+  border: 0px;
+  border-right: gray 0.5px solid;
+  padding-top:10px;
+  padding-bottom: 10px;
+  padding-left: 6px;
+  padding-right: 4rem;
+
 }
 
 .dropdown {
@@ -19,20 +20,42 @@
   display: none;
   position: absolute;
   background-color: white;
-  min-width: 200px;
+  width: 350px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
 
-.priceFilter {
-  padding: 30px;
+.priceFilter  {
+
+  padding-top: 20px;
+
+}
+
+.minmax {
+  padding-left: 60px;
+}
+
+.p {
+  padding-right: 270px;
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #ddd;}
+.dropdown-content:hover {
+  background-color: #ddd;
+  display: block;
+
+}
 
 /* Show the dropdown menu on hover */
-.dropdown:hover .dropdownContent {display: block;}
+.dropdown:hover .dropdownContent {
+  display: block;
+  
+}
 
-/* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {background-color: white;}
+@media only screen and (max-width: 659px) 
+{
+ .dropbtn{
+  width: 15rem;
+  }
+  
+}

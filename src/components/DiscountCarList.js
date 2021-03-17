@@ -4,14 +4,15 @@ import Car from './Car'
 
 import Carousel from 'react-elastic-carousel'
 import '../css/DiscountCarList.module.css'
-import { alignPropType } from "react-bootstrap/esm/DropdownMenu"
 
 
 const breakPoints = [
   { width: 1, itemsToShow: 1 },
-  { width: 550, itemsToShow: 1 },
-  { width: 700, itemsToShow: 2 },
-  { width: 1150, itemsToShow: 3 }
+  { width: 450, itemsToShow: 1 },
+  { width: 630, itemsToShow: 2 },
+  { width: 1100, itemsToShow: 3 },
+  { width: 1550, itemsToShow: 4 },
+  { width: 1900, itemsToShow: 5 }
 ]
 
 const DiscountCarList = () => {
@@ -19,8 +20,8 @@ const DiscountCarList = () => {
 
   return (
     <div className="discount">
-      <h2>Discount Cars</h2>
-      <Carousel breakPoints={breakPoints}>
+      <h1>Discount Cars</h1>
+      <Carousel itemPadding={[0, 0]} breakPoints={breakPoints}>
         {carDiscount.map((car) =>(
             <Car key={car.vin} car={car} />
         ))}

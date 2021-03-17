@@ -43,6 +43,10 @@ const FilterContextProvider = (props) => {
    
     //Sort functions
 
+    useEffect(() => {
+        setTempCars([...tempCars].sort((a,b) => (a.make > b.make ? 1 : -1)))
+    }, [])
+
     const sort = (sortChoice) => {
         let sorted;
         

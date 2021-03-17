@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
 
 body {
   margin: 0;
-  font-family: 'Lato','Roboto', sans-serif;
+  font-family: 'Lato','Roboto','Roboto Condensed', sans-serif;
 }
 h1, h2, h3, h4, h5, h6, p{
-  font-family:'Roboto'
+  font-family:'Roboto Condensed'
 }
 
 code {
@@ -31,8 +32,11 @@ code {
 
 .carlist-container {
   display: grid;
-  text-align: center;
+  text-align: center; 
   background: #F5F7F6;
+}
+input[type="range"].range-slider::-moz-range-thumb {
+  background: #FE7F50;
 }
 
 /* Carousel Buttons Starts */

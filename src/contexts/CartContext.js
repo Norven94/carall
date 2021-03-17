@@ -1,4 +1,4 @@
-import {createContext, useContext, useState, useEffect} from "react"
+import {createContext, useContext, useState, useEffect, useRef } from "react"
 import { CarContext } from "./CarContext"
 
 export const CartContext = createContext();
@@ -8,12 +8,16 @@ const CartContextProvider = (props) => {
     const [cart, setCart] = useState([])
     const [totalProducts, setTotalProducts] = useState(0)
     const [totalOrder, setTotalOrder] = useState(0)
-    const [orderDetails, setOrderDetails] = useState({})
+    const [orderDetails, setOrderDetails] = useState(null)
+    const [billingDetails, setBillingDetails] = useState({})
+    const [shippingDetails, setShippingDetails] = useState({})
+    const [previousOrderDetails, setPreviousOrderDetails] = useState([])
+    const firstRender = useRef(true); 
 
     const addToCart = (product) => {
       if (!product.purchased) {        
         setCart([...cart, product])
-
+        
         setCars(cars.map((car) => {
           if (car.vin === product.vin) {
             car.purchased = true;          
@@ -41,24 +45,48 @@ const CartContextProvider = (props) => {
             return acc+num.price          
           },0 ))
 
-          setOrderDetails({...orderDetails, cart});
-
+          if (!firstRender.current) {
+            console.log("Not first render");
+            localStorage.setItem('cart', JSON.stringify(cart));
+         }
+         firstRender.current = false; 
       }, [cart]   
     )
-    // acc = totala värdet i cart (börjar alltid på 0)
-    // num = objektet (bilen) 
-    // returnerar det nya priset
+
+    // Local Storage
+    useEffect(() => {
+      if (localStorage.getItem('cart')) {
+        const cart = JSON.parse(localStorage.getItem('cart'));
+        console.log("Cart", cart);
+        cart.forEach(product => {
+          setCars(cars.map((car) => {
+            if (car.vin === product.vin) {
+              car.purchased = true;          
+            }
+            return car
+          }))   
+        });
+        setCart(cart);
+      }
+      }, []); 
 
     const values =
     {
         cart,
+        setCart,
         addToCart,
         removeProduct,
         totalProducts,
         totalOrder,
         alert,
         orderDetails,
-        setOrderDetails
+        setOrderDetails,
+        billingDetails, 
+        setBillingDetails,
+        shippingDetails, 
+        setShippingDetails,
+        previousOrderDetails, 
+        setPreviousOrderDetails
     }
 
     return(
