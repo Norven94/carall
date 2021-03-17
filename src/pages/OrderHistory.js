@@ -1,13 +1,15 @@
-import { useScrollTrigger } from '@material-ui/core'
+// import { useScrollTrigger } from '@material-ui/core'
 import { useContext } from 'react'
-import { CartContext } from "../contexts/CartContext"
+// import { CartContext } from "../contexts/CartContext"
 import { UserContext } from '../contexts/UserContext'
 import styles from '../css/OrderHistory.module.css'
+import Order from '../components/Order'
 // import '../css/OrderHistory.module.css'
 
 const OrderHistory = () => {
-  const { orderDetails } = useContext(CartContext)
+  // const { orderDetails } = useContext(CartContext)
   const {users} =useContext(UserContext)
+  const {currentUser} =useContext(UserContext)
   
   return (
     <div>
