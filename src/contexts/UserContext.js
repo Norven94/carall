@@ -21,6 +21,7 @@ const UserContextProvider = (props) => {
     {
         loginState, 
         users,
+        setUsers,
         addToRegistration
     }
 
