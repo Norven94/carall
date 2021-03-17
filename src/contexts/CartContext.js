@@ -48,7 +48,7 @@ const CartContextProvider = (props) => {
           /* if (!firstRender.current) {
             localStorage.setItem('cart', JSON.stringify(cart));
          }
-         firstRender.current = false; 
+         firstRender.current = false; */
       }, [cart]   
     )
 /* 
@@ -58,7 +58,7 @@ const CartContextProvider = (props) => {
        setCart(JSON.parse(localStorage.getItem('cart')));
       }
       }, []); 
-
+*/
     const values =
     {
         cart,
