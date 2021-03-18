@@ -1,10 +1,14 @@
-import { useState } from "react";
+import  { useState, useEffect }from "react";
 import Login from "../components/Login";
 import Register from '../components/Register';
 import {Container } from "react-bootstrap"
 import styles from "../css/login.module.css"
 export default function LoginPage() {
-  const [toBeLogin, setToBeLogin]=useState(true) 
+  const [toBeLogin, setToBeLogin]=useState(true);
+  useEffect(() => {
+  setToBeLogin(true)
+  },[])
+  
   const toggle = () => {
     setToBeLogin(!toBeLogin)   
     }

@@ -1,17 +1,21 @@
-import { useState, useContext } from 'react'
+import { useState, useContext, useEffect } from 'react'
 import { UserContext } from '../contexts/UserContext'
 import { Alert, Container, Form, Button} from "react-bootstrap"
 import styles from "../css/login.module.css"
 
 const Register = () => {
   const { addToRegistration, isMember, setIsMember } = useContext(UserContext)
-  const [password, setPassword] = useState();
-  const [email, setEmail] = useState();
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+  useEffect(() => {
+   setIsMember(false)
+  }, [])
 
   const emailChange = (e) => {
     setEmail(e.target.value)
     setIsMember(false)
   } 
+
 
   const passwordChange = (e) => {
     setPassword(e.target.value)

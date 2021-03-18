@@ -9,7 +9,6 @@ export default function Login() {
     const { users, setLoginState, setCurrentUser } = useContext(UserContext);
     const [userName, setUserName] = useState("");
     const [password, setPassword] = useState("");
-
     const [isError, setIsError] = useState(false)
 
     const handleUsernameChange = (e) => {
