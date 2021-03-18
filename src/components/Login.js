@@ -9,7 +9,6 @@ export default function Login() {
     const { users, setLoginState, setCurrentUser } = useContext(UserContext);
     const [userName, setUserName] = useState("");
     const [password, setPassword] = useState("");
-
     const [isError, setIsError] = useState(false)
 
     const handleUsernameChange = (e) => {
@@ -52,7 +51,7 @@ export default function Login() {
                 </Form.Group>
                 <Container className="text-center">
                     <Button className={styles.singInButton} variant="primary" type="submit">
-                        Sign in
+                        SIGN IN
                     </Button>
                 </Container>
             </Form>
