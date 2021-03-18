@@ -1,18 +1,16 @@
-import React, { useContext, useEffect, useState } from "react"
+import React, { useContext } from "react"
 import { useHistory } from 'react-router-dom'
 import CartProduct from "../components/CartProduct";
 import BillingFields from "../components/BillingFields";
 import { CartContext } from "../contexts/CartContext";
 import { CarContext } from "../contexts/CarContext";
-import { UserContext } from "../contexts/UserContext";
 import ShippingFields from "../components/ShippingFields";
 import styles from '../css/CartPage.module.css';
 import Back from '../components/Back'
 import { Form } from "react-bootstrap";
 
 const CartPage = () => {
-  const { cart, setCart, orderDetails, setOrderDetails, billingDetails, shippingDetails, previousOrderDetails, setPreviousOrderDetails} = useContext(CartContext);
-  const { users, setUsers, currentUser } = useContext(UserContext);
+  const { cart, setCart, setOrderDetails, billingDetails, shippingDetails} = useContext(CartContext);
   const { cars, setCars } = useContext(CarContext);
   const history = useHistory();
 
@@ -29,20 +27,6 @@ const CartPage = () => {
       return car
     }));
   } 
-
-  useEffect(() => {
-      setUsers(users.map((user) => {
-        if (user.email === currentUser.email) {          
-          setPreviousOrderDetails([...previousOrderDetails, orderDetails])
-          return {
-            ...user,
-            previousOrders: previousOrderDetails
-          } 
-        } else {
-          return user
-        }
-      }))
-  },[orderDetails])
 
   return (
     <div className={styles["cartPage-style"]}>

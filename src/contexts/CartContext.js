@@ -8,11 +8,11 @@ const CartContextProvider = (props) => {
     const [cart, setCart] = useState([])
     const [totalProducts, setTotalProducts] = useState(0)
     const [totalOrder, setTotalOrder] = useState(0)
-    const [orderDetails, setOrderDetails] = useState({})
+    const [orderDetails, setOrderDetails] = useState(null)
     const [billingDetails, setBillingDetails] = useState({})
     const [shippingDetails, setShippingDetails] = useState({})
     const [previousOrderDetails, setPreviousOrderDetails] = useState([])
-   /*  const firstRender = useRef(true); */
+    const firstRender = useRef(true); 
 
     const addToCart = (product) => {
       if (!product.purchased) {        
@@ -45,20 +45,31 @@ const CartContextProvider = (props) => {
             return acc+num.price          
           },0 ))
 
-          /* if (!firstRender.current) {
+          if (!firstRender.current) {
+            console.log("Not first render");
             localStorage.setItem('cart', JSON.stringify(cart));
          }
-         firstRender.current = false; */
+         firstRender.current = false; 
       }, [cart]   
     )
-/* 
-    Local Storage
+
+    // Local Storage
     useEffect(() => {
       if (localStorage.getItem('cart')) {
-       setCart(JSON.parse(localStorage.getItem('cart')));
+        const cart = JSON.parse(localStorage.getItem('cart'));
+        console.log("Cart", cart);
+        cart.forEach(product => {
+          setCars(cars.map((car) => {
+            if (car.vin === product.vin) {
+              car.purchased = true;          
+            }
+            return car
+          }))   
+        });
+        setCart(cart);
       }
       }, []); 
-*/
+
     const values =
     {
         cart,

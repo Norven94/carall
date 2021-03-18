@@ -2,10 +2,20 @@
   text-align: center;
 }
 
+.hrcolor {
+  border-color: #FE7F50;
+}
+
+.boxfirst {
+  border: 1px solid lightgrey;
+  padding: 25px;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
 .details {
   text-align: center;
 }
 
-p {
-  text-align: center;
-}
