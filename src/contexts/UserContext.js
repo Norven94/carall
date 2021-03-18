@@ -48,26 +48,37 @@ const UserContextProvider = (props) => {
             setIsMember(true)
         }
     }
-      console.log(users)
+
+    let userOrders = null; 
+
     useEffect(() => {
-        if ( orderDetails ) {            
-            setPreviousOrderDetails([...previousOrderDetails, orderDetails])
-            console.log(previousOrderDetails)
+        if ( orderDetails ) {              
+            users.map((user) => {
+                if(user.email === currentUser.email) {                 
+                    if(user.previousOrders) { 
+                        userOrders = user.previousOrders
+                        setPreviousOrderDetails([...userOrders, orderDetails])
+                    }
+                    else {
+                        setPreviousOrderDetails([...previousOrderDetails, orderDetails])
+                    }                                    
+                }
+            })                 
         }                    
     },[orderDetails])
 
     useEffect(() => {
         setUsers(users.map((user) => {
-            if (user.email === currentUser.email) {     
-              return {
-                ...user,
-                previousOrders: previousOrderDetails
-              } 
-            } else {
-              return user
+            if (user.email === currentUser.email) {   
+                return {
+                    ...user,
+                    previousOrders: previousOrderDetails
+                }               
+            } 
+            else {
+                return user
             }
-          }))
-          console.log(previousOrderDetails) 
+        }))
     },[previousOrderDetails])
 
     const values =
