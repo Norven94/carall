@@ -48,7 +48,6 @@ const UserContextProvider = (props) => {
             setIsMember(true)
         }
     }
-      console.log(users)
 
     let userOrders = null; 
 
@@ -56,41 +55,32 @@ const UserContextProvider = (props) => {
         if ( orderDetails ) {              
             users.map((user) => {
                 if(user.email === currentUser.email) {
-                    console.log(user)
+                    console.log(user)                    
                     if(user.previousOrders) { 
                         userOrders = user.previousOrders
-                        
-                        console.log(userOrders)
+                        setPreviousOrderDetails([...userOrders, orderDetails])
                     }
+                    else {
+                        setPreviousOrderDetails([...previousOrderDetails, orderDetails])
+                    }                                    
                 }
-            })  
-            setPreviousOrderDetails([...previousOrderDetails, orderDetails])    
+            })                 
         }                    
     },[orderDetails])
 
-    /*
-    useEffect(() => {
-        if(userOrders) {
-            console.log(userOrders)
-            userOrders.map((order) => {
-                setPreviousOrderDetails([...previousOrderDetails, order])
-            })
-        }        
-    },[previousOrderDetails])
-    */
-
     useEffect(() => {
         setUsers(users.map((user) => {
-            if (user.email === currentUser.email) {     
-              return {
-                ...user,
-                previousOrders: previousOrderDetails + userOrders
-              } 
-            } else {
-              return user
+            if (user.email === currentUser.email) {   
+                return {
+                    ...user,
+                    previousOrders: previousOrderDetails
+                }               
+            } 
+            else {
+                return user
             }
-          }))
-          console.log(previousOrderDetails) 
+        }))
+        console.log(previousOrderDetails) 
     },[previousOrderDetails])
 
     const values =
