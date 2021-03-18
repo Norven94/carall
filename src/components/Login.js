@@ -25,10 +25,9 @@ export default function Login () {
     const login = (e) => {
         e.preventDefault();
         users.map((user) => {
-            if ((/*user.username === userName ||*/ user.email === userName) && user.password === password) {                
+            if ((user.email === userName) && user.password === password) {                
                 setLoginState(true)
                 setCurrentUser({
-                    // username: user.username,
                     email: user.email,
                     password: user.password
                 });               
@@ -51,17 +50,12 @@ export default function Login () {
                 <Form.Label>Password</Form.Label>
                 <Form.Control onChange={handlePasswordChange} type="password" placeholder="Password" required/>
             </Form.Group>
-        <Button className={styles.singInButton} variant="primary" type="submit">
-            Sing in
-        </Button>
+            <Button className={styles.singInButton} variant="primary" type="submit">
+                Sign in
+            </Button>
         </Form>
 
         </div>
-        // <form onSubmit={login}>
-        //     <span className={`${styles.errorBox} ${isError ? styles.active : styles.inactive}`}>You did not enter the correct credentials</span>
-        //     <input onChange={handleUsernameChange} placeholder="email" required/>
-        //     <input onChange={handlePasswordChange} placeholder="password" type="password" required/>
-        //     <button>Sign in</button>
-        // </form>    
+  
     )
 }
