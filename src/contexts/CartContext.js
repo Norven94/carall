@@ -12,6 +12,7 @@ const CartContextProvider = (props) => {
     const [billingDetails, setBillingDetails] = useState({})
     const [shippingDetails, setShippingDetails] = useState({})
     const [previousOrderDetails, setPreviousOrderDetails] = useState([])
+    const [errorLogin, setErrorLogin] = useState(false)
     const firstRender = useRef(true); 
 
     const addToCart = (product) => {
@@ -46,7 +47,6 @@ const CartContextProvider = (props) => {
           },0 ))
 
           if (!firstRender.current) {
-            console.log("Not first render");
             localStorage.setItem('cart', JSON.stringify(cart));
          }
          firstRender.current = false; 
@@ -57,7 +57,6 @@ const CartContextProvider = (props) => {
     useEffect(() => {
       if (localStorage.getItem('cart')) {
         const cart = JSON.parse(localStorage.getItem('cart'));
-        console.log("Cart", cart);
         cart.forEach(product => {
           setCars(cars.map((car) => {
             if (car.vin === product.vin) {
@@ -78,7 +77,6 @@ const CartContextProvider = (props) => {
         removeProduct,
         totalProducts,
         totalOrder,
-        alert,
         orderDetails,
         setOrderDetails,
         billingDetails, 
@@ -86,7 +84,9 @@ const CartContextProvider = (props) => {
         shippingDetails, 
         setShippingDetails,
         previousOrderDetails, 
-        setPreviousOrderDetails
+        setPreviousOrderDetails,
+        errorLogin, 
+        setErrorLogin
     }
 
     return(
