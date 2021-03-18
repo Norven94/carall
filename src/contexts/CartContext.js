@@ -46,7 +46,6 @@ const CartContextProvider = (props) => {
           },0 ))
 
           if (!firstRender.current) {
-            console.log("Not first render");
             localStorage.setItem('cart', JSON.stringify(cart));
          }
          firstRender.current = false; 
@@ -57,7 +56,6 @@ const CartContextProvider = (props) => {
     useEffect(() => {
       if (localStorage.getItem('cart')) {
         const cart = JSON.parse(localStorage.getItem('cart'));
-        console.log("Cart", cart);
         cart.forEach(product => {
           setCars(cars.map((car) => {
             if (car.vin === product.vin) {

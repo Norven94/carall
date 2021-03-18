@@ -41,6 +41,7 @@ const UserContextProvider = (props) => {
         if (!isAlreadyMember) {
             setUsers([member, ...users])
             setLoginState(true)
+            setCurrentUser(member);
             history.push("/");
         } 
         else{
@@ -78,7 +79,8 @@ const UserContextProvider = (props) => {
         currentUser,
         setCurrentUser,
         addToRegistration,
-        isMember
+        isMember,
+        setIsMember
     }
 
     return(

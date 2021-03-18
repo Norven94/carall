@@ -4,11 +4,11 @@ import { UserContext } from "../contexts/UserContext"
 import styles from "../css/login.module.css"
 import { Alert, Form, Button } from "react-bootstrap"
 
-export default function Login () {
+export default function Login() {
     const history = useHistory()
     const { users, setLoginState, setCurrentUser } = useContext(UserContext);
     const [userName, setUserName] = useState("");
-    const [password, setPassword] = useState("");    
+    const [password, setPassword] = useState("");
 
     const [isError, setIsError] = useState(false)
 
@@ -25,14 +25,13 @@ export default function Login () {
     const login = (e) => {
         e.preventDefault();
         users.map((user) => {
-            if ((/*user.username === userName ||*/ user.email === userName) && user.password === password) {                
+            if ((user.email === userName) && user.password === password) {
                 setLoginState(true)
                 setCurrentUser({
-                    // username: user.username,
                     email: user.email,
                     password: user.password
-                });               
-                history.push("/");                
+                });
+                history.push("/");
             } else {
                 setIsError(true);
             }
@@ -57,11 +56,5 @@ export default function Login () {
         </Form>
 
         </div>
-        // <form onSubmit={login}>
-        //     <span className={`${styles.errorBox} ${isError ? styles.active : styles.inactive}`}>You did not enter the correct credentials</span>
-        //     <input onChange={handleUsernameChange} placeholder="email" required/>
-        //     <input onChange={handlePasswordChange} placeholder="password" type="password" required/>
-        //     <button>Sign in</button>
-        // </form>    
     )
 }
