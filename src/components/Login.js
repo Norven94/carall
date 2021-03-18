@@ -52,7 +52,7 @@ export default function Login() {
                 </Form.Group>
                 <Container className="text-center">
                     <Button className={styles.singInButton} variant="primary" type="submit">
-                        Sign in
+                        SIGN IN
                     </Button>
                 </Container>
             </Form>

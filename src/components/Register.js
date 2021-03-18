@@ -32,7 +32,7 @@ const Register = () => {
         </Form.Group>
         <Container className="text-center">
           <Button className={styles.singInButton} variant="primary" type="submit">
-             Register
+             BECOME A MEMBER
           </Button>
         </Container>
       </Form>
