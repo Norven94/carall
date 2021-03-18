@@ -107,7 +107,7 @@ span.purchasedBox {
   color: white;
   font-weight: 600;
   text-align: center;
-  padding: 20px 40px;
+  padding: 10px 20px;
   position: absolute;
 }
 
@@ -189,4 +189,15 @@ span.undiscount {
   .details .img-container{
     height: 350px;
   }
+
+  span.purchasedBox {
+    font-size: .8rem;
+  }
+
+  span.discountTag {
+    height: 45px;
+    width: 45px;
+    font-size: .8rem;
+  }
+
 }
