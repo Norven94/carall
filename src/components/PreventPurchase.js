@@ -19,13 +19,11 @@ export default function PreventPurchase () {
     return (
         <div className={styles.loginErrorBox}>
             <div className={styles.messageBox}>
-                <span>You need to login in order to make a purchase</span>
+                <img src="/assets/images/purchaseError.svg" alt="Purchase Error" />
                 <span>Would you like to login?</span>
-                <div className={styles.buttonBox}>
-                    <button className={styles.yesButton} onClick={redirectToLogin}>Yes</button>
-                    <button className={styles.noButton} onClick={closeErrorBox}>No</button>
-                </div>
-            </div>            
+                <button className={styles.yesButton} onClick={redirectToLogin}>Yes</button>
+                <img className={styles.exitButton} onClick={closeErrorBox} src="/assets/icons/purchaseErrorExit.svg" alt="Exit Purchase Error" />
+            </div>         
         </div>
     )
 }
