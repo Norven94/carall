@@ -28,22 +28,8 @@
 }
 
 .buyButton {
-  display: grid;
   background-color: #FE7F50 ;
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 5px;
+  width: 100%;
   border: none;
+  color:#fff;
 }
-
-
-@media (max-width: 768px){
-  .buyButton {
-    position: relative;
-    top: 15px;
-    left: 15px;
-    margin-bottom: 50px;
-  }
-}
-

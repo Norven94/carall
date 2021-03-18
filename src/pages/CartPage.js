@@ -39,12 +39,14 @@ const CartPage = () => {
               {cart.map(product => <CartProduct key={product.vin} product={product} />)}
             </div>
           </Col>
-          <Col xs={6} md={4}>
+          <Col xs={9} md={4}>
             <div className={styles["forms"]}>
               <Form onSubmit={handleClick}>
                 <BillingFields />
                 <ShippingFields />
+                <Container className="text-center">
                 <button type="submit" className={styles.buyButton} >BUY</button>
+                </Container>
               </Form>
             </div>
           </Col>
