@@ -3,7 +3,7 @@ import { UserContext } from "../contexts/UserContext"
 import { CartContext } from "../contexts/CartContext"
 
 export default function LogoutButton () {
-    const { setLoginState, setCurrentUser } = useContext(UserContext);
+    const { setLoginState, setCurrentUser,setToBeLogin } = useContext(UserContext);
     const { setOrderDetails, setBillingDetails, setShippingDetails, setPreviousOrderDetails } = useContext(CartContext);
 
     const logout = () => {
@@ -13,6 +13,7 @@ export default function LogoutButton () {
         setBillingDetails({})
         setShippingDetails({})
         setPreviousOrderDetails([])
+        setToBeLogin(true)
     }
     
     return (
