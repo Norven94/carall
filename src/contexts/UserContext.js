@@ -54,8 +54,7 @@ const UserContextProvider = (props) => {
     useEffect(() => {
         if ( orderDetails ) {              
             users.map((user) => {
-                if(user.email === currentUser.email) {
-                    console.log(user)                    
+                if(user.email === currentUser.email) {                 
                     if(user.previousOrders) { 
                         userOrders = user.previousOrders
                         setPreviousOrderDetails([...userOrders, orderDetails])
@@ -80,7 +79,6 @@ const UserContextProvider = (props) => {
                 return user
             }
         }))
-        console.log(previousOrderDetails) 
     },[previousOrderDetails])
 
     const values =

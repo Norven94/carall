@@ -5,9 +5,7 @@ import styles from '../css/OrderHistory.module.css'
 // import '../css/OrderHistory.module.css'
 
 const OrderHistory = () => {
-  const { users, currentUser } = useContext(UserContext)
-  
-  console.log(users)
+  const { users, currentUser } = useContext(UserContext)  
 
   return (
     <div>
