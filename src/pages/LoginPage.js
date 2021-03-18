@@ -2,6 +2,7 @@ import { useState } from "react";
 import Login from "../components/Login";
 import Register from '../components/Register';
 import {Container } from "react-bootstrap"
+import styles from "../css/login.module.css"
 export default function LoginPage() {
   const [toBeLogin, setToBeLogin]=useState(true) 
   const toggle = () => {
@@ -10,8 +11,8 @@ export default function LoginPage() {
     return (
       <div>
         <Container>
-          {toBeLogin ? <Login /> : <Register />}
-          <p onClick={toggle}>{toBeLogin ? "Are you not a member yet?" :" Are you already a member?"}</p> 
+          {toBeLogin ? <Login /> : <Register />}          
+            <p className={styles.toggleText} onClick={toggle}>{toBeLogin ? "Are you not a member yet?" :" Are you already a member?"}</p>          
         </Container>
       </div>      
     )
