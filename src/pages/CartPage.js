@@ -28,28 +28,31 @@ const CartPage = () => {
     }));
   } 
 
+
   return (
     <div className={styles["cartPage-style"]}>
-      <Back/>
-      <Container>
-        <Row>
-          <Col xs={12} md={8}>
-            <h1 className={styles["cart-rubrik"]}>SHOPPING CART</h1>
-            <div className={styles["product-container"]}>
-              {cart.map(product => <CartProduct key={product.vin} product={product} />)}
-            </div>
-          </Col>
-          <Col xs={6} md={4}>
-            <div className={styles["forms"]}>
-              <Form onSubmit={handleClick}>
-                <BillingFields />
-                <ShippingFields />
-                <button type="submit" className={styles.buyButton} >BUY</button>
-              </Form>
-            </div>
-          </Col>
-        </Row>
-      </Container>
+      <div className={styles["back-button"]}>
+        <Back />
+      </div>
+      <div className={styles["div"]}>
+        <div className={styles["product-container"]}>
+          <h1 className={styles["cart-rubrik"]}>SHOPPING CART</h1>
+          <div className={styles["product"]}>
+            {cart.map(product => <CartProduct key={product.vin} product={product} />)}
+          </div>
+        </div>
+      </div>
+      <div className={styles["forms"]}>
+        <Form onSubmit={handleClick}>
+          <div className={styles["billing"]}>
+            <BillingFields />
+          </div>
+          <div className={styles["shipping"]}>
+            <ShippingFields />
+            <button type="submit" className={styles.buyButton} >BUY</button>
+          </div>
+        </Form>
+      </div>
     </div>
   );
 }
