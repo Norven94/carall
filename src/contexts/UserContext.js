@@ -1,9 +1,11 @@
 import {createContext, useState, useContext, useEffect } from "react"
 import { CartContext } from "../contexts/CartContext";
+import { useHistory } from 'react-router-dom'
 
 export const UserContext = createContext();
 
 const UserContextProvider = (props) => {  
+    const history = useHistory();
     const { orderDetails, previousOrderDetails, setPreviousOrderDetails} = useContext(CartContext);
     const [loginState, setLoginState] = useState(false);
     const [isMember, setIsMember] = useState(false);
@@ -38,6 +40,8 @@ const UserContextProvider = (props) => {
   
         if (!isAlreadyMember) {
             setUsers([member, ...users])
+            setLoginState(true)
+            history.push("/");
         } 
         else{
             setIsMember(true)
