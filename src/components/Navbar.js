@@ -12,8 +12,6 @@ function Navbar() {
   const { alert } = useContext(CartContext);
   const history = useHistory()
 
-  console.log(loginState)
-
   return (
     <>
     <ReactBootstrap.Navbar sticky="top" collapseOnSelect expand="sm" bg="info" variant="light">
