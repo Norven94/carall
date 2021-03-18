@@ -12,7 +12,7 @@ export default function LoginPage() {
       <div>
         <Container>
           {toBeLogin ? <Login /> : <Register />}          
-            <p className={styles.toggleText} onClick={toggle}>{toBeLogin ? "Are you not a member yet?" :" Are you already a member?"}</p>          
+            <p className={styles.toggleText} onClick={toggle}>{toBeLogin ? "Are you not a member yet?" :" Back to login"}</p>          
         </Container>
       </div>      
     )
