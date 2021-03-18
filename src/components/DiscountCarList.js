@@ -21,7 +21,7 @@ const DiscountCarList = () => {
 
   return (
     <div className="discount">
-      <h1 className={styles.h1}>Discount Cars</h1>
+      <h1 className={styles.h1}>Monthly Deals</h1>
       <Carousel itemPadding={[0, 0]} breakPoints={breakPoints}>
         {carDiscount.map((car) =>(
             <Car key={car.vin} car={car} />
