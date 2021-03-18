@@ -1,0 +1,12 @@
+/* .errorBox {
+    background-color: red;
+    display: none;
+} */
+
+.errorBox.active {
+    display: block;
+}
+
+.errorBox.inactive {
+    display: none
+}

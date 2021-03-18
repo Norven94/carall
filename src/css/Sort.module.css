@@ -6,8 +6,11 @@
   color:#707070;
   border: 0px;
   border-right: gray 0.5px solid;
+  width:15rem;
+
 }
 
 .sortSelect {
   color: black;
 }
+

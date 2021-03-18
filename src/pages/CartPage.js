@@ -10,7 +10,7 @@ import { Col, Container, Row, Form } from "react-bootstrap";
 import Back from '../components/Back'
 
 const CartPage = () => {
-  const { cart, setCart, orderDetails, setOrderDetails} = useContext(CartContext);
+  const { cart, setCart, setOrderDetails, billingDetails, shippingDetails} = useContext(CartContext);
   const { cars, setCars } = useContext(CarContext);
   const history = useHistory();
 
@@ -18,14 +18,15 @@ const CartPage = () => {
     history.push("/confirmation")
     let timestamp = new Date().toLocaleDateString();
     let id = Math.floor(Math.random() * 100000);
-    setOrderDetails({...orderDetails, orderDate: timestamp, orderNumber: id, cart});    
+    setOrderDetails({billingDetails, shippingDetails, orderDate: timestamp, orderNumber: id, cart});    
+    
     //Reset car list and empty the cart after purchase 
     setCart([]);
     setCars(cars.map((car) => {
       car.purchased = false;
       return car
     }));
-  }    
+  } 
 
   return (
     <div className={styles["cartPage-style"]}>
