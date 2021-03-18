@@ -4,11 +4,11 @@ import { UserContext } from "../contexts/UserContext"
 import styles from "../css/login.module.css"
 import { Alert, Container, Form, Button} from "react-bootstrap"
 
-export default function Login () {
+export default function Login() {
     const history = useHistory()
     const { users, setLoginState, setCurrentUser } = useContext(UserContext);
     const [userName, setUserName] = useState("");
-    const [password, setPassword] = useState("");    
+    const [password, setPassword] = useState("");
 
     const [isError, setIsError] = useState(false)
 
@@ -30,8 +30,8 @@ export default function Login () {
                 setCurrentUser({
                     email: user.email,
                     password: user.password
-                });               
-                history.push("/");                
+                });
+                history.push("/");
             } else {
                 setIsError(true);
             }
