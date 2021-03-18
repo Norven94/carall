@@ -1,21 +1,42 @@
 import { useState, useContext } from 'react'
 import { UserContext } from '../contexts/UserContext'
+import { Alert, Container, Form, Button} from "react-bootstrap"
+import styles from "../css/login.module.css"
 
 const Register = () => {
-  const { addToRegistration } = useContext(UserContext)
-  const [userName, setUserName] = useState();
+  const { addToRegistration, isMember, setIsMember } = useContext(UserContext)
   const [password, setPassword] = useState();
   const [email, setEmail] = useState();
 
+  const emailChange = (e) => {
+    setEmail(e.target.value)
+    setIsMember(false)
+  } 
+
+  const passwordChange = (e) => {
+    setPassword(e.target.value)
+  } 
+
   return (
-    
-      <form onSubmit={(e) => addToRegistration(e, userName, password, email)}>
-        <input onChange={(e) => setUserName(e.target.value)}  placeholder="Name" required/>
-        <input onChange={(e) => setEmail(e.target.value)}  placeholder="Email" required/>
-        <input onChange={(e) => setPassword(e.target.value)} placeholder="Password" required/>
-        <button type="submit">Register</button>
-      </form>
-    
+    <div className="container col-md-6 py-5">
+       <h1 className="text-center">BECOME A MEMBER</h1>
+      <Form onSubmit={(e) => addToRegistration(e, email, password)}>
+       <Alert variant={"danger"} className={`${styles.errorBox} ${isMember ? styles.active : styles.inactive}`}>This email already exist. Tyr another email or back to login.</Alert>
+       <Form.Group controlId="formBasicEmail">
+          <Form.Label>Email address</Form.Label>
+          <Form.Control onChange={emailChange} type="email" placeholder="Enter email"  required/>               
+        </Form.Group>
+        <Form.Group controlId="formBasicPassword">
+          <Form.Label>Create a password</Form.Label>
+          <Form.Control onChange={passwordChange} type="password" placeholder="Password" required/>
+        </Form.Group>
+        <Container className="text-center">
+          <Button className={styles.singInButton} variant="primary" type="submit">
+             Register
+          </Button>
+        </Container>
+      </Form>
+    </div>
   );
 }
 
