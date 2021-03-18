@@ -2,7 +2,7 @@ import { useState, useContext } from "react"
 import { useHistory } from "react-router-dom"
 import { UserContext } from "../contexts/UserContext"
 import styles from "../css/login.module.css"
-import { Form, Button } from "react-bootstrap"
+import { Alert, Form, Button } from "react-bootstrap"
 
 export default function Login() {
     const history = useHistory()
@@ -38,22 +38,23 @@ export default function Login() {
         })
     }
     return (
-        <div>
-            <h1 className="login-header">Login</h1>
-            <Form onSubmit={login}>
-                <span className={`${styles.errorBox} ${isError ? styles.active : styles.inactive}`}>You did not enter the correct credentials</span>
-                <Form.Group controlId="formBasicEmail">
-                    <Form.Label>Email address</Form.Label>
-                    <Form.Control onChange={handleUsernameChange} type="email" placeholder="Enter email" required />
-                </Form.Group>
-                <Form.Group controlId="formBasicPassword">
-                    <Form.Label>Password</Form.Label>
-                    <Form.Control onChange={handlePasswordChange} type="password" placeholder="Password" required />
-                </Form.Group>
-                <Button variant="primary" type="submit">
-                    Sign in
-                </Button>
-            </Form>
+        <div className={styles.loginContainer}>
+        <h1 className="login-header">Login</h1>
+        <Form onSubmit={login}>
+            <Alert variant={"danger"} className={`${styles.errorBox} ${isError ? styles.active : styles.inactive}`}>You did not enter the correct credentials</Alert>
+            <Form.Group controlId="formBasicEmail">
+                <Form.Label>Email address</Form.Label>
+                <Form.Control onChange={handleUsernameChange} type="email" placeholder="Enter email"  required/>               
+            </Form.Group>
+            <Form.Group controlId="formBasicPassword">
+                <Form.Label>Password</Form.Label>
+                <Form.Control onChange={handlePasswordChange} type="password" placeholder="Password" required/>
+            </Form.Group>
+        <Button className={styles.singInButton} variant="primary" type="submit">
+            Sing in
+        </Button>
+        </Form>
+
         </div>
     )
 }
