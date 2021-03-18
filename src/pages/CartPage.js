@@ -46,7 +46,7 @@ const CartPage = () => {
 
   return (
     <div className={styles["cartPage-style"]}>
-      <div className="back-button">
+      <div className={styles["back-button"]}>
       <Back/>
       </div>
       <div className={styles["div"]}>

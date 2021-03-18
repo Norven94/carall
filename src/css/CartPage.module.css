@@ -1,13 +1,16 @@
 .cartPage-style {
   background: #F5F7F6;
   display: flex;
-  width: 100%;
   justify-content: center;
 }
 
 .cart-rubrik {
   margin: 100px auto 10px auto;
   font-size: 2rem;
+}
+
+.back-button {
+  height: 100%;
 }
 
 .product-container {
