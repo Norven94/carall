@@ -1,7 +1,6 @@
-/* .errorBox {
-    background-color: red;
+.errorBox {
     display: none;
-} */
+}
 
 .errorBox.active {
     display: block;
@@ -10,3 +9,17 @@
 .errorBox.inactive {
     display: none
 }
+.loginContainer{
+    padding-top:50px;
+}
+.loginContainer >h1{
+    text-align: center;
+}
+.singInButton {
+    background-color: #FE7F50 ;
+    width: 30%;
+    margin : 0 auto; 
+    padding: 5px;
+    border: none;
+  }
+  

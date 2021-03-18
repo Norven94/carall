@@ -11,7 +11,7 @@ export default function LoginPage() {
       <div>
         <Container>
           {toBeLogin ? <Login /> : <Register />}
-          <button onClick={toggle}>{toBeLogin ? "Register here" :" Login here"}</button> 
+          <p onClick={toggle}>{toBeLogin ? "Are you not a member yet?" :" Are you already a member?"}</p> 
         </Container>
       </div>      
     )
