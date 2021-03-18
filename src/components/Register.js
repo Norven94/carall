@@ -21,13 +21,13 @@ const Register = () => {
     <div className="container col-md-6 py-5">
        <h1 className="text-center">BECOME A MEMBER</h1>
       <Form onSubmit={(e) => addToRegistration(e, email, password)}>
-       <Alert variant={"danger"} className={`${styles.errorBox} ${isMember ? styles.active : styles.inactive}`}>This email already exist</Alert>
+       <Alert variant={"danger"} className={`${styles.errorBox} ${isMember ? styles.active : styles.inactive}`}>This email already exist. Tyr another email or back to login.</Alert>
        <Form.Group controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
           <Form.Control onChange={emailChange} type="email" placeholder="Enter email"  required/>               
         </Form.Group>
         <Form.Group controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
+          <Form.Label>Create a password</Form.Label>
           <Form.Control onChange={passwordChange} type="password" placeholder="Password" required/>
         </Form.Group>
         <Container className="text-center">
