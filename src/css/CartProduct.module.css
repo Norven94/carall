@@ -117,5 +117,69 @@ span.undiscount{
     height: 100px;
   }
 
+  .cart-container:first-child { 
+    margin-top: 1vh;
+  }
+
 }
 
+@media (max-width: 450px){
+  .cart-container {
+    display: grid;
+    justify-content: center;
+  }
+
+  .product-model {
+    margin-bottom: -20px;
+    display: grid;
+    justify-content: center;
+  }
+
+  .product-image {
+    display: grid;
+    justify-content: center;
+    width: 50vw;
+  }
+
+  .product-image img {
+    margin-right: 0px;
+   }
+  
+
+  .product-info {
+    display: grid;
+    margin-left: 0px;
+    width: 50vw;
+    font-size: 1rem;
+  }
+
+  .miles-city {
+    margin-top: -20px;
+  }
+
+  .remove-product {
+    display: inline-block;
+    margin-left: 0px;
+    width: 50vw;
+    margin-top: -20px;
+    font-size: 1rem;
+  }
+
+  .remove-product span {
+  margin-top: 0px;
+  margin-right: 0px;
+ }
+
+  .remove-product :nth-child(1) {
+    margin-left: -20px;
+    float: left; 
+  }
+  .remove-product :nth-child(2) { 
+    float: right; 
+    margin-right: -30px;
+  }
+
+
+
+  
+}
