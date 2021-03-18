@@ -39,7 +39,7 @@ export default function Login() {
     }
     return (
         <div className="container col-md-6 py-5">
-            <h1 className="text-center">Login</h1>
+            <h1 className="text-center">LOGIN</h1>
             <Form onSubmit={login}>
                 <Alert variant={"danger"} className={`${styles.errorBox} ${isError ? styles.active : styles.inactive}`}>You did not enter the correct credentials</Alert>
                 <Form.Group controlId="formBasicEmail">
