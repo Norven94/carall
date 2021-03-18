@@ -7,6 +7,8 @@ import { UserContext } from "../contexts/UserContext"
 const OrderHistory = () => {
   const { users, currentUser } = useContext(UserContext)
   
+  console.log(users)
+
   return (
     <div>
       <div>
@@ -16,8 +18,11 @@ const OrderHistory = () => {
         <h4>Purchase date....</h4>
       </div>
 
+      
       {users.map((user, index) => {
+        console.log(currentUser)
         if (user.email === currentUser.email) {
+          console.log(user)
           return (
             user.previousOrders.map((order) => (
               <Order key={index} order={order}/>

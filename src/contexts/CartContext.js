@@ -78,7 +78,6 @@ const CartContextProvider = (props) => {
         removeProduct,
         totalProducts,
         totalOrder,
-        alert,
         orderDetails,
         setOrderDetails,
         billingDetails, 
