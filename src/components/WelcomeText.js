@@ -1,7 +1,5 @@
 import { UserContext } from "../contexts/UserContext";
 import { useContext } from "react";
-import { Container, Row, Col } from "react-bootstrap"
-
 export default function WelcomeText () {
   const { loginState } = useContext(UserContext);
   return (
