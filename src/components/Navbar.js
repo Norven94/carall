@@ -9,7 +9,6 @@ import LogoutButton from "./LogoutButton";
 function Navbar() {
   const { totalProducts, totalOrder } = useContext(CartContext);
   const { loginState } = useContext(UserContext);
-  const { alert } = useContext(CartContext);
   const history = useHistory()
 
   return (
