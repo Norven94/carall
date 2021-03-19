@@ -1,20 +1,27 @@
-import {useContext} from "react"
-import {CarContext }from "../contexts/CarContext"
-import Car from "./Car"
-import {Container, Row } from 'react-bootstrap'
+import { useContext, useEffect} from "react";
+import { CarContext } from "../contexts/CarContext";
+import Car from "./Car";
+import { Container, Row } from "react-bootstrap";
+import SearchGroup from "./SearchGroup";
+import NoResults from './NoResults'
+
 function CarList() {
-  const {cars} =useContext(CarContext)
-  return (         
-     <div className="carlist-container">
+  const { tempCars} = useContext(CarContext);
+
+  return (
+    <div className="carlist-container">
+      <h1>Find Your New Favorite Vehicle</h1>
+      <SearchGroup />
+
       <Container fluid>
         <Row className="d-flex justify-content-center align-content-center flex-wrap">
-        {cars.map((car)=>(        
-          <Car key={car.vin} car={car} />          
-          ))}      
+          {tempCars.length === 0 ? <NoResults /> : tempCars.map((car) => (
+            <Car key={car.vin} car={car} />
+          ))}
         </Row>
-      </Container>   
-      </div>
-  )
+      </Container>
+    </div>
+  );
 }
 
-export default CarList
+export default CarList;

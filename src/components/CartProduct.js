@@ -1,41 +1,49 @@
-import {useContext} from "react"
-import { Col, Container, Row } from "react-bootstrap";
-import {CarContext }from "../contexts/CarContext"
-
+import { useHistory } from "react-router-dom";
+import { useContext } from "react"
+import { CartContext } from "../contexts/CartContext"
+import styles from '../css/CartProduct.module.css';
+import { VscTrash } from 'react-icons/vsc';
 
 export default function CartProduct(props) {
+    const { removeProduct } = useContext(CartContext)
+    const priceWithSpace = props.product.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")
+    const history = useHistory();
+    const goToProduct = () => {
+        history.push("/product/" + props.product.vin);
+    };
+    const handleClick = (e) => {
+        e.stopPropagation()
+        removeProduct(props.product)
+    }
 
-    
-    //Add when cart array is availible in CarContext.js
-
-   // const {removeProduct} = useContext(CarContext)
-    console.log("HEREEE");
-    console.log(props);
     return (
-        <div className="cart-container">
-            <span className="cart-rubrik">SHOPPING CART</span>
-            <Container>
-                <Row>
-                    <Col>
-                    <div className="bild"></div>
-                    <p className="cart-price">{props.product.price} Kr</p>
-                    <button>Delete</button>
-                    </Col>
-                    <Col xs={6}>
-                    <span className="product-make">{props.product.make}</span>
-                    <span className="product-info">{props.product.model} / {props.product.year} / {props.product.miles} / {props.product.city}</span>
-                    <p className="longdesc-cart">"Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.\n\nFusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.\n\nSed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.\n\nPellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.",</p>
-                    </Col>
-                    <Col>
-                        Billing and shipping
-                    </Col>
-                </Row>
-            </Container>
-            
-            
-            
-           {/* <button onClick={() => removeProduct(props)}>Remove</button> */}
+        <div onClick={goToProduct} className={styles["cart-container"]}>
+            <div className={styles["product-image"]}>
+                <span className={`${styles.discountTag} ${props.product.isDiscount ? styles.isdiscount : styles.undiscount}`}>Sale</span>
+                <img src={props.product.image} alt={"Image of " + props.product.make + " " + props.product.model + " " + props.product.year} />
+            </div>
+
+            <div className={styles["product-info"]}>
+
+                <div className={styles["make-year"]}>
+                    <span className={styles["product-model"]}>{props.product.model}</span>
+                    <br />
+                    <p>{props.product.make}</p>
+                    <p>{props.product.year}</p>
+                </div>
+                <div className={styles["miles-city"]}>
+                    <p>{props.product.miles} miles</p>
+                    <p>{props.product.city}</p>
+                </div>
+            </div>
+
+            <div className={styles["remove-product"]}>
+                <span>{priceWithSpace}</span>
+                <span><VscTrash onClick={handleClick} className={styles["trashcan"]} size={25} style={{ fill: 'black' }} />
+                </span>
+                </div>
+
+
         </div>
     )
-    
 }
