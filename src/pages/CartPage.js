@@ -33,7 +33,6 @@ const CartPage = () => {
       }));
     } else {
       setErrorLogin(true);
-      console.log("You need to login");
     }
     
   } 
