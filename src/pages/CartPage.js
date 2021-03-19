@@ -59,7 +59,9 @@ const CartPage = () => {
           </div>
           <div className={styles["shipping"]}>
             <ShippingFields />
+            <Container>
             <button type="submit" className={styles.buyButton} >BUY</button>
+            </Container>
           </div>
         </Form>
       </div>
