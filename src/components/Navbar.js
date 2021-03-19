@@ -66,7 +66,7 @@ function Navbar() {
             </NavLink>
           : ""}
           <NavLink className={styles.span} to="/login">
-            {loginState ? <LogoutButton /> : <LoginButton  />}
+           <p className="text-center"> {loginState ? <LogoutButton /> : <LoginButton/>} </p> 
           </NavLink>
         </ReactBootstrap.Nav>
       </ReactBootstrap.Navbar.Collapse>
