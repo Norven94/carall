@@ -70,6 +70,7 @@
   
   .product-details .details1 {
     display: flex;
+    padding-top:1.5rem;
   }
 
   .pointer { 
@@ -111,7 +112,7 @@
   }
   
   .product-details .product-price {
-    font-size: 40px;
+    font-size: 30px;
     margin-right: 30px;
   }
   
@@ -123,7 +124,7 @@
   }
   
   .product-details img {
-    margin-top: -30px;
+    margin-top: -15px;
     width: 44px;
     height: 40px;
   }
