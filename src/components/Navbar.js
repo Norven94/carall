@@ -9,7 +9,6 @@ import LogoutButton from "./LogoutButton";
 function Navbar() {
   const { totalProducts, totalOrder, cart, removeProduct } = useContext(CartContext);
   const { loginState } = useContext(UserContext);
-  const { alert } = useContext(CartContext);
   const history = useHistory()
 
   const goToProduct = (carId) => {
