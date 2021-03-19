@@ -69,13 +69,21 @@ const CartPage = () => {
               {cart.map(product => <CartProduct key={product.vin} product={product} />)}
             </div>
           </div>
-          <div className={styles["shipping"]}>
-            <ShippingFields />
-            <Container>
-            <button type="submit" className={styles.buyButton} >BUY</button>
-            </Container>
-          </div>
-        </Form>
+        </div>
+        <div className={styles["forms"]}>
+          <Form onSubmit={handleClick}>
+            <div className={styles["billing"]}>
+              <BillingFields />
+            </div>
+            <div className={styles["shipping"]}>
+              <ShippingFields />
+              <Container>
+              <button type="submit" className={styles.buyButton} >BUY</button>
+              </Container>
+            </div>
+          </Form>
+        </div>
+        {errorLogin ? <PreventPurchase /> : ""}
       </div>
     );
   }
