@@ -12,6 +12,7 @@ import OrderHistory from './pages/OrderHistory'
 import CartPage from './pages/CartPage'
 import Confirmation from './pages/Confirmation'
 import LoginPage from "./pages/LoginPage";
+import Footer from './components/Footer'
 
 function App() {
   return (
@@ -48,6 +49,7 @@ function App() {
                   return <ProductPage productId={props.match.params.productId} />;
                   }}
                 />
+                  <Footer/>
               </UserContextProvider>
             </CartContextProvider>
           </FilterContextProvider>

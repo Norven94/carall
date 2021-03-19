@@ -1,5 +1,4 @@
 import * as ReactBootstrap from 'react-bootstrap'
-import Footer from '../components/Footer'
 
 function About() {
 
@@ -30,7 +29,6 @@ function About() {
         <img src="/assets/images/t-coral.png" alt="twitter-icon" />
         <img src="/assets/images/i-coral.png" alt="instagram-icon" />
       </div>
-      <Footer/>
     </div>
   )
 }
