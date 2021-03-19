@@ -1,15 +1,16 @@
 .boxorder {
   border: 1px solid lightgrey;
   padding: 1rem;
-  margin-left: 1rem;
-  margin-right: 1rem;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 2rem;
   margin-top: 2rem;
+  width: 40%;
 }
 
  .firstinfo {
   display: flex; 
-  justify-content: center;
+  justify-content: space-between;
   margin-top: 2rem;
   margin-left: auto;
   margin-right: auto;
@@ -17,7 +18,7 @@
  
 .secondInfo {
   display: flex; 
-  justify-content: center;
+  justify-content: space-between;
   margin-left: auto;
   margin-right: auto;
  }
@@ -44,7 +45,7 @@ margin-top: 1rem;
  .order2 { 
   text-align: right;
   margin-bottom: 1.5rem;
-  padding-left: 3.1rem;  
+  /* padding-left: 3.1rem;   */
   font-size: 0.9rem;
   font-weight: 300;
   color: grey;
@@ -62,5 +63,15 @@ margin-top: 1rem;
  .order p {
    margin-bottom: 5px; 
  }
+
+
+ @media only screen and (max-width: 659px) 
+{
+  .boxorder {
+    width: 100%;
+  }
+
+
+}
  
 
