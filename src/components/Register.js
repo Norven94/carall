@@ -23,9 +23,9 @@ const Register = () => {
 
   return (
     <div className="container col-md-6 py-5">
-       <h1 className="text-center">BECOME A MEMBER</h1>
+       <h1 className="text-center">Become a Member</h1>
       <Form onSubmit={(e) => addToRegistration(e, email, password)}>
-       <Alert variant={"danger"} className={`${styles.errorBox} ${isMember ? styles.active : styles.inactive}`}>This email already exist. Tyr another email or back to login.</Alert>
+       <Alert variant={"danger"} className={`${styles.errorBox} ${isMember ? styles.active : styles.inactive}`}>This email already exist.</Alert>
        <Form.Group controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
           <Form.Control onChange={emailChange} type="email" placeholder="Enter email"  required/>               
@@ -36,7 +36,7 @@ const Register = () => {
         </Form.Group>
         <Container className="text-center">
           <Button className={styles.singInButton} variant="primary" type="submit">
-             BECOME A MEMBER
+             REGISTER
           </Button>
         </Container>
       </Form>
