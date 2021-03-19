@@ -33,41 +33,59 @@ const CartPage = () => {
       }));
     } else {
       setErrorLogin(true);
-      console.log("You need to login");
     }
     
   } 
 
+  //let emptyCart = false;
 
-  return (
-    <div className={styles["cartPage-style"]}>
-      <div className={styles["back-button"]}>
-        <Back />
-      </div>
-      <div className={styles["div"]}>
-        <div className={styles["product-container"]}>
-          <h1 className={styles["cart-rubrik"]}>SHOPPING CART</h1>
-          <div className={styles["product"]}>
-            {cart.map(product => <CartProduct key={product.vin} product={product} />)}
+  if (cart.length === 0) {
+    return (
+      <div className={styles["cartPage-style"]}>
+        <div className={styles["back-button"]}>
+          <Back />
+        </div>
+        <div className={styles["div"]}>
+          <div className={styles.EmptyCartBox}>
+            <img src="/assets/icons/emptyBasket.svg" alt="Empty Basket Icon" />
+            <span>oops!</span>
+            <p>Your Cart Is Empty</p>
           </div>
         </div>
       </div>
-      <div className={styles["forms"]}>
-        <Form onSubmit={handleClick}>
-          <div className={styles["billing"]}>
-            <BillingFields />
+    );
+  } 
+  else {
+    return (
+      <div className={styles["cartPage-style"]}>
+        <div className={styles["back-button"]}>
+          <Back />
+        </div>
+        <div className={styles["div"]}>
+          <div className={styles["product-container"]}>
+            <h1 className={styles["cart-rubrik"]}>SHOPPING CART</h1>
+            <div className={styles["product"]}>
+              {cart.map(product => <CartProduct key={product.vin} product={product} />)}
+            </div>
           </div>
-          <div className={styles["shipping"]}>
-            <ShippingFields />
-            <Container>
-            <button type="submit" className={styles.buyButton} >BUY</button>
-            </Container>
-          </div>
-        </Form>
+        </div>
+        <div className={styles["forms"]}>
+          <Form onSubmit={handleClick}>
+            <div className={styles["billing"]}>
+              <BillingFields />
+            </div>
+            <div className={styles["shipping"]}>
+              <ShippingFields />
+              <Container>
+              <button type="submit" className={styles.buyButton} >BUY</button>
+              </Container>
+            </div>
+          </Form>
+        </div>
+        {errorLogin ? <PreventPurchase /> : ""}
       </div>
-      {errorLogin ? <PreventPurchase /> : ""}
-    </div>
-  );
+    );
+  }
 }
 
 export default CartPage;

@@ -50,6 +50,23 @@
   color:#fff;
 }
 
+.EmptyCartBox img {
+  width: 200px;
+}
+
+.EmptyCartBox span {
+  display: block;
+  color: #FE7F50;
+  font-size: 50px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.EmptyCartBox p {
+  font-size: 30px;
+  text-align: center;
+}
+
 
 @media (max-width: 768px){
 
