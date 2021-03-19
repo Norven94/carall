@@ -13,6 +13,7 @@ export default function AddedToCartBox () {
 
     const redirectToCart = () => {
         history.push("/cartpage")
+        setAddedToCart(false)
     }
 
     return (
