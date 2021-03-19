@@ -117,11 +117,10 @@
   }
 
   .cart-rubrik {
+    margin-top: -30px;
     display: grid;
     justify-content: center;
   }
-
-
 
   .product-container {
     margin-left: 0px;
@@ -144,5 +143,11 @@
 
   .shipping {
     width: 100%;
+  }
+
+  .buyButton {
+    display: grid;
+    justify-content: center;
+    left: 0;
   }
 }
