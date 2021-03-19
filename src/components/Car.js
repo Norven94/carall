@@ -62,7 +62,7 @@ export default function Car(props) {
           </h4>
           
           <hr />
-          <div className={location} style={{ paddingLeft: "0px" }}>{props.car.city}</div>
+          <div className={location} style={{ paddingLeft: "0px" }}><img src="/assets/icons/mapicon.svg" alt="map symbol"/>{props.car.city}</div>
         </div>
       </div>
     </div>

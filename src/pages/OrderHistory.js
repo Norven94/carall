@@ -16,11 +16,17 @@ const OrderHistory = () => {
         <hr className={styles.hrcolor} />
         {users.map((user, index) => {
           if (user.email === currentUser.email) {
-            return (
-              user.previousOrders.map((order) => (
-                <Order key={index} order={order} />  
-              ))
-            )
+            if (user.previousOrders) {
+              return (              
+                user.previousOrders.map((order) => (
+                  <Order key={index} order={order} />  
+                ))
+              )
+            } else {
+              return (
+                <p>You do not have any previous orders</p>
+              )
+            }
           }
         })}
 

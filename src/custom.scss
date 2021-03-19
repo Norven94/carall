@@ -35,6 +35,7 @@ $fourth:#ffc8b4;
     right: 0;
     left: auto;
     text-align: center;
+    width: 250px;
 }
 .dropdown-toggle::after {
     display: none;
@@ -123,3 +124,9 @@ $fourth:#ffc8b4;
     margin-top: 2rem;
     cursor:pointer;
 }
+
+.grid{
+  padding-right:0.3rem;
+  padding-left:1rem;
+}
+
