@@ -43,7 +43,7 @@ function ShippingFields() {
         <Form.Group as={Col} controlId="formBasicAddress">
           <Form.Control size="sm" onChange={handleAddressChangeShipping} type="address" placeholder="Address" value={shippingDetails.shippingAddress} required/>
         </Form.Group>
-        <Form.Row as={Col}>
+        <Form.Row as={Col}  className="grid">
           <Form.Group as={Col} controlId="formGridCity">
             <Form.Control size="sm" onChange={handleCityChangeShipping} type="city" placeholder="City" value={shippingDetails.shippingCity} required/>
           </Form.Group>

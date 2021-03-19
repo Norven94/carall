@@ -9,6 +9,7 @@ const UserContextProvider = (props) => {
     const { orderDetails, previousOrderDetails, setPreviousOrderDetails} = useContext(CartContext);
     const [loginState, setLoginState] = useState(false);
     const [isMember, setIsMember] = useState(false);
+    const [toBeLogin, setToBeLogin]=useState(true);
     const [users, setUsers] = useState ([
         {
             email: "oskar@gmail.com",
@@ -91,7 +92,9 @@ const UserContextProvider = (props) => {
         setCurrentUser,
         addToRegistration,
         isMember,
-        setIsMember
+        setIsMember,
+        toBeLogin,
+        setToBeLogin
     }
 
     return(
