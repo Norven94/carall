@@ -3,6 +3,7 @@ import { CarContext } from "../contexts/CarContext";
 import Car from "./Car";
 import { Container, Row } from "react-bootstrap";
 import SearchGroup from "./SearchGroup";
+import NoResults from './NoResults'
 
 function CarList() {
   const { tempCars} = useContext(CarContext);
@@ -11,9 +12,10 @@ function CarList() {
     <div className="carlist-container">
       <h1>Find Your New Favorite Vehicle</h1>
       <SearchGroup />
+
       <Container fluid>
         <Row className="d-flex justify-content-center align-content-center flex-wrap">
-          {tempCars.map((car) => (
+          {tempCars.length === 0 ? <NoResults /> : tempCars.map((car) => (
             <Car key={car.vin} car={car} />
           ))}
         </Row>
