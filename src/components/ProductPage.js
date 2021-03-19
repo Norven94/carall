@@ -58,16 +58,16 @@ export default function ProductPage(props) {
               />
             </Col>
             <Col xs={11} sm={8} lg={6} className={styles["product-details"]}>
-              <h1 className={styles["product-info"]}>{product.model}</h1>
+              <h1 className={styles["product-info"]}>{product.make}</h1>
               <div className={styles["details1"]}>
                 <div className={styles["product-makemiles"]}>
-                  <h4>{product.make}</h4>
+                  <h4>{product.model} / {product.year} / {product.miles} miles </h4>
                   <h6 className={styles["product-city"]}>{product.city}</h6>
                 </div>
-                <div className={styles["product-city-year"]}>
+                {/* <div className={styles["product-city-year"]}>
                   <h4>{product.miles} miles</h4>
                   <h6 className={styles["product-year"]}>{product.year}</h6>
-                </div>
+                </div> */}
               </div>
               <ReadMore maxChar="100">{product.descLong}</ReadMore>
 
