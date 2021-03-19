@@ -2,15 +2,21 @@
   padding-top:10px;
   padding-bottom: 9.5px;
   padding-left: 6px;
-  padding-right: 2rem;
   color:#707070;
   border: 0px;
   border-right: gray 0.5px solid;
-  width:15rem;
-
+  width:7rem;
 }
 
 .sortSelect {
   color: black;
+}
+
+@media only screen and (max-width: 659px) 
+{
+ .select{
+  width: 15rem;
+  }
+  
 }
 
