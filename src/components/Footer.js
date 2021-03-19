@@ -3,9 +3,9 @@
 function Footer() {
  
   return (
-    <div className="text-center p-3 bg-warning">
-    <p class="text-info">Carall © 2020 Copyright</p>
-  </div>
+    <Footer className="text-center p-3 bg-warning sticky-bottom" >
+    <div class="text-info">Carall © 2020 Copyright</div>
+  </Footer>
   )
 }
 
