@@ -6,6 +6,7 @@ import { useHistory, NavLink } from "react-router-dom"
 import styles from '../css/Navbar.module.css';
 import LoginButton from "./LoginButton";
 import LogoutButton from "./LogoutButton";
+
 function Navbar() {
   const { totalProducts, totalOrder } = useContext(CartContext);
   const { loginState } = useContext(UserContext);
