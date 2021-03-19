@@ -50,7 +50,7 @@ function Navbar() {
             </NavLink>
           : ""}
           <NavLink className={styles.span} to="/login">
-            {loginState ? <LogoutButton /> : <LoginButton />}
+            {loginState ? <LogoutButton /> : <LoginButton  />}
           </NavLink>
         </ReactBootstrap.Nav>
       </ReactBootstrap.Navbar.Collapse>

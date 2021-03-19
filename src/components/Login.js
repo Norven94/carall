@@ -9,7 +9,6 @@ export default function Login() {
     const { users, setLoginState, setCurrentUser } = useContext(UserContext);
     const [userName, setUserName] = useState("");
     const [password, setPassword] = useState("");
-
     const [isError, setIsError] = useState(false)
 
     const handleUsernameChange = (e) => {
@@ -39,7 +38,7 @@ export default function Login() {
     }
     return (
         <div className="container col-md-6 py-5">
-            <h1 className="text-center">LOGIN</h1>
+            <h1 className="text-center">Login</h1>
             <Form onSubmit={login}>
                 <Alert variant={"danger"} className={`${styles.errorBox} ${isError ? styles.active : styles.inactive}`}>You did not enter the correct credentials</Alert>
                 <Form.Group controlId="formBasicEmail">
@@ -52,7 +51,7 @@ export default function Login() {
                 </Form.Group>
                 <Container className="text-center">
                     <Button className={styles.singInButton} variant="primary" type="submit">
-                        Sign in
+                        SIGN IN
                     </Button>
                 </Container>
             </Form>
