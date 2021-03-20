@@ -12,6 +12,7 @@ import OrderHistory from './pages/OrderHistory'
 import CartPage from './pages/CartPage'
 import Confirmation from './pages/Confirmation'
 import LoginPage from "./pages/LoginPage";
+import WelcomeText from "./components/WelcomeText";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <CartContextProvider>
               <UserContextProvider>
                 <Navbar />
+                <WelcomeText />
                 <Route exact path="/">          
                   <Home />
                 </Route>
