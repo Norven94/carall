@@ -23,9 +23,9 @@
   margin-right: auto;
  }
 
- /* .secondInfoS:not(:last-child) {
+.secondInfoS:not(:last-child) {
   border-bottom: 1px solid  #FE7F50;
-} */
+}
 
 .secondInfoS:not(:first-child) {
 margin-top: 1rem;
@@ -65,12 +65,23 @@ margin-top: 1rem;
  }
 
 
- @media only screen and (max-width: 659px) 
+@media only screen and (max-width: 659px) 
 {
   .boxorder {
     width: 100%;
   }
+}
 
+@media only screen and (max-width: 374px) 
+{
+
+  .order1 {
+    font-size: 0.8rem;
+  }
+
+  .order2 {
+    font-size: 0.8rem;
+  }
 
 }
  
