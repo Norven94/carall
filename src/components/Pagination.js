@@ -19,7 +19,7 @@ const Pagination = ({ pages, setCurrentPage, currentCars, tempCars }) => {
     <div className="clearfix">
 				<div className="hint-text">Showing <b>{currentCars.length}</b> out of <b>{tempCars.length}</b> cars</div>
 				<ul className="pagination">
-					<li class={`${currentButton === 1 ? 'page-item disabled' : 'page-item'}`}><a href="#!" className="page-link" 
+					<li className={`${currentButton === 1 ? 'page-item disabled' : 'page-item'}`}><a href="#!" className="page-link" 
             onClick = { () => setCurrentButton((prev) => prev === 1 ? prev : prev -1 )}
             >Previous</a></li>
 
@@ -33,7 +33,7 @@ const Pagination = ({ pages, setCurrentPage, currentCars, tempCars }) => {
               })
             } 
 
-          <li class={`${currentButton === numOfPages.length ? 'page-item disabled' : 'page-item'}`}><a href="#!" className="page-link"
+          <li className={`${currentButton === numOfPages.length ? 'page-item disabled' : 'page-item'}`}><a href="#!" className="page-link"
                 onClick = { () => setCurrentButton((prev) => prev === numOfPages.length ? prev : prev + 1 )}
             >Next</a></li> 
             
