@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react"
+import React, { useContext} from "react"
 import { useHistory } from 'react-router-dom'
 import CartProduct from "../components/CartProduct";
 import BillingFields from "../components/BillingFields";
@@ -8,12 +8,12 @@ import { CarContext } from "../contexts/CarContext";
 import { UserContext } from "../contexts/UserContext";
 import ShippingFields from "../components/ShippingFields";
 import styles from '../css/CartPage.module.css';
-import { Col, Container, Row, Form } from "react-bootstrap";
+import { Container, Form } from "react-bootstrap";
 import Back from '../components/Back'
 
 const CartPage = () => {
   const { cart, setCart, setOrderDetails, billingDetails, shippingDetails, errorLogin, setErrorLogin} = useContext(CartContext);
-  const { cars, setCars } = useContext(CarContext);
+  const { cars, setCars,setTempCars } = useContext(CarContext);
   const { loginState } = useContext(UserContext);
   const history = useHistory();
 
@@ -24,7 +24,8 @@ const CartPage = () => {
       let timestamp = new Date().toLocaleDateString();
       let id = Math.floor(Math.random() * 100000);
       setOrderDetails({billingDetails, shippingDetails, orderDate: timestamp, orderNumber: id, cart});    
-      
+      //Reset filtering tempcar after purchase
+      setTempCars(cars)
       //Reset car list and empty the cart after purchase 
       setCart([]);
       setCars(cars.map((car) => {
