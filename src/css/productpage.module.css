@@ -131,6 +131,16 @@
     height: 40px;
   }
 
+  .h1Carousel {
+    margin-left: 2rem;
+    margin-top: 2rem;
+  }
+
+  .carousel {
+    display: flex;
+    flex-direction: column;
+  }
+
 @media (max-width: 800px) {
 
   .product-page {
