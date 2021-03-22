@@ -1,9 +1,7 @@
 import {createContext, useState, useContext, useEffect, useRef } from "react"
 import { CartContext } from "../contexts/CartContext";
 import { useHistory } from 'react-router-dom'
-
 export const UserContext = createContext();
-
 const UserContextProvider = (props) => {  
     const history = useHistory();
     const { orderDetails, previousOrderDetails, setPreviousOrderDetails} = useContext(CartContext);
@@ -20,14 +18,9 @@ const UserContextProvider = (props) => {
         {
             email: "celil@gmail.com",
             password: "celil123"
-        }, 
-        {
-            email: "mikaela@gmail.com",
-            password: "mikaela123"
-        }, 
+        },
     ])
     const [currentUser, setCurrentUser] = useState ({});
-
     const addToRegistration = (e, email, password) => {
         e.preventDefault()
         const member = {
@@ -39,8 +32,7 @@ const UserContextProvider = (props) => {
             if(users[i].email === member.email) {
                 isAlreadyMember=true         
             }
-        }   
-  
+        }  
         if (!isAlreadyMember) {
             setUsers([member, ...users])
             setLoginState(true)
@@ -51,7 +43,6 @@ const UserContextProvider = (props) => {
             setIsMember(true)
         }
     }
-
     let userOrders = null; 
 
     useEffect(() => {
@@ -61,8 +52,7 @@ const UserContextProvider = (props) => {
                     if(user.previousOrders) { 
                         userOrders = user.previousOrders
                         setPreviousOrderDetails([...userOrders, orderDetails])
-                    }
-                    else {
+                    } else {
                         setPreviousOrderDetails([...previousOrderDetails, orderDetails])
                     }                                    
                 }
@@ -78,7 +68,6 @@ const UserContextProvider = (props) => {
         } else {
             combinedUsers = users;
         }
-
         let finalCombinedUsers = combinedUsers.map((user) => {
             if (user.email === currentUser.email) {
                 let currUser = {
@@ -93,22 +82,16 @@ const UserContextProvider = (props) => {
                 }
             }
         });
-
         setUsers(finalCombinedUsers);
         localStorage.setItem('users', JSON.stringify(finalCombinedUsers));
-
     }, [previousOrderDetails])
-
-    useEffect(() => {
-    }, [users])
 
     useEffect(() => {
         if (!firstRender.current) {
             users.map((user) => {
                 if (user.email === currentUser.email) {
                     user.loggedIn = true;
-                }
-                return {
+                } return {
                     ...user,
                     previousOrders: previousOrderDetails
                 };
@@ -119,16 +102,12 @@ const UserContextProvider = (props) => {
         }
         firstRender.current = false;
     }, [currentUser]);
-
     useEffect(() => {
         let userList = JSON.parse(localStorage.getItem('users'));
 
         if (!userList) {
-            return;
-        }
-
+            return; }
         let user = userList.find(user => user.loggedIn === true);
-
         if (user) {
             setCurrentUser(user);
             setLoginState(true);
@@ -165,13 +144,10 @@ const UserContextProvider = (props) => {
         toBeLogin,
         setToBeLogin
     }
-
     return(
         <UserContext.Provider value={values}>
         {props.children}
         </UserContext.Provider>
     )
-
 }
-
 export default UserContextProvider
