@@ -10,6 +10,7 @@ import ShippingFields from "../components/ShippingFields";
 import styles from '../css/CartPage.module.css';
 import { Container, Form } from "react-bootstrap";
 import Back from '../components/Back'
+import Footer from '../components/Footer'
 
 const expRE=/^[0-9]{2}\/[0-9]{2}$/; 
 const cvcRE=/^[0-9]{3}$/; 

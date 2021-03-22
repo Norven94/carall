@@ -6,14 +6,20 @@ import { useHistory, NavLink } from "react-router-dom"
 import styles from '../css/Navbar.module.css';
 import LoginButton from "./LoginButton";
 import LogoutButton from "./LogoutButton";
+
 function Navbar() {
   const { totalProducts, totalOrder, cart, removeProduct } = useContext(CartContext);
   const { loginState } = useContext(UserContext);
   const history = useHistory()
 
-  const goToProduct = (carId) => {
+  const goToProduct = (carId) => {    
     history.push("/product/" + carId);
-  };    
+  };  
+  
+  const handleRemoveProduct = (car, e ) => {
+    e.stopPropagation()
+    removeProduct(car)
+  }
 
   return (
     <>
@@ -41,7 +47,7 @@ function Navbar() {
                     <span className={styles.carYear}>{`${car.year}`}</span>    
                     <span className={styles.carPrice}>{`${car.price}`}</span>             
                   </div>
-                  <img className={styles.removeButton} onClick={() => removeProduct(car)} src="/assets/icons/removeFromCart.svg" alt="Remove product from basket" />
+                  <img className={styles.removeButton} onClick={(e) => handleRemoveProduct(car, e)} src="/assets/icons/removeFromCart.svg" alt="Remove product from basket" />
                 </div>
               ))}
               </div>
