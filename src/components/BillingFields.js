@@ -5,7 +5,7 @@ import { useContext } from 'react'
 import { CartContext } from "../contexts/CartContext";
 
 function BillingFields() {
-  const { billingDetails, setBillingDetails } = useContext(CartContext);
+  const { billingDetails, setBillingDetails, formWarning, setFormWarning } = useContext(CartContext);
 
   const handleNameChangeBilling = (e) => {
     setBillingDetails({...billingDetails, billingName: e.target.value});
@@ -32,6 +32,9 @@ function BillingFields() {
   }
 
   const handleExDateChangeBilling = (e) => {
+    if(e.target.value.length === 2){
+      e.target.value += "/";
+    }
     setBillingDetails({...billingDetails, billingExdate: e.target.value});
   }
 
@@ -63,10 +66,14 @@ function BillingFields() {
         <Form.Group as={Col} controlId="formBasicCardNumber">
           <Form.Control size="sm" onChange={handleCardNumberChangeBilling} type="cardnumber" placeholder="Card Number" value={billingDetails.billingCardnumber} required/>
         </Form.Group >
+
+
         <Form.Row as={Col}  className="grid">
         <Form.Group as={Col} controlId="formBasicExDate">
-          <Form.Control size="sm" onChange={handleExDateChangeBilling} type="exdate" placeholder="00/00" value={billingDetails.billingExdate} required/>
+          <Form.Control className={formWarning ? "is-valid" : "is-invalid"} size="sm" onChange={handleExDateChangeBilling} type="exdate" placeholder="00/00" value={billingDetails.billingExdate} required/>
         </Form.Group >
+
+
         <Form.Group as={Col} controlId="formBasicCvc">
           <Form.Control size="sm" onChange={handleCvcChangeBilling} type="cvc" placeholder="CVC" value={billingDetails.billingCvc} required/>
         </Form.Group >

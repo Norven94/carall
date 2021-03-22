@@ -13,6 +13,7 @@ const CartContextProvider = (props) => {
     const [shippingDetails, setShippingDetails] = useState({})
     const [previousOrderDetails, setPreviousOrderDetails] = useState([])
     const [errorLogin, setErrorLogin] = useState(false)
+    const [formWarning, setFormWarning] = useState(true)
     const firstRender = useRef(true); 
 
     const addToCart = (product) => {
@@ -86,7 +87,9 @@ const CartContextProvider = (props) => {
         previousOrderDetails, 
         setPreviousOrderDetails,
         errorLogin, 
-        setErrorLogin
+        setErrorLogin, 
+        formWarning,
+        setFormWarning
     }
 
     return(

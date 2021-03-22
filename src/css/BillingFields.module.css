@@ -1,0 +1,11 @@
+.alert {
+  background: red;
+}
+
+.isAlert {
+  visibility: visible;
+}
+
+.notAlert {
+  visibility: hidden;
+}

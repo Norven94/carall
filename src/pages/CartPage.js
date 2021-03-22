@@ -11,14 +11,25 @@ import styles from '../css/CartPage.module.css';
 import { Col, Container, Row, Form } from "react-bootstrap";
 import Back from '../components/Back'
 
+const expRE=/^[0-9]{2}\/[0-9]{2}$/; 
+const cvcRE=/^[0-9]{3}$/; 
+
 const CartPage = () => {
-  const { cart, setCart, setOrderDetails, billingDetails, shippingDetails, errorLogin, setErrorLogin} = useContext(CartContext);
+  const { cart, setCart, setOrderDetails, billingDetails, shippingDetails, errorLogin, setErrorLogin, formWarning, setFormWarning} = useContext(CartContext);
   const { cars, setCars } = useContext(CarContext);
   const { loginState } = useContext(UserContext);
   const history = useHistory();
 
   const handleClick = (e) => {
     e.preventDefault()
+    // checks if billingDetails have proper characters in its fields
+    if(!expRE.test(billingDetails.billingExdate)){
+      console.log('please enter correct info')
+      // return false; 
+      setFormWarning(false);
+      return formWarning;
+    } 
+
     if (loginState) {
       history.push("/confirmation")
       let timestamp = new Date().toLocaleDateString();
