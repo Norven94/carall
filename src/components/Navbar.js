@@ -6,6 +6,7 @@ import { useHistory, NavLink } from "react-router-dom"
 import styles from '../css/Navbar.module.css';
 import LoginButton from "./LoginButton";
 import LogoutButton from "./LogoutButton";
+
 function Navbar() {
   const { totalProducts, totalOrder, cart, removeProduct } = useContext(CartContext);
   const { loginState } = useContext(UserContext);
@@ -33,8 +34,8 @@ function Navbar() {
             </ReactBootstrap.Dropdown.Toggle>
             <ReactBootstrap.Dropdown.Menu>
               <div className={styles.cartCars}>
-              {cart.map((car) => (
-                <div className={styles.carBox} onClick={() => goToProduct(car.vin)}>
+              {cart.map((car,i) => (
+                <div key={i} className={styles.carBox} onClick={() => goToProduct(car.vin)}>
                   <img className={styles.carImage} src={car.image} alt={`Image of ${car.make} ${car.model} ${car.year}`} />
                   <div className={styles.carDescription}>
                     <span className={styles.carName}>{`${car.make} ${car.model}`}</span>
@@ -66,7 +67,7 @@ function Navbar() {
             </NavLink>
           : ""}
           <NavLink className={styles.span} to="/login">
-           <p className="text-center"> {loginState ? <LogoutButton /> : <LoginButton/>} </p> 
+           <div className="text-center"> {loginState ? <LogoutButton /> : <LoginButton/>} </div> 
           </NavLink>
         </ReactBootstrap.Nav>
       </ReactBootstrap.Navbar.Collapse>
