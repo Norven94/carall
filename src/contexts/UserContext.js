@@ -1,4 +1,4 @@
-import {createContext, useState, useContext, useEffect } from "react"
+import {createContext, useState, useContext, useEffect, useRef } from "react"
 import { CartContext } from "../contexts/CartContext";
 import { useHistory } from 'react-router-dom'
 
@@ -10,6 +10,7 @@ const UserContextProvider = (props) => {
     const [loginState, setLoginState] = useState(false);
     const [isMember, setIsMember] = useState(false);
     const [toBeLogin, setToBeLogin]=useState(true);
+    const firstRender = useRef(true);
     const [users, setUsers] = useState ([
         {
             email: "oskar@gmail.com",
@@ -81,6 +82,28 @@ const UserContextProvider = (props) => {
             }
         }))
     },[previousOrderDetails])
+
+    useEffect(() => {
+        console.log("Current User", currentUser);
+        if (!firstRender.current) {
+            localStorage.setItem('currentUser', JSON.stringify(currentUser));
+        }
+        firstRender.current = false;  
+    }, [currentUser]);
+
+    useEffect(() => {
+        console.log("Current User", currentUser);
+        if (localStorage.getItem('currentUser')) {
+            setCurrentUser(JSON.parse(localStorage.getItem('currentUser')));
+            setLoginState(true);
+        }
+    }, []);
+
+    useEffect(() => {
+        if (!loginState) {
+            localStorage.removeItem('currentUser');
+        }
+    }, [loginState]);
 
     const values =
     {

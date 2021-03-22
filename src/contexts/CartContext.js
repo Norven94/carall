@@ -14,11 +14,13 @@ const CartContextProvider = (props) => {
     const [previousOrderDetails, setPreviousOrderDetails] = useState([])
     const [errorLogin, setErrorLogin] = useState(false)
     const [formWarning, setFormWarning] = useState(true)
+    const [addedToCart, setAddedToCart] = useState(false)
     const firstRender = useRef(true); 
 
     const addToCart = (product) => {
       if (!product.purchased) {        
         setCart([...cart, product])
+        setAddedToCart(true)
         
         setCars(cars.map((car) => {
           if (car.vin === product.vin) {
@@ -87,6 +89,9 @@ const CartContextProvider = (props) => {
         previousOrderDetails, 
         setPreviousOrderDetails,
         errorLogin, 
+        setErrorLogin,
+        addedToCart, 
+        setAddedToCart
         setErrorLogin, 
         formWarning,
         setFormWarning

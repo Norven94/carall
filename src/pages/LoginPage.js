@@ -1,4 +1,4 @@
-import  {useEffect, useContext }from "react";
+import  { useContext }from "react";
 import Login from "../components/Login";
 import Register from '../components/Register';
 import {Container } from "react-bootstrap"
@@ -11,7 +11,7 @@ const {toBeLogin, setToBeLogin} = useContext(UserContext)
     }
     return (
       <div>
-        <Container>
+        <Container className="py-0">
           {toBeLogin ? <Login /> : <Register />}          
             <p className={styles.toggleText} onClick={toggle}>{toBeLogin ? "Are you not a member yet?" :" Back to login"}</p>          
         </Container>
