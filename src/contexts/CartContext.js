@@ -91,8 +91,7 @@ const CartContextProvider = (props) => {
         errorLogin, 
         setErrorLogin,
         addedToCart, 
-        setAddedToCart
-        setErrorLogin, 
+        setAddedToCart,
         formWarning,
         setFormWarning
     }

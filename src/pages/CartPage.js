@@ -16,7 +16,7 @@ const cvcRE=/^[0-9]{3}$/;
 
 const CartPage = () => {
   const { cart, setCart, setOrderDetails, billingDetails, shippingDetails, errorLogin, setErrorLogin, formWarning, setFormWarning} = useContext(CartContext);
-  const { cars, setCars } = useContext(CarContext);
+  const { cars, setCars, setTempCars } = useContext(CarContext);
   const { loginState } = useContext(UserContext);
   const history = useHistory();
 
@@ -25,7 +25,6 @@ const CartPage = () => {
     // checks if billingDetails have proper characters in its fields
     if(!expRE.test(billingDetails.billingExdate)){
       console.log('please enter correct info')
-      // return false; 
       setFormWarning(false);
       return formWarning;
     } 

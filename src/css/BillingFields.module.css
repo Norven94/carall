@@ -1,11 +1,7 @@
-.alert {
+.form-control, .isAlert {
   background: red;
 }
 
-.isAlert {
-  visibility: visible;
-}
-
-.notAlert {
-  visibility: hidden;
+.form-control, .notAlert {
+  background: green;
 }

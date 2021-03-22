@@ -1,11 +1,13 @@
 //Form for Address, shipping alternatives, payment details
 import { visa } from "../css/visa.module.css"
 import { Col, Form } from 'react-bootstrap'
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import { CartContext } from "../contexts/CartContext";
+import styles from '../css/BillingFields.module.css'
 
 function BillingFields() {
   const { billingDetails, setBillingDetails, formWarning, setFormWarning } = useContext(CartContext);
+  const [alert, setAlert] = useState(false)
 
   const handleNameChangeBilling = (e) => {
     setBillingDetails({...billingDetails, billingName: e.target.value});
@@ -34,6 +36,9 @@ function BillingFields() {
   const handleExDateChangeBilling = (e) => {
     if(e.target.value.length === 2){
       e.target.value += "/";
+    }
+    if(!formWarning){
+      setAlert(true);
     }
     setBillingDetails({...billingDetails, billingExdate: e.target.value});
   }
@@ -70,7 +75,7 @@ function BillingFields() {
 
         <Form.Row as={Col}  className="grid">
         <Form.Group as={Col} controlId="formBasicExDate">
-          <Form.Control className={formWarning ? "is-valid" : "is-invalid"} size="sm" onChange={handleExDateChangeBilling} type="exdate" placeholder="00/00" value={billingDetails.billingExdate} required/>
+          <Form.Control size="sm" onChange={handleExDateChangeBilling} className={`${styles.alertColor} ${alert ? styles.isAlert : styles.notAlert}`} type="cc-exp" placeholder="00/00" value={billingDetails.billingExdate} required/>
         </Form.Group >
 
 
