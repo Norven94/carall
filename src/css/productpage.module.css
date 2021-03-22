@@ -136,10 +136,10 @@
     margin-top: 2rem;
   }
 
-  .carousel {
+  /* .carousel {
     display: flex;
     flex-direction: column;
-  }
+  } */
 
 @media (max-width: 800px) {
 

@@ -1,7 +1,10 @@
 import { CarContext } from "../contexts/CarContext";
 import { CartContext } from "../contexts/CartContext";
 import { useState, useContext } from "react";
-import { Container, Col, Row, Carousel } from "react-bootstrap";
+import { Container, Col, Row } from "react-bootstrap";
+// import React, { useState } from 'react';
+// import { Carousel,CarouselItem } from 'reactstrap';
+import Carousel from 'react-elastic-carousel'
 import styles from "../css/productpage.module.css";
 import Back from './Back'
 import Car from './Car'
@@ -89,11 +92,11 @@ export default function ProductPage(props) {
       </Container>
 
       <div>
-        <h1 className={styles.h1Carousel}>Another {product.make} models</h1>
+        <h1 className={styles.h1Carousel}>You may also like this</h1>
       </div>
 
       <Carousel className={styles.carousel}>
-        <Carousel.Item className={styles.carousel}>
+      {/* <CarouselItem className={styles.carousel}> */}
           {cars.map((car) => {
             if (product.make === car.make && product.vin !== car.vin) {
               return (
@@ -101,7 +104,7 @@ export default function ProductPage(props) {
               )
             }
           })}
-        </Carousel.Item>
+         {/* </CarouselItem> */}
       </Carousel>
 
     </>
