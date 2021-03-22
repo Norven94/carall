@@ -10,6 +10,7 @@ import ShippingFields from "../components/ShippingFields";
 import styles from '../css/CartPage.module.css';
 import { Container, Form } from "react-bootstrap";
 import Back from '../components/Back'
+import Footer from '../components/Footer'
 
 const CartPage = () => {
   const { cart, setCart, setOrderDetails, billingDetails, shippingDetails, errorLogin, setErrorLogin} = useContext(CartContext);

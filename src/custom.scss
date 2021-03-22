@@ -2,8 +2,8 @@ $theme-colors: (
     "info":  #fff,
     "danger":  #FE7F50,
     "success":#14B394,
-    "warning":#50FFDD,
-    "primary":#FF7F50,
+    "warning":#344648,
+    "primary":#FE7F50,
 );
 $first:#FE7F50;
 $second:#344648;
@@ -130,11 +130,11 @@ $fourth:#ffc8b4;
   padding-left:1rem;
 }
 
-.carousel-inner {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
+// .carousel-inner {
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: center;
+// }
 
 .carousel .carousel-item {
     display: flex;
