@@ -6,13 +6,15 @@ import { useHistory, NavLink } from "react-router-dom"
 import styles from '../css/Navbar.module.css';
 import LoginButton from "./LoginButton";
 import LogoutButton from "./LogoutButton";
+
 function Navbar() {
-  const { totalProducts, totalOrder } = useContext(CartContext);
+  const { totalProducts, totalOrder, cart, removeProduct } = useContext(CartContext);
   const { loginState } = useContext(UserContext);
-  const { alert } = useContext(CartContext);
   const history = useHistory()
 
-  console.log(loginState)
+  const goToProduct = (carId) => {
+    history.push("/product/" + carId);
+  };    
 
   return (
     <>
@@ -31,7 +33,20 @@ function Navbar() {
               </div>
             </ReactBootstrap.Dropdown.Toggle>
             <ReactBootstrap.Dropdown.Menu>
-              Total :{totalOrder} Kr
+              <div className={styles.cartCars}>
+              {cart.map((car,i) => (
+                <div key={i} className={styles.carBox} onClick={() => goToProduct(car.vin)}>
+                  <img className={styles.carImage} src={car.image} alt={`Image of ${car.make} ${car.model} ${car.year}`} />
+                  <div className={styles.carDescription}>
+                    <span className={styles.carName}>{`${car.make} ${car.model}`}</span>
+                    <span className={styles.carYear}>{`${car.year}`}</span>    
+                    <span className={styles.carPrice}>{`${car.price}`}</span>             
+                  </div>
+                  <img className={styles.removeButton} onClick={() => removeProduct(car)} src="/assets/icons/removeFromCart.svg" alt="Remove product from basket" />
+                </div>
+              ))}
+              </div>
+              <span className={styles.totalOrder}>Total: {totalOrder} Kr</span>
               <ReactBootstrap.NavDropdown.Divider />
               <ReactBootstrap.NavDropdown.Item 
                 onClick={() => history.push("/cartpage")}
@@ -52,7 +67,7 @@ function Navbar() {
             </NavLink>
           : ""}
           <NavLink className={styles.span} to="/login">
-            {loginState ? <LogoutButton /> : <LoginButton />}
+           <div className="text-center"> {loginState ? <LogoutButton /> : <LoginButton/>} </div> 
           </NavLink>
         </ReactBootstrap.Nav>
       </ReactBootstrap.Navbar.Collapse>

@@ -1,6 +1,7 @@
 import { useContext } from "react"
 import { CarContext } from '../contexts/CarContext'
 import Car from './Car'
+import styles from '../css/DiscountCarList.module.css'
 
 import Carousel from 'react-elastic-carousel'
 import '../css/DiscountCarList.module.css'
@@ -20,7 +21,7 @@ const DiscountCarList = () => {
 
   return (
     <div className="discount">
-      <h1>Discount Cars</h1>
+      <h1 className={styles.h1}>Monthly Deals</h1>
       <Carousel itemPadding={[0, 0]} breakPoints={breakPoints}>
         {carDiscount.map((car) =>(
             <Car key={car.vin} car={car} />

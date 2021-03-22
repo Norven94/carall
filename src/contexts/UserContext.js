@@ -1,4 +1,4 @@
-import {createContext, useState, useContext, useEffect } from "react"
+import {createContext, useState, useContext, useEffect, useRef } from "react"
 import { CartContext } from "../contexts/CartContext";
 import { useHistory } from 'react-router-dom'
 
@@ -9,6 +9,8 @@ const UserContextProvider = (props) => {
     const { orderDetails, previousOrderDetails, setPreviousOrderDetails} = useContext(CartContext);
     const [loginState, setLoginState] = useState(false);
     const [isMember, setIsMember] = useState(false);
+    const [toBeLogin, setToBeLogin]=useState(true);
+    const firstRender = useRef(true);
     const [users, setUsers] = useState ([
         {
             email: "oskar@gmail.com",
@@ -48,27 +50,60 @@ const UserContextProvider = (props) => {
             setIsMember(true)
         }
     }
-      console.log(users)
+
+    let userOrders = null; 
+
     useEffect(() => {
-        if ( orderDetails ) {            
-            setPreviousOrderDetails([...previousOrderDetails, orderDetails])
-            console.log(previousOrderDetails)
+        if ( orderDetails ) {              
+            users.map((user) => {
+                if(user.email === currentUser.email) {                 
+                    if(user.previousOrders) { 
+                        userOrders = user.previousOrders
+                        setPreviousOrderDetails([...userOrders, orderDetails])
+                    }
+                    else {
+                        setPreviousOrderDetails([...previousOrderDetails, orderDetails])
+                    }                                    
+                }
+            })                 
         }                    
     },[orderDetails])
 
     useEffect(() => {
         setUsers(users.map((user) => {
-            if (user.email === currentUser.email) {     
-              return {
-                ...user,
-                previousOrders: previousOrderDetails
-              } 
-            } else {
-              return user
+            if (user.email === currentUser.email) {   
+                return {
+                    ...user,
+                    previousOrders: previousOrderDetails
+                }               
+            } 
+            else {
+                return user
             }
-          }))
-          console.log(previousOrderDetails) 
+        }))
     },[previousOrderDetails])
+
+    useEffect(() => {
+        console.log("Current User", currentUser);
+        if (!firstRender.current) {
+            localStorage.setItem('currentUser', JSON.stringify(currentUser));
+        }
+        firstRender.current = false;  
+    }, [currentUser]);
+
+    useEffect(() => {
+        console.log("Current User", currentUser);
+        if (localStorage.getItem('currentUser')) {
+            setCurrentUser(JSON.parse(localStorage.getItem('currentUser')));
+            setLoginState(true);
+        }
+    }, []);
+
+    useEffect(() => {
+        if (!loginState) {
+            localStorage.removeItem('currentUser');
+        }
+    }, [loginState]);
 
     const values =
     {
@@ -80,7 +115,9 @@ const UserContextProvider = (props) => {
         setCurrentUser,
         addToRegistration,
         isMember,
-        setIsMember
+        setIsMember,
+        toBeLogin,
+        setToBeLogin
     }
 
     return(

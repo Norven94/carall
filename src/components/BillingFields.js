@@ -49,11 +49,11 @@ function BillingFields() {
         <Form.Group as={Col} controlId="formBasicAddress">
           <Form.Control size="sm" onChange={handleAddressChangeBilling} type="address" placeholder="Address" value={billingDetails.billingAddress} required />
         </Form.Group>
-        <Form.Row as={Col}>
+        <Form.Row as={Col} className="grid">
           <Form.Group as={Col} controlId="formGridCityZip">
             <Form.Control size="sm" onChange={handleCityChangeBilling} type="city" placeholder="City" value={billingDetails.billingCity} required />
           </Form.Group>
-          <Form.Group as={Col}  controlId="formGridCityZip">
+          <Form.Group as={Col} controlId="formGridCityZip">
             <Form.Control size="sm" onChange={handleZipChangeBilling} type="zip code" placeholder="Zip Code" value={billingDetails.billingZip} required/>
           </Form.Group>
         </Form.Row>
@@ -63,7 +63,7 @@ function BillingFields() {
         <Form.Group as={Col} controlId="formBasicCardNumber">
           <Form.Control size="sm" onChange={handleCardNumberChangeBilling} type="cardnumber" placeholder="Card Number" value={billingDetails.billingCardnumber} required/>
         </Form.Group >
-        <Form.Row as={Col}>
+        <Form.Row as={Col}  className="grid">
         <Form.Group as={Col} controlId="formBasicExDate">
           <Form.Control size="sm" onChange={handleExDateChangeBilling} type="exdate" placeholder="00/00" value={billingDetails.billingExdate} required/>
         </Form.Group >

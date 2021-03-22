@@ -1,3 +1,4 @@
+/*Login.js and Register.js style*/
 .errorBox {
     display: none;
 }
@@ -9,17 +10,21 @@
 .errorBox.inactive {
     display: none
 }
-.loginContainer{
-    padding-top:50px;
-}
-.loginContainer >h1{
-    text-align: center;
-}
+
 .singInButton {
     background-color: #FE7F50 ;
-    width: 30%;
-    margin : 0 auto; 
-    padding: 5px;
+    margin-top:2rem;
+    width: 70%;
     border: none;
-  }
-  
+}
+
+  /* LoginPage.js style*/
+.toggleText{
+    cursor: pointer;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.toggleText:hover{
+    color:#FE7F50
+}
