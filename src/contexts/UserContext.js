@@ -124,9 +124,7 @@ const UserContextProvider = (props) => {
                 }
             });
             localStorage.setItem('users', JSON.stringify(users));
-        } else {
-            let user = users.find(user => user.loggedIn === true);
-        }
+        } 
         loggedIn.current = true;
     }, [loginState]);
 
