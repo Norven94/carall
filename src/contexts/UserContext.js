@@ -11,6 +11,7 @@ const UserContextProvider = (props) => {
     const [isMember, setIsMember] = useState(false);
     const [toBeLogin, setToBeLogin]=useState(true);
     const firstRender = useRef(true);
+    const loggedIn = useRef(false);
     const [users, setUsers] = useState ([
         {
             email: "oskar@gmail.com",
@@ -70,39 +71,84 @@ const UserContextProvider = (props) => {
     },[orderDetails])
 
     useEffect(() => {
-        setUsers(users.map((user) => {
-            if (user.email === currentUser.email) {   
+        let localStorageUsers = JSON.parse(localStorage.getItem('users'));
+        let combinedUsers;
+        if (localStorageUsers) {
+            combinedUsers = localStorageUsers.map(user => ({ ...user, ...users.find(user2 => user2.email === user.email) }))
+        } else {
+            combinedUsers = users;
+        }
+
+        let finalCombinedUsers = combinedUsers.map((user) => {
+            if (user.email === currentUser.email) {
+                let currUser = {
+                    ...user,
+                    previousOrders: previousOrderDetails
+                }
+                setCurrentUser(currUser);
+                return currUser;
+            } else {
+                return {
+                    ...user
+                }
+            }
+        });
+
+        setUsers(finalCombinedUsers);
+        localStorage.setItem('users', JSON.stringify(finalCombinedUsers));
+
+    }, [previousOrderDetails])
+
+    useEffect(() => {
+    }, [users])
+
+    useEffect(() => {
+        if (!firstRender.current) {
+            users.map((user) => {
+                if (user.email === currentUser.email) {
+                    user.loggedIn = true;
+                }
                 return {
                     ...user,
                     previousOrders: previousOrderDetails
-                }               
-            } 
-            else {
-                return user
-            }
-        }))
-    },[previousOrderDetails])
-
-    useEffect(() => {
-        console.log("Current User", currentUser);
-        if (!firstRender.current) {
+                };
+            });
             localStorage.setItem('currentUser', JSON.stringify(currentUser));
+            localStorage.setItem('users', JSON.stringify(users));
+            setUsers(users);
         }
-        firstRender.current = false;  
+        firstRender.current = false;
     }, [currentUser]);
 
     useEffect(() => {
-        console.log("Current User", currentUser);
-        if (localStorage.getItem('currentUser')) {
-            setCurrentUser(JSON.parse(localStorage.getItem('currentUser')));
+        let userList = JSON.parse(localStorage.getItem('users'));
+
+        if (!userList) {
+            return;
+        }
+
+        let user = userList.find(user => user.loggedIn === true);
+
+        if (user) {
+            setCurrentUser(user);
             setLoginState(true);
         }
     }, []);
 
     useEffect(() => {
-        if (!loginState) {
-            localStorage.removeItem('currentUser');
+        if (!loginState && loggedIn.current) {
+            users.map((user) => {
+                user.loggedIn = false;
+                return {
+                    ...user,
+                    previousOrders: previousOrderDetails
+                }
+            });
+            localStorage.setItem('users', JSON.stringify(users));
+        } else {
+            let user = users.find(user => user.loggedIn === true);
         }
+        loggedIn.current = true;
     }, [loginState]);
 
     const values =
