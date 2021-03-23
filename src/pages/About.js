@@ -1,5 +1,6 @@
 import * as ReactBootstrap from 'react-bootstrap'
 import Footer from '../components/Footer'
+import footerstyle from '../css/Footer.module.css'
 
 function About() {
 
@@ -32,12 +33,9 @@ function About() {
         </p>
         </div>
       </ReactBootstrap.Container>
-
-
-
-
-
-      <Footer />
+      <div className={footerstyle.sticky}>
+        <Footer />
+      </div>
     </div>
   )
 }
