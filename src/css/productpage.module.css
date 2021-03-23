@@ -11,9 +11,13 @@
 
   .product-details .product-info h1 {
     display: inline-block;
-    font-size: 44px;
+    /* font-size: 1.1rem; */
   }
-  
+
+  .productmakemiles h4{
+    font-size: 1.1rem;
+  }
+
   .image-container {
     position: relative;
     /* display: flex;
@@ -102,19 +106,20 @@
   .product-details .product-info {
     display: inline-block;
       margin-bottom: 0px;
-    font-size: 37px;
+    font-size: 1.1rem;
     color: #000000;
   }
   
   .product-details p {
-    font-size: 20px;
+    font-size: 1.1rem;
     color: #707070;
     max-width: 920px;
     text-align: left;
   }
   
   .product-details .product-price {
-    font-size: 30px;
+    font-size: 1.2rem;
+    font-weight: 500;
     margin-right: 30px;
   }
   
@@ -127,8 +132,8 @@
   
   .product-details img {
     margin-top: -15px;
-    width: 44px;
-    height: 40px;
+    width: 30px;
+    height: 26px;
   }
 
   .h1Carousel {
@@ -138,7 +143,7 @@
 
   .carousel {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
   }
 
   .check {
@@ -153,9 +158,9 @@
     /* margin-left: 6.5rem; */
     margin-left: 2rem;
   }
-
+ 
   .top1 {
-    margin-top: 2rem;
+    margin-top: 1.5rem;
   }
 
   .check {
