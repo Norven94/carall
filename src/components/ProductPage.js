@@ -1,10 +1,11 @@
 import { CarContext } from "../contexts/CarContext";
 import { CartContext } from "../contexts/CartContext";
 import { useState, useContext } from "react";
-import { Container, Col, Row, Carousel } from "react-bootstrap";
+import { Container, Col, Row, Carousel, Form } from "react-bootstrap";
 import styles from "../css/productpage.module.css";
 import Back from './Back'
 import Car from './Car'
+import Footer from './Footer'
 // import Carousel from 'react-bootstrap/Carousel'
 
 export default function ProductPage(props) {
@@ -86,16 +87,33 @@ export default function ProductPage(props) {
             </button>
           </Col>
         </Row>
+        {/* <Col> */}
+        {/* <div className={styles.value}> */}
+            <div className={styles.top1}>
+            <img className={styles.check} src="/assets/icons/confirm.svg" alt="confirm icon" />
+            <h4>Driving test service</h4>
+            </div>
+            <div className={styles.top2}>
+            <img className={styles.check} src="/assets/icons/confirm.svg" alt="confirm icon" />
+            <h4>Quick delivery</h4>
+            </div>
+            <div className={styles.top3}>
+            <img className={styles.check} src="/assets/icons/confirm.svg" alt="confirm icon" />
+            <h4>Get more discount as member</h4>
+            </div>
+        {/* </div> */}
+            {/* </Col> */}
       </Container>
 
       <div>
-        <h1 className={styles.h1Carousel}>Another {product.make} models</h1>
+        <h1 className={styles.h1Carousel}>You may also like this</h1>
       </div>
 
       <Carousel className={styles.carousel}>
         <Carousel.Item className={styles.carousel}>
           {cars.map((car) => {
-            if (product.make === car.make && product.vin !== car.vin) {
+            if (product.make === car.make && product.vin !== car.vin ) {
+            } else if (product.year === car.year && product.vin !== car.vin) {
               return (
                 <Car key={car.vin} car={car} />
               )
@@ -103,6 +121,14 @@ export default function ProductPage(props) {
           })}
         </Carousel.Item>
       </Carousel>
+
+      <h4 className={styles.formH4}>Subscribe our newsletter and get the best deals for your car.</h4>
+      <Form className={styles.subscribe}>
+        <input type="text" className={styles.inputEmail} name="emailaddress" placeholder="Your email address here..."></input><button>SEND</button>
+      </Form>
+      <div>
+      <Footer />
+      </div>
 
     </>
   );
