@@ -2,13 +2,11 @@ import { CarContext } from "../contexts/CarContext";
 import { CartContext } from "../contexts/CartContext";
 import { useState, useContext, useEffect } from "react";
 import { Container, Col, Row, Form } from "react-bootstrap";
-import Carousel from 'react-elastic-carousel'
 import styles from "../css/productpage.module.css";
 import Back from './Back'
 import Car from './Car'
 import Footer from "../components/Footer"
 import footerstyle from '../css/Footer.module.css'
-// import Carousel from 'react-bootstrap/Carousel'
 
 export default function ProductPage(props) {
   const { cars } = useContext(CarContext);
@@ -16,6 +14,8 @@ export default function ProductPage(props) {
   const { addToCart } = useContext(CartContext);
   const { productId } = props.match.params
   const [product, setProduct] = useState(findProduct(productId));
+  const [features, setFeatures]=useState([])
+
   useEffect(() => {
     setProduct(findProduct(productId))
   }, [productId])
@@ -46,6 +46,15 @@ export default function ProductPage(props) {
       </p>
     );
   };
+    useEffect(() => {
+      setFeatures(
+        cars.filter((car)=>{
+          return car.price < product.price + 40000 
+          && car.price > product.price -40000 
+          && car.price!=product.price
+      })) 
+    }, [product])
+    
 
   return (
     <>
@@ -114,22 +123,16 @@ export default function ProductPage(props) {
           </Col>
         </Row>
       </Container>
-
       <div>
         <h1 className={styles.h1Carousel}>You may also like this</h1>
       </div>
-
-      <Carousel className={styles.carousel}>
-        {/* <CarouselItem className={styles.carousel}> */}
-        {cars.map((car) => {
-          if (product.make === car.make || product.year === car.year && product.vin !== car.vin) {
-            return (
-              <Car key={car.vin} car={car} />
-            )
-          }
-        })}
-        {/* </CarouselItem> */}
-      </Carousel>
+     <Container fluid >
+       <Row className="d-flex justify-content-center flex-wrap">
+        {features.map((car) =>(     
+            <Car key={car.vin} car={car} />
+          ))}    
+       </Row>
+     </Container>
 
       <h4 className={styles.formH4}>Subscribe our newsletter and get the best deals for your car.</h4>
       <Form className={styles.subscribe}>
