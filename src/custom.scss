@@ -57,12 +57,12 @@ $fourth:#ffc8b4;
 @media only screen and (min-width: 576px) 
 {
    .dropdown  {
-        order:1;
-        margin-right: 3rem;
-        }
-        .navbar-brand{
-            margin-left:3rem;
-        }
+    order:1;
+    margin-right: 3rem;
+    }
+    .navbar-brand{
+    margin-left:3rem;
+    }
 }
 
 .dropdown-item.active, .dropdown-item:active{
@@ -73,17 +73,17 @@ $fourth:#ffc8b4;
 .About{
     text-align: center;
     .AboutUs{
-        text-align: center;
-        background-color: #fff;
-        width: 20rem;
-        box-shadow: 0 1px 3px #00000017;
-        padding: 33px 39px;
-        display: flex;
-        flex-direction: column;
-        margin-left: auto;
-        margin-right: 3rem;
-        margin-top: 2rem;
-        margin-bottom: -8rem;
+    text-align: center;
+    background-color: #fff;
+    width: 20rem;
+    box-shadow: 0 1px 3px #00000017;
+    padding: 33px 39px;
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: 3rem;
+    margin-top: 2rem;
+    margin-bottom: -8rem;
     }
     .Jumbotron{
     background-size: cover;
@@ -99,13 +99,13 @@ $fourth:#ffc8b4;
 }
 .number{
     h2{
-        color:$second;
-        font-size:5rem;
-        font-weight: 600;
+    color:$second;
+    font-size:5rem;
+    font-weight: 600;
     } 
     p{
-        color:#000;
-        font-size:1rem; 
+    color:#000;
+    font-size:1rem; 
     }
 }
 .text{
@@ -117,19 +117,19 @@ $fourth:#ffc8b4;
     flex-direction: column;
     margin-bottom: 3rem;
      h3{
-        color:$first;
-        font-size:3rem;
-        font-weight: 600; 
-        margin-top:2rem;
+    color:$first;
+    font-size:3rem;
+    font-weight: 600; 
+    margin-top:2rem;
      }
      p{
-        color:#000;
-        font-size:1rem; 
-        margin:3rem;
+    color:#000;
+    font-size:1rem; 
+    margin:2rem;
     }
     .GoalImage img{
-        width:302px;
-        height:200px;
+    width:302px;
+    height:200px;
     }
 }
 }
@@ -141,20 +141,29 @@ $fourth:#ffc8b4;
     margin-top: 11rem;
         }
     .numberContainer{ 
-        flex-direction: row;
-        margin-top:4em;
+    flex-direction: row;
+    margin-top:4em;
     }
      .GoalContainer{ 
-        flex-direction: row;
-        margin-top:4em;
+    flex-direction: row;
+    margin-top:4em;
   
     .GoalImage img{
-        width:510px;
-        height:340px;
+    width:510px;
+    height:340px;
     }
     }
 }
 
+}
+@media only screen and (max-width: 991px) 
+{
+    .About{
+     .GoalContainer{ 
+    flex-direction: column;
+    margin-top:4em;
+    }
+}
 }
 
 
@@ -168,30 +177,25 @@ $fourth:#ffc8b4;
     padding-top: 3rem;
     padding-bottom: 2rem;
 }
-
 .arrow{
     margin-left: 1rem;
     margin-top: 2rem;
     cursor:pointer;
 }
-
 .grid{
-  padding-right:0.3rem;
-  padding-left:1rem;
+    padding-right:0.3rem;
+    padding-left:1rem;
 }
-
 // .carousel-inner {
 //     display: flex;
 //     flex-direction: row;
 //     justify-content: center;
 // }
-
 .carousel .carousel-item {
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
-
 // .carousel-control-next-icon, .carousel-control-prev {
 //     display: none;
 // }
