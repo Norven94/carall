@@ -91,22 +91,12 @@ $fourth:#ffc8b4;
         opacity: 0; 
       }
   }
-  .jumbotron {
-    background-color:$fourth; 
 
-}
 .About{
     text-align: center;
-    h1{
-        font-weight: 600;
-        }
-        h2{
-            font-size:1.5rem;
-            font-weight: 600;
-            }
-        img{
-            padding:2rem;
-        }  
+ background: url("/assets/images/hero.png");
+background-size: cover;
+
 }
 
 .rangeSlider::-webkit-slider-thumb {
