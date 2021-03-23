@@ -18,6 +18,7 @@ const CarContextProvider =(props)=>{
       isDiscount:car.price < 200000 ? true : false,
       image:`/assets/car-pictures/${car.make}-${car.model}-${car.year}.jpg`,
       purchased: false,
+      sold:false,
     }
   }))
   const [tempCars, setTempCars] = useState(cars)
