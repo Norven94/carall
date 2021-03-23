@@ -1,5 +1,5 @@
+/*Login.js and Register.js style*/
 .errorBox {
-    background-color: red;
     display: none;
 }
 
@@ -9,4 +9,22 @@
 
 .errorBox.inactive {
     display: none
+}
+
+.singInButton {
+    background-color: #FE7F50 ;
+    margin-top:2rem;
+    width: 70%;
+    border: none;
+}
+
+  /* LoginPage.js style*/
+.toggleText{
+    cursor: pointer;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.toggleText:hover{
+    color:#FE7F50
 }
