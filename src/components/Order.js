@@ -1,3 +1,4 @@
+import { Container } from 'react-bootstrap'
 import styles from '../css/Order.module.css'
 
 export default function Order (props) {
@@ -19,8 +20,8 @@ export default function Order (props) {
                     </div>
                 </div>
             <p className={styles.p}>Car details:</p>
-            {props.order.cart.map((car) => (
-                <div className={`${styles.secondInfo} ${styles.secondInfoS}`}>
+            {props.order.cart.map((car, i) => (
+                <div key={i} className={`${styles.secondInfo} ${styles.secondInfoS}`}>
                     <div className={styles.order1}>
                         <p> Article Number : </p>
                         <p> Make, Model : </p>

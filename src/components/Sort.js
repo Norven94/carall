@@ -11,8 +11,8 @@ function Sort() {
 
   return (
     <div className="sort-container">
-      <select class="form-select" className={styles.select} onChange={handleChange} aria-label="Default select example">
-        <option selected className={styles.sortSelect}>Sort by</option>
+      <select className="form-select" className={styles.select} onChange={handleChange} aria-label="Default select example">
+        <option defaultValue className={styles.sortSelect}>Sort by</option>
         <option className={styles.sortSelect} bg="danger" value="make">Brand</option>
         <option className={styles.sortSelect} value="model">Model a-z</option>
         <option className={styles.sortSelect} value="year up">Year ascending</option>
