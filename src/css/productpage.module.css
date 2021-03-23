@@ -215,6 +215,51 @@
     margin-top: 1rem;
   } 
 
+  .pChange {
+    color:black;
+    /* background-color: #FE7F50;  */
+    font-size: 1rem;
+  }
+  
+  .pContact:after {
+    content:"";
+    animation: spin 2s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% {
+      content:"ipsum";
+    }
+    10% {
+      content:"dolor";
+    }
+    20% {
+      content:"sit";
+    }
+    30% {
+      content:"amet";
+    }
+    40% {
+      content:"consectetur";
+    }
+    50% {
+      content: "adipisicing";
+    }
+    60% {
+      content: "elit";
+    }
+    70% {
+      content: "Hic";
+    }
+    80% {
+      content: "atque";
+    }
+    90% {
+      content: "fuga";
+    }
+  }
+
+
 @media (max-width: 800px) {
 
   .product-page {
