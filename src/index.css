@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
 
 body {
   margin: 0;
-  font-family: 'Lato','Roboto', sans-serif;
+  font-family: 'Lato','Roboto','Roboto Condensed', sans-serif;
 }
 h1, h2, h3, h4, h5, h6, p{
-  font-family:'Roboto'
+  font-family:'Roboto Condensed'
 }
 
 code {
@@ -31,8 +32,11 @@ code {
 
 .carlist-container {
   display: grid;
-  text-align: center;
+  text-align: center; 
   background: #F5F7F6;
+}
+input[type="range"].range-slider::-moz-range-thumb {
+  background: #FE7F50;
 }
 
 /* Carousel Buttons Starts */
@@ -52,3 +56,37 @@ code {
   color: black;
 }
 /* Carousel Buttons Ends */
+
+.pagination {
+	display: flex;
+  justify-content: center;
+	margin-top: 15px;
+}
+.pagination li a {
+	border: none;
+	font-size: 13px;
+	min-width: 30px;
+	min-height: 30px;
+	color: #999;
+	margin: 0 2px;
+	line-height: 30px;
+	border-radius: 5px;
+	text-align: center;
+	padding: 0 1px;
+}
+.pagination li a:hover {
+	color: #666;
+}	
+.pagination li.active a, .pagination li.active a.page-link {
+	background:  #fe7f50;
+}
+.pagination li.active a:hover {        
+	background:  #fe7f50;
+}
+.pagination li.disabled i {
+	color: #ccc;
+}
+.pagination li i {
+	font-size: 16px;
+	padding-top: 6px
+}
