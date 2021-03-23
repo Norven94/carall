@@ -56,6 +56,7 @@ export default function ProductPage(props) {
           <Col xs={11} sm={8} lg={5} className={styles["image-container"]} >
             <span className={`${styles.discountTag} ${product.isDiscount ? styles.isdiscount : styles.undiscount}`}>Sale</span>
             <span className={`${styles.purchasedBox} ${product.purchased ? styles.purchased : styles.notPurchased}`}>In your cart</span>
+            <span className={`${styles.soldBox} ${product.sold ? styles.sold : styles.notSold}`}>Sold Out</span>
             <img 
               src={product.image}
               alt={
@@ -101,7 +102,7 @@ export default function ProductPage(props) {
 
             <span className={styles["product-price"]}>Price : {priceWithSpace} Kr </span>
 
-            <button className={styles.cartBox1} onClick={() => addToCart(product)}>
+            <button className={`${product.sold ? styles.isSold : styles.cartBox1}`} onClick={() => addToCart(product)}>
               <img
                 src="../assets/icons/cart-orange.svg"
                 alt="Cart"
