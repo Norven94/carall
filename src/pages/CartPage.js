@@ -12,31 +12,35 @@ import { Container, Form } from "react-bootstrap";
 import Back from '../components/Back'
 import Footer from '../components/Footer'
 
+
+
 const CartPage = () => {
-  const { cart, setCart, setOrderDetails, billingDetails, shippingDetails, errorLogin, setErrorLogin} = useContext(CartContext);
-  const { cars, setCars,setTempCars } = useContext(CarContext);
+  const { cart, setCart, setOrderDetails, billingDetails, shippingDetails, errorLogin, setErrorLogin, formWarning, setFormWarning} = useContext(CartContext);
+  const { cars, setCars, setTempCars } = useContext(CarContext);
   const { loginState } = useContext(UserContext);
   const history = useHistory();
 
   const handleClick = (e) => {
     e.preventDefault()
-    if (loginState) {
-      history.push("/confirmation")
-      let timestamp = new Date().toLocaleDateString();
-      let id = Math.floor(Math.random() * 100000);
-      setOrderDetails({billingDetails, shippingDetails, orderDate: timestamp, orderNumber: id, cart});    
-      //Reset filtering tempcar after purchase
-      setTempCars(cars)
-      //Reset car list and empty the cart after purchase 
-      setCart([]);
-      setCars(cars.map((car) => {
-        car.purchased = false;
-        return car
-      }));
-    } else {
-      setErrorLogin(true);
+    // checks if billingDetails have proper characters in its fields
+    if (!formWarning) {
+      if (loginState) {
+        history.push("/confirmation")
+        let timestamp = new Date().toLocaleDateString();
+        let id = Math.floor(Math.random() * 100000);
+        setOrderDetails({billingDetails, shippingDetails, orderDate: timestamp, orderNumber: id, cart});    
+        //Reset filtering tempcar after purchase
+        setTempCars(cars)
+        //Reset car list and empty the cart after purchase 
+        setCart([]);
+        setCars(cars.map((car) => {
+          car.purchased = false;
+          return car
+        }));
+      } else {
+        setErrorLogin(true);
+      }
     }
-    
   } 
 
   useEffect(() => {
