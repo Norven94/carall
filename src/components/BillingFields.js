@@ -4,8 +4,8 @@ import { Col, Form } from 'react-bootstrap'
 import { useContext, useState, useEffect } from 'react'
 import { CartContext } from "../contexts/CartContext";
 
-const nameRE=/^[a-zA-ZåäöÅÄÖ ]{1,}$/; 
-const addressRE=/^[a-zA-ZåäöÅÄÖ0-9- ]{1,}$/; 
+const nameRE=/^[a-zA-ZåäöÅÄÖ\- ]{1,}$/; 
+const addressRE=/^[a-zA-ZåäöÅÄÖ0-9\- ]{1,}$/; 
 const cityRE=/^[a-zA-ZåäöÅÄÖ ]{1,}$/; 
 const zipRE=/^[0-9 ]{5,6}$/; 
 const countryRE=/^[a-zA-Z]{1,}$/; 
