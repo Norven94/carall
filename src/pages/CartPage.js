@@ -30,6 +30,9 @@ const CartPage = () => {
       //Reset car list and empty the cart after purchase 
       setCart([]);
       setCars(cars.map((car) => {
+        if(car.purchased){
+          car.sold=true;
+        }
         car.purchased = false;
         return car
       }));
