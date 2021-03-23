@@ -49,7 +49,9 @@ export default function ProductPage(props) {
     useEffect(() => {
       setFeatures(
         cars.filter((car)=>{
-          return car.price < product.price + 80000 && car.price > product.price
+          return car.price < product.price + 40000 
+          && car.price > product.price -40000 
+          && car.price!=product.price
       })) 
     }, [product])
     
