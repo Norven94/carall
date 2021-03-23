@@ -127,7 +127,8 @@
   .product-details .product-price {
     font-size: 1.1rem;
     margin-right: 18px;
-    font-weight: 500
+    font-weight: 500;
+    font-family: 'Roboto Condensed';
   }
   
   .product-details button {
@@ -156,13 +157,31 @@
 
   .subscribe {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 7rem;
   }
 
-  input[type="text"] {
+  Form input[type="text"] {
+    padding-top: 7px;
+    padding-right: 0px;
+    margin-right: 1.5rem;
+    border: 1px solid #fe7f50;
+    border-radius: 4px;
+  }
+
+  Form button {
+    border: 1px solid #fe7f50;
+    border-radius: 4px;
+    background-color: #fe7f50;
+    color: #ffffff;
+    padding: 7px 10px;
+  }
+
+  /* Form .inputEmail {
+    padding-right: 0px;
     margin-right: 2rem;
     border: 1px solid #fe7f50;
-  }
+    border-radius: 15px;
+  } */
 
   .check {
     width: 15px;

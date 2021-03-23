@@ -8,6 +8,7 @@ import Carousel from 'react-elastic-carousel'
 import styles from "../css/productpage.module.css";
 import Back from './Back'
 import Car from './Car'
+import Footer from "../components/Footer"
 // import Carousel from 'react-bootstrap/Carousel'
 
 export default function ProductPage(props) {
@@ -127,8 +128,11 @@ export default function ProductPage(props) {
 
       <h4 className={styles.formH4}>Subscribe our newsletter and get the best deals for your car.</h4>
       <Form className={styles.subscribe}>
-        <input type="text" placeholder="Your email address here..."></input><button>SEND</button>
+        <input type="text" className={styles.inputEmail} name="emailaddress" placeholder="Your email address here..."></input><button>SEND</button>
       </Form>
+      <div>
+      <Footer />
+      </div>
       
 
     </>
