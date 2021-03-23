@@ -1,4 +1,4 @@
-import React, { useContext} from "react"
+import React, { useContext, useEffect} from "react"
 import { useHistory } from 'react-router-dom'
 import CartProduct from "../components/CartProduct";
 import BillingFields from "../components/BillingFields";
@@ -30,6 +30,9 @@ const CartPage = () => {
       //Reset car list and empty the cart after purchase 
       setCart([]);
       setCars(cars.map((car) => {
+        if(car.purchased){
+          car.sold=true;
+        }
         car.purchased = false;
         return car
       }));
@@ -38,6 +41,12 @@ const CartPage = () => {
     }
     
   } 
+
+  useEffect(() => {
+    if (loginState) {
+      setErrorLogin(false);
+    }
+  },[])
 
   //let emptyCart = false;
 
@@ -54,6 +63,7 @@ const CartPage = () => {
             <p>Your Cart Is Empty</p>
           </div>
         </div>
+        <Footer />
       </div>
     );
   } 
@@ -85,7 +95,11 @@ const CartPage = () => {
           </Form>
         </div>
         {errorLogin ? <PreventPurchase /> : ""}
+        <div>
+      <Footer />
       </div>
+      </div>
+      
     );
   }
 }

@@ -6,7 +6,7 @@ function Footer() {
 
   return (
     <footer className={`text-center p-3 bg-warning ${footerstyle.footernormal}`} >
-      <div class="text-info">Carall © 2020 Copyright</div>
+      <div className="text-info">Carall © 2020 Copyright</div>
     </footer>
   )
 }
