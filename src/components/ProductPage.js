@@ -7,13 +7,14 @@ import styles from "../css/productpage.module.css";
 import Back from './Back'
 import Car from './Car'
 import Footer from "../components/Footer"
+import footerstyle from '../css/Footer.module.css'
 // import Carousel from 'react-bootstrap/Carousel'
 
 export default function ProductPage(props) {
   const { cars } = useContext(CarContext);
   const { findProduct } = useContext(CarContext);
   const { addToCart } = useContext(CartContext);
-  const {productId} =props.match.params
+  const { productId } = props.match.params
   const [product, setProduct] = useState(findProduct(productId));
   useEffect(() => {
     setProduct(findProduct(productId))
@@ -53,37 +54,37 @@ export default function ProductPage(props) {
       <Container className={styles["product-page"]}>
         <Row>
           <Col className={styles.colContainer}>
-          <Col xs={11} sm={8} lg={5} className={styles["image-container"]} >
-            <span className={`${styles.discountTag} ${product.isDiscount ? styles.isdiscount : styles.undiscount}`}>Sale</span>
-            <span className={`${styles.purchasedBox} ${product.purchased ? styles.purchased : styles.notPurchased}`}>In your cart</span>
-            <span className={`${styles.soldBox} ${product.sold ? styles.sold : styles.notSold}`}>Sold Out</span>
-            <img 
-              src={product.image}
-              alt={
-                "Image of " +
-                product.make +
-                " " +
-                product.model +
-                " " +
-                product.year
-              }
-            />
-             </Col>
-             <Col>
-            <div className={styles.top1}>
-            <img className={styles.check} src="/assets/icons/confirm.svg" alt="confirm icon" />
-            <h4>Driving test service</h4>
-            </div>
-            <div className={styles.top2}>
-            <img className={styles.check} src="/assets/icons/confirm.svg" alt="confirm icon" />
-            <h4>Quick delivery</h4>
-            </div>
-            <div className={styles.top3}>
-            <img className={styles.check} src="/assets/icons/confirm.svg" alt="confirm icon" />
-            <h4>Get more discount as member</h4>
-            </div>
+            <Col xs={11} sm={8} lg={5} className={styles["image-container"]} >
+              <span className={`${styles.discountTag} ${product.isDiscount ? styles.isdiscount : styles.undiscount}`}>Sale</span>
+              <span className={`${styles.purchasedBox} ${product.purchased ? styles.purchased : styles.notPurchased}`}>In your cart</span>
+              <span className={`${styles.soldBox} ${product.sold ? styles.sold : styles.notSold}`}>Sold Out</span>
+              <img
+                src={product.image}
+                alt={
+                  "Image of " +
+                  product.make +
+                  " " +
+                  product.model +
+                  " " +
+                  product.year
+                }
+              />
             </Col>
+            <Col>
+              <div className={styles.top1}>
+                <img className={styles.check} src="/assets/icons/confirm.svg" alt="confirm icon" />
+                <h4>Driving test service</h4>
+              </div>
+              <div className={styles.top2}>
+                <img className={styles.check} src="/assets/icons/confirm.svg" alt="confirm icon" />
+                <h4>Quick delivery</h4>
+              </div>
+              <div className={styles.top3}>
+                <img className={styles.check} src="/assets/icons/confirm.svg" alt="confirm icon" />
+                <h4>Get more discount as member</h4>
+              </div>
             </Col>
+          </Col>
           <Col xs={11} sm={8} lg={6} className={styles["product-details"]}>
             <h1 className={styles["product-info"]}>Make  : {product.make}</h1>
             <div className={styles["details1"]}>
@@ -119,15 +120,15 @@ export default function ProductPage(props) {
       </div>
 
       <Carousel className={styles.carousel}>
-      {/* <CarouselItem className={styles.carousel}> */}
-          {cars.map((car) => {
-            if (product.make === car.make || product.year === car.year && product.vin !== car.vin ) {
-              return (
-                <Car key={car.vin} car={car} />
-              )
-            }
-          })}
-         {/* </CarouselItem> */}
+        {/* <CarouselItem className={styles.carousel}> */}
+        {cars.map((car) => {
+          if (product.make === car.make || product.year === car.year && product.vin !== car.vin) {
+            return (
+              <Car key={car.vin} car={car} />
+            )
+          }
+        })}
+        {/* </CarouselItem> */}
       </Carousel>
 
       <h4 className={styles.formH4}>Subscribe our newsletter and get the best deals for your car.</h4>
@@ -135,10 +136,10 @@ export default function ProductPage(props) {
         <input type="text" className={styles.inputEmail} name="emailaddress" placeholder="Your email address here..."></input><button>SEND</button>
       </Form>
       <div>
-      <Footer />
+      <div className={footerstyle.sticky}>
+            <Footer />
+          </div>
       </div>
-      
-
     </>
   );
 
