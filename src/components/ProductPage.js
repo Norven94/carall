@@ -47,8 +47,8 @@ export default function ProductPage(props) {
       <Back />
 
       <Container className={styles["product-page"]}>
-        <Row className={styles.rowContainer}>
-          <Col >
+        <Row>
+          <Col className={styles.colContainer}>
           <Col xs={11} sm={8} lg={5} className={styles["image-container"]} >
             <span className={`${styles.discountTag} ${product.isDiscount ? styles.isdiscount : styles.undiscount}`}>Sale</span>
             <span className={`${styles.purchasedBox} ${product.purchased ? styles.purchased : styles.notPurchased}`}>In your cart</span>
@@ -69,11 +69,11 @@ export default function ProductPage(props) {
             <img className={styles.check} src="/assets/icons/confirm.svg" alt="confirm icon" />
             <h4>Driving test service</h4>
             </div>
-            <div className={styles.top1}>
+            <div className={styles.top2}>
             <img className={styles.check} src="/assets/icons/confirm.svg" alt="confirm icon" />
             <h4>Quick delivery</h4>
             </div>
-            <div className={styles.top1}>
+            <div className={styles.top3}>
             <img className={styles.check} src="/assets/icons/confirm.svg" alt="confirm icon" />
             <h4>Get more discount as member</h4>
             </div>
@@ -116,7 +116,7 @@ export default function ProductPage(props) {
       <Carousel className={styles.carousel}>
       {/* <CarouselItem className={styles.carousel}> */}
           {cars.map((car) => {
-            if (product.make === car.make && product.vin !== car.vin) {
+            if (product.make === car.make || product.year === car.year && product.vin !== car.vin ) {
               return (
                 <Car key={car.vin} car={car} />
               )

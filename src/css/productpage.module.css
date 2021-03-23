@@ -4,7 +4,7 @@
   }
 
   .image-container img {
-    width: 100%;
+    /* width: 100%; */
     width: 410px;
     height: 300px;
   }
@@ -30,11 +30,13 @@
   }
   
   span.purchasedBox {
+    width: 177px;
     background-color: #fe7f50;
     color: white;
     font-weight: 600;
     text-align: center;
     padding: 20px 40px;
+    margin-left: 8rem;
     position: absolute;
     top: 150px;
     left: 50%;
@@ -61,6 +63,7 @@
     text-align: center;
     padding: 12px 5px;
     font-weight: 600;
+    margin-left: 1.3rem;
   }
   
   span.isdiscount {
@@ -158,6 +161,7 @@
 
   input[type="text"] {
     margin-right: 2rem;
+    border: 1px solid #fe7f50;
   }
 
   .check {
@@ -166,19 +170,31 @@
     margin-right: 0.5rem;
   }
 
-  .top1 {
+  .top1, .top2, .top3 {
     display: flex;
     align-content:flex-start;
     /* flex-direction: column; */
   }
 
+  .top1 {
+    margin-top: 2rem;
+  }
+
   .top1 h4 {
     font-size: 1.1rem;
   }
-  /* .carousel {
-    display: flex;
-    flex-direction: column;
-  } */
+
+  .top2 h4 {
+    font-size: 1.1rem;
+  }
+
+  .top3 h4 {
+    font-size: 1.1rem;
+  }
+
+  .carousel {
+    margin-top: 1rem;
+  } 
 
 @media (max-width: 800px) {
 
@@ -187,8 +203,13 @@
     }
 
     .rowContainer {
-      justify-content: center;
-      align-items: center;
+      display: flex;
+      justify-content: space-evenly;
+      /* align-items: center; */
+    }
+
+    .colContanier {
+      padding-right: 0px;
     }
 
     .product-details {
