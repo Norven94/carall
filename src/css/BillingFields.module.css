@@ -1,7 +1,7 @@
-.form-control, .isAlert {
+.isAlert {
   background: red;
 }
 
-.form-control, .notAlert {
+.notAlert {
   background: green;
 }

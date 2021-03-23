@@ -1,13 +1,28 @@
 //Form for Address, shipping alternatives, payment details
 import { visa } from "../css/visa.module.css"
 import { Col, Form } from 'react-bootstrap'
-import { useContext, useState } from 'react'
+import { useContext, useState, useEffect } from 'react'
 import { CartContext } from "../contexts/CartContext";
 import styles from '../css/BillingFields.module.css'
 
+const expRE=/^[0-9]{2}\/[0-9]{2}$/; 
+const cvcRE=/^[0-9]{3}$/; 
+
 function BillingFields() {
-  const { billingDetails, setBillingDetails, formWarning, setFormWarning } = useContext(CartContext);
+  const { billingDetails, setBillingDetails, setFormWarning } = useContext(CartContext);
   const [alert, setAlert] = useState(false)
+
+  const [exDateError, setExDateError] = useState(false)
+  const [inputDefault, setInputDefault] = useState(false)
+
+  useEffect(() => {
+    if (exDateError === false) {
+      setFormWarning(false)
+    } else {
+      setFormWarning(true)
+    }
+  },[exDateError])
+
 
   const handleNameChangeBilling = (e) => {
     setBillingDetails({...billingDetails, billingName: e.target.value});
@@ -34,13 +49,20 @@ function BillingFields() {
   }
 
   const handleExDateChangeBilling = (e) => {
-    if(e.target.value.length === 2){
-      e.target.value += "/";
+    if (e.target.value !== "") {
+      setInputDefault(true)
+      if(!expRE.test(e.target.value)){
+        console.log('please enter correct info')
+        setExDateError(true);
+      } else {
+        setExDateError(false);
+        setBillingDetails({...billingDetails, billingExdate: e.target.value});
+      }
+    } else {
+      setInputDefault(false);
     }
-    if(!formWarning){
-      setAlert(true);
-    }
-    setBillingDetails({...billingDetails, billingExdate: e.target.value});
+    
+     
   }
 
   const handleCvcChangeBilling = (e) => {
@@ -52,35 +74,35 @@ function BillingFields() {
       {/* Billing Infos fiels here */}
       <h1 className="billing-header">Billing Info</h1>
         <Form.Group as={Col} controlId="formBasicName">
-          <Form.Control size="sm" onChange={handleNameChangeBilling} type="full name" placeholder="Full Name" value={billingDetails.billingName} required />
+          <Form.Control size="sm" onChange={handleNameChangeBilling} type="full name" placeholder="Full Name" required />
         </Form.Group>
         <Form.Group as={Col} controlId="formBasicAddress">
-          <Form.Control size="sm" onChange={handleAddressChangeBilling} type="address" placeholder="Address" value={billingDetails.billingAddress} required />
+          <Form.Control size="sm" onChange={handleAddressChangeBilling} type="address" placeholder="Address" required />
         </Form.Group>
         <Form.Row as={Col} className="grid">
           <Form.Group as={Col} controlId="formGridCityZip">
-            <Form.Control size="sm" onChange={handleCityChangeBilling} type="city" placeholder="City" value={billingDetails.billingCity} required />
+            <Form.Control size="sm" onChange={handleCityChangeBilling} type="city" placeholder="City" required />
           </Form.Group>
           <Form.Group as={Col} controlId="formGridCityZip">
-            <Form.Control size="sm" onChange={handleZipChangeBilling} type="zip code" placeholder="Zip Code" value={billingDetails.billingZip} required/>
+            <Form.Control size="sm" onChange={handleZipChangeBilling} type="zip code" placeholder="Zip Code" required/>
           </Form.Group>
         </Form.Row>
         <Form.Group as={Col} controlId="formBasicCountry">
-          <Form.Control size="sm" onChange={handleCountryChangeBilling} type="country" placeholder="Country" value={billingDetails.billingCountry} required/>
+          <Form.Control size="sm" onChange={handleCountryChangeBilling} type="country" placeholder="Country" required/>
         </Form.Group >
         <Form.Group as={Col} controlId="formBasicCardNumber">
-          <Form.Control size="sm" onChange={handleCardNumberChangeBilling} type="cardnumber" placeholder="Card Number" value={billingDetails.billingCardnumber} required/>
+          <Form.Control size="sm" onChange={handleCardNumberChangeBilling} type="cardnumber" placeholder="Card Number" required/>
         </Form.Group >
 
 
         <Form.Row as={Col}  className="grid">
         <Form.Group as={Col} controlId="formBasicExDate">
-          <Form.Control size="sm" onChange={handleExDateChangeBilling} className={`${styles.alertColor} ${alert ? styles.isAlert : styles.notAlert}`} type="cc-exp" placeholder="00/00" value={billingDetails.billingExdate} required/>
+          <Form.Control size="sm" onChange={handleExDateChangeBilling} className={`${styles.alertColor} ${inputDefault ? exDateError ? "is-invalid" : "is-valid" : "" }`} type="tel" placeholder="00/00" required/>
         </Form.Group >
 
 
         <Form.Group as={Col} controlId="formBasicCvc">
-          <Form.Control size="sm" onChange={handleCvcChangeBilling} type="cvc" placeholder="CVC" value={billingDetails.billingCvc} required/>
+          <Form.Control size="sm" onChange={handleCvcChangeBilling} type="cvc" placeholder="CVC" required/>
         </Form.Group >
         </Form.Row>
         <Form.Group as={Col}>

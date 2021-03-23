@@ -12,8 +12,7 @@ import { Container, Form } from "react-bootstrap";
 import Back from '../components/Back'
 import Footer from '../components/Footer'
 
-const expRE=/^[0-9]{2}\/[0-9]{2}$/; 
-const cvcRE=/^[0-9]{3}$/; 
+
 
 const CartPage = () => {
   const { cart, setCart, setOrderDetails, billingDetails, shippingDetails, errorLogin, setErrorLogin, formWarning, setFormWarning} = useContext(CartContext);
@@ -24,29 +23,24 @@ const CartPage = () => {
   const handleClick = (e) => {
     e.preventDefault()
     // checks if billingDetails have proper characters in its fields
-    if(!expRE.test(billingDetails.billingExdate)){
-      console.log('please enter correct info')
-      setFormWarning(false);
-      return formWarning;
-    } 
-
-    if (loginState) {
-      history.push("/confirmation")
-      let timestamp = new Date().toLocaleDateString();
-      let id = Math.floor(Math.random() * 100000);
-      setOrderDetails({billingDetails, shippingDetails, orderDate: timestamp, orderNumber: id, cart});    
-      //Reset filtering tempcar after purchase
-      setTempCars(cars)
-      //Reset car list and empty the cart after purchase 
-      setCart([]);
-      setCars(cars.map((car) => {
-        car.purchased = false;
-        return car
-      }));
-    } else {
-      setErrorLogin(true);
+    if (!formWarning) {
+      if (loginState) {
+        history.push("/confirmation")
+        let timestamp = new Date().toLocaleDateString();
+        let id = Math.floor(Math.random() * 100000);
+        setOrderDetails({billingDetails, shippingDetails, orderDate: timestamp, orderNumber: id, cart});    
+        //Reset filtering tempcar after purchase
+        setTempCars(cars)
+        //Reset car list and empty the cart after purchase 
+        setCart([]);
+        setCars(cars.map((car) => {
+          car.purchased = false;
+          return car
+        }));
+      } else {
+        setErrorLogin(true);
+      }
     }
-    
   } 
 
   //let emptyCart = false;

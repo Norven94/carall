@@ -38,21 +38,21 @@ function ShippingFields() {
       {/* Shipping Details Fields here */}
       <h1 className="shipping-header">Shipping Details</h1>
         <Form.Group as={Col} controlId="formBasicName">
-          <Form.Control size="sm" onChange={handleNameChangeShipping} type="full name" placeholder="Full Name" value={shippingDetails.shippingName} required/>
+          <Form.Control size="sm" onChange={handleNameChangeShipping} type="full name" placeholder="Full Name" required/>
         </Form.Group>
         <Form.Group as={Col} controlId="formBasicAddress">
-          <Form.Control size="sm" onChange={handleAddressChangeShipping} type="address" placeholder="Address" value={shippingDetails.shippingAddress} required/>
+          <Form.Control size="sm" onChange={handleAddressChangeShipping} type="address" placeholder="Address" required/>
         </Form.Group>
         <Form.Row as={Col}  className="grid">
           <Form.Group as={Col} controlId="formGridCity">
-            <Form.Control size="sm" onChange={handleCityChangeShipping} type="city" placeholder="City" value={shippingDetails.shippingCity} required/>
+            <Form.Control size="sm" onChange={handleCityChangeShipping} type="city" placeholder="City" required/>
           </Form.Group>
           <Form.Group as={Col} controlId="formGridZip">
-            <Form.Control size="sm" onChange={handleZipChangeShipping} type="zip code" placeholder="Zip Code" value={shippingDetails.shippingZip} required/>
+            <Form.Control size="sm" onChange={handleZipChangeShipping} type="zip code" placeholder="Zip Code" required/>
           </Form.Group>
         </Form.Row>
         <Form.Group as={Col} controlId="formBasicCountry">
-          <Form.Control size="sm" onChange={handleCountryChangeShipping} type="country" placeholder="Country" value={shippingDetails.shippingCountry} required/>
+          <Form.Control size="sm" onChange={handleCountryChangeShipping} type="country" placeholder="Country" required/>
         </Form.Group>
         <Form.Group as={Col} controlId="formGridShipping">
           <Form.Control size="sm" onChange={handleAlternativeChangeShipping} as="select" defaultValue="Shipping" required>
