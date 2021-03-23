@@ -1,4 +1,4 @@
-import React, { useContext} from "react"
+import React, { useContext, useEffect} from "react"
 import { useHistory } from 'react-router-dom'
 import CartProduct from "../components/CartProduct";
 import BillingFields from "../components/BillingFields";
@@ -39,6 +39,12 @@ const CartPage = () => {
     
   } 
 
+  useEffect(() => {
+    if (loginState) {
+      setErrorLogin(false);
+    }
+  },[])
+
   //let emptyCart = false;
 
   if (cart.length === 0) {
@@ -54,6 +60,7 @@ const CartPage = () => {
             <p>Your Cart Is Empty</p>
           </div>
         </div>
+        <Footer />
       </div>
     );
   } 
@@ -85,7 +92,11 @@ const CartPage = () => {
           </Form>
         </div>
         {errorLogin ? <PreventPurchase /> : ""}
+        <div>
+      <Footer />
       </div>
+      </div>
+      
     );
   }
 }
