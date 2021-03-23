@@ -10,7 +10,7 @@ function Footer() {
           <h6>Contact Us</h6><p>Looking for the right car?</p>
         </div>
         <div className={footerstyle.footerContact}>
-          <p >AdressLane 22A <br />
+          <p>AdressLane 22A <br />
           21 211 Stockholm </p>
           <p>info@Carall.se</p>
           <p>+46 763 000 00</p>

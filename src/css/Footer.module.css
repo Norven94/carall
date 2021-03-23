@@ -18,6 +18,8 @@
     color:#fff;
     display: flex;
     flex-direction: column;
+    display: flex;
+justify-content: space-between;
 }
 .customfooter h6{
     font-weight:600;
@@ -25,6 +27,7 @@
 }
 .footerheader{
     margin: 3rem 6rem;
+    text-align:left;
 }
 .footerAddress{
     margin: 2rem 5rem;
@@ -39,13 +42,18 @@
 .Social img{
     width:20px;
     height:20px;
-    margin:3rem 3rem;
+    margin:2rem 2rem auto 3rem;
 }
+.Social {
+  margin-right:5rem;
+}
+
 .Info{
     width:100%;
 }
 .footerContact p:first-child{
     margin-top: -1.5rem;
+    text-align: left;
 }
 
 @media only screen and (min-width: 576px) 
@@ -58,7 +66,7 @@
     margin-left: 4rem;
 }
 .Info{
-    width:70%;
+    width:58%;
 }
 .Social img{
     margin:3rem 1rem;
