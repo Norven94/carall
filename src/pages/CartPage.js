@@ -1,4 +1,4 @@
-import React, { useContext} from "react"
+import React, { useContext, useEffect} from "react"
 import { useHistory } from 'react-router-dom'
 import CartProduct from "../components/CartProduct";
 import BillingFields from "../components/BillingFields";
@@ -10,6 +10,7 @@ import ShippingFields from "../components/ShippingFields";
 import styles from '../css/CartPage.module.css';
 import { Container, Form } from "react-bootstrap";
 import Back from '../components/Back'
+import Footer from '../components/Footer'
 
 const CartPage = () => {
   const { cart, setCart, setOrderDetails, billingDetails, shippingDetails, errorLogin, setErrorLogin} = useContext(CartContext);
@@ -37,6 +38,12 @@ const CartPage = () => {
     }
     
   } 
+
+  useEffect(() => {
+    if (loginState) {
+      setErrorLogin(false);
+    }
+  },[])
 
   //let emptyCart = false;
 
