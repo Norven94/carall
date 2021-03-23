@@ -60,8 +60,7 @@ const Register = () => {
         </Form.Group>
         <Form.Group controlId="formConfirmPassword">
           <Form.Label>Confirm the password</Form.Label>
-          <Form.Control className={isValid ? "is-valid" : "is-invalid"} onChange={checkPassword} type="password" name="confirm" placeholder="Confirm Password" required/>
-        <Form.Control.Feedback className={`${styles.errorBox} ${isValid ? styles.active : styles.inactive}`}>OK! Click Submit</ Form.Control.Feedback>
+          <Form.Control className={isValid ? "is-valid" : "is-invalid"} onChange={checkPassword} type="password" name="confirm" placeholder="Confirm Password" required/>        
         </Form.Group>
         <Container className="text-center">
           <Button className={styles.singInButton} variant="primary" type="submit">

@@ -5,7 +5,10 @@ import DiscountCarList from "../components/DiscountCarList";
 
 import AddedToCartBox from "../components/AddedToCartBox";
 
-function Home(ref) {  
+import Footer from '../components/Footer'
+import footerstyle from '../css/Footer.module.css'
+
+function Home() {  
   const { addedToCart } = useContext(CartContext)
 
   return (
@@ -14,6 +17,9 @@ function Home(ref) {
       <DiscountCarList />
       <CarList />
       {addedToCart ? <AddedToCartBox /> : ""}     
+      <div className={footerstyle.sticky}>
+<Footer />
+</div>
     </div>      
   )
 }
