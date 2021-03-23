@@ -24,9 +24,7 @@
 
   .image-container {
     position: relative;
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
+
   }
   
   span.purchasedBox {
@@ -49,6 +47,32 @@
   
   span.purchased {
     visibility: visible;
+  }
+
+  .soldBox{
+    width:100%;
+    height:100%
+  }
+
+  span.soldBox {
+    background-color: rgba(0, 0, 0, 0.548);
+    color: white;
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    padding: 30%;
+    position: absolute;
+  }
+
+  span.notSold {
+    visibility: hidden;
+  }
+  span.sold {
+    visibility: visible;
+  }
+  
+  button.isSold{
+    display:none
   }
   
   span.discountTag {
