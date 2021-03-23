@@ -10,6 +10,7 @@ import footerstyle from '../css/Footer.module.css'
 
 function Home() {  
   const { addedToCart } = useContext(CartContext)
+
   return (
     <div>
 
