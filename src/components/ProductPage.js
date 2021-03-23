@@ -5,6 +5,7 @@ import { Container, Col, Row, Carousel } from "react-bootstrap";
 import styles from "../css/productpage.module.css";
 import Back from './Back'
 import Car from './Car'
+// import Carousel from 'react-bootstrap/Carousel'
 
 export default function ProductPage(props) {
   const { cars } = useContext(CarContext);
@@ -73,8 +74,7 @@ export default function ProductPage(props) {
             </div>
             <ReadMore maxChar="100">{product.descLong}</ReadMore>
 
-            {/* <span className={styles["product-price"]}>{priceWithSpace}Kr</span> */}
-            <span className={styles["product-price"]}>{product.price}Kr</span>
+            <span className={styles["product-price"]}>{priceWithSpace}Kr</span>
 
             <button className={styles.cartBox1} onClick={() => addToCart(product)}>
               <img
