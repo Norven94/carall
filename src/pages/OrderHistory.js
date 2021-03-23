@@ -15,11 +15,11 @@ const OrderHistory = () => {
         <div className={styles.boxfirst}>
         <h3>Latest Order</h3>
         <hr className={styles.hrcolor} />
-        {users.map((user, index) => {
+        {users.map((user) => {
           if (user.email === currentUser.email) {
             if (user.previousOrders) {
               return (              
-                user.previousOrders.map((order) => (
+                user.previousOrders.map((order, index) => (
                   <Order key={index} order={order} />  
                 ))
               )
