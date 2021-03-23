@@ -60,6 +60,7 @@ const CartPage = () => {
             <p>Your Cart Is Empty</p>
           </div>
         </div>
+        <Footer />
       </div>
     );
   } 
@@ -91,7 +92,11 @@ const CartPage = () => {
           </Form>
         </div>
         {errorLogin ? <PreventPurchase /> : ""}
+        <div>
+      <Footer />
       </div>
+      </div>
+      
     );
   }
 }

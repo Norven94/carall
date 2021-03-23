@@ -1,4 +1,5 @@
 import { useContext} from 'react'
+import Footer from '../components/Footer'
 import { CartContext } from "../contexts/CartContext"
 import styles from '../css/Confirmation.module.css'
 
@@ -58,6 +59,9 @@ const Confirmation = () => {
       <div className={styles.printButton}>
         <button className={styles.print} onClick={() => window.print()}>Print</button>
         <img className={styles.printIcon} src="assets/icons/print.svg" alt="" />
+      </div>
+      <div>
+      <Footer />
       </div>
     </div>
   );

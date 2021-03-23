@@ -2,6 +2,7 @@ import Order from "../components/Order"
 import { useContext } from 'react'
 import { UserContext } from '../contexts/UserContext'
 import styles from '../css/OrderHistory.module.css'
+import Footer from "../components/Footer"
 // import '../css/OrderHistory.module.css'
 
 const OrderHistory = () => {
@@ -33,6 +34,7 @@ const OrderHistory = () => {
         {/* <p> Total Price:............. kr </p>      */}
         </div>
      </div>
+     <Footer />
      </div>
    ); 
  } 
