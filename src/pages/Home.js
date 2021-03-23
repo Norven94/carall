@@ -5,8 +5,9 @@ import DiscountCarList from "../components/DiscountCarList";
 
 import AddedToCartBox from "../components/AddedToCartBox";
 
-function Home() {  
+function Home(ref) {  
   const { addedToCart } = useContext(CartContext)
+
   return (
     <div>
 
