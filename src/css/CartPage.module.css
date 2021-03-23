@@ -1,50 +1,156 @@
-
+* { box-sizing: border-box; }
 
 .cartPage-style {
   background: #F5F7F6;
-  display: grid;
+  display: flex;
+  justify-content: center;
+}
+
+.back-button {
+  margin-left: -80px;
+  height: 100%;
 }
 
 .cart-rubrik {
-  margin: 10px auto 10px auto;
+  margin-top: 2vw;
   font-size: 2rem;
-  font-family:Verdana, Geneva, Tahoma, sans-serif ;
 }
 
 .product-container {
   margin:5px; 
-  padding:5px; 
-  width: auto; 
-  height: 600px; 
+  margin-left: 15vw;
+  width: 50vw; 
+}
+
+.product {
+  height: 37vw;
   overflow: scroll; 
   text-align:justify; 
 }
 
 .forms {
+  width: 25vw;
   margin-top: 25px;
   padding: 10px;
   background-color: white;
 }
 
-.shipping-field {
-  position: fixed;
+.billing {
+  width: 100%;
+}
+
+.shipping {
+  width: 100%;
 }
 
 .buyButton {
-  display: grid;
   background-color: #FE7F50 ;
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 5px;
+  width: 100%;
   border: none;
+  color:#fff;
 }
 
+.EmptyCartBox img {
+  width: 200px;
+}
+
+.EmptyCartBox span {
+  display: block;
+  color: #FE7F50;
+  font-size: 50px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.EmptyCartBox p {
+  font-size: 30px;
+  text-align: center;
+}
+
+
 @media (max-width: 768px){
-  .buyButton {
-    position: relative;
-    top: 15px;
-    left: 15px;
-    margin-bottom: 50px;
+
+  .cartPage-style {
+    padding: 20px;
+    display: grid;
+    width: 100%;
+    justify-content: center;
   }
+
+  .back-button {
+    height: 100%;
+    margin-top: -30px;
+    margin-left: -20px;
+  }
+  
+
+  .cart-rubrik {
+    margin-top: -4vw;
+  }
+
+  .product-container {
+    margin-left: 10%;
+    width: 100%;
+  }
+
+  .product {
+    height: 32vw;
+  }
+  
+
+  .forms {
+  display: flex;
+  width: 100%;
+  
+  }
+
+  .billing {
+    float: left;
+    width: 50%;
+  }
+
+  .shipping {
+    float: left;
+    width: 50%;
+  }
+
+
+}
+
+@media (max-width: 450px){ 
+
+  .cartPage-style {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .cart-rubrik {
+    margin-top: -30px;
+    display: grid;
+    justify-content: center;
+  }
+
+  .product-container {
+    margin-left: 0px;
+    width: 100%;
+  }
+
+
+  .product {
+    height: 100vw;
+  }
+
+
+  .forms {
+    display: inline;
+    }
+
+  .billing {
+    width: 100%;
+  }
+
+  .shipping {
+    width: 100%;
+  }
+
 }

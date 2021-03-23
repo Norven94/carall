@@ -4,9 +4,6 @@ import { FilterContext } from '../contexts/FilterContext'
 import styles from '../css/filter.module.css'
 import { Col, Row, Form } from 'react-bootstrap'
 import RangeSlider from 'react-bootstrap-range-slider'
-import Dropdown from 'react-bootstrap/Dropdown'
-import DropdownButton from 'react-bootstrap/DropdownButton'
-// import * as ReactBootstrap from 'react-bootstrap'
 
 const FilterRange = () => {
   const { filterPriceStart, filterPriceEnd, filterMilesStart, filterMilesEnd } = useContext(FilterContext);
@@ -40,17 +37,9 @@ const FilterRange = () => {
 
   return (
     <div>
-      <div className={styles.dropdown}>
-{/*         
-      <DropdownButton id="dropdown-basic-button" title="Filter">
-      </DropdownButton> */}
-  {/* <Dropdown.Toggle id="dropdown-basic"> */}
-    {/* Filter */}
-  {/* </Dropdown.Toggle> */}
-  
-  
-        <select className={styles.dropbtn}>
-        <option selected className={styles.dropbtn}>Filter</option>
+       <div className={styles.dropdown}>
+        <select name="Filter" className={styles.dropbtn}>
+        <option defaultValue className={styles.dropbtn}>Filter</option>
         </select>
 
         <div className={styles.dropdownContent}>
@@ -80,10 +69,6 @@ const FilterRange = () => {
             </Form.Group>
           </Form>
           </div>
-        
-          
-       
-
       </div>
     </div>
   );

@@ -1,26 +1,59 @@
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import { CartContext } from "../contexts/CartContext"
-
+import { UserContext } from "../contexts/UserContext"
 import styles from '../css/Confirmation.module.css'
 
 const Confirmation = () => {
-  const { orderDetails } = useContext(CartContext)
-
+  const { orderDetails, previousOrderDetails } = useContext(CartContext)
+  const { users } = useContext(UserContext);
+    
   return (
     <div className={styles.confirmation}>
-      <h1>Thank you for your purchase!</h1>
-      <h3>Your order details</h3>
-      <p>Full Name: {orderDetails.ShippingName}</p>
-      <p>Delivery Address: {`${orderDetails.ShippingAddress}, ${orderDetails.ShippingCity}, ${orderDetails.ShippingCountry}`}</p>
-      <h3>Car details:</h3>
-      {orderDetails.cart.map((c) => (
-        <div key={c.vin}>
-          <p>Article Number: {c.vin}</p>
-          <p>Make: {c.make}</p>
-          <p>Model: {c.model}</p>
+      <img className={styles.confirm} src="/assets/icons/confirm.svg" alt="confirm icon" />
+      <div className={styles.thanks}>
+        <h1>Thank you for choosing us!</h1>
+        <p>Below you will find information about your purchase</p>
+      </div>
+
+      <div className={styles.details}>
+        <h4>Order details:</h4>
+        <div className={styles.orderDetails}>
+          <div className={styles.detailsLeft}>
+            <p>Order Number:</p>
+            <p>Order Date:</p>
+            <p>Full Name:</p>
+            <p>Delivery Address:</p>
+          </div>
+          <div className={styles.detailsRight}>
+            <p> {orderDetails.orderNumber}</p>
+            <p> {orderDetails.orderDate}</p>
+            <p> {orderDetails.shippingDetails.ShippingName}</p>
+            <p> {orderDetails.shippingDetails.ShippingAddress}</p>
+            <p> {`${orderDetails.shippingDetails.ShippingCity}, ${orderDetails.shippingDetails.ShippingCountry}`}</p>
+          </div>
         </div>
-      ))}
-      <button onClick={() => window.print()}>Print order confirmation</button>
+
+        <h4 >Car details:</h4>
+        {orderDetails.cart.map((c,i) => (
+          <div key={i} className={`${styles.carDetails} ${styles.carDetailsC}`}>
+            <div className={styles.detailsLeft}>
+              <p className={styles.left}>Article Number</p>
+              <p className={styles.left}>Make, Model:</p>
+              <p className={styles.left}>Price:</p>
+            </div>
+            <div className={styles.detailsRight} key={c.vin}>
+              <p className={styles.right}>{c.vin}</p>
+              <p className={styles.right}>{`${c.make} ${c.model}`}</p>
+              <p className={styles.right}>{c.price} Kr</p>
+            </div>
+          </div>
+        ))}
+
+      </div>
+      <div className={styles.printButton}>
+        <button className={styles.print} onClick={() => window.print()}>Print</button>
+        <img className={styles.printIcon} src="assets/icons/print.svg" alt="" />
+      </div>
     </div>
   );
 }
