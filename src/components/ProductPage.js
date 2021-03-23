@@ -1,9 +1,7 @@
 import { CarContext } from "../contexts/CarContext";
 import { CartContext } from "../contexts/CartContext";
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { Container, Col, Row, Form } from "react-bootstrap";
-// import React, { useState } from 'react';
-// import { Carousel,CarouselItem } from 'reactstrap';
 import Carousel from 'react-elastic-carousel'
 import styles from "../css/productpage.module.css";
 import Back from './Back'
@@ -15,7 +13,12 @@ export default function ProductPage(props) {
   const { cars } = useContext(CarContext);
   const { findProduct } = useContext(CarContext);
   const { addToCart } = useContext(CartContext);
-  const [product] = useState(findProduct(props.productId));
+  const {productId} =props.match.params
+  const [product, setProduct] = useState(findProduct(productId));
+  useEffect(() => {
+    setProduct(findProduct(productId))
+  }, [productId])
+
   const priceWithSpace = product.price
     .toString()
     .replace(/\B(?=(\d{3})+(?!\d))/g, " ");
