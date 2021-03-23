@@ -1,14 +1,14 @@
-import { useContext, useEffect } from 'react'
+import { useContext} from 'react'
+import Footer from '../components/Footer'
 import { CartContext } from "../contexts/CartContext"
-import { UserContext } from "../contexts/UserContext"
 import styles from '../css/Confirmation.module.css'
 
 const Confirmation = () => {
-  const { orderDetails, previousOrderDetails } = useContext(CartContext)
-  const { users } = useContext(UserContext);
+  const { orderDetails } = useContext(CartContext)
     
   return (
     <div className={styles.confirmation}>
+      <img className={styles.logo} src="/assets/images/logo.svg" alt="Logo" />
       <img className={styles.confirm} src="/assets/icons/confirm.svg" alt="confirm icon" />
       <div className={styles.thanks}>
         <h1>Thank you for choosing us!</h1>
@@ -48,11 +48,20 @@ const Confirmation = () => {
             </div>
           </div>
         ))}
-
       </div>
+      <div className={styles.information}>
+        <p>Oraganisation number : <span> 0000000</span></p>
+        <p>Email : <span> info@Carall.se</span></p>
+        <p>Telephone : <span> +46 000 000 00</span></p>
+        <p>Address : <span> Adresslane 22A 21 2211 Stockholm</span></p>
+      </div>
+
       <div className={styles.printButton}>
         <button className={styles.print} onClick={() => window.print()}>Print</button>
         <img className={styles.printIcon} src="assets/icons/print.svg" alt="" />
+      </div>
+      <div>
+      <Footer />
       </div>
     </div>
   );
