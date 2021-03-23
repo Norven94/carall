@@ -70,6 +70,7 @@
   
   .product-details .details1 {
     display: flex;
+    padding-top:0.5rem;
   }
 
   .pointer { 
@@ -77,10 +78,12 @@
   }
   
   .product-details .product-makemiles {
-    margin-right: 240px;
+    margin-right: 113px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    font-size: 1.5rem;
+    font-weight: 100;
   }
 
   .product-details .product-city-year {
@@ -111,7 +114,7 @@
   }
   
   .product-details .product-price {
-    font-size: 40px;
+    font-size: 30px;
     margin-right: 30px;
   }
   
@@ -123,9 +126,19 @@
   }
   
   .product-details img {
-    margin-top: -30px;
+    margin-top: -15px;
     width: 44px;
     height: 40px;
+  }
+
+  .h1Carousel {
+    margin-left: 2rem;
+    margin-top: 2rem;
+  }
+
+  .carousel {
+    display: flex;
+    flex-direction: column;
   }
 
 @media (max-width: 800px) {

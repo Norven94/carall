@@ -1,10 +1,12 @@
 import { useContext } from "react"
 import { UserContext } from "../contexts/UserContext"
 import { CartContext } from "../contexts/CartContext"
+import { CarContext } from "../contexts/CarContext";
 
 export default function LogoutButton () {
-    const { setLoginState, setCurrentUser } = useContext(UserContext);
-    const { setOrderDetails, setBillingDetails, setShippingDetails, setPreviousOrderDetails } = useContext(CartContext);
+    const { setLoginState, setCurrentUser,setToBeLogin } = useContext(UserContext);
+    const { setOrderDetails, setBillingDetails, setShippingDetails, setPreviousOrderDetails, setCart } = useContext(CartContext);
+    const { cars, setCars, setTempCars }=useContext(CarContext)
 
     const logout = () => {
         setLoginState(false)
@@ -13,6 +15,13 @@ export default function LogoutButton () {
         setBillingDetails({})
         setShippingDetails({})
         setPreviousOrderDetails([])
+        setToBeLogin(true)
+        setTempCars(cars)
+        setCart([])
+        setCars(cars.map((car) => {
+            car.purchased = false;
+            return car
+          }));
     }
     
     return (

@@ -39,7 +39,7 @@ const FilterRange = () => {
     <div>
        <div className={styles.dropdown}>
         <select name="Filter" className={styles.dropbtn}>
-        <option selected className={styles.dropbtn}>Filter</option>
+        <option defaultValue className={styles.dropbtn}>Filter</option>
         </select>
 
         <div className={styles.dropdownContent}>

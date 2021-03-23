@@ -7,8 +7,7 @@
   padding-top:10px;
   padding-bottom: 10px;
   padding-left: 6px;
-  padding-right: 4rem;
-
+  width:7rem;
 }
 
 .dropdown {
@@ -26,9 +25,7 @@
 }
 
 .priceFilter  {
-
   padding-top: 20px;
-
 }
 
 .minmax {

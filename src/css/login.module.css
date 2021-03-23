@@ -13,14 +13,14 @@
 
 .singInButton {
     background-color: #FE7F50 ;
-    width: 30%;
+    margin-top:2rem;
+    width: 70%;
     border: none;
 }
 
   /* LoginPage.js style*/
 .toggleText{
     cursor: pointer;
-    margin-top:2rem;
     text-align: center;
     text-decoration: underline;
 }
