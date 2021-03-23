@@ -178,8 +178,9 @@ $fourth:#ffc8b4;
     padding-bottom: 2rem;
 }
 .arrow{
-    margin-left: 1rem;
-    margin-top: 2rem;
+    position: absolute;
+    top: 6rem;
+    left: 2rem;
     cursor:pointer;
 }
 .grid{
