@@ -35,7 +35,7 @@ justify-content: space-between;
 .footerContact{
     display: flex;
     justify-content: space-around;
-    width: 500px;
+    width: 150px;
     flex-direction: column;
     margin-left: 6rem;
 }
@@ -70,5 +70,8 @@ justify-content: space-between;
 }
 .Social img{
     margin:3rem 1rem;
+}
+.footerContact{
+    width: 500px; 
 }
 }
