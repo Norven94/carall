@@ -4,6 +4,7 @@ import { UserContext } from '../contexts/UserContext'
 import styles from '../css/OrderHistory.module.css'
 import Footer from "../components/Footer"
 // import '../css/OrderHistory.module.css'
+import footerstyle from '../css/Footer.module.css'
 
 const OrderHistory = () => {
   const { users, currentUser } = useContext(UserContext)  
@@ -34,7 +35,9 @@ const OrderHistory = () => {
         {/* <p> Total Price:............. kr </p>      */}
         </div>
      </div>
-     <Footer />
+     <div className={footerstyle.sticky}>
+        <Footer />
+      </div>
      </div>
    ); 
  } 

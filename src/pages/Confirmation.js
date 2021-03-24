@@ -2,6 +2,7 @@ import { useContext} from 'react'
 import Footer from '../components/Footer'
 import { CartContext } from "../contexts/CartContext"
 import styles from '../css/Confirmation.module.css'
+import footerstyle from '../css/Footer.module.css'
 
 const Confirmation = () => {
   const { orderDetails } = useContext(CartContext)
@@ -61,7 +62,9 @@ const Confirmation = () => {
         <img className={styles.printIcon} src="assets/icons/print.svg" alt="" />
       </div>
       <div>
-      <Footer />
+      <div className={footerstyle.sticky}>
+        <Footer />
+      </div>
       </div>
     </div>
   );
