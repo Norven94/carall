@@ -22,6 +22,15 @@ export default function ProductPage(props) {
     color: "#FE7F50",
   };
 
+  const breakPoints = [
+    { width: 1, itemsToShow: 1 },
+    { width: 450, itemsToShow: 1 },
+    { width: 630, itemsToShow: 2 },
+    { width: 1100, itemsToShow: 3 },
+    { width: 1550, itemsToShow: 4 },
+    { width: 1900, itemsToShow: 5 }
+  ]
+
   const ReadMore = ({ children, maxChar }) => {
     const text = children;
 
@@ -126,13 +135,29 @@ export default function ProductPage(props) {
             {/* </Col> */}
 
       <div>
+        <h1 className={styles.h1Carousel}>Another {product.make} model</h1>
+      </div>
+
+      <Carousel className={styles.carousel} breakPoints={breakPoints}>
+        {/* <Carousel.Item> */}
+          {cars.map((car) => {
+            if (product.make === car.make && product.vin !== car.vin) {
+            return (
+                <Car key={car.vin} car={car} />
+              )
+            }
+          })}
+        {/* </Carousel.Item> */}
+      </Carousel>
+
+      <div>
         <h1 className={styles.h1Carousel}>You may also like this</h1>
       </div>
 
-      <Carousel className={styles.carousel}>
+      <Carousel className={styles.carousel} breakPoints={breakPoints}>
         {/* <Carousel.Item> */}
           {cars.map((car) => {
-            if (product.make === car.make && product.vin !== car.vin || product.year === car.year && product.vin !== car.vin) {
+            if (product.year === car.year && product.vin !== car.vin) {
             return (
                 <Car key={car.vin} car={car} />
               )
