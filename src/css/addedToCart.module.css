@@ -1,5 +1,6 @@
 .addedToCartBox {
     position: fixed;
+    z-index: 1;
     top: 0px;
     background-color: #141a1ae6;
     width: 100vw;

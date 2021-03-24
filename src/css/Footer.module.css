@@ -44,9 +44,7 @@ justify-content: space-between;
     height:20px;
     margin:2rem 2rem auto 3rem;
 }
-.Social {
-  margin-right:5rem;
-}
+
 .Info{
     width:100%;
 }
@@ -73,4 +71,7 @@ justify-content: space-between;
 .footerContact{
     width: 500px; 
 }
+.Social {
+    margin-right:5rem;
+  }
 }

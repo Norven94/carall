@@ -169,8 +169,6 @@ $fourth:#ffc8b4;
 }
 }
 
-
-
 .rangeSlider::-webkit-slider-thumb {
     color: #ff7f50;
     background: #ff7f50;
@@ -182,8 +180,8 @@ $fourth:#ffc8b4;
 }
 .arrow{
     position: absolute;
-    top: 6rem;
-    left: 2rem;
+    top: 7rem;
+    left: 1.5rem;
     cursor:pointer;
 }
 .grid{
@@ -201,10 +199,10 @@ $fourth:#ffc8b4;
     justify-content: center;
 }
 
-.row {
-    padding-left: 6rem;
-    padding-right: 6rem;
-  }
+// .row {
+//     padding-left: 6rem;
+//     padding-right: 6rem;
+//   }
 
 // .carousel-control-next-icon, .carousel-control-prev {
 //     display: none;

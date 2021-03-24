@@ -22,12 +22,13 @@ const CartPage = () => {
   const handleClick = (e) => {
     e.preventDefault()
     // checks if billingDetails have proper characters in its fields
-    if (!formWarning) {
-      history.push("/confirmation")
+    if (!formWarning) {      
       if (loginState) {
         let timestamp = new Date().toLocaleDateString();
         let id = Math.floor(Math.random() * 100000);
+        console.log(id);
         setOrderDetails({ billingDetails, shippingDetails, orderDate: timestamp, orderNumber: id, cart });
+        history.push("/confirmation")
         //Reset filtering tempcar after purchase
         setTempCars(cars)
         //Reset car list and empty the cart after purchase 
