@@ -1,0 +1,56 @@
+.addedToCartBox {
+    position: fixed;
+    top: 0px;
+    background-color: #141a1ae6;
+    width: 100vw;
+    height: 100%;
+    text-align: center;
+}
+
+.messageBox {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto auto 0 auto;
+    padding: 20px 20px;
+    max-width: 400px;
+    height: 100vh;
+    border-radius: 2px;
+}
+
+.messageBox img {
+    align-self: center;
+    width: 50%;
+}
+
+.messageBox span {
+    margin: 15px 0 15px 0;
+    font-size: 14px;
+}
+
+.yesButton {
+    align-self: center;
+    background-color: #FE7F50;
+    color: white;
+    padding: 6px 40px;
+    border: 1px solid #FE7F50;
+    border-radius: 2px;
+    transition: .3s;
+}
+
+.yesButton:hover {
+    background-color: transparent;
+    border: 1px solid #FE7F50;
+}
+
+img.exitButton {
+    cursor: pointer;
+    margin-top: 20px;
+    width: 20px;
+    transition: .3s;
+}
+
+img.exitButton:hover {
+    width: 25px;
+} 

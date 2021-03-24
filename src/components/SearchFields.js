@@ -1,5 +1,6 @@
 import { useContext } from "react"
 import { FilterContext } from "../contexts/FilterContext" 
+import styles from "../css/SearchFields.module.css"
 
 function SearchFields() {
   const { search } = useContext(FilterContext);
@@ -9,9 +10,9 @@ function SearchFields() {
   }
 
   return (
-  <div className="search-container">
+  <div className={styles.search}>
     <div>
-      <input onChange={handleSearch} type="text" placeholder="search" name="search" />
+      <input onChange={handleSearch} type="text" placeholder="Search..." name="search" />
     </div>
   </div>
   )

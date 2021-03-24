@@ -1,19 +1,24 @@
 $theme-colors: (
-    "info":  #ff7f50,
-    "danger":  #B34C26,
+    "info":  #fff,
+    "danger":  #FE7F50,
     "success":#14B394,
-    "warning":#50FFDD,
-    "primary":#FF7F50,
-    "secondary":#FF9269,
+    "warning":#344648,
+    "primary":#FE7F50,
 );
-$first:#ffc8b4;
+$first:#FE7F50;
+$second:#EDB518;
+$third:#F5F7F6;
+$fourth:#ffc8b4;
 
+@import "react-bootstrap-range-slider/dist/react-bootstrap-range-slider.scss";  
 @import "~bootstrap/scss/bootstrap";
 @use "sass:color";
 
+
 .cartBox{
-    color:#fff;
-    font-size:0.8rem;
+    color:$first;
+    font-size:1rem;
+    font-weight: 600;
     padding:0;
     margin:0;
 }
@@ -24,16 +29,24 @@ $first:#ffc8b4;
     margin:0;
 }
 .cartBox p {
-margin-bottom:-10px;
+    margin-bottom: -1.7rem;
+    margin-left: 2.5rem;
 }
 .dropdown-menu  {
     right: 0;
     left: auto;
     text-align: center;
+    width: 250px;
 }
 .dropdown-toggle::after {
     display: none;
 }
+
+.navbar {
+    border-radius: 2px;
+    box-shadow: 0px 1px 10px #999;
+  }
+  
 .nav-link a {
     color:#fff;
 }
@@ -44,51 +57,156 @@ margin-bottom:-10px;
 @media only screen and (min-width: 576px) 
 {
    .dropdown  {
-        order:1;
-        }
-}
-.nav-link p {
-    margin: auto;
+    order:1;
+    margin-right: 5rem;
+    }
+    .navbar-brand{
+    margin-left:5rem;
+    }
 }
 
-.fadeout {
-    text-align:center;
-    color: #000;
-    text-align: center;
-    opacity: 0;
-      -webkit-animation: fadeout 4s; /* Safari, Chrome and Opera > 12.1 */
-         -moz-animation: fadeout 4s; /* Firefox < 16 */
-          -ms-animation: fadeout 4s; /* Internet Explorer */
-           -o-animation: fadeout 4s; /* Opera < 12.1 */
-              animation: fadeout 4s;
-  }
-  
-  @keyframes fadeout {
- 
-      0% {
-        opacity: 1;
-      }
-      50% {
-        opacity: 0.5; 
-      }
-      100% {
-        opacity: 0; 
-      }
-  }
-  .jumbotron {
-    background-color:$first; 
-
+.dropdown-item.active, .dropdown-item:active{
+    background-color:$first;
 }
+
+
 .About{
     text-align: center;
+    .AboutUs{
+    text-align: center;
+    background-color: #fff;
+    width: 20rem;
+    box-shadow: 0 1px 3px #00000017;
+    padding: 33px 39px;
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: 3rem;
+    margin-top: 2rem;
+    margin-bottom: -8rem;
     h1{
-        font-weight: 600;
-        }
-        h2{
-            font-size:1.5rem;
-            font-weight: 600;
-            }
-        img{
-            padding:2rem;
-        }    
+        font-weight:600;
+    }
+    }
+    .Jumbotron{
+    background-size: cover;
+    background-repeat: no-repeat;
 }
+.numberContainer{
+    display: flex;
+    justify-content: space-around;
+    margin: 2em;
+    flex-direction: column;
+    width: 80%;
+    margin-top:8em;
+}
+.number{
+    h2{
+    color:$second;
+    font-size:5rem;
+    font-weight: 600;
+    } 
+    p{
+    color:#000;
+    font-size:1rem; 
+    }
+}
+.text{
+    text-align: left;
+    font-weight: 600;
+}
+.GoalContainer {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5rem;
+     h3{
+    color:$first;
+    font-size:3rem;
+    font-weight: 600; 
+    margin-top:2rem;
+     }
+     p{
+    color:#000;
+    font-size:1rem; 
+    margin:2rem;
+    }
+    .GoalImage img{
+    width:302px;
+    height:200px;
+    }
+}
+}
+
+@media only screen and (min-width: 576px) 
+{
+    .About{
+   .AboutUs  {
+    margin-top: 11rem;
+        }
+    .numberContainer{ 
+    flex-direction: row;
+    margin-top:4em;
+    }
+     .GoalContainer{ 
+    flex-direction: row;
+    margin-top:4em;
+  
+    .GoalImage img{
+    width:510px;
+    height:340px;
+    }
+    }
+}
+
+}
+@media only screen and (max-width: 991px) 
+{
+    .About{
+     .GoalContainer{ 
+    flex-direction: column;
+    margin-top:4em;
+    }
+}
+}
+
+
+
+.rangeSlider::-webkit-slider-thumb {
+    color: #ff7f50;
+    background: #ff7f50;
+}
+
+.carlist-container h1{
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+}
+.arrow{
+    position: absolute;
+    top: 6rem;
+    left: 2rem;
+    cursor:pointer;
+}
+.grid{
+    padding-right:0.3rem;
+    padding-left:1rem;
+}
+// .carousel-inner {
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: center;
+// }
+.carousel .carousel-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.row {
+    padding-left: 6rem;
+    padding-right: 6rem;
+  }
+
+// .carousel-control-next-icon, .carousel-control-prev {
+//     display: none;
+// }
+
