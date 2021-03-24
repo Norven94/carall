@@ -6,6 +6,7 @@ import styles from "../css/productpage.module.css";
 import Back from './Back'
 import Car from './Car'
 import Footer from './Footer'
+import footerstyle from '../css/Footer.module.css'
 import Carousel from 'react-elastic-carousel'
 
 export default function ProductPage(props) {
@@ -128,7 +129,9 @@ export default function ProductPage(props) {
         <input type="text" className={styles.inputEmail} name="emailaddress" placeholder="Your email address here..."></input><button>SEND</button>
       </Form>
       <div>
-      <Footer />
+      <div className={footerstyle.sticky}>
+            <Footer />
+          </div>
       </div>
 
     </>
