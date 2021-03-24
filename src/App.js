@@ -12,6 +12,7 @@ import OrderHistory from './pages/OrderHistory'
 import CartPage from './pages/CartPage'
 import Confirmation from './pages/Confirmation'
 import LoginPage from "./pages/LoginPage";
+import WelcomeText from "./components/WelcomeText";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <CartContextProvider>
               <UserContextProvider>
                 <Navbar />
+                <WelcomeText />
                 <Route exact path="/">          
                   <Home />
                 </Route>
@@ -40,14 +42,11 @@ function App() {
 
                 <Route exact path="/confirmation">
                   <Confirmation />
-                </Route>
-                
+                </Route>               
                 <Route
                   path="/product/:productId"
-                  render={(props) => {
-                  return <ProductPage productId={props.match.params.productId} />;
-                  }}
-                />
+                  component={ProductPage}            
+                />       
               </UserContextProvider>
             </CartContextProvider>
           </FilterContextProvider>
