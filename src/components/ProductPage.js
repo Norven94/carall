@@ -15,7 +15,7 @@ export default function ProductPage(props) {
   // const [product] = useState(findProduct(props.productId));
   const { productId } = props.match.params
   const [product, setProduct] = useState(findProduct(productId));
-  const [features, setFeatures]=useState([])
+  const [features, setFeatures] = useState([])
 
   useEffect(() => {
     setProduct(findProduct(productId))
@@ -47,15 +47,15 @@ export default function ProductPage(props) {
       </p>
     );
   };
-    useEffect(() => {
-      setFeatures(
-        cars.filter((car)=>{
-          return car.price < product.price + 40000 
-          && car.price > product.price -40000 
-          && car.price!=product.price
-      })) 
-    }, [product])
-    
+  useEffect(() => {
+    setFeatures(
+      cars.filter((car) => {
+        return car.price < product.price + 40000
+          && car.price > product.price - 40000
+          && car.price != product.price
+      }))
+  }, [product])
+
 
   return (
     <>
@@ -64,7 +64,7 @@ export default function ProductPage(props) {
       <Container className={styles["product-page"]}>
         <Row>
           <Col className={styles.colContainer}>
-            <Col xs={12} sm={12} lg={12} className={styles["image-container"]} style={{ padding:"0"}} >
+            <Col xs={12} sm={12} lg={12} className={styles["image-container"]} style={{ padding: "0" }} >
               <span className={`${styles.discountTag} ${product.isDiscount ? styles.isdiscount : styles.undiscount}`}>Sale</span>
               <span className={`${styles.purchasedBox} ${product.purchased ? styles.purchased : styles.notPurchased}`}>In your cart</span>
               <span className={`${styles.soldBox} ${product.sold ? styles.sold : styles.notSold}`}>Sold Out</span>
@@ -96,16 +96,14 @@ export default function ProductPage(props) {
             </Col>
           </Col>
           <Col xs={11} sm={8} lg={6} className={styles["product-details"]}>
-            <h1 className={styles["product-info"]}>{product.make}</h1>
+            <h1 className={styles["product-info"]}>Make  : {product.make}</h1>
             <div className={styles["details1"]}>
-              <div className={styles["product-makemiles"]}>
-                <h4>{product.model} / {product.year} / {product.miles} miles </h4>
-                <h6 className={styles["product-city"]}>{product.city}</h6>
+              <div className={styles.productmakemiles}>
+                <h4>Model : {product.model} </h4>
+                <h4>Year : {product.year} </h4>
+                <h4>Mileage : {product.miles} miles </h4>
+                <h4 className={styles["product-city"]}>Location : {product.city} </h4>
               </div>
-              {/* <div className={styles["product-city-year"]}>
-                  <h4>{product.miles} miles</h4>
-                  <h6 className={styles["product-year"]}>{product.year}</h6>
-                </div> */}
             </div>
             <ReadMore maxChar="100">{product.descLong}</ReadMore>
 
@@ -113,7 +111,7 @@ export default function ProductPage(props) {
 
             <button className={`${product.sold ? styles.isSold : styles.cartBox1}`} onClick={() => addToCart(product)}>
               <img
-                src="../assets/icons/cart.svg"
+                src="../assets/icons/cart-orange.svg"
                 alt="Cart"
                 className={styles.cartBox1}
                 onClick={() => addToCart(product)}
@@ -125,22 +123,22 @@ export default function ProductPage(props) {
       <div>
         <h1 className={styles.h1Carousel}>You may also like this</h1>
       </div>
-     <Container fluid >
-       <Row className="d-flex justify-content-center flex-wrap">
-        {features.map((car) =>(     
+      <Container fluid >
+        <Row className="d-flex justify-content-center flex-wrap">
+          {features.map((car) => (
             <Car key={car.vin} car={car} />
-          ))}    
-       </Row>
-     </Container>
+          ))}
+        </Row>
+      </Container>
 
       <h4 className={styles.formH4}>Subscribe our newsletter and get the best deals for your car.</h4>
       <Form className={styles.subscribe}>
         <input type="text" className={styles.inputEmail} name="emailaddress" placeholder="Your email address here..."></input><button>SEND</button>
       </Form>
       <div>
-      <div className={footerstyle.sticky}>
-            <Footer />
-          </div>
+        <div className={footerstyle.sticky}>
+          <Footer />
+        </div>
       </div>
     </>
   );
