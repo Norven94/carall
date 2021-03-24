@@ -1,11 +1,16 @@
 import styles from "../css/addedToCart.module.css";
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 import{ CartContext } from "../contexts/CartContext";
 import { useHistory } from 'react-router-dom';
 
-export default function AddedToCartBox () {
+import useOutsideAlerter from "./useOutsideAlerter"
+
+export default function AddedToCartBox (props) {
     const { setAddedToCart } = useContext(CartContext)
     const history = useHistory();
+
+    const wrapperRef = useRef(null);
+    useOutsideAlerter(wrapperRef);
 
     const closeAddedToCartBox = () => {
         setAddedToCart(false)
@@ -15,9 +20,8 @@ export default function AddedToCartBox () {
         history.push("/cartpage")
         setAddedToCart(false)
     }
-
     return (
-        <div className={styles.addedToCartBox}>
+        <div ref={wrapperRef} className={styles.addedToCartBox}>
             <div className={styles.messageBox}>
             <img src="/assets/icons/AddedToCart.svg" alt="Checkmark" />
             <span>A car have been added to your cart</span>

@@ -1,4 +1,4 @@
-import React, { useContext} from "react"
+import React, { useContext, useEffect } from "react"
 import { useHistory } from 'react-router-dom'
 import CartProduct from "../components/CartProduct";
 import BillingFields from "../components/BillingFields";
@@ -11,10 +11,11 @@ import styles from '../css/CartPage.module.css';
 import { Container, Form } from "react-bootstrap";
 import Back from '../components/Back'
 import Footer from '../components/Footer'
+import footerstyle from '../css/Footer.module.css'
 
 const CartPage = () => {
-  const { cart, setCart, setOrderDetails, billingDetails, shippingDetails, errorLogin, setErrorLogin} = useContext(CartContext);
-  const { cars, setCars,setTempCars } = useContext(CarContext);
+  const { cart, setCart, setOrderDetails, billingDetails, shippingDetails, errorLogin, setErrorLogin } = useContext(CartContext);
+  const { cars, setCars, setTempCars } = useContext(CarContext);
   const { loginState } = useContext(UserContext);
   const history = useHistory();
 
@@ -24,20 +25,29 @@ const CartPage = () => {
       history.push("/confirmation")
       let timestamp = new Date().toLocaleDateString();
       let id = Math.floor(Math.random() * 100000);
-      setOrderDetails({billingDetails, shippingDetails, orderDate: timestamp, orderNumber: id, cart});    
+      setOrderDetails({ billingDetails, shippingDetails, orderDate: timestamp, orderNumber: id, cart });
       //Reset filtering tempcar after purchase
       setTempCars(cars)
       //Reset car list and empty the cart after purchase 
       setCart([]);
       setCars(cars.map((car) => {
+        if (car.purchased) {
+          car.sold = true;
+        }
         car.purchased = false;
         return car
       }));
     } else {
       setErrorLogin(true);
     }
-    
-  } 
+
+  }
+
+  useEffect(() => {
+    if (loginState) {
+      setErrorLogin(false);
+    }
+  }, [])
 
   //let emptyCart = false;
 
@@ -54,11 +64,13 @@ const CartPage = () => {
             <p>Your Cart Is Empty</p>
           </div>
         </div>
+        <Footer />
       </div>
     );
-  } 
+  }
   else {
     return (
+        <div>
       <div className={styles["cartPage-style"]}>
         <div className={styles["back-button"]}>
           <Back />
@@ -79,13 +91,20 @@ const CartPage = () => {
             <div className={styles["shipping"]}>
               <ShippingFields />
               <Container>
-              <button type="submit" className={styles.buyButton} >BUY</button>
+                <button type="submit" className={styles.buyButton} >BUY</button>
               </Container>
             </div>
           </Form>
         </div>
         {errorLogin ? <PreventPurchase /> : ""}
+        <div>
+        </div>
       </div>
+      <div className={footerstyle.sticky}>
+            <Footer />
+          </div>
+      </div>
+
     );
   }
 }
