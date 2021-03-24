@@ -20,7 +20,7 @@ const Register = () => {
       setInputDefault(true)
     } else {
       setInputDefault(false)
-      if(password===confirmPassword){
+      if(confirmPassword.length >= 4 && password===confirmPassword){
         setIsValid(true)
       }
       else{
@@ -61,7 +61,7 @@ const Register = () => {
         </Form.Group>
         <Form.Group controlId="formBasicPassword">
           <Form.Label>Create a password</Form.Label>
-          <Form.Control onChange={passwordChange} type="password" name="password" placeholder="Password" required/>
+          <Form.Control onChange={passwordChange} type="password" name="password" placeholder="Please enter more than 4 characters" minlength="4" required/>
         </Form.Group>
         <Form.Group controlId="formConfirmPassword">
           <Form.Label>Confirm the password</Form.Label>
