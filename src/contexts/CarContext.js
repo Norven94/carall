@@ -14,13 +14,15 @@ const CarContextProvider =(props)=>{
       descShort:car.descShort,
       descLong:car.descLong,
       price:car.price,
-      miles:car.miles,
+      miles:car.miles === undefined ? 10000 : car.miles,
       isDiscount:car.price < 200000 ? true : false,
       image:`/assets/car-pictures/${car.make}-${car.model}-${car.year}.jpg`,
+      purchased: false,
+      sold:false,
     }
   }))
-  const [tempCars] = useState(cars)
-  const [carDiscount, setCarDicount] = useState(() => cars.filter((car) => car.isDiscount === true))
+  const [tempCars, setTempCars] = useState(cars)
+  const [carDiscount] = useState(() => cars.filter((car) => car.isDiscount === true))
   
   const findProduct = (productId) => {
     return cars.find((p) => p.vin === productId);
@@ -29,8 +31,9 @@ const CarContextProvider =(props)=>{
   const values =
   {
     cars,
-    tempCars,
     setCars,
+    tempCars,
+    setTempCars,
     findProduct,
     carDiscount, 
   }
