@@ -5,6 +5,7 @@ import styles from '../css/OrderHistory.module.css'
 import Footer from '../components/Footer'
 import footerstyle from '../css/Footer.module.css'
 // import '../css/OrderHistory.module.css'
+import footerstyle from '../css/Footer.module.css'
 
 const OrderHistory = () => {
   const { users, currentUser } = useContext(UserContext)
