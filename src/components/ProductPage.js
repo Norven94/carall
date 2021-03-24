@@ -7,12 +7,13 @@ import Back from './Back'
 import Car from './Car'
 import Footer from "../components/Footer"
 import footerstyle from '../css/Footer.module.css'
+import AddedToCartBox from "../components/AddedToCartBox";
 import Carousel from 'react-elastic-carousel'
 
 export default function ProductPage(props) {
   const { cars } = useContext(CarContext);
   const { findProduct } = useContext(CarContext);
-  const { addToCart } = useContext(CartContext);
+  const { addToCart, addedToCart } = useContext(CartContext);
   // const [product] = useState(findProduct(props.productId));
   const { productId } = props.match.params
   const [product, setProduct] = useState(findProduct(productId));
@@ -69,6 +70,7 @@ export default function ProductPage(props) {
 
   return (
     <>
+      {addedToCart && <AddedToCartBox />}
       <Back />
 
       <Container className={styles["product-page"]}>
@@ -106,13 +108,12 @@ export default function ProductPage(props) {
             </Col>
           </Col>
           <Col xs={11} sm={8} lg={6} className={styles["product-details"]}>
-            <h1 className={styles["product-info"]}>Make  : {product.make}</h1>
+            <h1 className={styles["product-info"]}>{product.make} {product.model}</h1>
             <div className={styles["details1"]}>
               <div className={styles.productmakemiles}>
-                <h4>Model : {product.model} </h4>
-                <h4>Year : {product.year} </h4>
-                <h4>Mileage : {product.miles} miles </h4>
-                <h4 className={styles["product-city"]}>Location : {product.city} </h4>
+                <h2>Year : {product.year} </h2>
+                <h2>Mileage : {product.miles} miles </h2>
+                <h2 className={styles["product-city"]}>Location : {product.city} </h2>
               </div>
             </div>
             <ReadMore maxChar="100">{product.descLong}</ReadMore>
