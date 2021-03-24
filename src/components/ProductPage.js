@@ -73,7 +73,7 @@ export default function ProductPage(props) {
       {addedToCart && <AddedToCartBox />}
       <Back />
 
-      <Container className={styles["product-page"]}>
+      <Container style={{marginTop:"80px"}} className={styles["product-page"]}>
         <Row>
           <Col className={styles.colContainer}>
             <Col xs={12} sm={12} lg={12} className={styles["image-container"]} style={{ padding: "0" }} >
@@ -107,7 +107,7 @@ export default function ProductPage(props) {
               </div>
             </Col>
           </Col>
-          <Col xs={11} sm={8} lg={6} className={styles["product-details"]}>
+          <Col xs={10} sm={6} lg={6} className={styles["product-details"]}>
             <h1 className={styles["product-info"]}>{product.make} {product.model}</h1>
             <div className={styles["details1"]}>
               <div className={styles.productmakemiles}>
