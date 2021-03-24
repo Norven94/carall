@@ -1,12 +1,13 @@
 import { CarContext } from "../contexts/CarContext";
 import { CartContext } from "../contexts/CartContext";
 import { useState, useContext, useEffect } from "react";
-import { Container, Col, Row, Form, Carousel } from "react-bootstrap";
+import { Container, Col, Row, Form } from "react-bootstrap";
 import styles from "../css/productpage.module.css";
 import Back from './Back'
 import Car from './Car'
 import Footer from "../components/Footer"
 import footerstyle from '../css/Footer.module.css'
+import Carousel from 'react-elastic-carousel'
 
 export default function ProductPage(props) {
   const { cars } = useContext(CarContext);
@@ -28,6 +29,15 @@ export default function ProductPage(props) {
   const spanStyle = {
     color: "#FE7F50",
   };
+
+  const breakPoints = [
+    { width: 1, itemsToShow: 1 },
+    { width: 450, itemsToShow: 1 },
+    { width: 630, itemsToShow: 2 },
+    { width: 1100, itemsToShow: 3 },
+    { width: 1550, itemsToShow: 4 },
+    { width: 1900, itemsToShow: 5 }
+  ]
 
   const ReadMore = ({ children, maxChar }) => {
     const text = children;
@@ -123,13 +133,20 @@ export default function ProductPage(props) {
       <div>
         <h1 className={styles.h1Carousel}>You may also like this</h1>
       </div>
-      <Container fluid >
+      {/* <Container fluid >
         <Row className="d-flex justify-content-center flex-wrap">
           {features.map((car) => (
             <Car key={car.vin} car={car} />
           ))}
         </Row>
-      </Container>
+      </Container> */}
+      <Carousel className={styles.carousel} breakPoints={breakPoints}>
+        {/* <Carousel.Item> */}
+        {features.map((car) => (
+            <Car key={car.vin} car={car} />
+          ))}
+        {/* </Carousel.Item> */}
+      </Carousel>
 
       <h4 className={styles.formH4}>Subscribe our newsletter and get the best deals for your car.</h4>
       <Form className={styles.subscribe}>
