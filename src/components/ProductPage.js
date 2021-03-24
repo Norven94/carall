@@ -92,7 +92,7 @@ export default function ProductPage(props) {
                 }
               />
             </Col>
-            <Col>
+            <Col style={{ padding: "0" }}>
               <div className={styles.top1}>
                 <img className={styles.check} src="/assets/icons/confirm.svg" alt="confirm icon" />
                 <h4>Driving test service</h4>
