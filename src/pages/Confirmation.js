@@ -8,6 +8,7 @@ const Confirmation = () => {
   const { orderDetails } = useContext(CartContext)
     
   return (
+    <div>  
     <div className={styles.confirmation}>
       <img className={styles.logo} src="/assets/images/logo.svg" alt="Logo" />
       <img className={styles.confirm} src="/assets/icons/confirm.svg" alt="confirm icon" />
@@ -62,9 +63,10 @@ const Confirmation = () => {
         <img className={styles.printIcon} src="assets/icons/print.svg" alt="" />
       </div>
       <div>
-      <div className={footerstyle.sticky}>
-        <Footer />
       </div>
+    </div>
+    <div className={footerstyle.sticky}>
+        <Footer />
       </div>
     </div>
   );
