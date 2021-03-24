@@ -13,23 +13,27 @@ import Back from '../components/Back'
 import Footer from '../components/Footer'
 import footerstyle from '../css/Footer.module.css'
 
+
+
 const CartPage = () => {
-  const { cart, setCart, setOrderDetails, billingDetails, shippingDetails, errorLogin, setErrorLogin } = useContext(CartContext);
+  const { cart, setCart, setOrderDetails, billingDetails, shippingDetails, errorLogin, setErrorLogin, formWarning, setFormWarning} = useContext(CartContext);
   const { cars, setCars, setTempCars } = useContext(CarContext);
   const { loginState } = useContext(UserContext);
   const history = useHistory();
 
   const handleClick = (e) => {
     e.preventDefault()
-    if (loginState) {
-      history.push("/confirmation")
-      let timestamp = new Date().toLocaleDateString();
-      let id = Math.floor(Math.random() * 100000);
-      setOrderDetails({ billingDetails, shippingDetails, orderDate: timestamp, orderNumber: id, cart });
-      //Reset filtering tempcar after purchase
-      setTempCars(cars)
-      //Reset car list and empty the cart after purchase 
-      setCart([]);
+    // checks if billingDetails have proper characters in its fields
+    if (!formWarning) {
+        history.push("/confirmation")
+      if (loginState) {
+        let timestamp = new Date().toLocaleDateString();
+        let id = Math.floor(Math.random() * 100000);
+        setOrderDetails({billingDetails, shippingDetails, orderDate: timestamp, orderNumber: id, cart});    
+        //Reset filtering tempcar after purchase
+        setTempCars(cars)
+        //Reset car list and empty the cart after purchase 
+        setCart([]);
       setCars(cars.map((car) => {
         if (car.purchased) {
           car.sold = true;
@@ -40,6 +44,7 @@ const CartPage = () => {
     } else {
       setErrorLogin(true);
     }
+  } 
 
   }
 
