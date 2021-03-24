@@ -22,11 +22,11 @@ function CarList() {
       <h1>Find Your New Favorite Vehicle</h1>
       <SearchGroup />
       <Container fluid>
-        <Row className="d-flex justify-content-center align-content-center flex-wrap">
+        <Container className="d-flex justify-content-center align-content-center flex-wrap">
           {currentCars.length === 0 ? <NoResults /> : currentCars.map((car) => (
             <Car key={car.vin} car={car} />
           ))}
-        </Row>
+        </Container>
       </Container>
       <Pagination pages={totalPagesNum} setCurrentPage={setCurrentPage} tempCars={tempCars} currentCars={currentCars} />
     </div>
