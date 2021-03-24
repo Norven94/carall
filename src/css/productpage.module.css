@@ -215,6 +215,11 @@ span.undiscount {
   flex-direction: column;
 }
 
+.check {
+  width: 30px;
+  height: 26px;
+}
+
 @media (max-width: 800px) {
 
 .product-page {

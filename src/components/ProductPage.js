@@ -1,7 +1,7 @@
 import { CarContext } from "../contexts/CarContext";
 import { CartContext } from "../contexts/CartContext";
 import { useState, useContext, useEffect } from "react";
-import { Container, Col, Row, Carousel } from "react-bootstrap";
+import { Container, Col, Row, Form, Carousel } from "react-bootstrap";
 import styles from "../css/productpage.module.css";
 import Back from './Back'
 import Car from './Car'
@@ -12,7 +12,7 @@ export default function ProductPage(props) {
   const { cars } = useContext(CarContext);
   const { findProduct } = useContext(CarContext);
   const { addToCart } = useContext(CartContext);
-  const [product] = useState(findProduct(props.productId));
+  // const [product] = useState(findProduct(props.productId));
   const { productId } = props.match.params
   const [product, setProduct] = useState(findProduct(productId));
   const [features, setFeatures]=useState([])
