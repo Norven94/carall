@@ -1,121 +1,40 @@
-/* @keyframes changeLetter {
-  0% {
-    content: "You're logged in";
-  }
-  50% {
-    color: #FE7F50;
-  }
-  100% {
-    content: "Contact us 24/7";
-  }
-} */
-
-.pContact {
-  color:white;
-  /* background-color: #FE7F50;  */
-  font-size: 1rem;
+.welcomeInactive {
+    width: 100%;
+    background-color: transparent;
 }
 
-.pContact::after {
-  content:"";
-  animation: spin 2s linear infinite;
+.welcomeBox {
+    background-color: #FE7F50;
+    width: 100%;
+    text-align: center;
 }
 
-@keyframes spin {
-  0% {
-    content:"ipsum";
-  }
-  10% {
-    content:"dolor";
-  }
-  20% {
-    content:"sit";
-  }
-  30% {
-    content:"amet";
-  }
-  40% {
-    content:"consectetur";
-  }
-  50% {
-    content: "adipisicing";
-  }
-  60% {
-    content: "elit";
-  }
-  70% {
-    content: "Hic";
-  }
-  80% {
-    content: "atque";
-  }
-  90% {
-    content: "fuga";
-  }
-}
-
-/* .pContact {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 10vh;
-  color: white;
-  background-color: #FE7F50;
-  font-size: 1rem; 
-} */
-
-/* .pContact::after {
-  animation: changeLetter 3s linear infinite alternate; */
-  /* display: block;
-  content: "You're logged in";
-  color: white;
-  font-size: 1rem;  */
-/* } */
-
-/* .pContact {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 10vh;
+.welcomeBox::after {
+    animation: changeContent 8s linear infinite alternate;
+    display: block;
+    content: "You are logged in";
     color: white;
-    &:after {
-      animation: changeLetter 3s linear infinite alternate;
-      display: block;
-      content: "You're logged in";
-      font-size: 1rem;  
-    }
-} */
-/* .pContact{
-  position: relative;
-  animation: move 3s;
-  -webkit-animation: move 6s;
-  color: white;
-  margin-top: 1.2rem;
-  margin-bottom: 0.5rem;
-  animation-iteration-count: infinite;
+    font-size: 18px;
+    font-weight: 600;
 }
 
-@keyframes move {
-  from {
-    margin-left: 1500%;
-    width: 1400%;  */
-    /* animation-iteration-count: infinite; */
-  /* }
-
-  to {
-    margin-left: 1050%;
-    width: 500%;
-  }
-} */
-            
-/* @-webkit-keyframes move {
-  from {
-    margin-left: 1100%;
-    width: 1000%; 
-  }
-
-  to {
-    margin-left: 100%;
-    width: 500%;
-  }
-} */
+@keyframes changeContent {
+    0% {
+        content: "Customer support 24/7";
+        color: white;
+    }
+    25% {
+        color: rgb(254, 127, 80);
+    }
+    50% {
+        content: "You are logged in";
+        color: white;
+    }
+    75% {
+        color: rgb(254, 127, 80);
+    }
+    100% {
+        content: "First oil change on us";
+        color: white;
+    }
+}
