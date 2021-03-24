@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { CarContext } from "../contexts/CarContext";
 import Car from "./Car";
-import { Container, Row } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import SearchGroup from "./SearchGroup";
 import Pagination from "./Pagination";
 import NoResults from './NoResults'
@@ -21,12 +21,10 @@ function CarList() {
     <div className="carlist-container">
       <h1>Find Your New Favorite Vehicle</h1>
       <SearchGroup />
-      <Container fluid>
-        <Container className="d-flex justify-content-center align-content-center flex-wrap">
-          {currentCars.length === 0 ? <NoResults /> : currentCars.map((car) => (
-            <Car key={car.vin} car={car} />
-          ))}
-        </Container>
+      <Container fluid className="d-flex justify-content-center align-content-center flex-wrap">
+        {currentCars.length === 0 ? <NoResults /> : currentCars.map((car) => (
+          <Car key={car.vin} car={car} />
+        ))}
       </Container>
       <Pagination pages={totalPagesNum} setCurrentPage={setCurrentPage} tempCars={tempCars} currentCars={currentCars} />
     </div>
