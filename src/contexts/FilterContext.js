@@ -37,6 +37,8 @@ const FilterContextProvider = (props) => {
             && car.miles < milesEnd && car.miles > milesStart
             && (car.make.toLowerCase().includes(searchString.toLowerCase())
                 ||  car.model.toLowerCase().includes(searchString.toLowerCase())
+                ||  car.vin.toLowerCase().includes(searchString.toLowerCase())
+                ||  car.city.toLowerCase().includes(searchString.toLowerCase())
                 ||  car.year.toString().toLowerCase().includes(searchString.toLowerCase()))
         }))
     }, [priceStart, priceEnd, milesStart, milesEnd, searchString])

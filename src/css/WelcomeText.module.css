@@ -1,0 +1,40 @@
+.welcomeInactive {
+    width: 100%;
+    background-color: transparent;
+}
+
+.welcomeBox {
+    background-color: #FE7F50;
+    width: 100%;
+    text-align: center;
+}
+
+.welcomeBox::after {
+    animation: changeContent 8s linear infinite alternate;
+    display: block;
+    content: "You are logged in";
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+@keyframes changeContent {
+    0% {
+        content: "Customer support 24/7";
+        color: white;
+    }
+    25% {
+        color: rgb(254, 127, 80);
+    }
+    50% {
+        content: "You are logged in";
+        color: white;
+    }
+    75% {
+        color: rgb(254, 127, 80);
+    }
+    100% {
+        content: "First oil change on us";
+        color: white;
+    }
+}
