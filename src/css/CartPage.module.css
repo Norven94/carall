@@ -104,11 +104,9 @@
     height: 32vw;
   }
   
-
   .forms {
   display: flex;
   width: 100%;
-  
   }
 
   .billing {
@@ -120,8 +118,6 @@
     float: left;
     width: 50%;
   }
-
-
 }
 
 @media (max-width: 450px){ 
@@ -142,11 +138,9 @@
     width: 100%;
   }
 
-
   .product {
     height: 100vw;
   }
-
 
   .forms {
     display: inline;

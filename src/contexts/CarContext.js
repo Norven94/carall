@@ -1,4 +1,4 @@
-import {createContext, useState, useEffect} from "react"
+import {createContext, useState } from "react"
 import data from "../assets/json/cars.json"
 export const CarContext = createContext();
 
