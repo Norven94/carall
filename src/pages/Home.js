@@ -18,7 +18,7 @@ function Home() {
       <DiscountCarList />
       <CarAnimation />
       <CarList />
-      {addedToCart ? <AddedToCartBox /> : ""}
+      {addedToCart && <AddedToCartBox />}
       <div className={footerstyle.sticky}>
         <Footer />
       </div>

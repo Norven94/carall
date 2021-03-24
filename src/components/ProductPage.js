@@ -7,11 +7,12 @@ import Back from './Back'
 import Car from './Car'
 import Footer from "../components/Footer"
 import footerstyle from '../css/Footer.module.css'
+import AddedToCartBox from "../components/AddedToCartBox";
 
 export default function ProductPage(props) {
   const { cars } = useContext(CarContext);
   const { findProduct } = useContext(CarContext);
-  const { addToCart } = useContext(CartContext);
+  const { addToCart, addedToCart } = useContext(CartContext);
   // const [product] = useState(findProduct(props.productId));
   const { productId } = props.match.params
   const [product, setProduct] = useState(findProduct(productId));
@@ -59,6 +60,7 @@ export default function ProductPage(props) {
 
   return (
     <>
+      {addedToCart && <AddedToCartBox />}
       <Back />
 
       <Container className={styles["product-page"]}>
