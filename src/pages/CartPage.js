@@ -22,7 +22,7 @@ const CartPage = () => {
   const handleClick = (e) => {
     e.preventDefault()
     // checks if billingDetails have proper characters in its fields
-    if (!formWarning) {      
+    if (!formWarning) {
       if (loginState) {
         let timestamp = new Date().toLocaleDateString();
         let id = Math.floor(Math.random() * 100000);
@@ -60,14 +60,17 @@ const CartPage = () => {
         <div className={styles["back-button"]}>
           <Back />
         </div>
-        <div className={styles["div"]}>
+
           <div className={styles.EmptyCartBox}>
             <img src="/assets/icons/emptyBasket.svg" alt="Empty Basket Icon" />
             <span>oops!</span>
             <p>Your Cart Is Empty</p>
           </div>
+        
+
+        <div className={footerstyle.sticky}>
+          <Footer />
         </div>
-        <Footer />
       </div>
     );
   }
