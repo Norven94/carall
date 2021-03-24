@@ -4,10 +4,16 @@
 }
 
 .image-container img {
-  /* width: 100%; */
-  width: 410px;
-  height: 300px;
+  width: 100%;
+  /* min-width: 410px;
+  min-height: 300px; */
 }
+
+/* .image-container img {
+width: 100%;
+max-width: 510px;
+max-height: 400px;
+} */
 
 .product-details .product-info h1 {
   display: inline-block;
@@ -24,6 +30,7 @@
 
 .image-container {
   position: relative;
+  padding: 0px;
 
 }
 
@@ -34,7 +41,6 @@ span.purchasedBox {
   font-weight: 600;
   text-align: center;
   padding: 20px 40px;
-  margin-left: 8rem;
   position: absolute;
   top: 150px;
   left: 50%;
@@ -87,7 +93,6 @@ span.discountTag {
   text-align: center;
   padding: 12px 5px;
   font-weight: 600;
-  margin-left: 1.3rem;
 }
 
 span.isdiscount {
@@ -290,4 +295,10 @@ span.discountTag {
   color: white;
   padding: 12px 5px;
 }
+
+/* .image-container img {
+  width: 50%;
+  width: 210px;
+  height: 200px;
+} */
 }
