@@ -42,14 +42,11 @@ function App() {
 
                 <Route exact path="/confirmation">
                   <Confirmation />
-                </Route>
-                
+                </Route>               
                 <Route
                   path="/product/:productId"
-                  render={(props) => {
-                  return <ProductPage productId={props.match.params.productId} />;
-                  }}
-                />
+                  component={ProductPage}            
+                />       
               </UserContextProvider>
             </CartContextProvider>
           </FilterContextProvider>

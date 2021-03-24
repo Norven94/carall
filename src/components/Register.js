@@ -7,21 +7,26 @@ const Register = () => {
   const { addToRegistration, isMember, setIsMember } = useContext(UserContext)
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
-  const [confirmPassword, setConfirmPassword]=useState("")
-  const [isValid, setIsValid]=useState(false)
+  const [confirmPassword, setConfirmPassword] = useState("")
+  const [isValid, setIsValid] = useState(false)
+  const [inputDefault, setInputDefault] = useState(true)
   
   useEffect(() => {
    setIsMember(false)
   }, [])
 
   useEffect(()=>{
-    if(password!="" && password===confirmPassword){
-      setIsValid(true)
-    }
-    else{
-      setIsValid(false)
-    }
-
+    if (confirmPassword === "") {
+      setInputDefault(true)
+    } else {
+      setInputDefault(false)
+      if(confirmPassword.length >= 4 && password===confirmPassword){
+        setIsValid(true)
+      }
+      else{
+        setIsValid(false)
+      }
+    } 
   },[password,confirmPassword ])
 
   const emailChange = (e) => {
@@ -56,11 +61,11 @@ const Register = () => {
         </Form.Group>
         <Form.Group controlId="formBasicPassword">
           <Form.Label>Create a password</Form.Label>
-          <Form.Control onChange={passwordChange} type="password" name="password" placeholder="Password" required/>
+          <Form.Control onChange={passwordChange} type="password" name="password" placeholder="Please enter more than 4 characters" minlength="4" required/>
         </Form.Group>
         <Form.Group controlId="formConfirmPassword">
           <Form.Label>Confirm the password</Form.Label>
-          <Form.Control className={isValid ? "is-valid" : "is-invalid"} onChange={checkPassword} type="password" name="confirm" placeholder="Confirm Password" required/>        
+          <Form.Control className={inputDefault ? "" : isValid ? "is-valid" : "is-invalid"} onChange={checkPassword} type="password" name="confirm" placeholder="Confirm Password" required/>        
         </Form.Group>
         <Container className="text-center">
           <Button className={styles.singInButton} variant="primary" type="submit">

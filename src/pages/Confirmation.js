@@ -1,11 +1,14 @@
 import { useContext} from 'react'
+import Footer from '../components/Footer'
 import { CartContext } from "../contexts/CartContext"
 import styles from '../css/Confirmation.module.css'
+import footerstyle from '../css/Footer.module.css'
 
 const Confirmation = () => {
   const { orderDetails } = useContext(CartContext)
     
   return (
+    <div>  
     <div className={styles.confirmation}>
       <img className={styles.logo} src="/assets/images/logo.svg" alt="Logo" />
       <img className={styles.confirm} src="/assets/icons/confirm.svg" alt="confirm icon" />
@@ -58,6 +61,12 @@ const Confirmation = () => {
       <div className={styles.printButton}>
         <button className={styles.print} onClick={() => window.print()}>Print</button>
         <img className={styles.printIcon} src="assets/icons/print.svg" alt="" />
+      </div>
+      <div>
+      </div>
+    </div>
+    <div className={footerstyle.sticky}>
+        <Footer />
       </div>
     </div>
   );
