@@ -89,10 +89,8 @@ export default function ProductPage(props) {
               />
             </button>
           </Col>
-        </Row>
-        {/* <Col> */}
-        {/* <div className={styles.value}> */}
-            <div className={styles.top1}>
+          {/* <Col>
+          <div className={styles.top1}>
             <img className={styles.check} src="/assets/icons/confirm.svg" alt="confirm icon" />
             <h4>Driving test service</h4>
             </div>
@@ -104,9 +102,28 @@ export default function ProductPage(props) {
             <img className={styles.check} src="/assets/icons/confirm.svg" alt="confirm icon" />
             <h4>Get more discount as member</h4>
             </div>
+            </Col> */}
+        </Row>
+        {/* <Col> */}
+        {/* <div className={styles.value}> */}
+            
         {/* </div> */}
             {/* </Col> */}
       </Container>
+      {/* <Col> */}
+          <div className={styles.top1}>
+            <img className={styles.check} src="/assets/icons/confirm.svg" alt="confirm icon" />
+            <h4>Driving test service</h4>
+            </div>
+            <div className={styles.top2}>
+            <img className={styles.check} src="/assets/icons/confirm.svg" alt="confirm icon" />
+            <h4>Quick delivery</h4>
+            </div>
+            <div className={styles.top3}>
+            <img className={styles.check} src="/assets/icons/confirm.svg" alt="confirm icon" />
+            <h4>Get more discount as member</h4>
+            </div>
+            {/* </Col> */}
 
       <div>
         <h1 className={styles.h1Carousel}>You may also like this</h1>
