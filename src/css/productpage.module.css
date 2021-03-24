@@ -20,7 +20,7 @@ max-height: 400px;
   font-size: 0.8rem;
 }
 
-.productmakemiles h4 {
+.productmakemiles h2 {
   font-size: 1.1rem;
 }
 
@@ -142,7 +142,7 @@ span.undiscount {
 .product-details .product-info {
   display: inline-block;
     margin-bottom: 0px;
-  font-size: 1.1rem;
+  font-size: 1.6rem;
   color: #000000;
 }
 
@@ -174,9 +174,10 @@ span.undiscount {
 }
 
 .h1Carousel {
-  margin-left: 2rem;
-  margin-top: 2rem;
-  font-size: 1.4rem;
+  text-align: center;
+  margin-top: 3rem;
+  font-size: 1.8rem;
+  font-weight: 500;
 }
 
 .formH4 {
