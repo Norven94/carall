@@ -2,20 +2,22 @@ import { CarContext } from "../contexts/CarContext";
 import { CartContext } from "../contexts/CartContext";
 import { useState, useContext, useEffect } from "react";
 import { Container, Col, Row, Form } from "react-bootstrap";
-import Carousel from 'react-elastic-carousel'
 import styles from "../css/productpage.module.css";
 import Back from './Back'
 import Car from './Car'
 import Footer from "../components/Footer"
 import footerstyle from '../css/Footer.module.css'
-// import Carousel from 'react-bootstrap/Carousel'
+import Carousel from 'react-elastic-carousel'
 
 export default function ProductPage(props) {
   const { cars } = useContext(CarContext);
   const { findProduct } = useContext(CarContext);
   const { addToCart } = useContext(CartContext);
+  // const [product] = useState(findProduct(props.productId));
   const { productId } = props.match.params
   const [product, setProduct] = useState(findProduct(productId));
+  const [features, setFeatures] = useState([])
+
   useEffect(() => {
     setProduct(findProduct(productId))
   }, [productId])
@@ -27,6 +29,15 @@ export default function ProductPage(props) {
   const spanStyle = {
     color: "#FE7F50",
   };
+
+  const breakPoints = [
+    { width: 1, itemsToShow: 1 },
+    { width: 450, itemsToShow: 1 },
+    { width: 630, itemsToShow: 2 },
+    { width: 1100, itemsToShow: 3 },
+    { width: 1550, itemsToShow: 4 },
+    { width: 1900, itemsToShow: 5 }
+  ]
 
   const ReadMore = ({ children, maxChar }) => {
     const text = children;
@@ -46,6 +57,15 @@ export default function ProductPage(props) {
       </p>
     );
   };
+  useEffect(() => {
+    setFeatures(
+      cars.filter((car) => {
+        return car.price < product.price + 40000
+          && car.price > product.price - 40000
+          && car.price != product.price
+      }))
+  }, [product])
+
 
   return (
     <>
@@ -54,7 +74,7 @@ export default function ProductPage(props) {
       <Container className={styles["product-page"]}>
         <Row>
           <Col className={styles.colContainer}>
-            <Col xs={11} sm={8} lg={5} className={styles["image-container"]} >
+            <Col xs={12} sm={12} lg={12} className={styles["image-container"]} style={{ padding: "0" }} >
               <span className={`${styles.discountTag} ${product.isDiscount ? styles.isdiscount : styles.undiscount}`}>Sale</span>
               <span className={`${styles.purchasedBox} ${product.purchased ? styles.purchased : styles.notPurchased}`}>In your cart</span>
               <span className={`${styles.soldBox} ${product.sold ? styles.sold : styles.notSold}`}>Sold Out</span>
@@ -94,14 +114,10 @@ export default function ProductPage(props) {
                 <h4>Mileage : {product.miles} miles </h4>
                 <h4 className={styles["product-city"]}>Location : {product.city} </h4>
               </div>
-              {/* <div className={styles["product-city-year"]}>
-                  <h4>{product.miles} miles</h4>
-                  <h6 className={styles["product-year"]}>{product.year}</h6>
-                </div> */}
             </div>
-            <ReadMore maxChar="100">Description : {product.descLong} </ReadMore>
+            <ReadMore maxChar="100">{product.descLong}</ReadMore>
 
-            <span className={styles["product-price"]}>Price : {priceWithSpace} Kr </span>
+            <span className={styles["product-price"]}>{priceWithSpace}Kr</span>
 
             <button className={`${product.sold ? styles.isSold : styles.cartBox1}`} onClick={() => addToCart(product)}>
               <img
@@ -114,21 +130,22 @@ export default function ProductPage(props) {
           </Col>
         </Row>
       </Container>
-
       <div>
         <h1 className={styles.h1Carousel}>You may also like this</h1>
       </div>
-
-      <Carousel className={styles.carousel}>
-        {/* <CarouselItem className={styles.carousel}> */}
-        {cars.map((car) => {
-          if (product.make === car.make || product.year === car.year && product.vin !== car.vin) {
-            return (
-              <Car key={car.vin} car={car} />
-            )
-          }
-        })}
-        {/* </CarouselItem> */}
+      {/* <Container fluid >
+        <Row className="d-flex justify-content-center flex-wrap">
+          {features.map((car) => (
+            <Car key={car.vin} car={car} />
+          ))}
+        </Row>
+      </Container> */}
+      <Carousel className={styles.carousel} breakPoints={breakPoints}>
+        {/* <Carousel.Item> */}
+        {features.map((car) => (
+            <Car key={car.vin} car={car} />
+          ))}
+        {/* </Carousel.Item> */}
       </Carousel>
 
       <h4 className={styles.formH4}>Subscribe our newsletter and get the best deals for your car.</h4>
@@ -136,9 +153,9 @@ export default function ProductPage(props) {
         <input type="text" className={styles.inputEmail} name="emailaddress" placeholder="Your email address here..."></input><button>SEND</button>
       </Form>
       <div>
-      <div className={footerstyle.sticky}>
-            <Footer />
-          </div>
+        <div className={footerstyle.sticky}>
+          <Footer />
+        </div>
       </div>
     </>
   );
