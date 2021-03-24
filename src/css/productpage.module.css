@@ -242,6 +242,8 @@ Form button {
 
 .carousel {
   margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
 } 
 
 @media (max-width: 800px) {
