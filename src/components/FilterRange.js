@@ -4,10 +4,6 @@ import { FilterContext } from '../contexts/FilterContext'
 import styles from '../css/filter.module.css'
 import { Col, Row, Form } from 'react-bootstrap'
 import RangeSlider from 'react-bootstrap-range-slider'
-import Dropdown from 'react-bootstrap/Dropdown'
-import DropdownButton from 'react-bootstrap/DropdownButton'
-// import * as ReactBootstrap from 'react-bootstrap'
-import ButtonGroup from 'react-bootstrap/ButtonGroup'
 
 const FilterRange = () => {
   const { filterPriceStart, filterPriceEnd, filterMilesStart, filterMilesEnd } = useContext(FilterContext);
@@ -42,24 +38,8 @@ const FilterRange = () => {
   return (
     <div>
        <div className={styles.dropdown}>
-{/*         
-      <DropdownButton id="dropdown-basic-button" title="Filter">
-      </DropdownButton> */}
-  {/* <Dropdown.Toggle id="dropdown-basic"> */}
-    {/* Filter */}
-  {/* </Dropdown.Toggle> */}
-  {/* <select multiple data-style="bg-white rounded-pill px-4 py-3 shadow-sm " className={styles.dropbtn} class="selectpicker w-100"> */}
-  
-  {/* <DropdownButton as={ButtonGroup} title="Filter" id="bg-vertical-dropdown-1"></DropdownButton> */}
-  
-  {/* <Dropdown.Menu show>
-  <Dropdown.Header>Filter</Dropdown.Header>
-  <Dropdown.Item eventKey="2">Another action</Dropdown.Item>
-  <Dropdown.Item eventKey="3">Something else here</Dropdown.Item>
-</Dropdown.Menu> */}
-
         <select name="Filter" className={styles.dropbtn}>
-        <option selected className={styles.dropbtn}>Filter</option>
+        <option defaultValue className={styles.dropbtn}>Filter</option>
         </select>
 
         <div className={styles.dropdownContent}>
@@ -89,11 +69,6 @@ const FilterRange = () => {
             </Form.Group>
           </Form>
           </div>
-          {/* </select> */}
-        
-          
-       
-         
       </div>
     </div>
   );
