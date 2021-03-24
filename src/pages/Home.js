@@ -7,6 +7,7 @@ import AddedToCartBox from "../components/AddedToCartBox";
 
 import Footer from '../components/Footer'
 import footerstyle from '../css/Footer.module.css'
+import CarAnimation from "../components/CarAnimation";
 
 function Home() {
   const { addedToCart } = useContext(CartContext)
@@ -15,8 +16,9 @@ function Home() {
     <div>
 
       <DiscountCarList />
+      <CarAnimation />
       <CarList />
-      {addedToCart ? <AddedToCartBox /> : ""}
+      {addedToCart && <AddedToCartBox />}
       <div className={footerstyle.sticky}>
         <Footer />
       </div>
