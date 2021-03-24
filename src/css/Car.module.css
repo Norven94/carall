@@ -11,23 +11,19 @@
   background: white;
   position: relative;
 }
-
 .car:hover {
   box-shadow: 0 0 21px rgba(33,33,33,.2); 
 }
-
 .imageBox img{
   width: 430px;
   height: 220px;
   display: block;
   object-fit: cover;
 }
-
 .cartBox img {
   width:30px;
   height:25px;   
 }
-
 .car .boxDetails{
   max-width: 500px;
   width: 100%;
@@ -35,7 +31,6 @@
   padding: 20px;
   margin: 15px 0 15px 0;
 }
-
 .boxDetails h2{
   display: flex;
   justify-content: flex-start;
@@ -43,7 +38,6 @@
   color:#030303;
   font-size: 1.2rem;
 }
-
 .boxDetails p{
   line-height: 1.5;
   display: -webkit-box;
@@ -52,7 +46,6 @@
   overflow: hidden;
   height: 50px;
 }
-
 .boxDetails h3{
   display: flex;
   justify-content: flex-start;
@@ -62,49 +55,42 @@
   text-overflow: ellipsis;
   font-size: 12px;
   }
-
-  .car .boxDetails h4{
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .location {
-    display: flex;
-    justify-content: flex-start;
-    font-family: Roboto;
-    font-size:16px;
-  }
-  .location img{
-    height:15px;
-    width:15px;
-    margin-top: 3px;
-    margin-right: 13px;
-  }
-
-  .car .boxDetails .isdiscount {
-    color: #FE7F50;
-    font-size: 1.3rem;
-  }
-  .car .boxDetails .undiscount{
-    color:black;
-    font-size: 1.4rem;
-  }
-
-.car .boxDetails button{
-  border: none;
-  padding-left: 60px;
-  cursor: pointer;
-  background-color: white;
-  
+.car .boxDetails h4{
+  display: flex;
+  justify-content: space-between;
 }
-
+.location {
+  display: flex;
+  justify-content: flex-start;
+  font-family: Roboto;
+  font-size:16px;
+}
+.location img{
+  height:15px;
+  width:15px;
+  margin-top: 3px;
+  margin-right: 13px;
+}
+.car .boxDetails .isdiscount {
+  color: #FE7F50;
+  font-size: 1.3rem;
+}
+.car .boxDetails .undiscount{
+  color:black;
+  font-size: 1.4rem;
+}
+.car .boxDetails button{
+border: none;
+padding-left: 60px;
+cursor: pointer;
+background-color: white;
+}
 .imageBox {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 span.purchasedBox {
   background-color: #FE7F50;
   color: white;
@@ -113,15 +99,12 @@ span.purchasedBox {
   padding: 10px 20px;
   position: absolute;
 }
-
 span.notPurchased {
   visibility: hidden;
 }
-
 span.purchased {
   visibility: visible;
 }
-
 .soldBox{
   width:100%;
   height:100%
@@ -144,7 +127,6 @@ span.sold {
 button.isSold{
   display:none
 }
-
 span.discountTag {
   position: absolute;
   top: 20px;
@@ -158,11 +140,9 @@ span.discountTag {
   padding: 12px 5px;
   font-weight: 600;
 }
-
 span.isdiscount {
   visibility: visible;
 }
-
 span.undiscount {
   visibility: hidden;
 }
@@ -179,7 +159,6 @@ span.undiscount {
     display: block;
     object-fit: cover;
   }
-
   .boxDetails{
     padding: 0;
   }
@@ -197,14 +176,12 @@ span.undiscount {
     max-width: 290px;
     margin: 15px 0;
   }
-
   .imageBox img{
     width: 100%;
     height: 100%;
     display: block;
     object-fit: cover;
   }
-
   .boxDetails{
     padding: 0;
   }
@@ -215,15 +192,12 @@ span.undiscount {
   .details .img-container{
     height: 350px;
   }
-
   span.purchasedBox {
     font-size: .8rem;
   }
-
   span.discountTag {
     height: 45px;
     width: 45px;
     font-size: .8rem;
   }
-
 }
