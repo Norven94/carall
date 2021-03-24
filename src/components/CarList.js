@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { CarContext } from "../contexts/CarContext";
 import Car from "./Car";
 import { Container, Row } from "react-bootstrap";
@@ -21,7 +21,6 @@ function CarList() {
     <div className="carlist-container">
       <h1>Find Your New Favorite Vehicle</h1>
       <SearchGroup />
-
       <Container fluid>
         <Row className="d-flex justify-content-center align-content-center flex-wrap">
           {currentCars.length === 0 ? <NoResults /> : currentCars.map((car) => (
