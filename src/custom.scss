@@ -58,10 +58,10 @@ $fourth:#ffc8b4;
 {
    .dropdown  {
     order:1;
-    margin-right: 3rem;
+    margin-right: 5rem;
     }
     .navbar-brand{
-    margin-left:3rem;
+    margin-left:5rem;
     }
 }
 
@@ -84,6 +84,9 @@ $fourth:#ffc8b4;
     margin-right: 3rem;
     margin-top: 2rem;
     margin-bottom: -8rem;
+    h1{
+        font-weight:600;
+    }
     }
     .Jumbotron{
     background-size: cover;
@@ -198,10 +201,10 @@ $fourth:#ffc8b4;
     justify-content: center;
 }
 
-.row {
-    padding-left: 6rem;
-    padding-right: 6rem;
-  }
+// .row {
+//     padding-left: 6rem;
+//     padding-right: 6rem;
+//   }
 
 // .carousel-control-next-icon, .carousel-control-prev {
 //     display: none;

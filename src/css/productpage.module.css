@@ -1,271 +1,307 @@
 .product-page {
-    margin: 50px auto 0 auto;
-    width: 800px;
-  }
+  margin: 50px auto 0 auto;
+  width: 800px;
+}
 
-  .image-container img {
-    /* width: 100%; */
-    width: 410px;
-    height: 300px;
-  }
+.image-container img {
+  width: 100%;
+  /* min-width: 410px;
+  min-height: 300px; */
+}
 
-  .product-details .product-info h1 {
-    display: inline-block;
-    font-size: 0.8rem;
-  }
+/* .image-container img {
+width: 100%;
+max-width: 510px;
+max-height: 400px;
+} */
 
-  .productmakemiles h4 {
-    font-size: 1.1rem;
-  }
-  
-  .image-container h4 {
-    font-size: 1.1rem;
-  }
+.product-details .product-info h1 {
+  display: inline-block;
+  font-size: 0.8rem;
+}
 
-  .image-container {
-    position: relative;
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
-  }
-  
-  span.purchasedBox {
-    width: 177px;
-    background-color: #fe7f50;
-    color: white;
-    font-weight: 600;
-    text-align: center;
-    padding: 20px 40px;
-    margin-left: 8rem;
-    position: absolute;
-    top: 150px;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  
-  span.notPurchased {
-    visibility: hidden;
-  }
-  
-  span.purchased {
-    visibility: visible;
-  }
-  
-  span.discountTag {
-    position: absolute;
-    top: 30px;
-    left: 10%;
-    height: 50px;
-    width: 50px;
-    background-color: #fe7f50;
-    border-radius: 50%;
-    color: white;
-    text-align: center;
-    padding: 12px 5px;
-    font-weight: 600;
-    margin-left: 1.3rem;
-  }
-  
-  span.isdiscount {
-    visibility: visible;
-  }
-  
-  span.undiscount {
-    visibility: hidden;
-  }
-  
-  .product-details .product-heading {
-    font-size: 1.1rem;
-    color: #000000;
-  }
-  
-  .product-details .details1 {
-    display: flex;
-    padding-top:0.5rem;
-  }
+.productmakemiles h2 {
+  font-size: 1.1rem;
+}
 
-  .pointer { 
-      cursor: pointer; 
-  }
-  
-  .product-details .product-makemiles {
-    margin-right: 113px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    font-size: 1.3rem;
-    font-weight: 100;
-  }
+.image-container h4 {
+  font-size: 1.1rem;
+}
 
-  .product-details .product-city-year {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .product-details .product-makemiles h4 {
-    font-size: 1.3rem;
-  }
-  
-  .product-details .product-city-year h6 {
-    font-size: 1.3rem;
-  }
-  
-  .product-details .product-info {
-    display: inline-block;
-      margin-bottom: 0px;
-    font-size: 1.1rem;
-    color: #000000;
-  }
-  
-  .product-details p {
-    font-size: 1.1rem;
-    color: #707070;
-    max-width: 920px;
-    text-align: left;
-  }
-  
-  .product-details .product-price {
-    font-size: 1.1rem;
-    margin-right: 18px;
-    font-weight: 500;
-    font-family: 'Roboto Condensed';
-  }
-  
-  .product-details button {
-    padding: 10px 20px;
-    background-color: #ffffff;
-    color: white;
-    border: none;
-  }
-  
-  .product-details img {
-    margin-top: -15px;
-    width: 36px;
-    height: 31px;
-  }
+.image-container {
+  position: relative;
+  padding: 0px;
 
-  .h1Carousel {
-    margin-left: 2rem;
-    margin-top: 2rem;
-    font-size: 1.4rem;
-  }
+}
 
-  .formH4 {
-    font-size: 1.1rem;
-    text-align: center;
-  }
+span.purchasedBox {
+  width: 177px;
+  background-color: #fe7f50;
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  padding: 20px 40px;
+  position: absolute;
+  top: 150px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
-  .subscribe {
-    text-align: center;
-    margin-bottom: 7rem;
-  }
+span.notPurchased {
+  visibility: hidden;
+}
 
-  Form input[type="text"] {
-    padding-top: 7px;
-    padding-right: 0px;
-    margin-right: 1.5rem;
-    border: 1px solid #fe7f50;
-    border-radius: 4px;
-  }
+span.purchased {
+  visibility: visible;
+}
 
-  Form button {
-    border: 1px solid #fe7f50;
-    border-radius: 4px;
-    background-color: #fe7f50;
-    color: #ffffff;
-    padding: 7px 10px;
-  }
+.soldBox{
+  width:100%;
+  height:100%
+}
 
-  /* Form .inputEmail {
-    padding-right: 0px;
-    margin-right: 2rem;
-    border: 1px solid #fe7f50;
-    border-radius: 15px;
-  } */
+span.soldBox {
+  background-color: rgba(0, 0, 0, 0.548);
+  color: white;
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 30%;
+  position: absolute;
+}
 
-  .check {
-    width: 15px;
-    height: 20px;
-    margin-right: 0.5rem;
-  }
+span.notSold {
+  visibility: hidden;
+}
+span.sold {
+  visibility: visible;
+}
 
-  .top1, .top2, .top3 {
-    display: flex;
-    align-content:flex-start;
-    /* flex-direction: column; */
-  }
+button.isSold{
+  display:none
+}
 
-  .top1 {
-    margin-top: 2rem;
-  }
+span.discountTag {
+  position: absolute;
+  top: 30px;
+  left: 10%;
+  height: 50px;
+  width: 50px;
+  background-color: #fe7f50;
+  border-radius: 50%;
+  color: white;
+  text-align: center;
+  padding: 12px 5px;
+  font-weight: 600;
+}
 
-  .top1 h4 {
-    font-size: 1.1rem;
-  }
+span.isdiscount {
+  visibility: visible;
+}
 
-  .top2 h4 {
-    font-size: 1.1rem;
-  }
+span.undiscount {
+  visibility: hidden;
+}
 
-  .top3 h4 {
-    font-size: 1.1rem;
-  }
+.product-details .product-heading {
+  font-size: 1.1rem;
+  color: #000000;
+}
 
-  .carousel {
-    margin-top: 1rem;
-  } 
+.product-details .details1 {
+  display: flex;
+  padding-top:0.5rem;
+}
+
+.pointer { 
+    cursor: pointer; 
+}
+
+.product-details .product-makemiles {
+  margin-right: 113px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 1.3rem;
+  font-weight: 100;
+}
+
+.product-details .product-city-year {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-details .product-makemiles h4 {
+  font-size: 1.3rem;
+}
+
+.product-details .product-city-year h6 {
+  font-size: 1.3rem;
+}
+
+.product-details .product-info {
+  display: inline-block;
+    margin-bottom: 0px;
+  font-size: 1.6rem;
+  color: #000000;
+}
+
+.product-details p {
+  font-size: 1.1rem;
+  color: #707070;
+  max-width: 920px;
+  text-align: left;
+}
+
+.product-details .product-price {
+  font-size: 1.1rem;
+  margin-right: 18px;
+  font-weight: 500;
+  font-family: 'Roboto Condensed';
+}
+
+.product-details button {
+  padding: 10px 20px;
+  background-color: #ffffff;
+  color: white;
+  border: none;
+}
+
+.product-details img {
+  margin-top: -15px;
+  width: 36px;
+  height: 31px;
+}
+
+.h1Carousel {
+  text-align: center;
+  margin-top: 3rem;
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.formH4 {
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.subscribe {
+  text-align: center;
+  margin-bottom: 7rem;
+}
+
+Form input[type="text"] {
+  padding-top: 7px;
+  padding-right: 0px;
+  margin-right: 1.5rem;
+  border: 1px solid #fe7f50;
+  border-radius: 4px;
+}
+
+Form button {
+  border: 1px solid #fe7f50;
+  border-radius: 4px;
+  background-color: #fe7f50;
+  color: #ffffff;
+  padding: 7px 10px;
+}
+
+/* Form .inputEmail {
+  padding-right: 0px;
+  margin-right: 2rem;
+  border: 1px solid #fe7f50;
+  border-radius: 15px;
+} */
+
+.check {
+  width: 15px;
+  height: 20px;
+  margin-right: 0.5rem;
+}
+
+.top1, .top2, .top3 {
+  display: flex;
+  align-content:flex-start;
+  /* flex-direction: column; */
+}
+
+.top1 {
+  margin-top: 2rem;
+}
+
+.top1 h4 {
+  font-size: 1.1rem;
+}
+
+.top2 h4 {
+  font-size: 1.1rem;
+}
+
+.top3 h4 {
+  font-size: 1.1rem;
+}
+
+.carousel {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+} 
 
 @media (max-width: 800px) {
 
-  .product-page {
-      margin: 15px auto 0 auto;
-    }
+.product-page {
+    margin: 15px auto 0 auto;
+  }
 
-    .rowContainer {
-      display: flex;
-      justify-content: space-evenly;
-      /* align-items: center; */
-    }
+  .rowContainer {
+    display: flex;
+    justify-content: space-evenly;
+    /* align-items: center; */
+  }
 
-    .colContanier {
-      padding-right: 0px;
-    }
+  .colContanier {
+    padding-right: 0px;
+  }
 
-    .product-details {
-      margin-top: 50px;
-    }
-    
-  .product-details .details1 {
-      display: flex;
-      justify-content: space-between;
-    }
-
-    .product-details .product-makemiles {
-      font-size: 25px;
-      margin-right: 0;
-      display: flex;
-      justify-content: space;
-    }
-
-    .product-details .product-makemiles h4 {
-      font-size: 25px;
-    }
+  .product-details {
+    margin-top: 50px;
+  }
   
-    .product-details .product-city-year h6 {
-      font-size: 20px;
-    }
+.product-details .details1 {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .product-details .product-makemiles {
+    font-size: 25px;
+    margin-right: 0;
+    display: flex;
+    justify-content: space;
+  }
+
+  .product-details .product-makemiles h4 {
+    font-size: 25px;
+  }
+
+  .product-details .product-city-year h6 {
+    font-size: 20px;
+  }
 }
 @media (max-width: 500px){
-  span.purchasedBox {
-    padding: 10px 30px;
-    top: 100px;
-  }
-
-  span.discountTag {
-    top: 20px;
-    color: white;
-    padding: 12px 5px;
-  }
+span.purchasedBox {
+  padding: 10px 30px;
+  top: 100px;
 }
 
+span.discountTag {
+  top: 20px;
+  color: white;
+  padding: 12px 5px;
+}
 
+/* .image-container img {
+  width: 50%;
+  width: 210px;
+  height: 200px;
+} */
+}
