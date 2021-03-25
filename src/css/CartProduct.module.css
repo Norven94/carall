@@ -44,7 +44,7 @@
 }
 
 .make-year p { 
-display: inline-block; 
+  display: inline-block; 
 }
 
 .make-year p:nth-child(3) { float:left; }
@@ -161,8 +161,8 @@ span.undiscount{
 }
 
 .remove-product span {
-margin-top: 0px;
-margin-right: 0px;
+  margin-top: 0px;
+  margin-right: 0px;
 }
 
 .remove-product :nth-child(1) {
