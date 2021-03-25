@@ -41,7 +41,7 @@ const CartContextProvider = (props) => {
       }))
     }
     
-    //Runs when cart updates 
+    //Runs when cart updates, and saves the new item in Cart Local Storage 
     useEffect(
       () =>{  
           setTotalProducts(cart.length)
