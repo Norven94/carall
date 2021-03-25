@@ -29,14 +29,7 @@ const CartContextProvider = (props) => {
         return car
       }))
     }
-    
-    //Runs when cart updates, and saves the new item in Cart Local Storage 
-    useEffect(
-      () =>{  
-          setTotalProducts(cart.length)
-          setTotalOrder(cart.reduce((acc,num) => {
-            return acc+num.price          
-          },0 ))
+  }
 
   const removeProduct = (product) => {
     setCart(cart.filter((p) => p !== product));
@@ -48,7 +41,7 @@ const CartContextProvider = (props) => {
     }))
   }
 
-  //Runs when cart updates 
+  //Runs when cart updates, and saves the new item in Cart Local Storage 
   useEffect(
     () => {
       setTotalProducts(cart.length)
