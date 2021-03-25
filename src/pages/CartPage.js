@@ -12,6 +12,8 @@ import { Container, Form } from "react-bootstrap";
 import Back from '../components/Back'
 import Footer from '../components/Footer'
 import footerstyle from '../css/Footer.module.css'
+import EmptyCart from '../components/EmptyCart'
+import FilledCart from '../components/FilledCart'
 
 const CartPage = () => {
   const { cart, setCart, setOrderDetails, billingDetails, shippingDetails, errorLogin, setErrorLogin, formWarning } = useContext(CartContext);
@@ -54,61 +56,16 @@ const CartPage = () => {
 
   //let emptyCart = false;
 
-  if (cart.length === 0) {
     return (
       <div className={styles["cartPage-style"]}>
         <div className={styles["back-button"]}>
           <Back />
         </div>
-        <div className={styles["div"]}>
-          <div className={styles.EmptyCartBox}>
-            <img src="/assets/icons/emptyBasket.svg" alt="Empty Basket Icon" />
-            <span>oops!</span>
-            <p>Your Cart Is Empty</p>
-          </div>
-        </div>
+        {cart.length === 0 ? <EmptyCart /> : <FilledCart handleClick={handleClick}/> }
         <Footer />
       </div>
     );
   }
-  else {
-    return (
-      <div>
-        <div className={styles["cartPage-style"]}>
-          <div className={styles["back-button"]}>
-            <Back />
-          </div>
-          <div className={styles["div"]}>
-            <div className={styles["product-container"]}>
-              <h1 className={styles["cart-rubrik"]}>SHOPPING CART</h1>
-              <div className={styles["product"]}>
-                {cart.map(product => <CartProduct key={product.vin} product={product} />)}
-              </div>
-            </div>
-          </div>
-          <div className={styles["forms"]}>
-            <Form onSubmit={handleClick}>
-              <div className={styles["billing"]}>
-                <BillingFields />
-              </div>
-              <div className={styles["shipping"]}>
-                <ShippingFields />
-                <Container>
-                  <button type="submit" className={styles.buyButton} >BUY</button>
-                </Container>
-              </div>
-            </Form>
-          </div>
-          {errorLogin ? <PreventPurchase /> : ""}
-          <div>
-          </div>
-        </div>
-        <div className={footerstyle.sticky}>
-          <Footer />
-        </div>
-      </div>
-    );
-  }
-}
+  
 
 export default CartPage;
