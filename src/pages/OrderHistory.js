@@ -34,11 +34,16 @@ const OrderHistory = () => {
           })}
 
           {/* <p> Total Price:............. kr </p>      */}
-        </div>
-        </div>
-        <div className={footerstyle.sticky}>
+          
+        <div>
           <Footer />
         </div>
+        
+        </div>
+        </div>
+        {/* <div className={footerstyle.sticky}>
+          <Footer />
+        </div> */}
       </div>
    );
  }
