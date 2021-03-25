@@ -38,11 +38,17 @@
     width: 150px;
     flex-direction: column;
     margin-left: 6rem;
+    text-align: left;
 }
+
 .Social img{
     width:20px;
     height:20px;
     margin:2rem 2rem auto 3rem;
+}
+
+.Social {
+    padding-bottom: 2rem;
 }
 
 .Info{
@@ -72,6 +78,6 @@
     width: 500px; 
 }
 .Social {
-    margin-right:5rem;
+    margin-right:5rem;    
   }
 }
