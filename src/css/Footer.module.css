@@ -1,10 +1,10 @@
-.footernormal{
+/* .footernormal{
     position: fixed;
     right: 0;
     bottom: 0;
     left: 0;
     z-index: 1030; 
-} 
+}  */
 .sticky .footernormal{
     position: -webkit-sticky; 
     position: sticky;
@@ -44,9 +44,6 @@ justify-content: space-between;
     height:20px;
     margin:2rem 2rem auto 3rem;
 }
-.Social {
-  margin-right:5rem;
-}
 
 .Info{
     width:100%;
@@ -74,4 +71,7 @@ justify-content: space-between;
 .footerContact{
     width: 500px; 
 }
+.Social {
+    margin-right:5rem;
+  }
 }
