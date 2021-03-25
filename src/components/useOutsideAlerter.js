@@ -2,7 +2,7 @@ import { useEffect, useContext } from "react";
 import{ CartContext } from "../contexts/CartContext";
 
 export default function useOutsideAlerter(ref) {
-    const { setAddedToCart, setErrorLogin, errorLogin } = useContext(CartContext)
+    const { setAddedToCart, setErrorLogin } = useContext(CartContext)
 
     useEffect(() => {
         //Remove AddedToCartBox if you click outside of it

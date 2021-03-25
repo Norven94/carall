@@ -41,7 +41,7 @@ function Navbar() {
             <div className={styles.cartCars}>
               {cart.map((car, i) => (
                 <div key={i} className={styles.carBox} onClick={() => goToProduct(car.vin)}>
-                  <img className={styles.carImage} src={car.image} alt={`Image of ${car.make} ${car.model} ${car.year}`} />
+                  <img className={styles.carImage} src={car.image} alt={`${car.make} ${car.model} ${car.year}`} />
                   <div className={styles.carDescription}>
                     <span className={styles.carName}>{`${car.make} ${car.model}`}</span>
                     <span className={styles.carYear}>{`${car.year}`}</span>
