@@ -10,6 +10,10 @@ import {
   notPurchased,
   purchasedBox,
   imageBox,
+  sold,
+  notSold,
+  isSold,
+  soldBox,
   discountTag
 } from "../css/Car.module.css";
 import { useContext } from "react";
@@ -35,6 +39,7 @@ export default function Car(props) {
         <div className={imageBox}>
           <span className={`${discountTag} ${props.car.isDiscount ? isdiscount : undiscount}`}>Sale</span>    
           <span className={`${purchasedBox} ${props.car.purchased ? purchased : notPurchased}`}>In your cart</span>
+          <span className={`${soldBox} ${props.car.sold ? sold : notSold}`}>Sold Out</span>
           <img
             
             src={props.car.image}
@@ -55,7 +60,7 @@ export default function Car(props) {
           </h3>
           <h4 style={{paddingTop: "30px"}} className={props.car.isDiscount ? isdiscount : undiscount}>
             {priceWithSpace} kr{" "}
-            <button className={cartBox} onClick={handleClick}>
+            <button className={`${props.car.sold ? isSold : cartBox}`} onClick={handleClick}>
             <img src="/assets/icons/cart.svg" alt="Cart"  className={cartBox} onClick={() => addToCart(props.car)}/>
             </button>
             

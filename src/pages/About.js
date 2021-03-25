@@ -1,36 +1,41 @@
 import * as ReactBootstrap from 'react-bootstrap'
 import Footer from '../components/Footer'
+import footerstyle from '../css/Footer.module.css'
 
 function About() {
 
   return (
     <div className="About">
-      <ReactBootstrap.Jumbotron>
-        <h1>About Us</h1>
-        <div className="container py-5">
-          <p>Carall is an international company with 30 years of history
-          selling used cars, trucks and motorcycles.
-          During our work we managed to create a unique service for
-          the sale and delivery of cars around the world.
-          We are the leader in global car retail, teaching and inspiring
-          clients to play in a world of beauty. Owned by LVMH Moët Hennessy,
-          the world’s leading luxury goods group, Carall has earned its reputation
-         as a car trailblazer with its expertise, innovation, and entrepreneurial spirit.</p>
+      <ReactBootstrap.Jumbotron className="Jumbotron" style={{ backgroundImage: "url(/assets/images/hero.png)" }}>
+        <div className="AboutUs .col-md-4 .offset-md-4">
+          <h1>About Us</h1>
+          <div className="container">
+            <p>Carall is a company with 40  years ofhistory of selling cars. We are the leader in global reuse, inspiring
+          clients to play in a world of carretail. Carall  got its reputation as a  trailblazer innovation,  and entrepreneurial expertise.</p>
+          </div>
         </div>
       </ReactBootstrap.Jumbotron>
-      <div className="container about py-5">
-
-        <h2>Contact Information</h2>
-        <h3>Carall AB</h3>
-        <p>Organisation number: 000 000 000</p>
-        <p>Adressfield 1234 Malmö</p>
-        <p>Tel: +46 00 000 000 0</p>
-        <p>Email: info@Carall.se</p>
-        <img src="/assets/images/f-coral.png" alt="facebook-icon" />
-        <img src="/assets/images/t-coral.png" alt="twitter-icon" />
-        <img src="/assets/images/i-coral.png" alt="instagram-icon" />
+      <div className="numberContainer">
+        <div className="number"><h2>1348</h2><p>cars sold</p></div>
+        <div className="number"><h2>904</h2><p>satisfied customers</p></div>
+        <div className="number"><h2>136</h2><p>Deals Daily</p></div>
       </div>
-      <Footer/>
+      <div className="container text">
+        <p>During our work we managed to create a unique service for the sale and delivery of cars around the world.
+        A better way to travel lighter and eco friendly with reused cars. Travel with us with sustainability and securely into the future.
+          </p>
+      </div>
+      <ReactBootstrap.Container className="GoalContainer">
+        <div className="GoalImage"><img src="/assets/images/car.jpg" alt="employee making a sale" /></div>
+        <div><h3>Our Goal</h3>
+          <p>Once the empty cargo van manufactured the LCF 3500. The stabilizer bar dumped the heavy duty welder body because
+          once the bumper decelerated the fire truck.
+        </p>
+        </div>
+      </ReactBootstrap.Container>
+      <div className={footerstyle.sticky}>
+        <Footer />
+      </div>
     </div>
   )
 }

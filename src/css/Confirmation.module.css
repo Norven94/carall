@@ -68,7 +68,7 @@
 }
 
 .logo{
- margin:45px 85px -10px;
+  margin:45px 85px -10px;
 }
 
 .information{
@@ -86,6 +86,7 @@
 
 .printButton {
   position: relative;
+  margin-bottom: 15rem;
 }
 
 .print {

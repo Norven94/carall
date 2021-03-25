@@ -1,4 +1,4 @@
-import {createContext, useState, useEffect} from "react"
+import {createContext, useState } from "react"
 import data from "../assets/json/cars.json"
 export const CarContext = createContext();
 
@@ -18,6 +18,7 @@ const CarContextProvider =(props)=>{
       isDiscount:car.price < 200000 ? true : false,
       image:`/assets/car-pictures/${car.make}-${car.model}-${car.year}.jpg`,
       purchased: false,
+      sold:false,
     }
   }))
   const [tempCars, setTempCars] = useState(cars)
