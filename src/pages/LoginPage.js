@@ -14,7 +14,7 @@ const {toBeLogin, setToBeLogin} = useContext(UserContext)
     }
     return (
       <div>
-        <Container className="py-0">
+        <Container className={`${styles.containerStyle} py-0`} >
           {toBeLogin ? <Login /> : <Register />}          
             <p className={styles.toggleText} onClick={toggle}>{toBeLogin ? "Are you not a member yet?" :" Back to login"}</p>          
         </Container>
