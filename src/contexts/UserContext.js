@@ -104,7 +104,8 @@ const UserContextProvider = (props) => {
         setUsers(finalCombinedUsers);
         localStorage.setItem('users', JSON.stringify(finalCombinedUsers));
     }, [previousOrderDetails])
-// If You Log out, this put you Logged Out in Local storage
+
+    // When currentUser changes this codeblock runs, and puts the right users as as loggedin and saves it to Local Storage
     useEffect(() => {
         if (!firstRender.current) {
             users.map((user) => {
@@ -122,9 +123,9 @@ const UserContextProvider = (props) => {
         firstRender.current = false;
     }, [currentUser]);
 
+    // Runs when the page reloads, and goes thru the users and if user is set as LoggedIn. It put's them as actice user 
     useEffect(() => {
         let userList = JSON.parse(localStorage.getItem('users'));
-
         if (!userList) {
             return; }
         let user = userList.find(user => user.loggedIn === true);
@@ -133,7 +134,7 @@ const UserContextProvider = (props) => {
             setLoginState(true);
         }
     }, []);
-
+// If You Log out, this put you Logged Out in Local storage
     useEffect(() => {
         if (!loginState && loggedIn.current) {
             users.map((user) => {
