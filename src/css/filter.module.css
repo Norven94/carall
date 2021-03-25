@@ -46,7 +46,6 @@
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdownContent {
   display: block;
-  
 }
 
 @media only screen and (max-width: 659px) 
@@ -74,5 +73,4 @@
   .priceFilter  {
     padding-top: 40px;
   }
-  
 }

@@ -13,14 +13,12 @@ const FilledCart = ({ handleClick }) => {
   const { cart, errorLogin } = useContext(CartContext);
   return (
     <div className={styles["filled-cart"]}>
-      {/* <div className={styles["div"]}> */}
       <div className={styles["product-container"]}>
         <h1 className={styles["cart-rubrik"]}>SHOPPING CART</h1>
         <div className={styles["product"]}>
           {cart.map(product => <CartProduct key={product.vin} product={product} />)}
         </div>
       </div>
-      {/* </div> */}
       <div className={styles["forms"]}>
         <Form onSubmit={handleClick}>
           <div className={styles["billing"]}>

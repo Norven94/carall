@@ -24,35 +24,31 @@ function App() {
               <UserContextProvider>
                 <Navbar />
                 <WelcomeText />
-                <Route exact path="/">          
+                <Route exact path="/">
                   <Home />
                 </Route>
-
-                <Route exact path="/orderhistory">          
+                <Route exact path="/orderhistory">
                   <OrderHistory />
                 </Route>
-
                 <Route exact path="/login">
                   <LoginPage />
                 </Route>
-                
                 <Route exact path="/cartpage">
                   <CartPage />
                 </Route>
-
                 <Route exact path="/confirmation">
                   <Confirmation />
-                </Route>               
+                </Route>
                 <Route
                   path="/product/:productId"
-                  component={ProductPage}            
-                />       
+                  component={ProductPage}
+                />
               </UserContextProvider>
             </CartContextProvider>
           </FilterContextProvider>
         </CarContextProvider>
         {
-        <Route exact path="/About" component={About} />
+          <Route exact path="/About" component={About} />
         }
       </BrowserRouter>
     </div>

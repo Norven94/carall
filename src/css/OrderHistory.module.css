@@ -8,17 +8,10 @@
 
 .box{
   height: max-content;
-  /* margin-bottom: 50rem; */
 }
 
 .box2 {
   min-height: 80vh;
-  /* margin-bottom: 51rem; */
-  /* border: 1px solid lightgrey;
-  padding: 25px;
-  margin-left: 1rem;
-  margin-right: 1rem;
-  margin-top: 3rem; */
 }
 
 .boxfirst {
