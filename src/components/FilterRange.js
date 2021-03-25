@@ -13,13 +13,11 @@ const FilterRange = () => {
   const [milesValue2, setMilesValue2] = useState(70000);
 
   const handlePriceValue1 = (e) => {
-    console.log(e.target.value)
     setPriceValue1(e.target.value);
     filterPriceStart(e.target.value)
   }
 
   const handlePriceValue2 = (e) => {
-    console.log(e.target.value)
     setPriceValue2(e.target.value);
     filterPriceEnd(e.target.value)
   }
@@ -37,13 +35,11 @@ const FilterRange = () => {
 
   return (
     <div>
-       <div className={styles.dropdown}>
+      <div className={styles.dropdown}>
         <select name="Filter" className={styles.dropbtn}>
-        <option defaultValue className={styles.dropbtn}>Filter</option>
+          <option defaultValue className={styles.dropbtn}>Filter</option>
         </select>
-
         <div className={styles.dropdownContent}>
-
           <Form className={styles.priceFilter}>
             <p className={styles.p}>Price :</p>
             <Form.Group className={styles.minmax} as={Row}>
@@ -68,7 +64,7 @@ const FilterRange = () => {
               </Col>
             </Form.Group>
           </Form>
-          </div>
+        </div>
       </div>
     </div>
   );

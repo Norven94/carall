@@ -45,7 +45,6 @@ margin-top: 1rem;
  .order2 { 
   text-align: right;
   margin-bottom: 1.5rem;
-  /* padding-left: 3.1rem;   */
   font-size: 0.9rem;
   font-weight: 300;
   color: grey;
@@ -73,7 +72,6 @@ margin-top: 1rem;
 
 @media only screen and (max-width: 374px) 
 {
-
   .order1 {
     font-size: 0.8rem;
   }
