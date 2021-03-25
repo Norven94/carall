@@ -5,10 +5,9 @@ import { useHistory } from 'react-router-dom';
 
 import useOutsideAlerter from "./useOutsideAlerter"
 
-export default function AddedToCartBox(props) {
+export default function AddedToCartBox() {
     const { setAddedToCart } = useContext(CartContext)
     const history = useHistory();
-    //Test
 
     //Use the custom hook to disable the popup window when you click outside of the element
     const wrapperRef = useRef(null);
