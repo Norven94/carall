@@ -12,7 +12,8 @@ const OrderHistory = () => {
 
   return (
     <div>
-      <div>
+      <div className={styles.box}>
+      <div className={styles.box2}>
         <h1 className={styles.h1}>Order History</h1>
         <div className={styles.boxfirst}>
           <h3>Latest Order</h3>
@@ -35,10 +36,12 @@ const OrderHistory = () => {
 
           {/* <p> Total Price:............. kr </p>      */}
           
+        
+         
+        </div>
+        </div>
         <div>
           <Footer />
-        </div>
-        
         </div>
         </div>
         {/* <div className={footerstyle.sticky}>
