@@ -84,7 +84,7 @@ const UserContextProvider = (props) => {
                 }
             }
         });
-// Looping all the cars. Check foreach car if there is a users with an old order. 
+// Looping all the cars. Check each car if there is a users with an old order. If so it puts it SOLD 
         cars.map((car) => {
             finalCombinedUsers.forEach(user => {
                 if (user.previousOrders) {
