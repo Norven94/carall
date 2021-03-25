@@ -6,13 +6,21 @@
   border-color: #FE7F50;
 }
 
+.box{
+  height: max-content;
+}
+
+.box2 {
+  min-height: 80vh;
+}
+
 .boxfirst {
   border: 1px solid lightgrey;
   padding: 25px;
   margin-left: 1rem;
   margin-right: 1rem;
   margin-top: 3rem;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 .details {

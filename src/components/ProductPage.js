@@ -14,7 +14,6 @@ export default function ProductPage(props) {
   const { cars } = useContext(CarContext);
   const { findProduct } = useContext(CarContext);
   const { addToCart, addedToCart } = useContext(CartContext);
-  // const [product] = useState(findProduct(props.productId));
   const { productId } = props.match.params
   const [product, setProduct] = useState(findProduct(productId));
   const [features, setFeatures] = useState([])
@@ -64,6 +63,7 @@ export default function ProductPage(props) {
         return car.price < product.price + 40000
           && car.price > product.price - 40000
           && car.price != product.price
+          && car.sold === false
       }))
   }, [product])
 
@@ -72,8 +72,7 @@ export default function ProductPage(props) {
     <>
       {addedToCart && <AddedToCartBox />}
       <Back />
-
-      <Container style={{marginTop:"80px"}} className={styles["product-page"]}>
+      <Container style={{ marginTop: "80px" }} className={styles["product-page"]}>
         <Row>
           <Col className={styles.colContainer}>
             <Col xs={12} sm={12} lg={12} className={styles["image-container"]} style={{ padding: "0" }} >
@@ -134,21 +133,11 @@ export default function ProductPage(props) {
       <div>
         <h1 className={styles.h1Carousel}>You may also like this</h1>
       </div>
-      {/* <Container fluid >
-        <Row className="d-flex justify-content-center flex-wrap">
-          {features.map((car) => (
-            <Car key={car.vin} car={car} />
-          ))}
-        </Row>
-      </Container> */}
       <Carousel className={styles.carousel} breakPoints={breakPoints}>
-        {/* <Carousel.Item> */}
         {features.map((car) => (
-            <Car key={car.vin} car={car} />
-          ))}
-        {/* </Carousel.Item> */}
+          <Car key={car.vin} car={car} />
+        ))}
       </Carousel>
-
       <h4 className={styles.formH4}>Subscribe our newsletter and get the best deals for your car.</h4>
       <Form className={styles.subscribe}>
         <input type="text" className={styles.inputEmail} name="emailaddress" placeholder="Your email address here..."></input><button>SEND</button>

@@ -45,7 +45,6 @@ margin-top: 1rem;
  .order2 { 
   text-align: right;
   margin-bottom: 1.5rem;
-  /* padding-left: 3.1rem;   */
   font-size: 0.9rem;
   font-weight: 300;
   color: grey;
@@ -55,26 +54,24 @@ margin-top: 1rem;
  } 
 
  .p {
-   font-weight: 500;
-   color: grey;
-   text-align: center;
+  font-weight: 500;
+  color: grey;
+  text-align: center;
  }
 
  .order p {
-   margin-bottom: 5px; 
+  margin-bottom: 5px; 
  }
-
 
 @media only screen and (max-width: 659px) 
 {
   .boxorder {
-    width: 100%;
+  width: 100%;
   }
 }
 
 @media only screen and (max-width: 374px) 
 {
-
   .order1 {
     font-size: 0.8rem;
   }
@@ -82,7 +79,6 @@ margin-top: 1rem;
   .order2 {
     font-size: 0.8rem;
   }
-
 }
  
 

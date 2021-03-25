@@ -19,6 +19,9 @@
 }
 
   /* LoginPage.js style*/
+.containerStyle{
+    min-height: 80vh;
+}
 .toggleText{
     cursor: pointer;
     text-align: center;

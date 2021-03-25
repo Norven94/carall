@@ -5,8 +5,8 @@ import styles from '../css/PreventPurchase.module.css';
 
 import useOutsideAlerter from "./useOutsideAlerter"
 
-export default function PreventPurchase () {
-    const { setErrorLogin} = useContext(CartContext);
+export default function PreventPurchase() {
+    const { setErrorLogin } = useContext(CartContext);
     const history = useHistory();
 
     const wrapperRef = useRef(null);
@@ -20,7 +20,7 @@ export default function PreventPurchase () {
     const closeErrorBox = () => {
         setErrorLogin(false)
     }
-    
+
     return (
         <div ref={wrapperRef} className={styles.loginErrorBox}>
             <div className={styles.messageBox}>
@@ -29,7 +29,7 @@ export default function PreventPurchase () {
                 <span>Would you like to login?</span>
                 <button className={styles.yesButton} onClick={redirectToLogin}>Yes</button>
                 <img className={styles.exitButton} onClick={closeErrorBox} src="/assets/icons/purchaseErrorExit.svg" alt="Exit Purchase Error" />
-            </div>         
+            </div>
         </div>
     )
 }

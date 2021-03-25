@@ -1,9 +1,8 @@
 import { useEffect, useContext } from "react";
 import{ CartContext } from "../contexts/CartContext";
 
-
 export default function useOutsideAlerter(ref) {
-    const { setAddedToCart, setErrorLogin, errorLogin } = useContext(CartContext)
+    const { setAddedToCart, setErrorLogin } = useContext(CartContext)
 
     useEffect(() => {
         //Remove AddedToCartBox if you click outside of it
@@ -14,10 +13,8 @@ export default function useOutsideAlerter(ref) {
             }
         }
 
-        // Bind the event listener
         document.addEventListener("mousedown", handleClickOutside);
         return () => {
-            // Unbind the event listener on clean up
             document.removeEventListener("mousedown", handleClickOutside);
         };
     }, [ref]);
