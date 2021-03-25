@@ -23,7 +23,7 @@ export default function AddedToCartBox (props) {
     return (
         <div ref={wrapperRef} className={styles.addedToCartBox}>
             <div className={styles.messageBox}>
-            <img src="/assets/icons/AddedToCart.svg" alt="Checkmark" />
+            <img src="/assets/icons/confirm.svg" alt="Checkmark" />
             <span>A car have been added to your cart</span>
             <button className={styles.yesButton} onClick={redirectToCart}>Take me there</button>
             <img className={styles.exitButton} onClick={closeAddedToCartBox} src="/assets/icons/purchaseErrorExit.svg" alt="Close added tp cart box" />
