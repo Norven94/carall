@@ -41,7 +41,7 @@ const CartContextProvider = (props) => {
       }))
     }
     
-    //Things that need to dynamicaly change when cart changes
+    //Runs when cart updates 
     useEffect(
       () =>{  
           setTotalProducts(cart.length)
