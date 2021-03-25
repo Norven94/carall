@@ -5,7 +5,7 @@ import { useHistory } from 'react-router-dom';
 
 import useOutsideAlerter from "./useOutsideAlerter"
 
-export default function AddedToCartBox(props) {
+export default function AddedToCartBox() {
     const { setAddedToCart } = useContext(CartContext)
     const history = useHistory();
 
