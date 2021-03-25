@@ -2,28 +2,22 @@
   padding-top:10px;
   padding-bottom: 9.5px;
   padding-left: 6px;
-  padding-right: 2rem;
   color:#707070;
+  background-color: white;
   border: 0px;
   border-right: gray 0.5px solid;
+  width:7rem;
 }
 
 .sortSelect {
   color: black;
 }
 
-/* .sort-container select option:hover {
-  background: #ff9500 -webkit-linear-gradient(bottom, #ff9500 0%, #ff9500 100%); 
-  color: #fff;
-   background: orangered; 
-} */
+@media only screen and (max-width: 659px) 
+{
+ .select{
+  width: 15rem;
+  }
+  
+}
 
-/* .Sort .sortSelect:hover {
-  background: orangered;
-  color: #FE7F50;
-} */
-
-/* select option:hover {
-  background-color: orangered;
-  color: #FE7F50;
-} */

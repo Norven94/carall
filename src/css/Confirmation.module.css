@@ -1,10 +1,16 @@
+.confirm {
+  width: 60px;
+  display: block;
+  margin: 50px auto 10px;
+}
+
 .confirmation {
   width: 330px;
   display: block;
   margin: 0 auto;
 }
 
-.thanks {
+.latest {
   margin: 0 auto;
 }
 
@@ -26,7 +32,6 @@
 }
 
 .details {
-  color: gray;
   font-weight: 300;
   font-family: 'Roboto Condensed';
   text-align: center;
@@ -62,8 +67,26 @@
   padding-bottom: .9rem;
 }
 
+.logo{
+  margin:45px 85px -10px;
+}
+
+.information{
+  margin-top:2rem;
+  margin-bottom:3rem ;
+}
+
+.information >p{
+  font-weight: 300;
+  font-family: 'Roboto Condensed';
+  text-align: center;
+  font-size:.8rem;
+  line-height: .2rem;
+}
+
 .printButton {
   position: relative;
+  margin-bottom: 15rem;
 }
 
 .print {
