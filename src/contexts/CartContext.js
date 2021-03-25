@@ -56,7 +56,7 @@ const CartContextProvider = (props) => {
       }, [cart]   
     )
 
-    // Local Storage
+    // When i get cart från Local Storage, i do a loop over the cart and puts a car as purchased foreach 
     useEffect(() => {
       if (localStorage.getItem('cart')) {
         const cart = JSON.parse(localStorage.getItem('cart'));
