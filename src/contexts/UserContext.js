@@ -1,10 +1,12 @@
 import {createContext, useState, useContext, useEffect, useRef } from "react"
 import { CartContext } from "../contexts/CartContext";
+import { CarContext } from "../contexts/CarContext";
 import { useHistory } from 'react-router-dom'
 export const UserContext = createContext();
 const UserContextProvider = (props) => {  
     const history = useHistory();
     const { orderDetails, previousOrderDetails, setPreviousOrderDetails} = useContext(CartContext);
+    const { cars, setCars } = useContext(CarContext);
     const [loginState, setLoginState] = useState(false);
     const [isMember, setIsMember] = useState(false);
     const [toBeLogin, setToBeLogin]=useState(true);
@@ -59,7 +61,7 @@ const UserContextProvider = (props) => {
             })                 
         }                    
     },[orderDetails])
-
+    //Combined the users in Local storage with the hardcoded users
     useEffect(() => {
         let localStorageUsers = JSON.parse(localStorage.getItem('users'));
         let combinedUsers;
@@ -82,10 +84,27 @@ const UserContextProvider = (props) => {
                 }
             }
         });
+// Looping all the cars. Check foreach car if there is a users with an old order. 
+        cars.map((car) => {
+            finalCombinedUsers.forEach(user => {
+                if (user.previousOrders) {
+                user.previousOrders.forEach(order => {
+                    order.cart.forEach(cartItem => {
+                        if (car.vin == cartItem.vin) {
+                            car.sold = true;
+                        }
+                    })
+                })
+            }
+            });
+            return car;
+        });
+
+        setCars(cars);
         setUsers(finalCombinedUsers);
         localStorage.setItem('users', JSON.stringify(finalCombinedUsers));
     }, [previousOrderDetails])
-
+// If You Log out, this put you Logged Out in Local storage
     useEffect(() => {
         if (!firstRender.current) {
             users.map((user) => {
@@ -102,6 +121,7 @@ const UserContextProvider = (props) => {
         }
         firstRender.current = false;
     }, [currentUser]);
+
     useEffect(() => {
         let userList = JSON.parse(localStorage.getItem('users'));
 
