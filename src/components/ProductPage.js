@@ -64,6 +64,7 @@ export default function ProductPage(props) {
         return car.price < product.price + 40000
           && car.price > product.price - 40000
           && car.price != product.price
+          && car.sold === false
       }))
   }, [product])
 
