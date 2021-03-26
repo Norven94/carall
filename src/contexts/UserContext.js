@@ -15,7 +15,7 @@ const UserContextProvider = (props) => {
     const [users, setUsers] = useState([
         {
             email: "oskar@gmail.com",
-            password: "1234"
+            password: "1234",
         }
     ])
     const [currentUser, setCurrentUser] = useState({});
@@ -43,14 +43,18 @@ const UserContextProvider = (props) => {
     }
     let userOrders = null;
 
+    //Listen after orderDetails so that it runs after you make a purchase. 
     useEffect(() => {
         if (orderDetails) {
             users.map((user) => {
                 if (user.email === currentUser.email) {
+                    //If the user have made an order before then the if will run. Then every time the user makes a new order they will get added instead of overwritten
                     if (user.previousOrders) {
                         userOrders = user.previousOrders
                         setPreviousOrderDetails([...userOrders, orderDetails])
-                    } else {
+                    } 
+                    //If the use have not made any orders before then the else will run    
+                    else {
                         setPreviousOrderDetails([...previousOrderDetails, orderDetails])
                     }
                 }
