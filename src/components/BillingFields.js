@@ -182,12 +182,10 @@ function BillingFields() {
       </Form.Group >
       <Form.Row as={Col} className="grid">
         <Form.Group as={Col} controlId="formBasicExDate">
-          <Form.Control size="sm" onChange={handleExDateChangeBilling} className={`${exDateInputDefault ? exDateError ? "is-invalid" : "is-valid" : ""}`} type="tel" placeholder="00/00" maxL
-          ength="5" required />
+          <Form.Control size="sm" onChange={handleExDateChangeBilling} className={`${exDateInputDefault ? exDateError ? "is-invalid" : "is-valid" : ""}`} type="tel" placeholder="00/00" maxLength="5" required />
         </Form.Group >
         <Form.Group as={Col} controlId="formBasicCvc">
-          <Form.Control size="sm" onChange={handleCvcChangeBilling} className={`${cvcInputDefault ? cvcError ? "is-invalid" : "is-valid" : ""}`} type="cvc" placeholder="CVC" maxL
-          ength="3" required />
+          <Form.Control size="sm" onChange={handleCvcChangeBilling} className={`${cvcInputDefault ? cvcError ? "is-invalid" : "is-valid" : ""}`} type="cvc" placeholder="CVC" maxLength="3" required />
         </Form.Group >
       </Form.Row>
       <Form.Group as={Col}>
