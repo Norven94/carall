@@ -1,4 +1,3 @@
-//Form for Address, shipping alternatives, payment details
 import Form from 'react-bootstrap/Form'
 import { Col } from 'react-bootstrap'
 import { useContext, useState, useEffect } from 'react'
@@ -111,7 +110,6 @@ function ShippingFields() {
 
   return (
     <div>
-      {/* Shipping Details Fields here */}
       <h1 className="shipping-header">Shipping Details</h1>
       <Form.Group as={Col} controlId="formBasicName">
         <Form.Control size="sm" onChange={handleNameChangeShipping} className={`${nameInputDefault ? nameError ? "is-invalid" : "is-valid" : ""}`} type="full name" placeholder="Full Name" required />

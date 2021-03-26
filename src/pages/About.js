@@ -3,7 +3,6 @@ import Footer from '../components/Footer'
 import footerstyle from '../css/Footer.module.css'
 
 function About() {
-
   return (
     <div className="About">
       <ReactBootstrap.Jumbotron className="Jumbotron" style={{ backgroundImage: "url(/assets/images/hero.png)" }}>

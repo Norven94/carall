@@ -17,19 +17,18 @@ const breakPoints = [
 ]
 
 const DiscountCarList = () => {
-  const {carDiscount} = useContext(CarContext)
+  const { carDiscount } = useContext(CarContext)
 
   return (
     <div className="discount">
       <h1 className={styles.h1}>Monthly Deals</h1>
       <Carousel itemPadding={[0, 0]} breakPoints={breakPoints}>
-        {carDiscount.map((car) =>(
-            <Car key={car.vin} car={car} />
+        {carDiscount.map((car) => (
+          <Car key={car.vin} car={car} />
         ))}
       </Carousel>
     </div>
   );
-  
 }
 
 export default DiscountCarList;

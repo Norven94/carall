@@ -17,9 +17,9 @@ function Footer() {
         </div>
       </div>
       <div className={footerstyle.Social}>
-        <img src="/assets/icons/f.svg" alt="Socialicon facebook" />
-        <img src="/assets/icons/i.svg" alt="Socialicon Instagram" />
-        <img src="/assets/icons/t.svg" alt="Socialicon Twitter" />
+        <img src="/assets/icons/facebook.svg" alt="Socialicon facebook" />
+        <img src="/assets/icons/instagram.svg" alt="Socialicon Instagram" />
+        <img src="/assets/icons/twitter.svg" alt="Socialicon Twitter" />
       </div>
     </footer>
   )

@@ -1,66 +1,63 @@
-import {createContext, useState, useContext, useEffect, useRef } from "react"
+import { createContext, useState, useContext, useEffect, useRef } from "react"
 import { CartContext } from "../contexts/CartContext";
 import { CarContext } from "../contexts/CarContext";
 import { useHistory } from 'react-router-dom'
 export const UserContext = createContext();
-const UserContextProvider = (props) => {  
+const UserContextProvider = (props) => {
     const history = useHistory();
-    const { orderDetails, previousOrderDetails, setPreviousOrderDetails} = useContext(CartContext);
+    const { orderDetails, previousOrderDetails, setPreviousOrderDetails } = useContext(CartContext);
     const { cars, setCars } = useContext(CarContext);
     const [loginState, setLoginState] = useState(false);
     const [isMember, setIsMember] = useState(false);
-    const [toBeLogin, setToBeLogin]=useState(true);
+    const [toBeLogin, setToBeLogin] = useState(true);
     const firstRender = useRef(true);
     const loggedIn = useRef(false);
-    const [users, setUsers] = useState ([
+    const [users, setUsers] = useState([
         {
             email: "oskar@gmail.com",
             password: "1234"
-        }, 
-        {
-            email: "celil@gmail.com",
-            password: "celil123"
-        },
+        }
     ])
-    const [currentUser, setCurrentUser] = useState ({});
+    const [currentUser, setCurrentUser] = useState({});
     const addToRegistration = (e, email, password) => {
         e.preventDefault()
         const member = {
-            email, 
+            email,
             password
-        } 
-        let isAlreadyMember =false   
-        for(let i =0; i< users.length; i++){
-            if(users[i].email === member.email) {
-                isAlreadyMember=true         
+        }
+        let isAlreadyMember = false
+        for (let i = 0; i < users.length; i++) {
+            if (users[i].email === member.email) {
+                isAlreadyMember = true
             }
-        }  
+        }
         if (!isAlreadyMember) {
             setUsers([member, ...users])
             setLoginState(true)
             setCurrentUser(member);
             history.push("/");
-        } 
-        else{
+        }
+        else {
             setIsMember(true)
         }
     }
-    let userOrders = null; 
+    let userOrders = null;
 
     useEffect(() => {
-        if ( orderDetails ) {              
+        if (orderDetails) {
             users.map((user) => {
-                if(user.email === currentUser.email) {                 
-                    if(user.previousOrders) { 
+                if (user.email === currentUser.email) {
+                    if (user.previousOrders) {
                         userOrders = user.previousOrders
                         setPreviousOrderDetails([...userOrders, orderDetails])
                     } else {
                         setPreviousOrderDetails([...previousOrderDetails, orderDetails])
-                    }                                    
+                    }
                 }
-            })                 
-        }                    
-    },[orderDetails])
+            })
+        }
+    }, [orderDetails])
+
     //Combined the users in Local storage with the hardcoded users
     useEffect(() => {
         let localStorageUsers = JSON.parse(localStorage.getItem('users'));
@@ -84,18 +81,18 @@ const UserContextProvider = (props) => {
                 }
             }
         });
-// Looping all the cars. Check foreach car if there is a users with an old order. 
+// Looping all the cars. Check each car if there is a users with an old order. If so it puts it SOLD 
         cars.map((car) => {
             finalCombinedUsers.forEach(user => {
                 if (user.previousOrders) {
-                user.previousOrders.forEach(order => {
-                    order.cart.forEach(cartItem => {
-                        if (car.vin == cartItem.vin) {
-                            car.sold = true;
-                        }
+                    user.previousOrders.forEach(order => {
+                        order.cart.forEach(cartItem => {
+                            if (car.vin == cartItem.vin) {
+                                car.sold = true;
+                            }
+                        })
                     })
-                })
-            }
+                }
             });
             return car;
         });
@@ -127,14 +124,15 @@ const UserContextProvider = (props) => {
     useEffect(() => {
         let userList = JSON.parse(localStorage.getItem('users'));
         if (!userList) {
-            return; }
+            return;
+        }
         let user = userList.find(user => user.loggedIn === true);
         if (user) {
             setCurrentUser(user);
             setLoginState(true);
         }
     }, []);
-// If You Log out, this put you Logged Out in Local storage
+    // If You Log out, this put you Logged Out in Local storage
     useEffect(() => {
         if (!loginState && loggedIn.current) {
             users.map((user) => {
@@ -145,7 +143,7 @@ const UserContextProvider = (props) => {
                 }
             });
             localStorage.setItem('users', JSON.stringify(users));
-        } 
+        }
         loggedIn.current = true;
     }, [loginState]);
 
@@ -163,9 +161,9 @@ const UserContextProvider = (props) => {
         toBeLogin,
         setToBeLogin
     }
-    return(
+    return (
         <UserContext.Provider value={values}>
-        {props.children}
+            {props.children}
         </UserContext.Provider>
     )
 }

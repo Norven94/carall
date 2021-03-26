@@ -1,17 +1,16 @@
-//Form for Address, shipping alternatives, payment details
 import { visa } from "../css/visa.module.css"
 import { Col, Form } from 'react-bootstrap'
 import { useContext, useState, useEffect } from 'react'
 import { CartContext } from "../contexts/CartContext";
 
-const nameRE=/^[a-zA-ZåäöÅÄÖ\- ]{1,}$/; 
-const addressRE=/^[a-zA-ZåäöÅÄÖ0-9\- ]{1,}$/; 
-const cityRE=/^[a-zA-ZåäöÅÄÖ ]{1,}$/; 
-const zipRE=/^[0-9 ]{5,6}$/; 
-const countryRE=/^[a-zA-Z]{1,}$/; 
-const cardNumRE=/^[0-9]{16}$/; 
-const expRE=/^[0-9]{2}\/[0-9]{2}$/; 
-const cvcRE=/^[0-9]{3}$/; 
+const nameRE = /^[a-zA-ZåäöÅÄÖ\- ]{1,}$/;
+const addressRE = /^[a-zA-ZåäöÅÄÖ0-9\- ]{1,}$/;
+const cityRE = /^[a-zA-ZåäöÅÄÖ ]{1,}$/;
+const zipRE = /^[0-9 ]{5,6}$/;
+const countryRE = /^[a-zA-Z]{1,}$/;
+const cardNumRE = /^[0-9]{16}$/;
+const expRE = /^[0-9]{2}\/[0-9]{2}$/;
+const cvcRE = /^[0-9]{3}$/;
 
 function BillingFields() {
   const { billingDetails, setBillingDetails, setFormWarning } = useContext(CartContext);
@@ -34,22 +33,26 @@ function BillingFields() {
   const [exDateInputDefault, setExDateInputDefault] = useState(false)
   const [cvcInputDefault, setCvcInputDefault] = useState(false)
 
+  //UseEffect to set the formwarning based if all input fields are correct submitted
+
   useEffect(() => {
     if (exDateError === false && cvcError === false && cardNumError === false && countryError === false && zipError === false && cityError === false && addressError === false && nameError === false) {
       setFormWarning(false)
     } else {
       setFormWarning(true)
     }
-  },[exDateError, cvcError, cardNumError, countryError, zipError, cityError, addressError, nameError])
+  }, [exDateError, cvcError, cardNumError, countryError, zipError, cityError, addressError, nameError])
+
+  //Handler setting billingdata and checking regex, which determines if it should get a red, green or neutral outline
 
   const handleNameChangeBilling = (e) => {
-    if(e.target.value !== ""){
+    if (e.target.value !== "") {
       setNameInputDefault(true)
-      if(!nameRE.test(e.target.value)){
+      if (!nameRE.test(e.target.value)) {
         setNameError(true)
       } else {
         setNameError(false)
-        setBillingDetails({...billingDetails, billingName: e.target.value});
+        setBillingDetails({ ...billingDetails, billingName: e.target.value });
       }
     } else {
       setNameInputDefault(false)
@@ -57,13 +60,13 @@ function BillingFields() {
   };
 
   const handleAddressChangeBilling = (e) => {
-    if(e.target.value !== ""){
+    if (e.target.value !== "") {
       setAddressInputDefault(true)
-      if(!addressRE.test(e.target.value)){
+      if (!addressRE.test(e.target.value)) {
         setAddressError(true)
       } else {
         setAddressError(false)
-        setBillingDetails({...billingDetails, billingAddress: e.target.value});
+        setBillingDetails({ ...billingDetails, billingAddress: e.target.value });
       }
     } else {
       setAddressInputDefault(false)
@@ -71,13 +74,13 @@ function BillingFields() {
   };
 
   const handleCityChangeBilling = (e) => {
-    if(e.target.value !== ""){
+    if (e.target.value !== "") {
       setCityInputDefault(true)
-      if(!cityRE.test(e.target.value)){
+      if (!cityRE.test(e.target.value)) {
         setCityError(true)
       } else {
         setCityError(false)
-        setBillingDetails({...billingDetails, billingCity: e.target.value});
+        setBillingDetails({ ...billingDetails, billingCity: e.target.value });
       }
     } else {
       setCityInputDefault(false)
@@ -85,13 +88,13 @@ function BillingFields() {
   };
 
   const handleZipChangeBilling = (e) => {
-    if(e.target.value !== ""){
+    if (e.target.value !== "") {
       setZipInputDefault(true)
-      if(!zipRE.test(e.target.value)){
+      if (!zipRE.test(e.target.value)) {
         setZipError(true)
       } else {
         setZipError(false)
-        setBillingDetails({...billingDetails, billingZip: e.target.value});
+        setBillingDetails({ ...billingDetails, billingZip: e.target.value });
       }
     } else {
       setZipInputDefault(false)
@@ -99,13 +102,13 @@ function BillingFields() {
   };
 
   const handleCountryChangeBilling = (e) => {
-    if(e.target.value !== ""){
+    if (e.target.value !== "") {
       setCountryInputDefault(true)
-      if(!countryRE.test(e.target.value)){
+      if (!countryRE.test(e.target.value)) {
         setCountryError(true)
       } else {
         setCountryError(false)
-        setBillingDetails({...billingDetails, billingCountry: e.target.value});
+        setBillingDetails({ ...billingDetails, billingCountry: e.target.value });
       }
     } else {
       setCountryInputDefault(false)
@@ -115,11 +118,11 @@ function BillingFields() {
   const handleCardNumberChangeBilling = (e) => {
     if (e.target.value !== "") {
       setCardNumInputDefault(true)
-      if(!cardNumRE.test(e.target.value)){
+      if (!cardNumRE.test(e.target.value)) {
         setCardNumError(true)
       } else {
         setCardNumError(false)
-        setBillingDetails({...billingDetails, billingCardnumber: e.target.value});
+        setBillingDetails({ ...billingDetails, billingCardnumber: e.target.value });
       }
     } else {
       setCardNumInputDefault(false);
@@ -129,11 +132,11 @@ function BillingFields() {
   const handleExDateChangeBilling = (e) => {
     if (e.target.value !== "") {
       setExDateInputDefault(true)
-      if(!expRE.test(e.target.value)){
+      if (!expRE.test(e.target.value)) {
         setExDateError(true);
       } else {
         setExDateError(false);
-        setBillingDetails({...billingDetails, billingExdate: e.target.value});
+        setBillingDetails({ ...billingDetails, billingExdate: e.target.value });
       }
     } else {
       setExDateInputDefault(false);
@@ -143,11 +146,11 @@ function BillingFields() {
   const handleCvcChangeBilling = (e) => {
     if (e.target.value !== "") {
       setCvcInputDefault(true)
-      if(!cvcRE.test(e.target.value)){
+      if (!cvcRE.test(e.target.value)) {
         setCvcError(true);
       } else {
         setCvcError(false);
-        setBillingDetails({...billingDetails, billingCvc: e.target.value});
+        setBillingDetails({ ...billingDetails, billingCvc: e.target.value });
       }
     } else {
       setCvcInputDefault(false)
@@ -157,38 +160,38 @@ function BillingFields() {
   return (
     <div>
       <h1 className="billing-header">Billing Info</h1>
-        <Form.Group as={Col} controlId="formBasicName">
-          <Form.Control size="sm" onChange={handleNameChangeBilling} className={`${nameInputDefault ? nameError ? "is-invalid" : "is-valid" : ""}` } type="full name" placeholder="Full Name" required />
+      <Form.Group as={Col} controlId="formBasicName">
+        <Form.Control size="sm" onChange={handleNameChangeBilling} className={`${nameInputDefault ? nameError ? "is-invalid" : "is-valid" : ""}`} type="full name" placeholder="Full Name" required />
+      </Form.Group>
+      <Form.Group as={Col} controlId="formBasicAddress">
+        <Form.Control size="sm" onChange={handleAddressChangeBilling} className={`${addressInputDefault ? addressError ? "is-invalid" : "is-valid" : ""}`} type="address" placeholder="Address" required />
+      </Form.Group>
+      <Form.Row as={Col} className="grid">
+        <Form.Group as={Col} controlId="formGridCityZip">
+          <Form.Control size="sm" onChange={handleCityChangeBilling} className={`${cityInputDefault ? cityError ? "is-invalid" : "is-valid" : ""}`} type="city" placeholder="City" required />
         </Form.Group>
-        <Form.Group as={Col} controlId="formBasicAddress">
-          <Form.Control size="sm" onChange={handleAddressChangeBilling} className={`${addressInputDefault ? addressError ? "is-invalid" : "is-valid" : ""}` } type="address" placeholder="Address" required />
+        <Form.Group as={Col} controlId="formGridCityZip">
+          <Form.Control size="sm" onChange={handleZipChangeBilling} className={`${zipInputDefault ? zipError ? "is-invalid" : "is-valid" : ""}`} type="zip code" placeholder="Zip Code" maxlength="6" required />
         </Form.Group>
-        <Form.Row as={Col} className="grid">
-          <Form.Group as={Col} controlId="formGridCityZip">
-            <Form.Control size="sm" onChange={handleCityChangeBilling} className={`${cityInputDefault ? cityError ? "is-invalid" : "is-valid" : ""}` } type="city" placeholder="City" required />
-          </Form.Group>
-          <Form.Group as={Col} controlId="formGridCityZip">
-            <Form.Control size="sm" onChange={handleZipChangeBilling} className={`${zipInputDefault ? zipError ? "is-invalid" : "is-valid" : ""}` } type="zip code" placeholder="Zip Code" maxlength="6" required/>
-          </Form.Group>
-        </Form.Row>
-        <Form.Group as={Col} controlId="formBasicCountry">
-          <Form.Control size="sm" onChange={handleCountryChangeBilling} className={`${countryInputDefault ? countryError ? "is-invalid" : "is-valid" : "" }`} type="country" placeholder="Country" required/>
-        </Form.Group >
-        <Form.Group as={Col} controlId="formBasicCardNumber">
-          <Form.Control size="sm" onChange={handleCardNumberChangeBilling} className={`${cardNumInputDefault ? cardNumError ? "is-invalid" : "is-valid" : "" }`} type="cardnumber" placeholder="Card Number" maxlength="16" required/>
-        </Form.Group >
-        <Form.Row as={Col}  className="grid">
+      </Form.Row>
+      <Form.Group as={Col} controlId="formBasicCountry">
+        <Form.Control size="sm" onChange={handleCountryChangeBilling} className={`${countryInputDefault ? countryError ? "is-invalid" : "is-valid" : ""}`} type="country" placeholder="Country" required />
+      </Form.Group >
+      <Form.Group as={Col} controlId="formBasicCardNumber">
+        <Form.Control size="sm" onChange={handleCardNumberChangeBilling} className={`${cardNumInputDefault ? cardNumError ? "is-invalid" : "is-valid" : ""}`} type="cardnumber" placeholder="Card Number" maxlength="16" required />
+      </Form.Group >
+      <Form.Row as={Col} className="grid">
         <Form.Group as={Col} controlId="formBasicExDate">
-          <Form.Control size="sm" onChange={handleExDateChangeBilling} className={`${exDateInputDefault ? exDateError ? "is-invalid" : "is-valid" : "" }`} type="tel" placeholder="00/00" maxlength="5" required/>
+          <Form.Control size="sm" onChange={handleExDateChangeBilling} className={`${exDateInputDefault ? exDateError ? "is-invalid" : "is-valid" : ""}`} type="tel" placeholder="00/00" maxlength="5" required />
         </Form.Group >
         <Form.Group as={Col} controlId="formBasicCvc">
-          <Form.Control size="sm" onChange={handleCvcChangeBilling} className={`${cvcInputDefault ? cvcError ? "is-invalid" : "is-valid" : "" }`} type="cvc" placeholder="CVC" maxlength="3" required/>
+          <Form.Control size="sm" onChange={handleCvcChangeBilling} className={`${cvcInputDefault ? cvcError ? "is-invalid" : "is-valid" : ""}`} type="cvc" placeholder="CVC" maxlength="3" required />
         </Form.Group >
-        </Form.Row>
-        <Form.Group as={Col}>
-          <img className={visa} src="/assets/images/visa.png" alt="visa" />
-          <img className={visa} src="/assets/images/mc.png" alt="mcard" />
-          </Form.Group >
+      </Form.Row>
+      <Form.Group as={Col}>
+        <img className={visa} src="/assets/images/visa.png" alt="visa" />
+        <img className={visa} src="/assets/images/mc.png" alt="mcard" />
+      </Form.Group >
     </div>
   )
 }
