@@ -171,21 +171,21 @@ function BillingFields() {
           <Form.Control size="sm" onChange={handleCityChangeBilling} className={`${cityInputDefault ? cityError ? "is-invalid" : "is-valid" : ""}`} type="city" placeholder="City" required />
         </Form.Group>
         <Form.Group as={Col} controlId="formGridCityZip">
-          <Form.Control size="sm" onChange={handleZipChangeBilling} className={`${zipInputDefault ? zipError ? "is-invalid" : "is-valid" : ""}`} type="zip code" placeholder="Zip Code" maxlength="6" required />
+          <Form.Control size="sm" onChange={handleZipChangeBilling} className={`${zipInputDefault ? zipError ? "is-invalid" : "is-valid" : ""}`} type="zip code" placeholder="Zip Code" maxLength="6" required />
         </Form.Group>
       </Form.Row>
       <Form.Group as={Col} controlId="formBasicCountry">
         <Form.Control size="sm" onChange={handleCountryChangeBilling} className={`${countryInputDefault ? countryError ? "is-invalid" : "is-valid" : ""}`} type="country" placeholder="Country" required />
       </Form.Group >
       <Form.Group as={Col} controlId="formBasicCardNumber">
-        <Form.Control size="sm" onChange={handleCardNumberChangeBilling} className={`${cardNumInputDefault ? cardNumError ? "is-invalid" : "is-valid" : ""}`} type="cardnumber" placeholder="Card Number" maxlength="16" required />
+        <Form.Control size="sm" onChange={handleCardNumberChangeBilling} className={`${cardNumInputDefault ? cardNumError ? "is-invalid" : "is-valid" : ""}`} type="cardnumber" placeholder="Card Number" maxLength="16" required />
       </Form.Group >
       <Form.Row as={Col} className="grid">
         <Form.Group as={Col} controlId="formBasicExDate">
-          <Form.Control size="sm" onChange={handleExDateChangeBilling} className={`${exDateInputDefault ? exDateError ? "is-invalid" : "is-valid" : ""}`} type="tel" placeholder="00/00" maxlength="5" required />
+          <Form.Control size="sm" onChange={handleExDateChangeBilling} className={`${exDateInputDefault ? exDateError ? "is-invalid" : "is-valid" : ""}`} type="tel" placeholder="00/00" maxLength="5" required />
         </Form.Group >
         <Form.Group as={Col} controlId="formBasicCvc">
-          <Form.Control size="sm" onChange={handleCvcChangeBilling} className={`${cvcInputDefault ? cvcError ? "is-invalid" : "is-valid" : ""}`} type="cvc" placeholder="CVC" maxlength="3" required />
+          <Form.Control size="sm" onChange={handleCvcChangeBilling} className={`${cvcInputDefault ? cvcError ? "is-invalid" : "is-valid" : ""}`} type="cvc" placeholder="CVC" maxLength="3" required />
         </Form.Group >
       </Form.Row>
       <Form.Group as={Col}>

@@ -122,7 +122,7 @@ function ShippingFields() {
           <Form.Control size="sm" onChange={handleCityChangeShipping} className={`${cityInputDefault ? cityError ? "is-invalid" : "is-valid" : ""}`} type="city" placeholder="City" required />
         </Form.Group>
         <Form.Group as={Col} controlId="formGridZip">
-          <Form.Control size="sm" onChange={handleZipChangeShipping} className={`${zipInputDefault ? zipError ? "is-invalid" : "is-valid" : ""}`} type="zip code" placeholder="Zip Code" maxlength="6" required />
+          <Form.Control size="sm" onChange={handleZipChangeShipping} className={`${zipInputDefault ? zipError ? "is-invalid" : "is-valid" : ""}`} type="zip code" placeholder="Zip Code" maxLength="6" required />
         </Form.Group>
       </Form.Row>
       <Form.Group as={Col} controlId="formBasicCountry">
