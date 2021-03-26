@@ -18,8 +18,12 @@ const OrderHistory = () => {
             {users.map((user) => {
               if (user.email === currentUser.email) {
                 if (user.previousOrders) {
+                  console.log(user)
+                  console.log(user.previousOrders)  //Ini variable yg ada info semua ttg order dr user
+
                   return (
                     user.previousOrders.map((order, index) => (
+                      
                       <Order key={index} order={order} />
                     ))
                   )
